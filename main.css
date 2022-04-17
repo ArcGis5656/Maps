@@ -1,0 +1,43 @@
+html,
+body,
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 93%;
+  width: 100%;
+ 
+}
+body{
+  background-color:#475dbe;
+}
+
+#layerToggle1 {
+  bottom: 20px;
+  right: 50px;
+  position: absolute;
+  z-index: 99;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  opacity: 0.75;
+}
+#layerToggle2 {
+  bottom: 20px;
+  right: 200px;
+  position: absolute;
+  z-index: 99;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  opacity: 0.75;
+}
+#layerToggle3 {
+  bottom: 20px;
+  right: 340px;
+  position: absolute;
+  z-index: 99;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  opacity: 0.75;
+}
