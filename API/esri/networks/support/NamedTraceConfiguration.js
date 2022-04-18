@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/MultiOriginJSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ./TraceConfiguration ./typeUtils ./UNTraceConfiguration".split(" "),function(k,c,b,d,p,q,r,l,m,g,e,n){b=function(h){function f(a){a=h.call(this,a)||this;a.globalId=null;a.title=null;a.traceConfiguration=
 null;a.creationDate=null;a.creator=null;a.description=null;a.minStartingPoints=null;a.resultTypes=[];a.tags=[];a.traceType=null;return a}k._inheritsLoose(f,h);f.prototype.readTraceConfiguration=function(a,t){return void 0!==a.tierName?n.fromJSON(a):g.fromJSON(a)};return f}(b.MultiOriginJSONSupport);c.__decorate([d.property({type:String,nonNullable:!0,json:{origins:{"web-map":{read:{source:"id"},write:{target:"id",isRequired:!0}},service:{read:{source:"globalId"}}},read:!1}})],b.prototype,"globalId",

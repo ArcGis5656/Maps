@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../core/maybe ../../core/object ./domainUtils ../../support/arcadeOnDemand".split(" "),function(ea,d,g,fa,k,x,r,ha){function S(a,b,c){if(a)for(const e of a)(a=(a=x.getDeepValue(e,b))&&"function"!==typeof a&&c.get(a))&&x.setDeepValue(e,a.name,b)}function n(a,b){if(!a||!b)return[];y.clear();p(y,a,b);return Array.from(y).sort()}function p(a,b,c){var e;if(c)if(null!=b&&null!=(e=b.fields)&&e.length)if(c.includes("*"))for(const {name:f}of b.fields)a.add(f);
 else for(const f of c)q(a,b,f);else if(c.includes("*"))a.clear(),a.add("*");else for(const f of c)a.add(f)}function q(a,b,c){"string"===typeof c&&(b?(b=b.get(c))&&a.add(b.name):a.add(c))}function l(a,b,c){return z.apply(this,arguments)}function z(){z=g._asyncToGenerator(function*(a,b,c){var e;if(c){var {arcadeUtils:f}=yield ha.loadArcade();c=f.extractFieldNames(c,null==b?void 0:null==(e=b.fields)?void 0:e.map(h=>h.name));for(const h of c)q(a,b,h)}});return z.apply(this,arguments)}function T(a,b,c){return A.apply(this,

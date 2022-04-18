@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../geometry ../../../core/Error ../../../core/maybe ../../../core/promiseUtils ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../RasterInfo ./BaseRaster ../rasterFunctions/pixelUtils ../../../geometry/Extent ../../../geometry/SpatialReference".split(" "),function(l,m,f,y,u,z,v,J,K,
 L,A,B,C,w,D,E){f=function(x){function n(){var c=x.apply(this,arguments)||this;c.datasetFormat="MEMORY";return c}l._inheritsLoose(n,x);var p=n.prototype;p.open=function(){var c=l._asyncToGenerator(function*(a){var b;yield this.init();const {pixelBlock:d,statistics:e,histograms:q,name:g,keyProperties:h,nativeExtent:F,transform:G}=this.data,{width:r,height:t,pixelType:H}=d,k=this.data.extent||new D({xmin:-.5,ymin:.5,xmax:r-.5,ymax:t-.5,spatialReference:new E({wkid:3857})}),I=null!=(b=this.data.isPseudoSpatialReference)?

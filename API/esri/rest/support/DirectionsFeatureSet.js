@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ./DirectionsFeature ./FeatureSet ../../geometry/Extent ../../geometry/SpatialReference ../../geometry/Polyline ../../geometry/Point".split(" "),function(y,e,c,C,l,K,L,M,D,E,z,F,G,H,w,I){c=
 function(A){function u(a){a=A.call(this,a)||this;a.extent=null;a.features=null;a.geometryType="polyline";a.routeId=null;a.routeName=null;a.totalDriveTime=null;a.totalLength=null;a.totalTime=null;return a}y._inheritsLoose(u,A);var x=u.prototype;x.readFeatures=function(a,f){var g;if(!a)return[];const r=(f=null!=(g=f.summary.envelope.spatialReference)?g:f.spatialReference)&&H.fromJSON(f);return a.map(p=>{var t,d,h=this._decompressGeometry(p.compressedGeometry);h=new w({...h,spatialReference:r});const v=

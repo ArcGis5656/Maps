@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ./FeatureSetIterator ./IdSet ./shared ./cache ./stats ../../../core/promiseUtils ../../../core/sql/WhereClause ../../../geometry/geometryEngineAsync ../../../geometry/SpatialReference ../../../layers/support/FieldsIndex".split(" "),function(x,y,v,n,t,q,k,r,u,z,A){let w=function(){function l(a){this.featureSetQueryInterceptor=this.recentlyUsedQueries=null;this._idstates=[];this._mainSetInUse=this._wset=this._parent=null;this._maxProcessing=200;this._maxQuery=
 500;this._totalCount=-1;this._databaseType=n.FeatureServiceDatabaseType.NotEvaluated;this._databaseTypeProbed=null;this.declaredRootClass="esri.arcade.featureset.support.FeatureSet";this._featureCache=[];this.fields=this.types=null;this.globalIdField=this.objectIdField=this.geometryType="";this.spatialReference=null;this.loaded=this._transparent=this.hasZ=this.hasM=!1;this._fieldsIndex=this._loadPromise=null;a&&a.lrucache&&(this.recentlyUsedQueries=a.lrucache);a&&a.interceptor&&(this.featureSetQueryInterceptor=

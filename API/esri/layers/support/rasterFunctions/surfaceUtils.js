@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../PixelBlock","./pixelUtils"],function(G,K,H){function J(l){let {altitude:f,azimuth:c}=l;const {hillshadeType:r,pixelSizePower:d,pixelSizeFactor:y,scalingType:F,isGCS:D,resolution:E}=l;var m="multi-directional"===r?2*l.zFactor:l.zFactor;const {x:v,y:u}=E;l=m/(8*v);var w=m/(8*u);D&&.001<m&&(l/=111E3,w/=111E3);"adjusted"===F&&(D?(l=111E3*v,w=111E3*u,l=(m+l**d*y)/(8*l),w=(m+w**d*y)/(8*w)):(l=(m+v**d*y)/(8*v),w=(m+u**d*y)/(8*u)));var k=(90-f)*Math.PI/180;m=Math.cos(k);let g=(360-c+
 90)*Math.PI/180,e=Math.sin(k)*Math.cos(g);k=Math.sin(k)*Math.sin(g);const p=[315,270,225,360,180,0],h=[60,60,60,60,60,90];var t=new Float32Array([3,5,3,2,1,4]);const q=t.reduce((n,B)=>n+B);t=t.map(n=>n/q);const z="multi-directional"===r?p.length:1,A=new Float32Array(6),x=new Float32Array(6),C=new Float32Array(6);if("multi-directional"===r)for(let n=0;n<z;n++)f=h[n],c=p[n],k=(90-f)*Math.PI/180,m=Math.cos(k),g=(360-c+90)*Math.PI/180,e=Math.sin(k)*Math.cos(g),k=Math.sin(k)*Math.sin(g),A[n]=m,x[n]=e,

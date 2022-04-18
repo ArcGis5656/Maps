@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/Error","../../../core/sql/WhereClauseCache"],function(d,e,r){function n(b,a){return b?m.get(b,a):null}function l(b,a,f,k=!0){const g=[];for(const h of a)if("*"!==h&&!b.has(h))if(k){a=p(h);try{const c=n(a,b);if(!c)throw new e("feature-store:unsupported-query","invalid SQL expression",{where:a});if(!c.isStandardized)throw new e("feature-store:unsupported-query","expression is not standard",{clause:c});l(b,c.fieldNames,"expression contains missing fields")}catch(c){if((a=
 c&&c.details)&&(a.clause||a.where))throw c;a&&a.missingFields?g.push(...a.missingFields):g.push(h)}}else g.push(h);if(g.length)throw new e("feature-store:unsupported-query",f,{missingFields:g});}function p(b){return b.split(" as ")[0]}const m=new r.WhereClauseCache(50,500),t=new Set("esriFieldTypeOID esriFieldTypeSmallInteger esriFieldTypeInteger esriFieldTypeSingle esriFieldTypeDouble esriFieldTypeLong esriFieldTypeDate".split(" "));d.getAliasFromFieldName=function(b){return b.split(" as ")[1]};

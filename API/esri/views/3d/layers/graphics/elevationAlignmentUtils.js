@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../core/compilerUtils ../../../../core/maybe ../../../../chunks/mat4 ../../../../chunks/mat4f64 ../../../../chunks/vec3f64 ../../../../geometry/projection ../../../../layers/graphics/dehydratedFeatureUtils ./graphicUtils ../../support/ElevationProvider".split(" "),function(l,B,r,C,D,E,y,F,G,v){function z(a,c,b,d,e){const g=(F.isDehydratedPoint(a)?a.z:v.isSamplePosition(a)?a.array[a.offset+2]:a[2])||0;switch(b.mode){case "on-the-ground":b=r.unwrapOr(v.getElevationAtPoint(c,
 a,"ground"),0);e.verticalDistanceToGround=0;e.sampledElevation=b;e.z=b;break;case "relative-to-ground":a=r.unwrapOr(v.getElevationAtPoint(c,a,"ground"),0);b=b.geometryZWithOffset(g,d);e.verticalDistanceToGround=b;e.sampledElevation=a;e.z=b+a;break;case "relative-to-scene":a=r.unwrapOr(v.getElevationAtPoint(c,a,"scene"),0);b=b.geometryZWithOffset(g,d);e.verticalDistanceToGround=b;e.sampledElevation=a;e.z=b+a;break;case "absolute-height":b=b.geometryZWithOffset(g,d);d=r.unwrapOr(v.getElevationAtPoint(c,

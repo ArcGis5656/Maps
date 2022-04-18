@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../Color","../smartMapping/symbology/support/symbologyUtils","../smartMapping/symbology/support/utils"],function(n,d,t,e){function v(a){return t.getThemesforBasemap(w,a)}function x(a){if("mesh"===a.geometryType)return null;const b=t.getRawSchemes({basemap:a.basemap,geometryType:a.geometryType,basemapTheme:a.basemapTheme,theme:w.get("default")});if(b){var {schemesInfo:c,basemapId:g,basemapTheme:p}=b;return{primaryScheme:y(a,c.primary),secondarySchemes:c.secondary.map(q=>y(a,q)).filter(Boolean),
 basemapId:g,basemapTheme:p}}}function r(a){if(a)return a={...a},"color"in a&&a.color&&(a.color=new d(a.color)),"noDataColor"in a&&a.noDataColor&&(a.noDataColor=new d(a.noDataColor)),"outline"in a&&a.outline&&(a.outline={color:a.outline.color&&new d(a.outline.color),width:a.outline.width}),"marker"in a&&a.marker&&(a.marker=r(a.marker)),"background"in a&&a.background&&(a.background=r(a.background)),a}function y(a,b){var c="mesh"!==a.geometryType&&a.worldScale?a.view:null;switch(a.geometryType){case "point":case "multipoint":return z({color:b.color,

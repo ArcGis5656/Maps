@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(function(){return{"seq-yellow-orange-red-bright":{1:["#ff7b22"],2:["#c0370f","#ff7b22"],3:["#b1260b","#e05919","#ff8e33"],4:["#a11506","#d04814","#ef6a1d","#ffa143"],5:["#a11506","#d04814","#ef6a1d","#ff8e33","#ffb454"],6:"#a11506 #c0370f #e05919 #ef6a1d #ff8e33 #ffb454".split(" "),7:"#a11506 #c0370f #e05919 #ef6a1d #ff7b22 #ffa143 #ffc764".split(" "),8:"#910000 #b1260b #c0370f #e05919 #ef6a1d #ff7b22 #ffa143 #ffc764".split(" "),9:"#910000 #b1260b #c0370f #e05919 #ef6a1d #ff7b22 #ffa143 #ffb454 #ffda74".split(" "),
 10:"#910000 #b1260b #c0370f #e05919 #ef6a1d #ff7b22 #ffa143 #ffb454 #ffda74 #ffed85".split(" "),stops:["#910000","#c33910","#f6711f","#fbaf52","#ffed85"],tags:"light reds yellows oranges bright sequential colorblind-friendly".split(" "),name:"Orange 1"},"seq-yellow-pink-purple":{1:["#b65fa5"],2:["#e6b7c4","#b65fa5"],3:["#eecec9","#d588b9","#a14e96"],4:["#f6e5cf","#dd9fbf","#cc71b4","#8c3c88"],5:["#f6e5cf","#dd9fbf","#cc71b4","#a14e96","#762a79"],6:"#f6e5cf #e6b7c4 #d588b9 #cc71b4 #a14e96 #762a79".split(" "),

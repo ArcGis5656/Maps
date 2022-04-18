@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/JSONSupport ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/reader ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer".split(" "),function(p,d,b,f,r,t,u,m,q,g){var h;b=h=function(n){function k(a){a=n.call(this,a)||this;a.date=null;a.directShadowsEnabled=!1;a.displayUTCOffset=null;return a}p._inheritsLoose(k,
 n);var e=k.prototype;e.readDate=function(a,c){return null!=c.datetime&&new Date(c.datetime)||null};e.writeDate=function(a,c,l){c[l]=a.getTime()};e.readDirectShadowsEnabled=function(a,c){return!!c.directShadows};e.writedirectShadowsEnabled=function(a,c,l){a&&(c[l]=a)};e.writeDisplayUTCOffset=function(a,c){null!=a&&(c.displayUTCOffset=a)};e.clone=function(){return new h(this.cloneConstructProperties())};e.cloneConstructProperties=function(){const a={directShadowsEnabled:this.directShadowsEnabled,displayUTCOffset:null!=

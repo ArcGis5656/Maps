@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../core/maybe ../../geometry/support/scaleUtils ../statistics/spatialStatistics ../support/adapters/support/layerUtils".split(" "),function(q,m,u,r,v,l){function w(a){return n.apply(this,arguments)}function n(){n=q._asyncToGenerator(function*(a){const {view:c,sampleSize:b}=a;if(!(a&&c&&a.layer))throw new m("scale-range:missing-parameters","'view' and 'layer' parameters are required");const {layer:e,...f}=a;a=l.createLayerAdapter(e,
 l.featureCapableLayerTypes);const h={layerAdapter:a,...f};h.sampleSize=b||500;if(!a)throw new m("scale-range:invalid-parameters","'layer' must be one of these types: "+l.getLayerTypeLabels(l.featureCapableLayerTypes).join(", "));yield c.when();const k=u.isSome(h.signal)?{signal:h.signal}:null;yield a.load(k);return h});return n.apply(this,arguments)}function t(a,c,b=!0){if(a.constraints&&"effectiveLODs"in a.constraints){a=a.constraints.effectiveLODs;a=b?a:a.slice(0).reverse();let e=null;for(const f of a)if(!(b?

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["./CIMSymbolHelper","./Rect","./SDFHelper","./utils"],function(l,u,r,x){return function(){function v(a){this._resourceManager=a}var t=v.prototype;t.dispose=function(){this._rasterizationCanvas=null};t.rasterizeJSONResource=function(a,g,c){this._rasterizationCanvas||(this._rasterizationCanvas=document.createElement("canvas"));if("simple-fill"===a.type||"esriSFS"===a.type){const [f,h,k]=l.SymbolHelper.rasterizeSimpleFill(this._rasterizationCanvas,a.style,g);return{size:[h,k],image:new Uint32Array(f.buffer),
 sdf:!1,simplePattern:!0,anchorX:0,anchorY:0}}if("simple-line"===a.type||"esriSLS"===a.type||"line"===a.type&&a.dashTemplate){if("simple-line"===a.type||"esriSLS"===a.type)switch(c=l.slsDashToTemplateArray(a.style,a.cap),a.cap){case "butt":a="Butt";break;case "square":a="Square";break;default:a="Round"}else c=a.dashTemplate,a=a.cim.capStyle;const [f,h,k]=l.SymbolHelper.rasterizeSimpleLine(c,a);return{size:[h,k],image:new Uint32Array(f.buffer),sdf:!0,simplePattern:!0,anchorX:0,anchorY:0}}let b,e;"simple-marker"===

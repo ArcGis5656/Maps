@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../chunks/_rollupPluginBabelHelpers","./GeometryUtils","./MemoryBuffer"],function(n,q,w,c){let x=function(d){function b(a){return d.call(this,a)||this}q._inheritsLoose(b,d);b.prototype.add=function(a,h,f,g,k,l,p,m,r,u,v,t){const e=this.array;a=c.i1616to32(a,h);e.push(a);a=c.i8888to32(Math.round(31*f),Math.round(31*g),Math.round(31*k),Math.round(31*l));e.push(a);a=c.i8888to32(Math.round(31*p),Math.round(31*m),Math.round(31*r),Math.round(31*u));e.push(a);a=c.i1616to32(v,
 0);e.push(a);t&&e.push(...t)};return b}(c),y=function(d){function b(a){return d.call(this,a)||this}q._inheritsLoose(b,d);b.prototype.add=function(a,h,f){const g=this.array;g.push(c.i1616to32(a,h));f&&g.push(...f)};return b}(c),z=function(d){function b(a){return d.call(this,a)||this}q._inheritsLoose(b,d);b.prototype.add=function(a,h,f,g,k,l,p){const m=this.array,r=this.index;a=c.i1616to32(a,h);m.push(a);a=c.i8888to32(Math.round(15*f),Math.round(15*g),k,l);m.push(a);p&&m.push(...p);return r};return b}(c),

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../chunks/languageUtils","../../core/number"],function(p,b,q){function n(g,f,k){if("undefined"===typeof k||0===+k)return Math[g](f);f=+f;k=+k;if(isNaN(f)||"number"!==typeof k||0!==k%1)return NaN;f=f.toString().split("e");f=Math[g](+(f[0]+"e"+(f[1]?+f[1]-k:-k)));f=f.toString().split("e");return+(f[0]+"e"+(f[1]?+f[1]+k:k))}p.registerFunctions=function(g,f){function k(d,e,c){d=b.toNumber(d);return isNaN(d)?d:isNaN(e)||isNaN(c)||e>c?NaN:d<e?e:d>c?c:d}g.number=function(d,e){return f(d,
 e,function(c,h,a){b.pcCheck(a,1,2);c=a[0];return b.isNumber(c)?c:null===c?0:b.isDate(c)||b.isBoolean(c)?Number(c):b.isArray(c)?NaN:""===c||void 0===c?Number(c):b.isString(c)?void 0!==a[1]?(a=b.multiReplace(a[1],"\u2030",""),a=b.multiReplace(a,"\u00a4",""),q.parse(c,{pattern:a})):Number(c.trim()):Number(c)})};g.abs=function(d,e){return f(d,e,function(c,h,a){b.pcCheck(a,1,1);return Math.abs(b.toNumber(a[0]))})};g.acos=function(d,e){return f(d,e,function(c,h,a){b.pcCheck(a,1,1);return Math.acos(b.toNumber(a[0]))})};

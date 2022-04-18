@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../core/Logger ../../../../core/maybe ../../../../core/NestedMap ./Util".split(" "),function(h,k,g,f,l,m){const n=g.getLogger("esri.views.3d.webgl-engine.lib.GLMaterialRepository");let p=function(){function e(a){this._glMaterial=a;this.refCnt=0;this._glMaterial=a}var c=e.prototype;c.incRefCnt=function(){++this.refCnt};c.decRefCnt=function(){--this.refCnt;m.assert(0<=this.refCnt)};c.getRefCnt=function(){return this.refCnt};k._createClass(e,
 [{key:"glMaterial",get:function(){return this._glMaterial}}]);return e}();g=function(){function e(a,d,b,q){this._textureRepository=a;this._techniqueRepository=d;this.materialChanged=b;this.requestRender=q;this._id2glMaterialRef=new l.NestedMap}var c=e.prototype;c.dispose=function(){this._textureRepository.dispose()};c.acquire=function(a,d){this._ownMaterial(a);var b=this._id2glMaterialRef.get(d,a.id);f.isNone(b)&&(b=a.createGLMaterial({material:a,techniqueRep:this._techniqueRepository,textureRep:this._textureRepository,

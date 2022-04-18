@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../chunks/_rollupPluginBabelHelpers","../../../../core/maybe","./FeatureTileFetcher3D","./featureTileQuery3D"],function(f,h,g,k,l){let n=function(){function c(a){this._capabilities=this._memoryCache=null;const b=a.layerView.layer;this.layerView=a.layerView;this.objectIdField=b.objectIdField;this.globalIdField="globalIdField"in b?b.globalIdField:null;this.returnZ=a.returnZ;this.returnM=a.returnM;const d=this.layerView.view.resourceController;this.query=l.createFeatureTileQuery3D(b,
 m=>d.schedule(m));d&&this.memoryCacheEnabled&&(this._memoryCache=d.memoryController.newCache(b.uid))}var e=c.prototype;e.destroy=function(){this._memoryCache=g.destroyMaybe(this._memoryCache);this.query.destroy()};e.createQuery=function(){const a=this.layerView.layer.createQuery();a.outFields=this.layerView.availableFields;a.returnZ=this.returnZ;a.returnM=this.returnM;a.outSpatialReference=this.tilingScheme.spatialReference;return a};e.logFetchError=function(a,b){a.error("#fetchTile()",this.layerView.layer,

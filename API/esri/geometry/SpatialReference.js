@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/JSONSupport ../core/lang ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer ./support/spatialReferenceUtils".split(" "),function(n,c,b,t,l,d,u,p,f){var e;b=e=function(q){function h(a){a=q.call(this,a)||this;a.latestWkid=null;a.wkid=null;a.wkt=null;a.vcsWkid=null;a.latestVcsWkid=null;a.imageCoordinateSystem=null;return a}
 n._inheritsLoose(h,q);h.fromJSON=function(a){if(!a)return null;if(a.wkid){if(102100===a.wkid)return e.WebMercator;if(4326===a.wkid)return e.WGS84}const g=new e;g.read(a);return g};var k=h.prototype;k.normalizeCtorArgs=function(a){return a&&"object"===typeof a?a:{["string"===typeof a?"wkt":"wkid"]:a}};k.writeWkt=function(a,g){this.wkid||(g.wkt=a)};k.clone=function(){if(this===e.WGS84)return e.WGS84;if(this===e.WebMercator)return e.WebMercator;const a=new e;null!=this.wkid?(a.wkid=this.wkid,null!=this.latestWkid&&

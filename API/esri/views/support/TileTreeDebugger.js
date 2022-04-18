@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../Color ../../Graphic ../../core/Accessor ../../core/mathUtils ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../symbols/PointSymbol3D ../../symbols/SimpleFillSymbol ../../symbols/TextSymbol ../../symbols/TextSymbol3DLayer".split(" "),function(f,t,h,B,u,C,v,k,n,J,K,L,D,E,F,G,H){const I=
 [[0,179,255],[117,62,128],[0,104,255],[215,189,166],[32,0,193],[98,162,206],[102,112,129],[52,125,0],[142,118,246],[138,83,0],[92,122,255],[122,55,83],[0,142,255],[81,40,179],[0,200,244],[13,24,127],[0,170,147],[19,58,241],[22,44,35]];f.TileTreeDebugger=function(w){function l(b){b=w.call(this,b)||this;b.updating=!1;b.enablePolygons=!0;b.enableLabels=!0;b._polygons=new Map;b._labels=new Map;b._enabled=!0;return b}t._inheritsLoose(l,w);var m=l.prototype;m.initialize=function(){this._symbols=I.map(b=>

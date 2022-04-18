@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../../chunks/_rollupPluginBabelHelpers","../../../../../../core/maybe","./util"],function(u,M,K,y){function E(c){return c.length-1}function F(c){let e=0;for(let a=0;a<E(c);a++)e+=L(c,a);return e}function L(c,e,a=1){const [b,d]=c[e+1];return Math.sqrt(b*b+d*d)*a}function G(c,e,a,b,d){if(!(a<e)){var l=b.clone().seek(a/2);K.isNone(l)||(c(l.clone(),a,d),a=(a-e)/2,l=K.unwrap(l.seek(e/2)),G(c,e,a,b,d+1),G(c,e,a,l,d+1))}}let H=function(){function c(a,b,d,l,g){this._segments=
 a;this._index=b;this._distance=d;this._xStart=l;this._yStart=g;this._done=!1}c.create=function(a){return new c(a,0,0,a[0][0],a[0][1])};var e=c.prototype;e.clone=function(){return new c(this._segments,this._index,this._distance,this.xStart,this.yStart)};e.equals=function(a){return this._index===a._index||a._index===this._index-1&&(0===this._distance||1===a._distance)||a._index===this._index+1&&(1===this._distance||0===a._distance)};e.leq=function(a){return this._index<a._index||this._index===a._index&&

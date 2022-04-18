@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../sources/Empty ../support/FeatureSet ../support/IdSet ../support/shared ../../../core/promiseUtils ../../../geometry/geometryEngineAsync".split(" "),function(v,m,l,r,p,q,n){return function(u){function f(a){var b=u.call(this,a)||this;b._relation="";b._relationGeom=null;b._relationString="";b.declaredClass="esri.arcade.featureset.actions.SpatialFilter";b._relationString=a.relationString;b._parent=a.parentfeatureset;b._maxProcessing=40;b._relation=
 a.relation;b._relationGeom=a.relationGeom;return b}v._inheritsLoose(f,u);var h=f.prototype;h._getSet=function(a){return null===this._wset?this._ensureLoaded().then(()=>this._parent._getFilteredSet("esriSpatialRelRelation"!==this._relation?this._relation:this._relation+":"+this._relationString,this._relationGeom,null,null,a)).then(b=>{this._checkCancelled(a);return this._wset=new r(b._candidates.slice(0),b._known.slice(0),b._ordered,this._clonePageDefinition(b.pagesDefinition))}):q.resolve(this._wset)};

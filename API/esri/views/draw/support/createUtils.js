@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../geometry ../../../core/arrayUtils ../../../core/lang ../../../core/maybe ../../../core/unitUtils ../../../geometry/Circle ../../../geometry/geometryEngine ../../../geometry/support/coordsUtils ../../../geometry/support/spatialReferenceUtils ./surfaceCoordinateSystems ../../../geometry/Multipoint ../../../geometry/Point ../../../geometry/Polyline ../../../geometry/Polygon".split(" "),function(l,D,u,v,m,w,x,r,p,t,g,y,z,A,B){function q(a,c){c=new z({x:a[0],y:a[1],spatialReference:c});
 2<a.length&&(c.z=a[2]);return c}function n(a,c,d,e=!0){a=v.clone(a);a.forEach(b=>{u.equals(b[0],b[b.length-1])&&1!==b.length||b.push(b[0])});a=new B({rings:a,spatialReference:c});a.rings.forEach(b=>{p.isClockwise(b,!1,!1)||b.reverse()});d&&p.unnormalizeGeometryOnDatelineCrossing(a);e&&a.isSelfIntersecting&&t.isValid(c)&&(a=r.simplify(a));return a}l.SNAPPING_GRAPHICS_LAYER_ID="DrawAction-snapping-graphics-layer";l.createCircle=function(a,c,d,e){var b=c.mapToLocalMultiple(a),f=a=null;d?(a=b[0],f=b[1]):

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../support/utils"],function(f,p){function q(a){return`(${a.map(b=>`${b} >= 0`).join(" OR ")})`}function r(a,b){const {returnFieldName:d,defaultValue:g,layer:k}=b;b=[];if(d&&g){var e=a.map(c=>`${c} <= 0`).join(" AND ");b.push(`WHEN ${e} THEN ${g}`)}for(const c of a){e=a.reduce((m,t)=>{c!==t&&m.push(`${c} > ${t}`);return m},[]).join(" AND ");var h=k&&p.isIntegerField(k,c);h=d&&`'${c}'`?`'${c}'`:h?p.castIntegerFieldToFloat(c):c;b.push(`WHEN ${e} THEN ${h}`)}return`CASE ${b.join(" ")} ELSE ${g||
 "0"} END`}function l(a){return a&&a.map(b=>`$feature["${b}"];`).join("\n")+"\n"||""}function n(a,b=!1){a=a.map(d=>`"${d}"`);return`\n  var fieldNames = [ ${a.join(", ")} ];\n  var numFields = ${a.length};\n  var maxValueField = null;\n  var maxValue = -Infinity;\n  var value, i, totalValue = null;\n\n  for(i = 0; i < numFields; i++) {\n    value = $feature[fieldNames[i]];\n\n    if(value > 0) {\n      if(value > maxValue) {\n        maxValue = value;\n        maxValueField = fieldNames[i];\n      }\n      else if (value == maxValue) {\n        maxValueField = null;\n      }\n    }\n    ${b?

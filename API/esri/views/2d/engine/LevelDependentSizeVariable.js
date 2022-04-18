@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/lang ../../../core/accessorSupport/decorators/property ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../core/accessorSupport/decorators/writer ../../../renderers/visualVariables/SizeVariable ../../../renderers/visualVariables/support/sizeVariableUtils".split(" "),function(a,k,b,l,m,u,n,p,q,f){var c;a.LevelDependentSizeVariable=c=function(g){function d(){return g.apply(this,
 arguments)||this}k._inheritsLoose(d,g);var h=d.prototype;h.writeLevels=function(e,r,v){for(const t in e){r.stops=this.levels[t];break}};h.clone=function(){return new c({axis:this.axis,field:this.field,valueExpression:this.valueExpression,valueExpressionTitle:this.valueExpressionTitle,maxDataValue:this.maxDataValue,maxSize:f.isSizeVariable(this.maxSize)?this.maxSize.clone():this.maxSize,minDataValue:this.minDataValue,minSize:f.isSizeVariable(this.minSize)?this.minSize.clone():this.minSize,normalizationField:this.normalizationField,

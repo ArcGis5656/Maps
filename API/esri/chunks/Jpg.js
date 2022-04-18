@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(Y){var U={exports:{}};(function(Z){(function(H){H=H();void 0!==H&&(Z.exports=H)})(function(){var H=function(){function L(S){this.message="JPEG error: "+S}L.prototype=Error();L.prototype.name="JpegError";return L.constructor=L}();return function(){function L(){this.decodeTransform=null;this.colorTransform=-1}function S(b,d){for(var l=0,k=[],a,t,e=16;0<e&&!b[e-1];)e--;k.push({children:[],index:0});var f=k[0],x;for(a=0;a<e;a++){for(t=0;t<b[a];t++){f=k.pop();for(f.children[f.index]=
 d[l];0<f.index;)f=k.pop();f.index++;for(k.push(f);k.length<=a;)k.push(x={children:[],index:0}),f.children[f.index]=x.children,f=x;l++}a+1<e&&(k.push(x={children:[],index:0}),f.children[f.index]=x.children,f=x)}return k[0].children}function aa(b,d,l,k,a,t,e,f,x){function q(){if(0<u)return u--,h>>u&1;h=b[d++];if(255===h){var m=b[d++];if(m)throw new H("unexpected marker "+(h<<8|m).toString(16));}u=7;return h>>>7}function g(m){for(;;){m=m[q()];if("number"===typeof m)return m;if("object"!==typeof m)throw new H("invalid huffman sequence");

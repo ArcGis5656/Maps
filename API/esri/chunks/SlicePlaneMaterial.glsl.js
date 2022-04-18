@@ -1,7 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../views/3d/webgl-engine/core/shaderModules/interfaces","../views/3d/webgl-engine/core/shaderModules/ShaderBuilder"],function(b,c,e){function d(){const a=new e.ShaderBuilder;a.extensions.add("GL_OES_standard_derivatives");a.vertex.uniforms.add("proj","mat4").add("view","mat4");a.attributes.add("position","vec3");a.attributes.add("uv0","vec2");a.varyings.add("vUV","vec2");a.vertex.code.add(c.glsl`void main(void) {
+define(["exports","../views/3d/webgl-engine/core/shaderModules/interfaces","../views/3d/webgl-engine/core/shaderModules/ShaderBuilder","../views/3d/webgl-engine/lib/VertexAttribute"],function(b,c,f,d){function e(){const a=new f.ShaderBuilder;a.extensions.add("GL_OES_standard_derivatives");a.vertex.uniforms.add("proj","mat4").add("view","mat4");a.attributes.add(d.VertexAttribute.POSITION,"vec3");a.attributes.add(d.VertexAttribute.UV0,"vec2");a.varyings.add("vUV","vec2");a.vertex.code.add(c.glsl`void main(void) {
 vUV = uv0;
 gl_Position = proj * view * vec4(position, 1.0);
 }`);a.fragment.uniforms.add("backgroundColor","vec4").add("gridColor","vec4").add("ratio","float").add("gridWidth","float");a.fragment.code.add(c.glsl`void main() {
@@ -16,4 +16,4 @@ float gridAlpha = gridColor.a * gridFade;
 gl_FragColor =
 vec4(backgroundColor.rgb * backgroundColor.a, backgroundColor.a) * (1.0 - gridAlpha) +
 vec4(gridColor.rgb, 1.0) * gridAlpha;
-}`);return a}const f=Object.freeze({__proto__:null,build:d});b.SlicePlaneMaterialShader=f;b.build=d});
+}`);return a}const g=Object.freeze({__proto__:null,build:e});b.SlicePlaneMaterialShader=g;b.build=e});

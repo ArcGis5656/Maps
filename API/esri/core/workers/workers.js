@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../chunks/_rollupPluginBabelHelpers ../Error ../has ../promiseUtils ./Connection ./RemoteClient ./WorkerOwner".split(" "),function(A,f,n,B,g,v,w,p,C){function D(a){if(a&&a.__esModule)return a;const b=Object.create(null);if(a)for(const c in a)if("default"!==c){const d=Object.getOwnPropertyDescriptor(a,c);Object.defineProperty(b,c,d.get?d:{enumerable:!0,get:()=>a[c]})}b.default=a;return Object.freeze(b)}function l(a,b){return q.apply(this,arguments)}function q(){q=n._asyncToGenerator(function*(a,
 b){const c=new w;yield c.open(a,b);return c});return q.apply(this,arguments)}function r(){r=n._asyncToGenerator(function*(a,b={}){if("string"!==typeof a)throw new B("workers:undefined-module","modulePath is missing");var c=b.strategy||"distributed";g("host-webworker")&&!g("esri-workers")&&(c="local");if("local"===c){var d=yield p.loadWorker(a);d||(d=yield new Promise((h,t)=>A([a],E=>h(D(E)),t)));v.throwIfAborted(b.signal);c=b.client||d;d=p.connect(d);return l([d],{...b,client:c})}yield x();v.throwIfAborted(b.signal);

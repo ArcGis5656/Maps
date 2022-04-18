@@ -1,11 +1,11 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../util/RgbaFloatEncoding.glsl","../../shaderModules/interfaces"],function(c,d,e){c.ReadShadowMap=function(a){a.fragment.include(d.RgbaFloatEncoding);a.fragment.uniforms.add("uShadowMapTex","sampler2D");a.fragment.uniforms.add("uShadowMapNum","int");a.fragment.uniforms.add("uShadowMapDistance","vec4");a.fragment.uniforms.add("uShadowMapMatrix","mat4",4);a.fragment.uniforms.add("uDepthHalfPixelSz","float");a.fragment.code.add(e.glsl`int chooseCascade(float _linearDepth, out mat4 mat) {
-vec4 distance = uShadowMapDistance;
+define(["exports","../util/RgbaFloatEncoding.glsl","../../shaderModules/interfaces"],function(c,d,e){c.ReadShadowMap=function(a){a.fragment.include(d.RgbaFloatEncoding);a.fragment.uniforms.add("shadowMapTex","sampler2D");a.fragment.uniforms.add("numCascades","int");a.fragment.uniforms.add("cascadeDistances","vec4");a.fragment.uniforms.add("shadowMapMatrix","mat4",4);a.fragment.uniforms.add("depthHalfPixelSz","float");a.fragment.code.add(e.glsl`int chooseCascade(float _linearDepth, out mat4 mat) {
+vec4 distance = cascadeDistances;
 float depth = _linearDepth;
 int i = depth < distance[1] ? 0 : depth < distance[2] ? 1 : depth < distance[3] ? 2 : 3;
-mat = i == 0 ? uShadowMapMatrix[0] : i == 1 ? uShadowMapMatrix[1] : i == 2 ? uShadowMapMatrix[2] : uShadowMapMatrix[3];
+mat = i == 0 ? shadowMapMatrix[0] : i == 1 ? shadowMapMatrix[1] : i == 2 ? shadowMapMatrix[2] : shadowMapMatrix[3];
 return i;
 }
 vec3 lightSpacePosition(vec3 _vpos, mat4 mat) {
@@ -34,10 +34,10 @@ return mix(mix(s00, s10, st.x), mix(s01, s11, st.x), st.y);
 float readShadowMap(const in vec3 _vpos, float _linearDepth) {
 mat4 mat;
 int i = chooseCascade(_linearDepth, mat);
-if (i >= uShadowMapNum) { return 0.0; }
+if (i >= numCascades) { return 0.0; }
 vec3 lvpos = lightSpacePosition(_vpos, mat);
 if (lvpos.z >= 1.0) { return 0.0; }
 if (lvpos.x < 0.0 || lvpos.x > 1.0 || lvpos.y < 0.0 || lvpos.y > 1.0) { return 0.0; }
 vec2 uv = cascadeCoordinates(i, lvpos);
-return filterShadow(uv, lvpos, uDepthHalfPixelSz, uShadowMapTex);
+return filterShadow(uv, lvpos, depthHalfPixelSz, shadowMapTex);
 }`)};c.bindReadShadowMapUniforms=function(a,b){b.shadowMappingEnabled&&(b.shadowMap.bind(a),b.shadowMap.bindView(a,b.origin))};c.bindReadShadowMapView=function(a,b){b.shadowMappingEnabled&&b.shadowMap.bindView(a,b.origin)};c.bindReadShadowMapViewCustomOrigin=function(a,b,f){b.shadowMappingEnabled&&b.shadowMap.bindView(a,f)};Object.defineProperty(c,"__esModule",{value:!0})});

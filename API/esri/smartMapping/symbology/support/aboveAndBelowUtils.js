@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../symbols/CIMSymbol"],function(h,c){function b(f,g=!1){return{type:"CIMPolygonSymbol",symbolLayers:[{type:"CIMSolidFill",enable:!0,color:f,colorLocked:g}]}}function d(f){return{type:"CIMSymbolReference",symbol:{type:"CIMPointSymbol",haloSize:1,scaleX:1,angleAlignment:"Display",symbolLayers:f}}}function a(f,g){return{type:"CIMVectorMarker",enable:!0,anchorPointUnits:"Relative",dominantSizeAxis3D:"Y",size:10,billboardMode3D:"FaceNearPlane",scaleSymbolsProportionally:!0,respectFrame:!0,
 frame:e,colorLocked:g,clippingPath:{type:"CIMClippingPath",clippingType:"Intersect",path:{rings:[[[e.xmin,e.ymin],[e.xmax,e.ymin],[e.xmax,e.ymax],[e.xmin,e.ymax],[e.xmin,e.ymin]]]}},markerGraphics:f.map(k=>({type:"CIMMarkerGraphic",symbol:k.symbol||b([0,0,0,255]),geometry:k.geometry}))}}const e={xmin:0,ymin:0,xmax:32,ymax:32};h.getAboveAndBelowSymbols=function(f){switch(f){case "caret":return{above:new c({data:d([a([{geometry:{rings:[[[16,16],[32,0],[32,7.3],[16,23.3],[0,7.3],[0,0],[16,16]]]}}])])}),

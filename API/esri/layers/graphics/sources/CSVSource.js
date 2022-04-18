@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../geometry ../../../core/has ../../../core/Loadable ../../../core/maybe ../../../core/promiseUtils ../../../core/workers/workers ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../rest/support/FeatureSet ../../../geometry/Extent".split(" "),function(d,g,f,t,u,v,w,x,h,D,E,y,z,A){f=function(p){function n(b){var a=
 p.call(this,b)||this;a.type="csv";a.refresh=w.debounce(function(){var c=d._asyncToGenerator(function*(l){yield a.load();const {extent:m,timeExtent:k}=yield a._connection.invoke("refresh",l);a.sourceJSON.extent=m;k&&(a.sourceJSON.timeInfo.timeExtent=[k.start,k.end]);return{dataChanged:!0,updates:{extent:a.sourceJSON.extent,timeInfo:a.sourceJSON.timeInfo}}});return function(l){return c.apply(this,arguments)}}());return a}d._inheritsLoose(n,p);var e=n.prototype;e.load=function(b){b=v.isSome(b)?b.signal:

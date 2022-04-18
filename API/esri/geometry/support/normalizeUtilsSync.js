@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ./aaBoundingRect ./boundsUtils ./intersectsBase ./jsonUtils ./normalizeUtilsCommon ./spatialReferenceUtils".split(" "),function(x,C,D,y,q,m,z){function E(a,c){const d=m.getGeometryParts(a);for(const b of d)for(const e of b)e[0]+=c;return a}function F(a,c){if(!c)return a;const d=G(a,c).map(b=>b.extent);return 2>d.length?d[0]||a:2<d.length?(a.xmin=c.valid[0],a.xmax=c.valid[1],a):{rings:d.map(b=>[[b.xmin,b.ymin],[b.xmin,b.ymax],[b.xmax,b.ymax],[b.xmax,b.ymin],[b.xmin,b.ymin]])}}function A(a,
 c,d){if(Array.isArray(a)){var b=a[0];b>c?(d=m.offsetMagnitude(b,c),a[0]=b+-2*d*c):b<d&&(c=m.offsetMagnitude(b,d),a[0]=b+-2*c*d)}else b=a.x,b>c?(d=m.offsetMagnitude(b,c),a.x+=-2*d*c):b<d&&(c=m.offsetMagnitude(b,d),a.x+=-2*c*d);return a}function G(a,c){const d=[],{ymin:b,ymax:e}=a;var f=a.xmax-a.xmin,h=a.xmin,g=a.xmax;const [k,t]=c.valid;var l=B(a.xmin,c);var n=l.x;const p=l.frameId;l=B(a.xmax,c);a=l.x;l=l.frameId;c=n===a&&0<f;if(f>2*t){f={xmin:h<g?n:a,ymin:b,xmax:t,ymax:e};h={xmin:k,ymin:b,xmax:h<

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../core/has ../../../../core/maybe ../../../../core/accessorSupport/diffUtils ../../../../support/arcadeOnDemand ../../arcade/callExpressionWithCursor".split(" "),function(n,l,k,p,q,m,r,t){const u=new Promise((h,g)=>n(["../../../../layers/support/labelFormatUtils"],h,g));let v=function(){function h(c,a){this._canCacheExpressionValue=!1;this._sourceInfo=c;this._bitsets={computed:a.getBitset(a.createBitset())}}var g=h.prototype;
 g.invalidate=function(){this._bitsets.computed.clear()};g.updateSchema=function(){var c=k._asyncToGenerator(function*(a,b){var e=m.diff(this._schema,b);if((this._schema=b)&&!q.isNone(e)&&m.hasDiff(e,"attributes")){p("esri-2d-update-debug")&&console.debug("Applying Update - Store:",e);this._bitsets.computed.clear();a.targets[b.name]=!0;a=b.attributes;b=[];e=[];for(const d in a){const f=a[d];switch(f.type){case "expression":b.push(this._createArcadeComputedField(f));break;case "label-expression":b.push(this._createLabelArcadeComputedField(f));

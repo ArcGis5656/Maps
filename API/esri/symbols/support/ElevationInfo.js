@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/jsonMap ../../core/JSONSupport ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer ./FeatureExpressionInfo ./unitConversionUtils".split(" "),function(n,d,e,b,q,g,f,y,z,r,t,u,p,v){var l;f=e.strict()({onTheGround:"on-the-ground",
 relativeToGround:"relative-to-ground",relativeToScene:"relative-to-scene",absoluteHeight:"absolute-height"});e=new e.JSONMap({foot:"feet",kilometer:"kilometers",meter:"meters",mile:"miles","us-foot":"us-feet",yard:"yards"});b=l=function(m){function h(){var a=m.apply(this,arguments)||this;a.offset=null;return a}n._inheritsLoose(h,m);var k=h.prototype;k.readFeatureExpressionInfo=function(a,c){if(null!=a)return a;if(c.featureExpression&&0===c.featureExpression.value)return{expression:"0"}};k.writeFeatureExpressionInfo=

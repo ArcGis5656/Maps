@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/Evented ../../../core/Logger ../../../core/maybe ../../../core/MemCache ../layers/support/MemoryManagedLayerView".split(" "),function(k,m,n,p,q,l,r){const t=p.getLogger("esri.views.3d.support.MemoryController");let u=function(){function f(a){this._view=a;this.events=new n;this.minQuality=.1;this._maxMemory=500;this._additionalCacheMemory=100;this._quality=1;this._downscaleMemoryUsed=this._stableQuality=0;this._canFastRecover=
 !1;this._memoryPredicted=this._memoryUsed=0;this._cacheStorage=new l.MemCacheStorage;this._numQualityChanges=0;this._updating=!1}var b=f.prototype;b.destroy=function(){this.events=null;this._cacheStorage.destroy()};b.newCache=function(a,d){return new l.MemCache(a,this._cacheStorage,d)};b.disableMemCache=function(){this._additionalCacheMemory=-4096};b.resetStableQuality=function(){this._stableQuality=0};b.update=function(){this._updateMemory();if(!(0>=this._memoryPredicted)||this._updating){var a=

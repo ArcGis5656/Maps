@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports"],function(d){const f={u8:5121,u16:5123,u32:5125,i8:5120,i16:5122,i32:5124,f32:5126};d.glLayout=function(c,g=0){const h=c.stride;return c.fieldNames.filter(a=>{a=c.fields.get(a).optional;return!(a&&a.glPadding)}).map(a=>{const b=c.fields.get(a),k=b.constructor.ElementCount;var e=f[b.constructor.ElementType];if(!e)throw Error("BufferType not supported in WebGL");return{name:a,stride:h,count:k,type:e,offset:b.offset,normalized:!(!b.optional||!b.optional.glNormalized),divisor:g}})};
-Object.defineProperty(d,"__esModule",{value:!0})});
+define(["exports","../../../webgl/enums","../../../webgl/VertexElementDescriptor"],function(e,a,g){const h={u8:a.DataType.UNSIGNED_BYTE,u16:a.DataType.UNSIGNED_SHORT,u32:a.DataType.UNSIGNED_INT,i8:a.DataType.BYTE,i16:a.DataType.SHORT,i32:a.DataType.INT,f32:a.DataType.FLOAT};e.glLayout=function(d,k=0){const l=d.stride;return d.fieldNames.filter(b=>{b=d.fields.get(b).optional;return!(b&&b.glPadding)}).map(b=>{const c=d.fields.get(b),m=c.constructor.ElementCount;var f=h[c.constructor.ElementType];if(!f)throw Error("BufferType not supported in WebGL");
+return new g.VertexElementDescriptor(b,m,f,c.offset,l,!(!c.optional||!c.optional.glNormalized),k)})};Object.defineProperty(e,"__esModule",{value:!0})});

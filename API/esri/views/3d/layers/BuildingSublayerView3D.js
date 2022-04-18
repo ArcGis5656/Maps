@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Evented ../../../core/HandleOwner ../../../core/Identifiable ../../../core/Promise ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass".split(" "),function(g,h,c,m,n,p,q,d,t,u,v,r){g.BuildingSublayerView3DMixin=(b,w)=>{b=function(k){function e(a){a=k.call(this,a)||this;a.sublayer=
 null;a.parent=null;a.view=null;return a}h._inheritsLoose(e,k);var f=e.prototype;f.initialize=function(){};f.canResume=function(){return!this.get("parent.suspended")&&this.get("view.ready")&&this.visible||!1};f.isUpdating=function(){return!1};h._createClass(e,[{key:"suspended",get:function(){return!this.canResume()}},{key:"updating",get:function(){return!this.suspended&&this.isUpdating()}},{key:"visible",get:function(){return!0===this.get("sublayer.visible")},set:function(a){void 0===a?this._clearOverride("visible"):

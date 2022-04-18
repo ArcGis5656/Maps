@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/maybe ../../../core/throttle ../../../core/unitFormatUtils ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../Widget ../css ../support/constants ../../support/widgetUtils ../../support/decorators/messageBundle ../../../core/Logger ../../support/jsxFactory".split(" "),
 function(d,w,k,r,x,m,n,B,C,D,y,z,g,l,E,t,F,h){d.Statistics=function(u){function p(a,c){a=u.call(this,a,c)||this;a._messagesUnits=null;a._updateLayout=b=>{const e=b.parentElement,A=b.style.display;e.removeChild(b);document.body.appendChild(b);b.style.display="block";let q=80;for(const v of b.childNodes)v instanceof HTMLElement&&(q=Math.max(q,v.offsetWidth));document.body.removeChild(b);e.appendChild(b);b.style.display=A;b.style.setProperty("--max-width",`${q}px`)};a._updateLayoutThrottled=x.throttle(a._updateLayout,

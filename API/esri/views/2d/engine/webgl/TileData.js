@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../core/maybe ./MemoryRequirements ./TileBufferData ./TileDisplayData ./Utils ./WGLDisplayRecord ./cpuMapped/DisplayRecordReader ./mesh/VertexBuffer ./mesh/VertexVector ./util/Writer".split(" "),function(z,B,t,w,x,u,A,C,D,E,F){const v=new t,n=new t;t=function(){function l(){this.tileBufferData=this.tileDisplayData=null}var q=l.prototype;q.reshuffle=function(){v.reset();const b=x.groupRecordsByGeometryType(this.tileDisplayData.displayObjects);for(var c of b)for(var a of c)a&&
 v.needMore(a.geometryType,a.meshData?a.meshData.vertexCount:a.vertexCount,a.meshData?a.meshData.indexData.length:a.indexCount);c=b.length;a=new w;for(var d=0;d<c;++d){a.geometries[d].indexBuffer=new Uint32Array(Math.round(1.5*v.indicesFor(d)));var e=[];for(var f in this.tileBufferData.geometries[d].vertexBuffer)e.push(this.tileBufferData.geometries[d].vertexBuffer[f].stride);e=l._computeVertexAlignment(e);var h=Math.round(1.5*v.verticesFor(d));e=l._align(h,e);for(var g in this.tileBufferData.geometries[d].vertexBuffer)h=

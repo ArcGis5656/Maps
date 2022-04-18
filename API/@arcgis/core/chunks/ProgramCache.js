@@ -1,5 +1,5 @@
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 */
-import{c as r}from"./ShaderCompiler.js";class a{constructor(r){this._programCacheByTemplate=new Map,this._rctx=r}dispose(){this._programCacheByTemplate.forEach((r=>r.programs.forEach((r=>r.dispose())))),this._programCacheByTemplate=null}getProgram(a,t){return this._programCacheByTemplate.has(a)||this.addProgramTemplate(a,(t=>r(this._rctx,a,t))),this.getProgramTemplateInstance(a,t)}addProgramTemplate(r,a){this._programCacheByTemplate.set(r,{constructor:a,programs:new Map})}getProgramTemplateInstance(r,a){const t=this._programCacheByTemplate.get(r);if(t){const r=a?JSON.stringify(a):"default";if(!t.programs.has(r)){const e=t.constructor(a);t.programs.set(r,e)}return t.programs.get(r)}return null}}export{a as P};
+import{i as s}from"../core/lang.js";import{N as t}from"./NestedMap.js";import{P as r}from"./Program.js";class e{constructor(s){this._rctx=s,this._store=new t}dispose(){this._store.forEach((s=>s.forEach((s=>s.dispose())))),this._store.clear()}acquire(t,e,o,a){const c=this._store.get(t,e);if(s(c))return c.ref(),c;const i=new r(this._rctx,t,e,o,a);return i.ref(),this._store.set(t,e,i),i}get test(){let s=0;return this._store.forEach((t=>t.forEach((t=>s+=t.hasGLName?2:1)))),{cachedWebGLObjects:s}}}export{e as P};

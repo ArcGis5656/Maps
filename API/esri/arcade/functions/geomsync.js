@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../kernel ../kernel ../../chunks/languageUtils ./centroid ../../geometry/Extent ../../geometry/Geometry ../../geometry/Multipoint ../../geometry/Point ../../geometry/Polygon ../../geometry/Polyline ../../geometry/support/jsonUtils ../../core/unitUtils".split(" "),function(w,B,m,c,q,u,l,x,v,r,t,y,C){function z(f){return 0===B.version.indexOf("4.")?r.fromExtent(f):new r({spatialReference:f.spatialReference,rings:[[[f.xmin,f.ymin],[f.xmin,f.ymax],[f.xmax,f.ymax],[f.xmax,f.ymin],[f.xmin,
 f.ymin]]]})}function A(f,k){if("polygon"!==f.type&&"polyline"!==f.type&&"extent"!==f.type)return 0;var n=1;if(f.spatialReference.vcsWkid||f.spatialReference.latestVcsWkid){n=q.getMetersPerVerticalUnitForSR(f.spatialReference);var d=C.getMetersPerUnitForSR(f.spatialReference);n/=d}d=0;if("polyline"===f.type)for(var g of f.paths)for(var b=1;b<g.length;b++)d+=q.segmentLength3d(g[b],g[b-1],n);else if("polygon"===f.type)for(b of f.rings){for(g=1;g<b.length;g++)d+=q.segmentLength3d(b[g],b[g-1],n);if(b[0][0]!==

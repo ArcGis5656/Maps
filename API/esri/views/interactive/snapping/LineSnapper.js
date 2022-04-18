@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/maybe ../../../chunks/vec2f64 ./SnappingAlgorithm ./snappingUtils ./candidates/LineSnappingCandidate ../../support/geometry2dUtils".split(" "),function(p,r,t,u,l,k,v,w){l=function(q){function m(){return q.apply(this,arguments)||this}r._inheritsLoose(m,q);var n=m.prototype;n.snapNewVertex=function(f,b){var c=b.editGeometryOperations.data.components[0],a=c.edges.length;const e=[];if(1>a)return e;const h=k.anyMapPointToScreenPoint(f,
 b.coordinateHelper,b.elevationInfo,this.view);a=c=c.edges[a-1];do this.edgeExceedsShortLineThreshold(a,b)&&this._processCandidateProposal(a.leftVertex.pos,a.rightVertex.pos,f,h,b,e),a=a.leftVertex.leftEdge;while(a&&a!==c);return e};n.snapExistingVertex=function(f,b){const c=[],a=t.unwrap(b.vertexHandle);var e=a.component;if(2>e.edges.length)return c;const h=k.anyMapPointToScreenPoint(f,b.coordinateHelper,b.elevationInfo,this.view);var d=a.leftEdge;const g=a.rightEdge;d&&g&&this.edgeExceedsShortLineThreshold(d,

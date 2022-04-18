@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/maybe ../../../core/uuid ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../intl/duration ../../Widget ../css ./Label ./LabeledColorPicker ../../support/widgetUtils ../../support/decorators/messageBundle ../../../core/Logger ../../support/jsxFactory".split(" "),
 function(m,c,q,e,r,n,g,C,D,E,t,u,v,w,x,y,F,z,G,d){c.DiscreteConfigurator=function(p){function h(b){var a=p.call(this,b)||this;a.colorPickerVisible=!0;a._selectId=`select-${n.generateUUID()}`;a._colorPickerId=`color-picker-${n.generateUUID()}`;a._onColorChange=k=>{a.options.color=k};return a}q._inheritsLoose(h,p);var l=h.prototype;l.loadDependencies=function(){return Promise.all([new Promise((b,a)=>m(["../../../chunks/calcite-label"],b,a)),new Promise((b,a)=>m(["../../../chunks/calcite-select"],b,

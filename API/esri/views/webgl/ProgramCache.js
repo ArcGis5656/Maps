@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["./programUtils"],function(f){return function(){function e(a){this._programCacheByTemplate=new Map;this._rctx=a}var d=e.prototype;d.dispose=function(){this._programCacheByTemplate.forEach(a=>a.programs.forEach(b=>b.dispose()));this._programCacheByTemplate=null};d.getProgram=function(a,b){this._programCacheByTemplate.has(a)||this.addProgramTemplate(a,c=>f.createProgram(this._rctx,a,c));return this.getProgramTemplateInstance(a,b)};d.addProgramTemplate=function(a,b){this._programCacheByTemplate.set(a,
-{constructor:b,programs:new Map})};d.getProgramTemplateInstance=function(a,b){if(a=this._programCacheByTemplate.get(a)){const c=b?JSON.stringify(b):"default";a.programs.has(c)||(b=a.constructor(b),a.programs.set(c,b));return a.programs.get(c)}return null};return e}()});
+define(["exports","../../chunks/_rollupPluginBabelHelpers","../../core/maybe","../../core/NestedMap","./Program"],function(f,h,k,l,m){let p=function(){function d(a){this._rctx=a;this._store=new l.NestedMap}var g=d.prototype;g.dispose=function(){this._store.forEach(a=>a.forEach(b=>b.dispose()));this._store.clear()};g.acquire=function(a,b,c,n){const e=this._store.get(a,b);if(k.isSome(e))return e.ref(),e;c=new m.Program(this._rctx,a,b,c,n);c.ref();this._store.set(a,b,c);return c};h._createClass(d,[{key:"test",
+get:function(){let a=0;this._store.forEach(b=>b.forEach(c=>a+=c.hasGLName?2:1));return{cachedWebGLObjects:a}}}]);return d}();f.ProgramCache=p;Object.defineProperty(f,"__esModule",{value:!0})});

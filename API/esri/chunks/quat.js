@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ./mat3f64 ./quatf64 ./vec3f64 ./common ./vec3 ./vec4".split(" "),function(g,A,F,B,r,q,k){function G(b){b[0]=0;b[1]=0;b[2]=0;b[3]=1;return b}function C(b,a,c){c*=.5;const d=Math.sin(c);b[0]=d*a[0];b[1]=d*a[1];b[2]=d*a[2];b[3]=Math.cos(c);return b}function H(b,a){const c=2*Math.acos(a[3]),d=Math.sin(c/2);d>r.EPSILON?(b[0]=a[0]/d,b[1]=a[1]/d,b[2]=a[2]/d):(b[0]=1,b[1]=0,b[2]=0);return c}function u(b,a,c){const d=a[0],e=a[1],f=a[2];a=a[3];const h=c[0],n=c[1],p=c[2];c=c[3];b[0]=d*c+a*h+
 e*p-f*n;b[1]=e*c+a*n+f*h-d*p;b[2]=f*c+a*p+d*n-e*h;b[3]=a*c-d*h-e*n-f*p;return b}function I(b,a,c){c*=.5;const d=a[0],e=a[1],f=a[2];a=a[3];const h=Math.sin(c);c=Math.cos(c);b[0]=d*c+a*h;b[1]=e*c+f*h;b[2]=f*c-e*h;b[3]=a*c-d*h;return b}function J(b,a,c){c*=.5;const d=a[0],e=a[1],f=a[2];a=a[3];const h=Math.sin(c);c=Math.cos(c);b[0]=d*c-f*h;b[1]=e*c+a*h;b[2]=f*c+d*h;b[3]=a*c-e*h;return b}function K(b,a,c){c*=.5;const d=a[0],e=a[1],f=a[2];a=a[3];const h=Math.sin(c);c=Math.cos(c);b[0]=d*c+e*h;b[1]=e*c-d*

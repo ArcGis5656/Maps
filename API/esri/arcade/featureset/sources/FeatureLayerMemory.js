@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../Graphic ../support/FeatureSet ../support/IdSet ../support/shared ../support/sqlUtils ../../../core/promiseUtils ../../../geometry/Geometry ../../../layers/FeatureLayer ../../../layers/support/FeatureType ../../../layers/support/Field ../../../rest/support/Query".split(" "),function(w,z,A,r,t,B,h,C,D,E,x,v){return function(y){function p(a){var b=y.call(this,a)||this;b.declaredClass="esri.arcade.featureset.sources.FeatureLayerMemory";b._removeGeometry=
 !1;b._overrideFields=null;b._forceIsTable=!1;a.spatialReference&&(b.spatialReference=a.spatialReference);b._transparent=!0;b._maxProcessing=1E3;b._layer=a.layer;b._wset=null;!0===a.isTable&&(b._forceIsTable=!0);void 0!==a.outFields&&(b._overrideFields=a.outFields);void 0!==a.includeGeometry&&(b._removeGeometry=!1===a.includeGeometry);return b}w._inheritsLoose(p,y);var e=p.prototype;e._maxQueryRate=function(){return t.defaultMaxRecords};e.end=function(){return this._layer};e.optimisePagingFeatureQueries=

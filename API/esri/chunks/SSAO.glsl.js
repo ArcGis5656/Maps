@@ -1,19 +1,19 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define("exports ../views/3d/webgl-engine/core/shaderLibrary/ScreenSpacePass ../views/3d/webgl-engine/core/shaderLibrary/output/ReadLinearDepth.glsl ../views/3d/webgl-engine/core/shaderLibrary/util/CameraSpace.glsl ../views/3d/webgl-engine/core/shaderModules/interfaces ../views/3d/webgl-engine/core/shaderModules/ShaderBuilder".split(" "),function(d,g,e,h,b,k){function f(c){const a=new k.ShaderBuilder;a.include(g.ScreenSpacePass);1===c.output&&(a.fragment.include(e.ReadLinearDepth),a.fragment.uniforms.add("normalMap",
-"sampler2D").add("depthMap","sampler2D").add("tex","sampler2D").add("blurSize","vec2").add("projScale","float").add("nearFar","vec2"),a.fragment.code.add(b.glsl`
+define("exports ../views/3d/webgl-engine/core/shaderLibrary/ScreenSpacePass ../views/3d/webgl-engine/core/shaderLibrary/output/ReadLinearDepth.glsl ../views/3d/webgl-engine/core/shaderLibrary/util/CameraSpace.glsl ../views/3d/webgl-engine/core/shaderModules/interfaces ../views/3d/webgl-engine/core/shaderModules/ShaderBuilder".split(" "),function(d,g,e,h,c,k){function f(a){const b=new k.ShaderBuilder;b.include(g.ScreenSpacePass);a.output===d.SSAOOutput.Blur&&(b.fragment.include(e.ReadLinearDepth),
+b.fragment.uniforms.add("normalMap","sampler2D").add("depthMap","sampler2D").add("tex","sampler2D").add("blurSize","vec2").add("projScale","float").add("nearFar","vec2"),b.fragment.code.add(c.glsl`
       void blurFunction(vec2 uv, float r, float center_d, float sharpness, inout float wTotal, inout float bTotal) {
         float c = texture2D(tex, uv).r;
         float d = linearDepthFromTexture(depthMap, uv, nearFar);
 
         float ddiff = d - center_d;
 
-        float w = exp(-r * r * ${b.glsl.float(c.blurFalloff)} - ddiff * ddiff * sharpness);
+        float w = exp(-r * r * ${c.glsl.float(a.blurFalloff)} - ddiff * ddiff * sharpness);
         wTotal += w;
         bTotal += w * c;
       }
-    `),a.fragment.code.add(b.glsl`
+    `),b.fragment.code.add(c.glsl`
       void main(void) {
         float b = 0.0;
         float w_total = 0.0;
@@ -21,7 +21,7 @@ define("exports ../views/3d/webgl-engine/core/shaderLibrary/ScreenSpacePass ../v
         float center_d = linearDepthFromTexture(depthMap, uv, nearFar);
 
         float sharpness = -0.05 * projScale/center_d;
-        for (int r = -${b.glsl.int(c.filterRadius)}; r <= ${b.glsl.int(c.filterRadius)}; ++r) {
+        for (int r = -${c.glsl.int(a.filterRadius)}; r <= ${c.glsl.int(a.filterRadius)}; ++r) {
           float rf = float(r);
           vec2 uvOffset = uv + rf * blurSize;
           blurFunction(uvOffset, rf, center_d, sharpness, w_total, b);
@@ -29,7 +29,7 @@ define("exports ../views/3d/webgl-engine/core/shaderLibrary/ScreenSpacePass ../v
 
         gl_FragColor = vec4(b / w_total);
       }
-    `));0===c.output&&(a.fragment.include(e.ReadLinearDepth),a.include(h.CameraSpace),a.fragment.uniforms.add("normalMap","sampler2D").add("depthMap","sampler2D").add("intensity","float").add("projScale","float").add("radius","float").add("nearFar","vec2").add("screenDimensions","vec2").add("rnmScale","vec2").add("rnm","sampler2D"),a.fragment.code.add(b.glsl`vec3 sphere[16];
+    `));a.output===d.SSAOOutput.SSAO&&(b.fragment.include(e.ReadLinearDepth),b.include(h.CameraSpace),b.fragment.uniforms.add("normalMap","sampler2D").add("depthMap","sampler2D").add("intensity","float").add("projScale","float").add("radius","float").add("nearFar","vec2").add("screenDimensions","vec2").add("rnmScale","vec2").add("rnm","sampler2D"),b.fragment.code.add(c.glsl`vec3 sphere[16];
 void fillSphere() {
 sphere[0] = vec3(0.186937, 0.0, 0.0);
 sphere[1] = vec3(0.700542, 0.0, 0.0);
@@ -51,12 +51,12 @@ sphere[15] = vec3(0.417709, -0.386701, 0.442449);
 float fallOffFunction(float vv, float vn, float bias) {
 float f = max(radius * radius - vv, 0.0);
 return f * f * f * max(vn-bias, 0.0);
-}`),a.fragment.code.add(b.glsl`float aoValueFromPositionsAndNormal(vec3 C, vec3 n_C, vec3 Q) {
+}`),b.fragment.code.add(c.glsl`float aoValueFromPositionsAndNormal(vec3 C, vec3 n_C, vec3 Q) {
 vec3 v = Q - C;
 float vv = dot(v, v);
 float vn = dot(normalize(v), n_C);
 return fallOffFunction(vv, vn, 0.1);
-}`),a.fragment.code.add(b.glsl`
+}`),b.fragment.code.add(c.glsl`
       void main(void) {
         fillSphere();
         vec3 fres = normalize((texture2D(rnm, uv * rnmScale).xyz * 2.0) - vec3(1.0));
@@ -81,7 +81,7 @@ return fallOffFunction(vv, vn, 0.1);
         // bug or deviation from CE somewhere else?
         float ps = projScale/(2.0 * currentPixelPos.z * zScale.x + zScale.y);
 
-        for(int i = 0; i < ${b.glsl.int(c.samples)}; ++i) {
+        for(int i = 0; i < ${c.glsl.int(a.samples)}; ++i) {
           vec2 unitOffset = reflect(sphere[i], fres).xy;
           vec2 offset = vec2(-unitOffset * radius * ps);
 
@@ -106,10 +106,10 @@ return fallOffFunction(vv, vn, 0.1);
         }
 
         // output the result
-        float A = max(1.0-sum*intensity/float(${b.glsl.int(c.samples)}),0.0);
+        float A = max(1.0-sum*intensity/float(${c.glsl.int(a.samples)}),0.0);
 
         // Anti-tone map to reduce contrast and drag dark region farther: (x^0.2 + 1.2 * x^4)/2.2
         A = (pow(A, 0.2) + 1.2 * A*A*A*A) / 2.2;
         gl_FragColor = vec4(A);
       }
-    `));return a}const l=Object.freeze({__proto__:null,build:f});d.SSAOShader=l;d.build=f});
+    `));return b}d.SSAOOutput=void 0;(function(a){a[a.SSAO=0]="SSAO";a[a.Blur=1]="Blur";a[a.COUNT=2]="COUNT"})(d.SSAOOutput||(d.SSAOOutput={}));const l=Object.freeze({__proto__:null,get SSAOOutput(){return d.SSAOOutput},build:f});d.SSAOShader=l;d.build=f});

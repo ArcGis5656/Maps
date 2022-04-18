@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./_commonjsHelpers"],function(k,h){var c={exports:{}};(function(e,f){(function(a){a=a(h.commonjsRequire,f);void 0!==a&&(e.exports=a)})(function(a,b){Object.defineProperty(b,"__esModule",{value:!0});b.default={_decimalSeparator:",",_thousandSeparator:" ",_date_millisecond:"mm::ss SSS",_date_second:"HH:mm:ss",_date_minute:"HH:mm",_date_hour:"HH:mm",_date_day:"yyyy-MM-dd",_date_week:"ww",_date_month:"MMM",_date_year:"yyyy",_duration_millisecond:"SSS",_duration_second:"ss",_duration_minute:"mm",
 _duration_hour:"hh",_duration_day:"dd",_duration_week:"ww",_duration_month:"MM",_duration_year:"yyyy",_era_ad:"m.e.",_era_bc:"p.m.e.",A:"R",P:"V",AM:"ryto",PM:"vakaro","A.M.":"ryto","P.M.":"vakaro",January:"sausio",February:"vasario",March:"kovo",April:"baland\u017eio",May:"gegu\u017e\u0117s",June:"bir\u017eelio",July:"liepos",August:"rugpj\u016b\u010dio",September:"rugs\u0117jo",October:"spalio",November:"lapkri\u010dio",December:"gruod\u017eio",Jan:"sau.",Feb:"vas.",Mar:"kov.",Apr:"bal.","May(short)":"geg.",

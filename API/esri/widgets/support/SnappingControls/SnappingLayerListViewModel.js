@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Collection ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../views/interactive/snapping/FeatureSnappingLayerSource ../../LayerList/LayerListViewModel ./snappingLayerListUtils ./SnappingListItem".split(" "),function(d,g,f,n,h,w,x,y,p,q,r,k,t){d.SnappingLayerListViewModel=
 function(e){function b(){var a=e.apply(this,arguments)||this;a.featureSnappingSources=new n;return a}g._inheritsLoose(b,e);var c=b.prototype;c._compileList=function(){var a=this.get("view.map.layers");a&&(a=a.filter(k.isValidSnappingLayer),this._watchLayersListMode(a),(a=this._getViewableLayers(a))&&a.length?(this._createNewItems(a),this._removeItems(a),this._sortItems(a),this._beforeCallListItemsCreated()):this._removeAllItems())};c._createListItem=function(a){const {view:u}=this,v=l(this.featureSnappingSources,

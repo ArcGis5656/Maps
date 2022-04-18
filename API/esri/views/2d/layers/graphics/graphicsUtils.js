@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../core/BidiText ../../../../core/maybe ../../../../core/screenUtils ../../../../geometry/Polygon ../../../../geometry/support/aaBoundingRect ../../../../geometry/support/normalizeUtilsCommon ../../engine/webgl/alignmentUtils ../../engine/webgl/definitions ../../engine/webgl/mesh/templates/shapingUtils".split(" "),function(e,n,p,f,q,h,r,l,m,t){e.PIXEL_BUFFER=50;e.TILE_SIZE=512;e.getTextSymbolSize=function(a,b,c){var d,g,k;if(!c||0===c.glyphMosaicItems.length)return a;const u=
 n.bidiText(b.text)[1];b=t.shapeGlyphs(c.glyphMosaicItems,u,{scale:f.pt2px(b.font.size)/m.GLYPH_SIZE,angle:null!=(d=b.angle)?d:0,xOffset:null!=(g=b.xoffset)?g:0,yOffset:null!=(k=b.yoffset)?k:0,hAlign:l.getXAnchorDirection(b.horizontalAlignment||"center"),vAlign:l.getYAnchorDirection(b.verticalAlignment||"baseline"),maxLineWidth:Math.max(32,Math.min(b.lineWidth||512,512)),lineHeight:m.MAGIC_LABEL_LINE_HEIGHT*Math.max(.25,Math.min(b.lineHeight||1,4)),decoration:b.font.decoration||"none",isCIM:!1}).bounds;

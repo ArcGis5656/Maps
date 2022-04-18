@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./_commonjsHelpers"],function(k,h){var e={exports:{}};(function(f,g){(function(a){a=a(h.commonjsRequire,g);void 0!==a&&(f.exports=a)})(function(a,c){Object.defineProperty(c,"__esModule",{value:!0});c.default={_decimalSeparator:".",_thousandSeparator:",",_date_millisecond:"mm::ss SSS",_date_second:"hh:mm:ss a",_date_minute:"hh:mm a",_date_hour:"hh:mm a",_date_day:"MMM dd",_date_week:"ww",_date_month:"MMM",_date_year:"yyyy",_duration_millisecond:"SSS",_duration_second:"ss",_duration_minute:"mm",
 _duration_hour:"hh",_duration_day:"dd",_duration_week:"ww",_duration_month:"MM",_duration_year:"yyyy",_era_ad:"AD",_era_bc:"BC",A:"",P:"",AM:"",PM:"","A.M.":"","P.M.":"",January:"",February:"",March:"",April:"",May:"",June:"",July:"",August:"",September:"",October:"",November:"",December:"",Jan:"",Feb:"",Mar:"",Apr:"","May(short)":"May",Jun:"",Jul:"",Aug:"",Sep:"",Oct:"",Nov:"",Dec:"",Sunday:"",Monday:"",Tuesday:"",Wednesday:"",Thursday:"",Friday:"",Saturday:"",Sun:"",Mon:"",Tue:"",Wed:"",Thu:"",

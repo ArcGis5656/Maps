@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/Error ../../../../core/Logger ../../../../core/maybe ../../../../core/promiseUtils ../../../../core/urlUtils ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../geometry/support/zscale ./StreamConnection".split(" "),function(f,n,v,k,A,
 q,x,B,y,F,G,H,C,D,E){const h=A.getLogger("esri.layers.graphics.sources.connections.WebSocketConnection");f.ReadyState=void 0;(function(g){g[g.CONNECTING=0]="CONNECTING";g[g.OPEN=1]="OPEN";g[g.CLOSING=2]="CLOSING";g[g.CLOSED=3]="CLOSED"})(f.ReadyState||(f.ReadyState={}));f.WebSocketConnection=function(g){function r(c){var b=g.call(this)||this;b.errorString=null;const {geometryType:d,spatialReference:a,sourceSpatialReference:e}=c;b._config=c;b._featureZScaler=D.getGeometryZScaler(d,e,a);b._open();return b}

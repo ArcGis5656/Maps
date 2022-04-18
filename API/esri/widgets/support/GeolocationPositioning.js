@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../assets ../../Graphic ../../core/Accessor ../../core/Error ../../core/Evented ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../symbols/PictureMarkerSymbol ./geolocationUtils ./GoTo".split(" "),function(n,g,r,t,c,u,v,k,I,J,K,w,x,p,y){c=function(q){function m(){var a=q.apply(this,arguments)||this;a._geolocationUsable=
 !0;a._iconPath=r.getAssetUrl("esri/images/support/sdk_gps_location.png");a.geolocationOptions=null;a.goToLocationEnabled=!0;a.graphic=new t({symbol:new x({url:a._iconPath,width:21,height:21})});a.scale=null;a.useHeadingEnabled=!0;a.view=null;return a}n._inheritsLoose(m,q);var f=m.prototype;f.initialize=function(){p.supported()||(this._geolocationUsable=!1)};f.destroy=function(){this._clear();this.view=null};f._clear=function(){this.view&&this.view.graphics.remove(this.graphic)};f._getScaleWithinConstraints=

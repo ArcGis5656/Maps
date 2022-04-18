@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../Viewpoint ../../core/Accessor ../../core/scheduling ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../ViewAnimation ./unitBezier ./viewpointUtils ../../geometry/Point".split(" "),function(m,g,f,q,r,t,h,y,z,A,u,n,l,v,w){let x=function(){function k(e,c,a,b){const d=e.targetGeometry,p=c.targetGeometry;
 b?"string"===typeof b&&(b=l.parse(b)||l.easingFunctions.ease):b=l.easingFunctions.ease;this.easing=b;this.duration=a;this.sCenterX=d.x;this.sCenterY=d.y;this.sScale=e.scale;this.sRotation=e.rotation;this.tCenterX=p.x;this.tCenterY=p.y;this.tScale=c.scale;this.tRotation=c.rotation;this.dCenterX=this.tCenterX-this.sCenterX;this.dCenterY=this.tCenterY-this.sCenterY;this.dScale=this.tScale-this.sScale;this.dRotation=this.tRotation-this.sRotation;180<this.dRotation?this.dRotation-=360:-180>this.dRotation&&

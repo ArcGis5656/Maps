@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../geometry ../../../../core/maybe ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../layers/support/rasterFunctions/pixelUtils ../../../../rest/support/ImageHistogramParameters ./RasterLayerAdapter ../../../../geometry/Point".split(" "),function(n,p,
 f,l,v,C,D,E,w,x,y,z,A){f=function(q){function m(){var b=q.apply(this,arguments)||this;b._cacheSize=20;b._statsCache=new Map;return b}n._inheritsLoose(m,q);var g=m.prototype;g.generateRasterInfo=function(b){const a=l.unwrap(null==b?void 0:b.renderingRule);return this.layer.generateRasterInfo(a,{signal:null==b?void 0:b.signal})};g.estimateStatisticsHistograms=function(){var b=n._asyncToGenerator(function*(a){var c,h,d,e=null!=(c=null==(h=l.unwrap(null==a?void 0:a.renderingRule))?void 0:h.functionName)?

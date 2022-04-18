@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../core/MapUtils ../../core/mathUtils ../../core/maybe ../../core/screenUtils ./interactiveToolUtils ../support/screenUtils".split(" "),function(y,z,u,g,A,v,m){const q={manipulator:null,tool:null};return function(){function r(){this._pointerLocations=new Map;this._hoveredManipulators=new Map;this._grabbedManipulators=new Map;this._draggedManipulators=new Map;this._stopDrag=!1;this._currentlyActiveTool=null;this._revertToActiveTool=!1;this._cursor=
 null}var k=r.prototype;k.handleInputEvent=function(a,e){var d=()=>a.stopPropagation();switch(a.type){case "pointer-move":"mouse"===a.pointerType&&this._pointerLocations.set(a.pointerId,{x:a.x,y:a.y,pointerType:a.pointerType});break;case "drag":0<this._grabbedManipulators.size&&(this._stopDrag=!0);this._stopDrag&&(a.stopPropagation(),"end"===a.action&&(this._stopDrag=!1));break;case "pointer-down":if("mouse"===a.pointerType&&0!==a.button)break;d=m.createScreenPointFromEvent(a);var c=this._intersect(d,

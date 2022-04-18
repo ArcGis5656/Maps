@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/accessorSupport/decorators/aliasOf ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/property ../../core/accessorSupport/decorators/subclass ./SmartMappingSliderBase ./HeatmapSlider/HeatmapSliderViewModel ../support/widgetUtils ../support/decorators/messageBundle ../../core/Logger ../support/jsxFactory".split(" "),function(p,c,q,b,x,y,g,r,t,u,z,v,A,d){var h;
 b=h=function(l){function f(a,e){a=l.call(this,a,e)||this;a._rampFillId=null;a.label=void 0;a.messages=null;a.stops=null;a.viewModel=new u;a.slider.set({visibleElements:{labels:!1,rangeLabels:!0},labelInputsEnabled:!1,rangeLabelInputsEnabled:!1});a._rampFillId=`${a.id}-ramp-fill`;return a}p._inheritsLoose(f,l);f.fromHeatmapRendererResult=function(a){return new h({stops:a.renderer.colorStops})};var m=f.prototype;m.render=function(){const {state:a,label:e,visibleElements:k}=this,n="disabled"===a,w=this.classes("esri-heatmap-slider",

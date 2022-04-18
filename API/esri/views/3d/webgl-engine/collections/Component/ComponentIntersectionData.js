@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../chunks/_rollupPluginBabelHelpers","../../../../../chunks/vec3f64","../../../../../geometry/support/aaBoundingBox","../../materials/internal/MaterialUtil"],function(F,N,B,J,O){function P(g,h,a){let d=0,e=Infinity;for(let b=0;3>b;++b){var c=g[b];if(h[b]<c){if(1E-6>=a[b])return!1;d=Math.max(d,(c-h[b])/a[b])}else-1E-6>=a[b]&&(e=Math.min(e,(c-h[b])/a[b]));if(d>e)return!1;c=g[b+3];if(h[b]>c){if(-1E-6<=a[b])return!1;d=Math.max(d,(c-h[b])/a[b])}else 1E-6<=a[b]&&(e=Math.min(e,
 (c-h[b])/a[b]));if(d>e)return!1}return!0}function Q(g,h,a,d,e,c){let b=d;for(;a<b;){var f=g[a];h[6*f+e+3]<=c?++a:(--b,g[a]=g[b],g[b]=f)}f=a;for(b=d;f<b;)d=g[b-1],h[6*d+e]>=c?--b:(g[b-1]=g[f],g[f]=d,++f);return{next:a,mid:f}}function R(g,h,a,d){if(d<=a)return J.fromValues(NaN,NaN,NaN,NaN,NaN,NaN);var e=6*g[a];for(var c=0;3>c;++c)y[c]=h[e+0+c],z[c]=h[e+3+c];for(a+=1;a<d;++a)for(e=6*g[a],c=0;3>c;++c)y[c]=Math.min(y[c],h[e+0+c]),z[c]=Math.max(z[c],h[e+3+c]);return J.fromValues(y[0],y[1],y[2],z[0],z[1],

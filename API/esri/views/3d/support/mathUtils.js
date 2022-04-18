@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/mathUtils","../../../chunks/vec3","../../../chunks/vec3f64"],function(g,u,f,m){function r(a){for(const c in a){const b=a[c];b instanceof Function&&(a[c]=b.bind(a))}return a}let q=function(){function a(b,d){this.min=b;this.max=d;this.range=d-b}var c=a.prototype;c.ndiff=function(b,d=0){return Math.ceil((b-d)/this.range)*this.range+d};c._normalize=function(b,d,e,h=0,k=!1){e-=h;e<b?e+=this.ndiff(b-e):e>d&&(e-=this.ndiff(e-d));k&&e===d&&(e=b);return e+h};c.normalize=function(b,
 d=0,e=!1){return this._normalize(this.min,this.max,b,d,e)};c.clamp=function(b,d=0){return u.clamp(b-d,this.min,this.max)+d};c.monotonic=function(b,d,e){return b<d?d:d+this.ndiff(b-d,e)};c.minimalMonotonic=function(b,d,e){return this._normalize(b,b+this.range,d,e)};c.center=function(b,d,e){d=this.monotonic(b,d,e);return this.normalize((b+d)/2,e)};c.diff=function(b,d,e){return this.monotonic(b,d,e)-b};c.shortestSignedDiff=function(b,d){b=this.normalize(b);d=this.normalize(d);const e=d-b;b=d<b?this.minimalMonotonic(b,

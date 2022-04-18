@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../chunks/_rollupPluginBabelHelpers"],function(k,l){let n=function(){function d(a){this._largestRange=null;this._parent=a;this._updateLargestRange()}var g=d.prototype;g.rangeCreated=function(a){if(!this._largestRange||a.count>this._largestRange.count)this._largestRange=a};g.rangeResized=function(a,b){if(a===this._largestRange)a.count<b&&this._updateLargestRange();else if(!this._largestRange||a.count>this._largestRange.count)this._largestRange=a};g.findBestRange=function(a){let b=
 this._parent._freeHead,c=null;for(;null!==b;)b.count>=a&&(!c||b.count-a<c.count-a)&&(c=b),b=b.next;return c};g.findAdjacentRanges=function(a,b){let c=!0,e=!1,f=null,h=this._parent._freeHead;for(;c&&!e;){const m=null!==h?h.from:this._parent._size;a>=(null!==f?f.from+f.count:0)&&a+b<=m?(c=!1,e=!0):null!==h?(f=h,h=h.next):c=!1}return[f,h]};g._updateLargestRange=function(){let a=null,b=this._parent._freeHead;for(;null!==b;){if(!a||b.count>a.count)a=b;b=b.next}this._largestRange=a};l._createClass(d,[{key:"largestRange",

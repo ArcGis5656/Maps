@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../core/maybe ../../../../chunks/mat4f64 ../../../../chunks/vec3f64 ../../../../geometry/projection ../../../../geometry/support/aaBoundingBox ../../../../geometry/support/coordsUtils ../../../../layers/graphics/dehydratedFeatures ./elevationAlignmentUtils ./graphicUtils ../../webgl-engine/lib/Object3D".split(" "),function(h,u,v,w,m,x,q,r,t,y,z){const f=w.create();h.createStageObjectForHUD=function(a,b,d,n,p,c,e,g){const k=d?d.length:0;var l=a.clippingExtent;m.projectPointToVector(b,
 f,a.elevationProvider.spatialReference);if(u.isSome(l)&&!x.containsPoint(l,f))return null;m.projectPointToVector(b,f,a.renderCoordsHelper.spatialReference);l=a.localOriginFactory.getOrigin(f);c=new z.Object3D({castShadow:!1,metadata:{layerUid:c,graphicUid:e,usesVerticalDistanceToGround:!0}});for(e=0;e<k;e++)c.addGeometry(d[e],n[e],v.IDENTITY,l,g);a=t.applyElevationAlignmentForHUD(c,b,a.elevationProvider,a.renderCoordsHelper,p);return{object:c,sampledElevation:a}};h.extendPointGraphicElevationContext=

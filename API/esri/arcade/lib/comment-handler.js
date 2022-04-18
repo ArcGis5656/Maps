@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./syntax"],function(g,h){let l=function(){function k(){this.attach=!1;this.comments=[];this.stack=[];this.leading=[];this.trailing=[]}var e=k.prototype;e.insertInnerComments=function(b,c){if(b.type===h.Syntax.BlockStatement&&0===b.body.length){const a=[];for(let d=this.leading.length-1;0<=d;--d){const f=this.leading[d];c.end.offset>=f.start&&(a.unshift(f.comment),this.leading.splice(d,1),this.trailing.splice(d,1))}a.length&&(b.innerComments=a)}};e.findTrailingComments=function(b){let c=
 [];if(0<this.trailing.length){for(var a=this.trailing.length-1;0<=a;--a){var d=this.trailing[a];d.start>=b.end.offset&&c.unshift(d.comment)}this.trailing.length=0;return c}(a=this.stack[this.stack.length-1])&&a.node.trailingComments&&(d=a.node.trailingComments[0])&&d.range[0]>=b.end.offset&&(c=a.node.trailingComments,delete a.node.trailingComments);return c};e.findLeadingComments=function(b){const c=[];for(var a;0<this.stack.length;){var d=this.stack[this.stack.length-1];if(d&&d.start>=b.start.offset)a=

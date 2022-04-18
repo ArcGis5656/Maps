@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../config ../../kernel ../../PopupTemplate ../../request ../../core/lang ../../core/urlUtils ../../geometry/SpatialReference ../../geometry/support/aaBoundingBox ../../geometry/support/boundsUtils ../../renderers/support/jsonUtils ../../rest/support/FeatureSet".split(" "),function(n,z,A,y,B,C,q,D,E,l,r,F,G){function v(c,d,b){b.forEach(a=>{c.set(a.attributes[d],a)})}function H(c,d){let b;d.some(a=>a.id===c?(b=a,!0):!1);return b}function w(){w=
 z._asyncToGenerator(function*(c){var d=G.fromJSON(c.featureSet).features;const b=F.fromJSON(c.layerDefinition.drawingInfo.renderer);c=B.fromJSON(c.popupInfo);const a=[];for(const f of d)d=yield b.getSymbolAsync(f),f.symbol=d,f.popupTemplate=c,f.visible=!0,a.push(f);return a});return w.apply(this,arguments)}function x(c){const d=l.create(l.NEGATIVE_INFINITY),b=l.create(l.NEGATIVE_INFINITY);for(const a of c){if(a.polygons&&a.polygons.featureSet&&a.polygons.featureSet.features)for(const f of a.polygons.featureSet.features)r.getBoundsXYZ(d,

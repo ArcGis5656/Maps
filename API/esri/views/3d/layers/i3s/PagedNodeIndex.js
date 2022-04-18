@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../../geometry/support/aaBoundingBox","./I3SUtil","../../support/orientedBoundingBox"],function(t,w,r){return function(){function u(a,b,c){this._pages=[];this.pageSize=0;this._renderSR=this._nodeSR=null;this._nodeSR=a;this._renderSR=b;this.pageSize=c}var g=u.prototype;g.addPage=function(a,b,c=0){for(;this._pages.length<a;)this._pages.push(null);var e=this._nodeSR,f=this._renderSR,k=new r.ObbArray(b.length);for(var d=0;d<b.length;d++)w.transformObb(b[d].obb,e,k.obbs[d],f,c);c=k.obbs;
 this._pages[a]={nodes:b,renderObbs:c,parents:new Uint32Array(this.pageSize)};a=this._pages;b=this.pageSize;for(c=[0];c.length;)for(e=c.pop(),f=a[e/b|0].nodes[e%b],k=0;k<f.childCount;k++)d=f.firstChild+k,null!=a[d/b|0]&&(a[d/b|0].parents[d%b]=e,c.push(d))};g.hasPage=function(a){return!!this._pages[a]};g.getNode=function(a){const b=this.pageSize;return this._pages[a/b|0].nodes[a%b]};g.getRenderObb=function(a){const b=this.pageSize;return this._pages[a/b|0].renderObbs[a%b]};g.getRenderCenter=function(a){return this.getRenderObb(a).center};

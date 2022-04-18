@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../request ../core/Error ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../geometry/Extent ../geometry/SpatialReference ../geometry/support/aaBoundingRect ./Layer ./mixins/BlendLayer ./mixins/RefreshableLayer ./mixins/ScaleRangeLayer ./support/TileInfo".split(" "),function(q,d,r,t,f,b,C,D,u,v,g,w,x,y,z,A,n){const e={id:"0/0/0",level:0,
 row:0,col:0,extent:null};b=function(p){function h(){var a=p.apply(this,arguments)||this;a.tileInfo=n.create({spatialReference:g.WebMercator,size:256});a.type="base-tile";a.fullExtent=new v(-2.0037508342787E7,-2.003750834278E7,2.003750834278E7,2.0037508342787E7,g.WebMercator);a.spatialReference=g.WebMercator;return a}q._inheritsLoose(h,p);var k=h.prototype;k.getTileBounds=function(a,l,m,c){c=c||w.create();e.level=a;e.row=l;e.col=m;e.extent=c;this.tileInfo.updateTileInfo(e);e.extent=null;return c};

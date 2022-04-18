@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Collection ../../core/collectionUtils ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./VoxelAlphaStop ./VoxelColorStop ./VoxelRangeFilter".split(" "),function(g,c,d,h,b,e,q,r,t,n,k,l,p){b=function(m){function f(a){a=m.call(this,a)||this;a.interpolation=null;a.stretchRange=null;
 a.rangeFilter=null;a.colorStops=new d;a.alphaStops=new d;return a}g._inheritsLoose(f,m);g._createClass(f,[{key:"colorStops",set:function(a){this._set("colorStops",h.referenceSetter(a,this._get("colorStops"),d.ofType(l)))}},{key:"alphaStops",set:function(a){this._set("alphaStops",h.referenceSetter(a,this._get("alphaStops"),d.ofType(k)))}}]);return f}(b.JSONSupport);c.__decorate([e.property({type:["linear","nearest"],json:{write:!0}})],b.prototype,"interpolation",void 0);c.__decorate([e.property({type:[Number],

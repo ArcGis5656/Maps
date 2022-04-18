@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/Error","../../../geometry/Extent","./xmlUtilities"],function(r,w,p,b){function n(c){return c.indexOf("?")===c.length-1?c.substring(0,c.length-1):c}function t(c){const e={};for(let f=0;f<c.childNodes.length;f++){var a=c.childNodes[f];if(1===a.nodeType){var d=b.getNodeNameIgnoreNS(a).toLowerCase();switch(d){case "title":case "abstract":e[d]=b.getElementValue(a);break;case "identifier":e.id=b.getElementValue(a);break;case "wgs84boundingbox":d=b.getSpaceDelimitedNumericValues(a,
 "LowerCorner");a=b.getSpaceDelimitedNumericValues(a,"UpperCorner");e.lonLatEnvelope=new p({xmin:d[0],ymin:d[1],xmax:a[0],ymax:a[1],spatialReference:{wkid:4326}});break;case "coveragesummary":e.coverageSummaries=e.coverageSummaries||[],e.coverageSummaries.push(t(a))}}}return e}function u(c,e){if(c.coverageSummaries)for(let a=0;a<c.coverageSummaries.length;a++)c.coverageSummaries[a]["abstract"]=c.coverageSummaries[a]["abstract"]||c["abstract"],c.coverageSummaries[a].lonLatEnvelope=c.coverageSummaries[a].lonLatEnvelope||

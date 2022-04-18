@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Accessor ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass".split(" "),function(g,c,a,d,n,p,q,k){a=function(h){function e(f){var b=h.call(this)||this;b.nativeIndex=null;b._detectedDeviceType="unknown";"standard"===f.mapping?b._detectedDeviceType="standard":l.test(f.id)?b._detectedDeviceType=
 "spacemouse":b._detectedDeviceType="unknown";b.nativeIndex=f.index;return b}g._inheritsLoose(e,h);g._createClass(e,[{key:"native",get:function(){return(navigator.getGamepads?navigator.getGamepads():[])[this.nativeIndex]}},{key:"deviceType",get:function(){return this._detectedDeviceType}},{key:"axisThreshold",get:function(){return m[this.deviceType]}}]);return e}(a);c.__decorate([d.property({nonNullable:!0,readOnly:!0})],a.prototype,"nativeIndex",void 0);c.__decorate([d.property({type:String,readOnly:!0})],

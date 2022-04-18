@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../../chunks/vec4f64","../../shaderModules/interfaces"],function(b,d,g){const e=d.fromValues(1,1,0,1),f=d.fromValues(1,0,1,1);b.OutputHighlight=function(a){a.fragment.uniforms.add("depthTex","sampler2D");a.fragment.uniforms.add("highlightViewportPixelSz","vec4");a.fragment.constants.add("occludedHighlightFlag","vec4",e).add("unoccludedHighlightFlag","vec4",f);a.fragment.code.add(g.glsl`void outputHighlight() {
 vec4 fragCoord = gl_FragCoord;

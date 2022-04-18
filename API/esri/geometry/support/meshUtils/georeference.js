@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../core/maybe ../../../core/unitUtils ../../../chunks/mat3f64 ../../../chunks/mat4 ../../../chunks/mat4f64 ../../../chunks/mat3 ../../projection ../../projectionEllipsoid ../MeshTransform ../buffer/BufferView ../../../chunks/vec32 ./geographicUtils ./projection".split(" "),function(n,l,u,I,z,A,B,J,K,L,k,p,r,m){function v(b,a,c){if(r.isGeographicMesh(a.spatialReference,c)){var e=a.spatialReference,f=C(a,c,w);c=new Float64Array(b.position.length);var d=b.position,g=f;a=e;var h=
 c;p.transformMat4(k.BufferViewVec3f64.fromTypedArray(h),k.BufferViewVec3f64.fromTypedArray(d),g);d=new Float64Array(d.length);a=m.projectFromPCPF(h,d,a);f=B.normalFromMat4(D,f);h=c;d=b.normal;g=f;var t=e;if(l.isNone(d))h=null;else{var q=new Float32Array(d.length);p.transformMat3(k.BufferViewVec3f.fromTypedArray(q),k.BufferViewVec3f.fromTypedArray(d),g);m.projectNormalFromPCPF(q,a,h,t,q);h=q}b=b.tangent;if(l.isNone(b))b=null;else{d=new Float32Array(b.length);p.transformMat3(k.BufferViewVec3f.fromTypedArray(d,

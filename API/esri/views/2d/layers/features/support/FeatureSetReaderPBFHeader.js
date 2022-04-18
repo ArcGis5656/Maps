@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../core/Error","../../../../../rest/query/operations/pbfFeatureServiceParser"],function(m,x,r){let t=function(){function a(){this.fieldMap=new Map;this.fields=[];this.hasFeatures=!1;this.vertexCount=this.objectIdFieldIndex=this.featureCount=this.fieldCount=0;this.offsets={attributes:[],geometry:[]};this.centroid=[]}var g=a.prototype;g.hasField=function(f){return this.fieldMap.has(f)};g.isDateField=function(f){var k;return null==(k=this.fieldMap.get(f))?void 0:k.isDate};
 g.getFieldIndex=function(f){var k;return null==(k=this.fieldMap.get(f))?void 0:k.index};return a}();m.FeatureSetHeader=t;m.parseHeader=function(a,g,f=!1){const k=a.pos(),b=new t;let l=0,h=0,u=null,v=null,w=null,n=!1;for(;a.next();)switch(a.tag()){case 1:u=a.getString();break;case 3:v=a.getString();break;case 12:w=a.processMessage(r.parseTransform);break;case 9:b.exceededTransferLimit=a.getBool();if(b.exceededTransferLimit){b.offsets.geometry=f?new Float64Array(8E3):new Int32Array(8E3);b.centroid=

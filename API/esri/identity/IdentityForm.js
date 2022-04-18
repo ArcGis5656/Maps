@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../intl/substitute ../widgets/Widget ../widgets/support/widgetUtils ../widgets/support/decorators/messageBundle ../core/Logger ../widgets/support/jsxFactory".split(" "),function(q,e,f,d,C,D,r,t,u,m,v,E,b){d=function(n){function h(a,g){a=n.call(this,a,g)||this;a._usernameInputNode=null;
 a._passwordInputNode=null;a.messages=null;a.signingIn=!1;a.server=null;a.resource=null;a.error=null;a.oAuthPrompt=!1;return a}q._inheritsLoose(h,n);var k=h.prototype;k.render=function(){const {error:a,server:g,resource:w,signingIn:p,oAuthPrompt:l,messages:c}=this,x=b.tsx("div",{class:"esri-identity-form__group"},t.substitute(l?c.oAuthInfo:c.info,{server:/\.arcgis\.com/i.test(g)?"ArcGIS Online":g,resource:`(${w||c.lblItem})`})),y=l?null:b.tsx("div",{class:"esri-identity-form__group",key:"username"},

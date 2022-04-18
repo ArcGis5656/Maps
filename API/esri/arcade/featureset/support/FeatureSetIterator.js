@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../core/promiseUtils"],function(k){return function(){function n(a,b){this._lastId=-1;this._progress=b;this._parent=a}var m=n.prototype;m.reset=function(){this._lastId=-1};m.nextBatch=function(a){if(null!==this._parent._mainSetInUse)return this._parent._mainSetInUse.then(d=>this.nextBatch(a),d=>this.nextBatch(a));var b=null,c=!1;const h=[];b=k.create((d,e)=>{this._parent._getSet(this._progress).then(f=>{var l=f._known.length-1;"GETPAGES"===f._known[f._known.length-1]&&--l;if(this._lastId+
 a>l&&0<f._known.length&&"GETPAGES"===f._known[f._known.length-1])this._parent._expandPagedSet(f,this._parent._maxQueryRate(),0,0,this._progress).then(g=>{c=!0;this._parent._mainSetInUse=null;this.nextBatch(a).then(d,e)},g=>{c=!0;this._parent._mainSetInUse=null;e(g)});else if(l>=this._lastId+a||0===f._candidates.length){for(l=0;l<a;l++){const g=l+this._lastId+1;if(g>=f._known.length)break;h[l]=f._known[g]}this._lastId+=h.length;0===h.length&&(c=!0,this._parent._mainSetInUse=null,d([]));this._parent._getFeatureBatch(h,

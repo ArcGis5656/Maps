@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ./DirtyMap ./DisplayRecordStore ./WGLBuffers ./WGLTile".split(" "),function(u,v,w,x,z,r){r=function(t){function q(){var a=t.apply(this,arguments)||this;a._data=null;a._displayList=null;a._lastCommitTime=0;a._hasData=!1;a._invalidated=!1;a._wglBuffers=null;a._dirtyMap=new w;return a}v._inheritsLoose(q,t);var l=q.prototype;l.destroy=function(){t.prototype.destroy.call(this);this.clear()};l.getGeometry=function(a){return this._wglBuffers&&
 this._wglBuffers.has(a)?this._wglBuffers.get(a):null};l.getDisplayList=function(){return this._displayList};l.patch=function(a){if(!0===a.clear)this.clear(),this._hasData=!1;else{var g=a.addOrUpdate,c=a.remove;!this._data&&g&&g.tileDisplayData.displayObjects.length?(g.tileDisplayData.computeDisplayList(),this._dirtyMap=new w,this._dispRecStore=x.fromTileData(g,this._dirtyMap),this._data=g,this._dirtyMap.markAllDirty(),this._hasData=!0,a.end&&this.ready()):this._data?g&&g.tileDisplayData.displayObjects.length||

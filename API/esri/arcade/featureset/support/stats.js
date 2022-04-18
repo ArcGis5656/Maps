@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../chunks/languageUtils","./shared","./sqlUtils","../../../core/promiseUtils"],function(h,y,p,r,m){function n(b){let a=0;for(let c=0;c<b.length;c++)a+=b[c];return a/b.length}function t(b){const a=n(b);let c=0;for(let d=0;d<b.length;d++)c+=(a-b[d])**2;return c/b.length}function u(b){const a=n(b);let c=0;for(let d=0;d<b.length;d++)c+=(a-b[d])**2;return c/(b.length-1)}function v(b){let a=0;for(let c=0;c<b.length;c++)a+=b[c];return a}function l(b,a,c,d=!1){try{const e=b.iterator(c);
 return m.create((f,g)=>{w(e,[],a,d,f,g)})}catch(e){return m.reject(e)}}function w(b,a,c,d,e,f){y.tick(b.next().then(g=>{try{if(null!==g){const k=c.calculateValue(g);null===k?!1===d&&(a[a.length]=k):a[a.length]=k;return w(b,a,c,d,e,f)}e(a)}catch(k){f(k)}},f))}function x(b,a,c,d,e){return b.next().then(f=>null!==f?(f=d.calculateValue(f),void 0!==f&&null!==f&&void 0===a[f]&&(c.push(f),a[f]=1),c.length>=e&&-1!==e?c:x(b,a,c,d,e)):c)}h.calculateStat=function(b,a,c=1E3){switch(b.toLowerCase()){case "distinct":a:{b=

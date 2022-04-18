@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../FunctionWrapper","../../../chunks/languageUtils","../../../geometry/Geometry"],function(n,t,h,u){function d(a,b){switch(b.type){case "EmptyStatement":return"";case "VariableDeclarator":var c=null===b.init?null:d(a,b.init);a=m(b.name,a.mangles);a=""===c?a:a+" \x3d "+c;return a;case "VariableDeclaration":c=[];for(var e=0;e<b.declarations.length;e++)c.push(d(a,b.declarations[e]));return a="var "+c.join(",")+"; ";case "BlockStatement":c="{\n";for(e=0;e<b.body.length;e++)c+=d(a,
 b.body[e])+" \n";return a=c+"}\n";case "FunctionDeclaration":{e="function "+p(b.id.name,a.globalMangles,{});var f=[],g={};g={};const q={};for(c of b.params){const v=m(c.name,q);f.push(v);g[c.name]=1}e+="("+f.join(",")+") ";a=e+=d({functions:a.functions,globals:a.globals,symbols:a.symbols,context:a.context,globalMangles:a.globalMangles,localMangles:q,locals:g},b.body)}return a;case "ReturnStatement":return a=null===b.argument?"return;":"return "+d(a,b.argument)+";\n",a;case "IfStatement":return"if "+

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../chunks/_rollupPluginBabelHelpers","../../../core/Evented","../../../core/MapUtils"],function(l,m,h,p){h=function(n){function f(){var a=n.apply(this,arguments)||this;a._map=new Map;return a}m._inheritsLoose(f,n);var d=f.prototype;d.clear=function(){if(0<this._map.size){const a=this.toArray();this._map.clear();this.emit("change",{added:[],removed:a})}};d.get=function(a){return this._map.get(a)};d.addMany=function(a){if(0!==a.length){var b=new Set;for(let c=0;c<a.length;c++){const e=
 a[c],k=e.objectId,g=this._map.get(k);g?(b.add(k),e!==g&&(a[c]=g),++g.refCount):(e.refCount=1,this._map.set(k,e))}a=0<b.size?a.filter(c=>!b.has(c.objectId)):a;0<a.length&&this.emit("change",{added:a,removed:[]})}};d.removeMany=function(a){const b=[];for(const c of a){a=c.objectId;const e=this._map.get(a);null!=e&&0>=--e.refCount&&(this._map.delete(a),b.push(c))}0<b.length&&this.emit("change",{added:[],removed:b})};d.removeManyByObjectId=function(a){const b=[];for(const c of a)a=this._map.get(c),null!=

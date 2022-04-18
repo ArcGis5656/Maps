@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/Accessor ../../../../core/promiseUtils ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../geometry/Extent ../../../../geometry/support/aaBoundingRect ../../../../geometry/support/spatialReferenceUtils ../../../../layers/support/TileInfo ../../viewStateUtils ../../engine/Bitmap ../../tiling/TileInfoView ../../tiling/TileKey".split(" "),
 function(t,f,e,C,m,K,L,M,D,y,E,F,G,z,H,I,J){const n=E.create(),p=[0,0],A=new J(0,0,0,0);e=function(B){function x(g){var a=B.call(this,g)||this;a._imagePromise=null;a.bitmaps=[];a.hidpi=!1;a.imageMaxWidth=2048;a.imageMaxHeight=2048;a.imageRotationSupported=!1;a.imageNormalizationSupported=!1;a.update=C.debounce(function(){var l=t._asyncToGenerator(function*(c,h){if(!c.stationary||a.destroyed)return null;const b=c.state;var d=F.getInfo(b.spatialReference);c=a.hidpi?c.pixelRatio:1;var k=a.imageNormalizationSupported&&

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./_commonjsHelpers"],function(k,h){var c={exports:{}};(function(e,f){(function(a){a=a(h.commonjsRequire,f);void 0!==a&&(e.exports=a)})(function(a,b){Object.defineProperty(b,"__esModule",{value:!0});b.default={_decimalSeparator:",",_thousandSeparator:".",_date_millisecond:"mm:ss SSS",_date_second:"HH:mm:ss",_date_minute:"HH:mm",_date_hour:"HH:mm",_date_day:"dd MMM",_date_week:"ww",_date_month:"MMM",_date_year:"yyyy",_duration_millisecond:"SSS",_duration_second:"ss",_duration_minute:"mm",
 _duration_hour:"hh",_duration_day:"dd",_duration_week:"ww",_duration_month:"MM",_duration_year:"yyyy",_era_ad:"DC",_era_bc:"AC",A:"",P:"",AM:"",PM:"","A.M.":"","P.M.":"",January:"Janeiro",February:"Fevereiro",March:"Mar\u00e7o",April:"Abril",May:"Maio",June:"Junho",July:"Julho",August:"Agosto",September:"Setembro",October:"Outubro",November:"Novembro",December:"Dezembro",Jan:"Jan",Feb:"Fev",Mar:"Mar",Apr:"Abr","May(short)":"Mai",Jun:"Jun",Jul:"Jul",Aug:"Ago",Sep:"Set",Oct:"Out",Nov:"Nov",Dec:"Dez",

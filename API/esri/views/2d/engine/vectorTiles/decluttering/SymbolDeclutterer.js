@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../chunks/_rollupPluginBabelHelpers","../../../../../core/maybe","./config"],function(w,x,y,z){function A(k,g){if(k.priority-g.priority)return k.priority-g.priority;const a=k.tile.key,b=g.tile.key;return a.world-b.world?a.world-b.world:a.level-b.level?a.level-b.level:a.row-b.row?a.row-b.row:a.col-b.col?a.col-b.col:k.xTile-g.xTile?k.xTile-g.xTile:k.yTile-g.yTile}let B=function(){function k(a,b,l,d,m,n){this._visibleTiles=a;this._symbolRepository=b;this._createCollisionJob=
 l;this._assignTileSymbolsOpacity=d;this._symbolLayerSorter=m;this._isLayerVisible=n;this._selectionJob=null;this._selectionJobCompleted=!1;this._collisionJob=null;this._collisionJobCompleted=!1;this._opacityJob=null;this._opacityJobCompleted=!1;this._running=!0}var g=k.prototype;g.setScreenSize=function(a,b){this._screenWidth===a&&this._screenHeight===b||this.restart();this._screenWidth=a;this._screenHeight=b};g.restart=function(){this._selectionJob=null;this._selectionJobCompleted=!1;this._collisionJob=

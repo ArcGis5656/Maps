@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./NavigationToggle/NavigationToggleViewModel ./support/decorators/accessibleHandler ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory ./support/widgetUtils".split(" "),function(k,c,p,b,x,y,e,q,r,l,t,u,z,f,A){b=
 function(m){function g(a,d){a=m.call(this,a,d)||this;a.iconClass="esri-icon-pan2";a.label=void 0;a.messages=null;a.view=null;a.viewModel=new l;return a}k._inheritsLoose(g,m);var h=g.prototype;h.toggle=function(){return this.viewModel.toggle()};h.render=function(){const a="disabled"===this.get("viewModel.state");var d="pan"===this.get("viewModel.navigationMode");const v={["esri-navigation-toggle__button--active"]:d};d={["esri-navigation-toggle__button--active"]:!d};const w=a?-1:0,n=this.messages.toggle;

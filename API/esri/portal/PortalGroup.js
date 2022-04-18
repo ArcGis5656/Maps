@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/Error ../core/JSONSupport ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ./PortalQueryParams".split(" "),function(n,d,m,b,e,t,u,q,r,k){b=function(p){function l(a){a=p.call(this,a)||this;a.access=null;a.created=null;a.description=null;a.id=null;a.isInvitationOnly=!1;a.modified=null;a.owner=null;a.portal=null;a.snippet=null;
 a.sortField=null;a.sortOrder=null;a.tags=null;a.title=null;return a}n._inheritsLoose(l,p);var h=l.prototype;h.fetchCategorySchema=function(a){return this.portal._request(this.url+"/categorySchema",a).then(c=>{c=c.categorySchema||[];return c.some(g=>"contentCategorySetsGroupQuery.LivingAtlas"===g.source)?this._fetchCategorySchemaSet("LivingAtlas",a):c})};h.fetchMembers=function(a){return this.portal._request(this.url+"/users",a)};h.getThumbnailUrl=function(a){let c=this.thumbnailUrl;c&&a&&(c+=`&w=${a}`);

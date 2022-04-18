@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../Basemap ../../Ground ../../WebScene ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/extensions/serializableProperty/type ../../layers/GroupLayer ../../layers/KMLLayer ../../layers/mixins/operationalLayerModuleMap ../../layers/mixins/operationalLayers ../../layers/support/Sublayer ../../layers/support/source/DataLayerSource ../../layers/support/source/MapLayerSource ./utils".split(" "),function(L,h,M,S,T,la,
 v,U,N,V,W,X,q,O,Y,Z){function w(){w=h._asyncToGenerator(function*(a){const b=new Z.ScanContext;return P(null,{typeName:"json",type:a},b)});return w.apply(this,arguments)}function r(a,b,c){return x.apply(this,arguments)}function x(){x=h._asyncToGenerator(function*(a,b,c){switch(b.typeName){case "array":yield aa(a,b,c);break;case "union":yield ba(a,b,c);break;case "json":yield P(a,b,c);break;case "native":yield ca(a,b,c);break;case "enum":yield da(a,b,c)}});return x.apply(this,arguments)}function ca(a,

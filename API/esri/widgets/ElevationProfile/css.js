@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(a){a.CHART_BASE="esri-elevation-profile-chart";a.CHART_CSS={line:"amcharts-LineSeries",cursorEnabled:"amcharts-cursor--enabled",axisTooltip:"amcharts-axis-tooltip",seriesTooltip:"amcharts-series-tooltip"};a.CSS={esriWidget:"esri-widget--panel esri-widget",esriWidgetDisabled:"esri-widget--disabled",buttonDisabled:"esri-button--disabled",widgetIcon:"esri-icon-elevation-profile",base:"esri-elevation-profile",portrait:"esri-elevation-profile--portrait",refined:"esri-elevation-profile--refined",
 mainContainer:"esri-elevation-profile__main-container",promptContainer:"esri-elevation-profile__prompt-container",header:"esri-elevation-profile__header",zoomOutButton:"esri-elevation-profile__zoom-out-button esri-icon-zoom-out-magnifying-glass",clearButton:"esri-elevation-profile__clear-button esri-icon-trash",actionButton:"esri-elevation-profile__action-button esri-button",sketchButton:"esri-elevation-profile__sketch-button esri-button--primary",sketchCancelButton:"esri-elevation-profile__sketch-cancel-button esri-button--secondary",

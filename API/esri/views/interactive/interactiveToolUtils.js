@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../core/maybe"],function(c,d){c.areToolManipulatorsEditable=function(b){return b.visible&&b.getEditableFlag(0)&&b.getEditableFlag(1)};c.evaluateToolConstructorArguments=function(b){return d.isNone(b)?{}:"function"===typeof b?b():b};c.getToolAttachDetachHandles=function(b){return[b.on("after-add",a=>{a=a.item;a.view&&a.view.ready&&!a.attached&&a.attach()}),b.on("after-remove",a=>{a=a.item;a.active&&(a.view.activeTool=null);a.attached&&a.detach()})]};Object.defineProperty(c,"__esModule",
-{value:!0})});
+define(["exports","../../core/Logger","./interfaces"],function(c,f,d){const g=f.getLogger("esri.views.interactive.interactiveToolUtils");c.areToolManipulatorsEditable=function(b){return b.visible&&b.getEditableFlag(d.EditableFlag.USER)&&b.getEditableFlag(d.EditableFlag.MANAGER)};c.getToolCollectionHandles=function(b){return[b.on("before-add",a=>{const e=a.item;if(null==e||b.includes(e))g.warn("Tool is either already in the list of tools or tool is `null`. Not adding tool."),a.preventDefault()}),b.on("after-remove",
+a=>{a=a.item;a.visible=!1;a.active&&(a.view.activeTool=null);a.destroy()})]};Object.defineProperty(c,"__esModule",{value:!0})});

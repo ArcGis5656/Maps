@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../geometry ../../../../core/arrayUtils ../../../../core/maybe ../../../../core/promiseUtils ../../../support/Scheduler ../../../../geometry/Multipoint".split(" "),function(n,q,r,t,p,m,u,v){r=function(){function k(a,c){this.spatialReference=a;this.view=c}var l=k.prototype;l.getElevation=function(a,c,d){return this.view.elevationProvider.getElevation(a,c,0,this.spatialReference,d)};l.queryElevation=function(){var a=q._asyncToGenerator(function*(c,
 d,g,f,h){return this.view.elevationProvider.queryElevation(c,d,0,this.spatialReference,h,g,f)});return function(c,d,g,f,h){return a.apply(this,arguments)}}();return k}();let x=function(){function k(a,c,d,g){this.spatialReference=c;this._getElevationQueryProvider=d;this._queries=[];this._queryOptions={...g,ignoreInvisibleLayers:!0};this._frameTask=a.registerTask(u.TaskPriority.ELEVATION_QUERY,this)}var l=k.prototype;l.destroy=function(){this._frameTask.remove()};l.queryElevation=function(a,c,d,g=0){return new Promise((f,

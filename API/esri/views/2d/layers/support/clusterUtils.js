@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../core/Error ../../../../core/has ../../../../core/Logger ../../../../core/maybe ../../../../core/MD5 ../../../../renderers/visualVariables/SizeVariable ../../../../renderers/visualVariables/support/SizeStop ../../engine/LevelDependentSizeVariable".split(" "),function(h,p,q,y,r,n,z,l,A){function B(b,a,c){switch(b){case "avg":case "avg_angle":return`cluster_avg_${a}`;case "mode":return`cluster_type_${a}`;case "norm":return b=a.toLowerCase()+",norm:field,"+c.toLowerCase(),
 "cluster_avg_"+n.createMD5Hash(b)}}function C(b,a){const {name:c,outStatistic:g}=a,{onStatisticField:e,onStatisticValueExpression:f,statisticType:d}=g;f?(a=n.createMD5Hash(f.toLowerCase()),b.push({name:c,outStatistic:{onStatisticField:a,onStatisticValueExpression:f,statisticType:d}})):e?b.push({name:c,outStatistic:{onStatisticField:e,statisticType:d}}):t.error(new p("mapview-unsupported-field","Unable to handle field",{field:a}))}function m(b,a,c){const g=n.createMD5Hash(a),e="mode"===c?`cluster_type_${g}`:

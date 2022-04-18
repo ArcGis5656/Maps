@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/enumeration ../../core/accessorSupport/decorators/subclass".split(" "),function(a,g,b,h,c,m,n,p,l,k){a.I3SNodePageDefinition=function(d){function e(){var f=d.apply(this,arguments)||this;f.nodesPerPage=null;f.rootIndex=0;f.lodSelectionMetricType=
 null;return f}g._inheritsLoose(e,d);return e}(h.JSONSupport);b.__decorate([c.property({type:Number})],a.I3SNodePageDefinition.prototype,"nodesPerPage",void 0);b.__decorate([c.property({type:Number})],a.I3SNodePageDefinition.prototype,"rootIndex",void 0);b.__decorate([c.property({type:String})],a.I3SNodePageDefinition.prototype,"lodSelectionMetricType",void 0);a.I3SNodePageDefinition=b.__decorate([k.subclass("esri.layer.support.I3SNodePageDefinition")],a.I3SNodePageDefinition);a.I3SMaterialTexture=

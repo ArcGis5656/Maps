@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../renderers/ClassBreaksRenderer ../../renderers/DictionaryRenderer ../../renderers/DotDensityRenderer ../../renderers/HeatmapRenderer ../../renderers/Renderer ../../renderers/SimpleRenderer ../../renderers/UniqueValueRenderer ../../renderers/support/jsonUtils ../../core/Error ../../core/maybe ../heuristics/outline ../heuristics/sizeRange ./support/utils ../support/adapters/support/layerUtils ../../chunks/location".split(" "),function(u,m,
 E,F,G,H,I,x,J,K,g,n,y,z,h,k,p){function A(a){return q.apply(this,arguments)}function q(){q=m._asyncToGenerator(function*(a){if(!a||!a.layer)throw new g("location-renderer:missing-parameters","'layer' parameter is required");a={...a};a.symbolType=a.symbolType||"2d";var b=k.createLayerAdapter(a.layer,k.featureCapableLayerTypes);a.layer=b;if(!b)throw new g("location-renderer:invalid-parameters","'layer' must be one of these types: "+k.getLayerTypeLabels(k.featureCapableLayerTypes).join(", "));const d=

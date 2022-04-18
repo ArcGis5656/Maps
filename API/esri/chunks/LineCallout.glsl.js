@@ -1,8 +1,8 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define("exports ../views/3d/webgl-engine/core/shaderLibrary/Slice.glsl ../views/3d/webgl-engine/core/shaderLibrary/hud/AlignPixel.glsl ../views/3d/webgl-engine/core/shaderLibrary/hud/HUD.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/MultipassGeometryTest.glsl ../views/3d/webgl-engine/core/shaderModules/interfaces ../views/3d/webgl-engine/core/shaderModules/ShaderBuilder".split(" "),function(e,k,l,m,n,c,p){function g(b){const a=new p.ShaderBuilder;a.include(l.AlignPixel);a.include(m.HUD,
-b);a.include(k.Slice,b);a.attributes.add("uv0","vec2");a.vertex.uniforms.add("lineSize","float").add("pixelToNDC","vec2").add("borderSize","float").add("screenOffset","vec2");a.varyings.add("coverageSampling","vec4");a.varyings.add("lineSizes","vec2");b.multipassGeometryEnabled&&a.varyings.add("depth","float");a.vertex.code.add(c.glsl`
+define("exports ../views/3d/webgl-engine/core/shaderLibrary/Slice.glsl ../views/3d/webgl-engine/core/shaderLibrary/hud/AlignPixel.glsl ../views/3d/webgl-engine/core/shaderLibrary/hud/HUD.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/MultipassGeometryTest.glsl ../views/3d/webgl-engine/core/shaderModules/interfaces ../views/3d/webgl-engine/core/shaderModules/ShaderBuilder ../views/3d/webgl-engine/lib/VertexAttribute".split(" "),function(e,k,l,m,n,c,p,q){function f(a){const b=new p.ShaderBuilder;
+b.include(l.AlignPixel);b.include(m.HUD,a);b.include(k.Slice,a);b.attributes.add(q.VertexAttribute.UV0,"vec2");b.vertex.uniforms.add("lineSize","float").add("pixelToNDC","vec2").add("borderSize","float").add("screenOffset","vec2");b.varyings.add("coverageSampling","vec4");b.varyings.add("lineSizes","vec2");a.multipassGeometryEnabled&&b.varyings.add("depth","float");b.vertex.code.add(c.glsl`
     void main(void) {
       ProjectHUDAux projectAux;
       vec4 endPoint = projectPositionHUD(projectAux);
@@ -12,13 +12,13 @@ b);a.include(k.Slice,b);a.attributes.add("uv0","vec2");a.vertex.uniforms.add("li
         gl_Position = vec4(1e38, 1e38, 1e38, 1.0);
         return;
       }
-    ${b.occlusionTestEnabled?c.glsl`
+    ${a.occlusionTestEnabled?c.glsl`
       if (!testVisibilityHUD(endPoint)) {
         gl_Position = vec4(1e38, 1e38, 1e38, 1.0);
         return;
       }`:""}
 
-    ${b.screenSizePerspectiveEnabled?c.glsl`
+    ${a.screenSizePerspectiveEnabled?c.glsl`
       vec4 perspectiveFactor = screenSizePerspectiveScaleFactor(projectAux.absCosAngle, projectAux.distanceToCamera, screenSizePerspectiveAlignment);
       vec2 screenOffsetScaled = applyScreenSizePerspectiveScaleFactorVec2(screenOffset, perspectiveFactor);
         `:c.glsl`
@@ -27,7 +27,7 @@ b);a.include(k.Slice,b);a.attributes.add("uv0","vec2");a.vertex.uniforms.add("li
       // Add view dependent polygon offset to get exact same original starting point. This is mostly
       // used to get the correct depth value
       vec3 posView = (view * vec4(position, 1.0)).xyz;
-      ${b.multipassGeometryEnabled?"depth \x3d posView.z;":""}
+      ${a.multipassGeometryEnabled?"depth \x3d posView.z;":""}
 
       applyHUDViewDependentPolygonOffset(auxpos1.w, projectAux.absCosAngle, posView);
       vec4 startPoint = proj * vec4(posView, 1.0);
@@ -38,12 +38,12 @@ b);a.include(k.Slice,b);a.attributes.add("uv0","vec2");a.vertex.uniforms.add("li
       // Align start and end to pixel origin
       vec4 startAligned = alignToPixelOrigin(startPoint, viewport.zw);
       vec4 endAligned = alignToPixelOrigin(endPoint, viewport.zw);
-    ${b.depthHudEnabled?b.depthHudAlignStartEnabled?c.glsl`endAligned = vec4(endAligned.xy / endAligned.w * startAligned.w, startAligned.zw);`:c.glsl`startAligned = vec4(startAligned.xy / startAligned.w * endAligned.w, endAligned.zw);`:""}
+    ${a.depthHudEnabled?a.depthHudAlignStartEnabled?c.glsl`endAligned = vec4(endAligned.xy / endAligned.w * startAligned.w, startAligned.zw);`:c.glsl`startAligned = vec4(startAligned.xy / startAligned.w * endAligned.w, endAligned.zw);`:""}
       vec4 projectedPosition = mix(startAligned, endAligned, uv0.y);
       // The direction of the line in screen space
       vec2 screenSpaceDirection = normalize(endAligned.xy / endAligned.w - startAligned.xy / startAligned.w);
       vec2 perpendicularScreenSpaceDirection = vec2(screenSpaceDirection.y, -screenSpaceDirection.x);
-    ${b.screenSizePerspectiveEnabled?c.glsl`
+    ${a.screenSizePerspectiveEnabled?c.glsl`
       float lineSizeScaled = applyScreenSizePerspectiveScaleFactorFloat(lineSize, perspectiveFactor);
       float borderSizeScaled = applyScreenSizePerspectiveScaleFactorFloat(borderSize, perspectiveFactor);
         `:c.glsl`
@@ -101,9 +101,9 @@ b);a.include(k.Slice,b);a.attributes.add("uv0","vec2");a.vertex.uniforms.add("li
 
       gl_Position = projectedPosition;
     }
-  `);a.fragment.uniforms.add("color","vec4");a.fragment.uniforms.add("borderColor","vec4");b.multipassGeometryEnabled&&(a.fragment.include(n.multipassGeometryTest,b),a.fragment.uniforms.add("inverseViewport","vec2"));a.fragment.code.add(c.glsl`
+  `);b.fragment.uniforms.add("uColor","vec4");b.fragment.uniforms.add("borderColor","vec4");a.multipassGeometryEnabled&&(b.fragment.include(n.multipassGeometryTest,a),b.fragment.uniforms.add("inverseViewport","vec2"));b.fragment.code.add(c.glsl`
     void main() {
-      ${b.multipassGeometryEnabled?"if( geometryDepthTest(gl_FragCoord.xy * inverseViewport, depth) ){ discard; }":""}
+      ${a.multipassGeometryEnabled?"if( geometryDepthTest(gl_FragCoord.xy * inverseViewport, depth) ){ discard; }":""}
 
       // Mix between line and border coverage offsets depending on whether we need
       // a border (based on the sidedness).
@@ -114,12 +114,12 @@ b);a.include(k.Slice,b);a.attributes.add("uv0","vec2");a.vertex.uniforms.add("li
       //
       // Anti-alias by blending final result using the full (including optional border) coverage
       // and the color alpha
-      float borderAlpha = color.a * borderColor.a * coverage.y;
-      float colorAlpha = color.a * coverage.x;
+      float borderAlpha = uColor.a * borderColor.a * coverage.y;
+      float colorAlpha = uColor.a * coverage.x;
 
       float finalAlpha = mix(borderAlpha, 1.0, colorAlpha);
 
-    ${b.depthHudEnabled?c.glsl`
+    ${a.depthHudEnabled?c.glsl`
       if (finalAlpha < 0.01) {
         discard;
       }
@@ -127,9 +127,9 @@ b);a.include(k.Slice,b);a.attributes.add("uv0","vec2");a.vertex.uniforms.add("li
       // Compute the finalRgb, but keep it pre-multiplied (for unpre-multiplied you
       // need to divide by finalAlpha). We avoid the division here by setting the
       // appropriate blending function in the material.
-      vec3 finalRgb = mix(borderColor.rgb * borderAlpha, color.rgb, colorAlpha);
+      vec3 finalRgb = mix(borderColor.rgb * borderAlpha, uColor.rgb, colorAlpha);
       gl_FragColor = vec4(finalRgb, finalAlpha);
       `}
   }
-  `);return a}function h(b,a,d){3===d.length?b.setUniform4f(a,d[0],d[1],d[2],1):b.setUniform4fv(a,d)}e.LineCallout=void 0;(function(b){b.bindUniforms=function(a,d,f){h(a,"color",d.color);a.setUniform1f("pixelRatio",f);a.setUniform2f("screenOffset",d.screenOffset[0]*f,d.screenOffset[1]*f);null!==d.borderColor?(h(a,"borderColor",d.borderColor),a.setUniform1f("borderSize",f)):(a.setUniform4f("borderColor",0,0,0,0),a.setUniform1f("borderSize",0))}})(e.LineCallout||(e.LineCallout={}));const q=Object.freeze({__proto__:null,
-build:g,get LineCallout(){return e.LineCallout}});e.LineCalloutShader=q;e.build=g});
+  `);return b}function g(a,b,d){h(a,"uColor",b.color);a.setUniform1f("pixelRatio",d);a.setUniform2f("screenOffset",b.screenOffset[0]*d,b.screenOffset[1]*d);null!==b.borderColor?(h(a,"borderColor",b.borderColor),a.setUniform1f("borderSize",d)):(a.setUniform4f("borderColor",0,0,0,0),a.setUniform1f("borderSize",0))}function h(a,b,d){3===d.length?a.setUniform4f(b,d[0],d[1],d[2],1):a.setUniform4fv(b,d)}const r=Object.freeze({__proto__:null,build:f,bindLineCalloutUniforms:g});e.LineCalloutShader=r;e.bindLineCalloutUniforms=
+g;e.build=f});

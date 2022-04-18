@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Error ../../core/Evented ../../core/HandleOwner ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass".split(" "),function(d,f,n,c,p,g,r,t,u,q){c=function(m){function k(a){a=m.call(this,a)||this;a._indexHistory=[];a._lastStepIndex=-1;a._stepIndex=-1;a._handleKeys={afterCommit:"after-commit",beforeCommit:"before-commit"};
 a.data=void 0;a.started=!1;a.steps=[];a.type=null;return a}d._inheritsLoose(k,m);var e=k.prototype;e.cancel=function(){var a=d._asyncToGenerator(function*(b={force:!0}){return!1!==b.force?this._cancel():new Promise((h,l)=>{this.emit("cancel-request",{controller:{allow:()=>{this._cancel().then(h)},deny:()=>l(new n("workflow:cancel-denied","Request to cancel workflow was denied."))}})})});return function(){return a.apply(this,arguments)}}();e.commit=function(){var a=d._asyncToGenerator(function*(){this.handles.remove(this._handleKeys.beforeCommit);

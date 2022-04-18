@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Collection ../../core/Evented ../../core/HandleOwner ../../core/promiseUtils ../../core/watchUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../LayerList/ListItem".split(" "),function(k,h,f,y,z,n,l,m,D,E,F,A,u){const p=f.ofType(u);f=function(v){function q(b){var a=v.call(this,b)||this;a.baseItems=
 new p;a.baseListItemCreatedFunction=null;a.referenceListItemCreatedFunction=null;a.referenceItems=new p;a.view=null;a._callReferenceListItemsCreatedDebounced=n.debounce(function(){var c=k._asyncToGenerator(function*(d){return a._callListItemsCreated({items:d,type:"reference"})});return function(d){return c.apply(this,arguments)}}(),300);a._callBaseListItemsCreatedDebounced=n.debounce(function(){var c=k._asyncToGenerator(function*(d){return a._callListItemsCreated({items:d,type:"base"})});return function(d){return c.apply(this,

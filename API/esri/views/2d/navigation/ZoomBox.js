@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Accessor ../../../core/screenUtils ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../input/InputManager".split(" "),function(m,n,h,t,p,v,w,x,u,q){h=function(r){function k(a){a=r.call(this,a)||this;a._container=null;a._overlay=null;a._backgroundShape=null;a._boxShape=null;
 a._box={x:0,y:0,width:0,height:0};a._redraw=a._redraw.bind(m._assertThisInitialized(a));return a}m._inheritsLoose(k,r);var g=k.prototype;g.destroy=function(){this.view=null};g._start=function(){this._createContainer();this._createOverlay();this.navigation.begin()};g._update=function(a,c,b,d){this._box.x=a;this._box.y=c;this._box.width=b;this._box.height=d;this._rafId||(this._rafId=requestAnimationFrame(this._redraw))};g._end=function(a,c,b,d,e){const f=this.view;a=f.toMap(t.createScreenPoint(a+.5*

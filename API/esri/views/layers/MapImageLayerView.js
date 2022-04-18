@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Error ../../core/maybe ../../core/promiseUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../layers/support/commonProperties ../../layers/support/ExportImageParameters ../../renderers/support/clickToleranceUtils ../../support/arcadeOnDemand ./support/popupUtils ../support/floorFilterUtils".split(" "),
 function(v,l,h,F,w,G,m,x,O,P,H,I,J,K,L,z,M){x=c=>{c=function(y){function r(){return y.apply(this,arguments)||this}l._inheritsLoose(r,y);var n=r.prototype;n.initialize=function(){this.exportImageParameters=new J.ExportImageParameters({layer:this.layer})};n.destroy=function(){this.exportImageParameters.destroy();this.exportImageParameters=null};n.fetchPopupFeatures=function(){var b=l._asyncToGenerator(function*(p,t){var q=this,{layer:k}=this;if(!p)return Promise.reject(new F("mapimagelayerview:fetchPopupFeatures",

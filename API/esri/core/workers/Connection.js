@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../chunks/_rollupPluginBabelHelpers","../handleUtils","../Logger","../promiseUtils","./RemoteClient"],function(p,q,r,m,n){const t=r.getLogger("esri.core.workers.Connection");return function(){function k(){this._clients=[];this._clientPromises=[];this._clientIdx=0}var g=k.prototype;g.destroy=function(){this.close()};g.open=function(a,b){return new Promise((c,d)=>{let e=!0;const h=f=>{m.throwIfAborted(b.signal);e&&(e=!1,f())};this._clients.length=a.length;this._clientPromises.length=a.length;
 for(let f=0;f<a.length;++f){const l=a[f];m.isPromiseLike(l)?this._clientPromises[f]=l.then(u=>{this._clients[f]=new n(u,b);h(c);return this._clients[f]},()=>{h(d);return null}):(this._clients[f]=new n(l,b),this._clientPromises[f]=Promise.resolve(this._clients[f]),h(c))}})};g.broadcast=function(a,b,c){const d=Array(this._clientPromises.length);for(let e=0;e<this._clientPromises.length;++e)d[e]=this._clientPromises[e].then(h=>h.invoke(a,b,c));return d};g.close=function(){for(const a of this._clientPromises)a.then(b=>

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/lang ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/enumeration ../core/accessorSupport/decorators/subclass ./Renderer ./mixins/VisualVariablesMixin ./support/commonProperties".split(" "),function(f,g,n,k,e,p,q,r,t,u){var l;e=l=function(m){function h(a){a=m.call(this,a)||this;a.description=null;a.label=null;a.symbol=null;a.type="simple";return a}f._inheritsLoose(h,
 m);var c=h.prototype;c.collectRequiredFields=function(){var a=f._asyncToGenerator(function*(b,d){yield Promise.all([this.collectSymbolFields(b,d),this.collectVVRequiredFields(b,d)])});return function(b,d){return a.apply(this,arguments)}}();c.collectSymbolFields=function(){var a=f._asyncToGenerator(function*(b,d){yield Promise.all(this.getSymbols().map(v=>v.collectRequiredFields(b,d)))});return function(b,d){return a.apply(this,arguments)}}();c.getSymbol=function(a,b){return this.symbol};c.getSymbolAsync=

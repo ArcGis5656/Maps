@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../chunks/_rollupPluginBabelHelpers","../../../core/Error","../../../core/workers/workers"],function(h,f,g,k){let l=function(){function d(){}var e=d.prototype;e.open=function(){var b=f._asyncToGenerator(function*(a){this.connection=yield k.open("statsWorker",{strategy:"distributed",signal:a})});return function(a){return b.apply(this,arguments)}}();e.destroy=function(){var b;null==(b=this.connection)?void 0:b.close()};d.getInstance=function(){d.instance||(d.instance=new d);
 return d.instance};e.summaryStatistics=function(){var b=f._asyncToGenerator(function*(a,c){if(!this.connection)throw new g("worker-client:summary-statistics","connection is required");return this.connection.invoke("summaryStatistics",{attribute:a,features:c})});return function(a,c){return b.apply(this,arguments)}}();e.uniqueValues=function(){var b=f._asyncToGenerator(function*(a,c){if(!this.connection)throw new g("worker-client:unique-values","connection is required");return this.connection.invoke("uniqueValues",

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../core/Logger ../../../core/maybe ../../../chunks/mat3 ../../../chunks/mat3f64 ../../../chunks/mat4f64 ../../../chunks/vec3 ../../../chunks/vec3f64 ../../projection ../../projectionEllipsoid ./geographicUtils ./projection".split(" "),function(m,x,d,y,z,A,n,p,B,C,D,f){function q(a,k){if(a)for(let b=0;b<a.length;b+=3)for(let c=0;3>c;c++)a[b+c]+=k[c]}const E=x.getLogger("esri.geometry.support.meshUtils.offset"),r=p.create(),t=A.create(),u=z.create();m.offset=function(a,k,b){if(a.vertexAttributes&&
 a.vertexAttributes.position)if(d.isSome(a.transform))null!=(null==b?void 0:b.geographic)&&b.geographic!==a.transform.geographic&&E.warn(`Specifying the 'geographic' parameter (${b.geographic}) different from the Mesh transform setting (${a.transform.geographic}) is not supported`),a=a.transform,b=a.origin,a.origin=n.add(p.create(),b,k);else if(D.isGeographicMesh(a.spatialReference,b)){{b=a.spatialReference;const c=a.vertexAttributes.position,g=a.vertexAttributes.normal,h=a.vertexAttributes.tangent,

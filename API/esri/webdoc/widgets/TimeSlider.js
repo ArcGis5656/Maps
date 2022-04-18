@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../TimeExtent ../../TimeInterval ../../core/JSONSupport ../../core/lang ../../core/maybe ../../core/object ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer".split(" "),function(v,c,l,u,b,w,m,q,h,y,n,x,p){var r;b=r=function(f){function k(a){a=f.call(this,a)||
 this;a.currentTimeExtent=null;a.fullTimeExtent=null;a.loop=!1;a.numStops=null;a.numThumbs=null;a.stopDelay=null;a.stopInterval=null;a.stops=null;return a}v._inheritsLoose(k,f);var e=k.prototype;e.readCurrentTimeExtent=function(a){if(a)return new l({start:null!=a[0]?new Date(a[0]):null,end:null!=a[1]?new Date(a[1]):null})};e.writeCurrentTimeExtent=function(a,d,g){a&&q.setDeepValue(g,[m.isSome(a.start)?a.start.getTime():null,m.isSome(a.end)?a.end.getTime():null],d)};e.readFullTimeExtent=function(a,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./vec3f64","./common"],function(v,M,B){function P(a,b){a[0]=b[0];a[1]=b[1];a[2]=b[2];a[3]=b[3];a[4]=b[4];a[5]=b[5];a[6]=b[6];a[7]=b[7];a[8]=b[8];a[9]=b[9];a[10]=b[10];a[11]=b[11];a[12]=b[12];a[13]=b[13];a[14]=b[14];a[15]=b[15];return a}function Q(a,b,c,d,e,f,h,k,g,l,m,n,q,p,t,r,u){a[0]=b;a[1]=c;a[2]=d;a[3]=e;a[4]=f;a[5]=h;a[6]=k;a[7]=g;a[8]=l;a[9]=m;a[10]=n;a[11]=q;a[12]=p;a[13]=t;a[14]=r;a[15]=u;return a}function N(a){a[0]=1;a[1]=0;a[2]=0;a[3]=0;a[4]=0;a[5]=1;a[6]=0;a[7]=0;a[8]=
 0;a[9]=0;a[10]=1;a[11]=0;a[12]=0;a[13]=0;a[14]=0;a[15]=1;return a}function R(a,b){if(a===b){const c=b[1],d=b[2],e=b[3],f=b[6],h=b[7],k=b[11];a[1]=b[4];a[2]=b[8];a[3]=b[12];a[4]=c;a[6]=b[9];a[7]=b[13];a[8]=d;a[9]=f;a[11]=b[14];a[12]=e;a[13]=h;a[14]=k}else a[0]=b[0],a[1]=b[4],a[2]=b[8],a[3]=b[12],a[4]=b[1],a[5]=b[5],a[6]=b[9],a[7]=b[13],a[8]=b[2],a[9]=b[6],a[10]=b[10],a[11]=b[14],a[12]=b[3],a[13]=b[7],a[14]=b[11],a[15]=b[15];return a}function S(a,b){const c=b[0],d=b[1],e=b[2],f=b[3],h=b[4],k=b[5],g=

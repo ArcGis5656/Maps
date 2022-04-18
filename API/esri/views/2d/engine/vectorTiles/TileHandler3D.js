@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../chunks/_rollupPluginBabelHelpers ../../../../core/maybe ../../../../core/MemCache ../../../../core/promiseUtils ../../../../chunks/mat3f32 ../../../../geometry/support/aaBoundingRect ./VectorTile ./TileHandler ./decluttering/jobsUtil ../../tiling/TileKey".split(" "),function(k,g,m,n,p,q,r,t,u,v){return function(l){function h(c,a,d,b,e){c=l.call(this,c,a,d)||this;c._memCache=b;c._loader=e;c._ongoingTileRequests=new Map;c._ongoingRequestToController=new Map;return c}k._inheritsLoose(h,
 l);var f=h.prototype;f.destroy=function(){this._ongoingRequestToController.forEach(c=>c.abort());this._ongoingRequestToController.clear();this._ongoingTileRequests.clear()};f.getVectorTile=function(){var c=k._asyncToGenerator(function*(a,d,b,e){a=new v(a,d,b,0);b=this._memCache.get(a.id);if(g.isSome(b))return b.retain(),b;d=yield this._getVectorTileData(a);n.throwIfAborted(e);if(!this._layer)return null;b=this._memCache.get(a.id);if(g.isSome(b))return b.retain(),b;e=this._layer.tileInfo.getTileBounds(q.create(),

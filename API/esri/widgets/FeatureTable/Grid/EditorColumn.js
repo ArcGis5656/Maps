@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ./Column".split(" "),function(r,g,h,f,y,z,v,w){f=function(u){function t(m){var a=u.call(this,m)||this;a.activeEditInfo=null;a.cellValueValidatorFunction=({oldValue:c,value:b})=>c!==b;a.editable=!1;a.inputRenderFunction=({root:c,column:b,rowData:d})=>
 {var e,k;if((null==(e=a.activeEditInfo)||!e.updating)&&a.editable){var l=a.getCellValue(b,d);e=a.createInputElement({root:c,column:b,rowData:d,value:l});a._set("activeEditInfo",{column:b,input:e,root:c,rowData:d,updating:!0,oldValue:l});b=a.createInputContainer();b.appendChild(e);a.removeCellContent(c);c.appendChild(b);e.focus();e instanceof HTMLInputElement&&e.select();null==(k=a.grid)?void 0:k.notifyResize()}};a.loadingMessage="";a.inputType="text";a.maxLength=null;a.parseInputValueFunction=({input:c})=>

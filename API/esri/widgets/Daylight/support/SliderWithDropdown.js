@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/events ../../../core/maybe ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../Slider ./SliderWithDropdownViewModel ../../support/widgetUtils ../../../core/Logger ../../support/jsxFactory".split(" "),function(p,e,m,n,f,c,v,w,q,r,t,x,y,g){c=function(h){function k(a,b){a=h.call(this,
 a,b)||this;a.viewModel=new t.SliderWithDropdownViewModel;a.buttonTooltip="";a.showDropDown=!0;a.currentIndex=0;a._rootNode=null;return a}p._inheritsLoose(k,h);var d=k.prototype;d.renderThumbLabel=function(a){return g.tsx("div",{class:this.classes("esri-slider-with-dropdown__box","esri-slider__label",{["esri-slider-with-dropdown__box--drop-down-on"]:this.showDropDown,["esri-slider-with-dropdown__box--drop-down-off"]:!this.showDropDown})},h.prototype.renderThumbLabel.call(this,a),this.showDropDown?

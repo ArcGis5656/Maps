@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(b){b.WGLGeometryType=void 0;(function(a){a[a.FILL=0]="FILL";a[a.LINE=1]="LINE";a[a.MARKER=2]="MARKER";a[a.TEXT=3]="TEXT";a[a.LABEL=4]="LABEL"})(b.WGLGeometryType||(b.WGLGeometryType={}));b.WGLGeometryTransactionStatus=void 0;(function(a){a[a.SUCCEEDED=0]="SUCCEEDED";a[a.FAILED_OUT_OF_MEMORY=1]="FAILED_OUT_OF_MEMORY"})(b.WGLGeometryTransactionStatus||(b.WGLGeometryTransactionStatus={}));b.WGLDrawPhase=void 0;(function(a){a[a.NONE=0]="NONE";a[a.MAP=1]="MAP";a[a.LABEL=2]=
 "LABEL";a[a.LABEL_ALPHA=4]="LABEL_ALPHA";a[a.HITTEST=8]="HITTEST";a[a.HIGHLIGHT=16]="HIGHLIGHT";a[a.CLIP=32]="CLIP";a[a.DEBUG=64]="DEBUG";a[a.NUM_DRAW_PHASES=9]="NUM_DRAW_PHASES"})(b.WGLDrawPhase||(b.WGLDrawPhase={}));b.VVType=void 0;(function(a){a[a.SIZE=0]="SIZE";a[a.COLOR=1]="COLOR";a[a.OPACITY=2]="OPACITY";a[a.ROTATION=3]="ROTATION"})(b.VVType||(b.VVType={}));b.WGLVVFlag=void 0;(function(a){a[a.NONE=0]="NONE";a[a.OPACITY=1]="OPACITY";a[a.COLOR=2]="COLOR";a[a.ROTATION=4]="ROTATION";a[a.SIZE_MINMAX_VALUE=

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../core/maybe","../../core/screenUtils","../../layers/graphics/dehydratedFeatures","../../support/elevationInfoUtils"],function(e,f,k,l,g){let n=function(){function b(a,d,h,m=null){this.elevationInfo=a;this.defaultZ=d;this.view=h;this.excludeGraphics=m}var c=b.prototype;c.screenToMap=function(a){if(f.isSome(this.defaultZ))return this.view.sceneIntersectionHelper.intersectElevationFromScreen(k.createScreenPointArray(a.x,a.y),this.elevationInfo,this.defaultZ,this.excludeGraphics);
 a=this.view.sceneIntersectionHelper.intersectElevationFromScreen(k.createScreenPointArray(a.x,a.y),this.elevationInfo,0,this.excludeGraphics);f.isSome(a)&&(a.z=void 0);return a};c.mapToScreen=function(a){a=l.makeDehydratedPoint(a.x,a.y,g.getConvertedElevation(this.view,a,this.elevationInfo),a.spatialReference);return this.view.toScreen(a)};return b}(),p=function(){function b(a,d,h=[]){this.view=a;this.elevationInfo=d;this.exclude=h}var c=b.prototype;c.screenToMap=function(a){a=this.view.toMap(a,{exclude:this.exclude});

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["../../../webgl/BufferObject","../../../webgl/VertexArrayObject"],function(e,f){return function(){function c(b,d){this.rctx=b;this._vertexBuffer=e.createVertex(b,35044,new Uint16Array(d));this._vao=new f(b,new Map([["a_position",0]]),{geometry:[{name:"a_position",count:2,type:5122,offset:0,stride:4,normalized:!1}]},{geometry:this._vertexBuffer});this._count=d.length/2}var a=c.prototype;a.bind=function(){this._vao.bind()};a.unbind=function(){this._vao.unbind()};a.dispose=function(){this._vao.dispose(!1);
-this._vertexBuffer.dispose()};a.draw=function(){this.rctx.bindVAO(this._vao);this.rctx.drawArrays(5,0,this._count)};return c}()});
+define(["../../../webgl/BufferObject","../../../webgl/enums","../../../webgl/VertexArrayObject","../../../webgl/VertexElementDescriptor"],function(f,b,g,h){return function(){function d(c,e){this.rctx=c;this._vertexBuffer=f.BufferObject.createVertex(c,b.Usage.STATIC_DRAW,new Uint16Array(e));this._vao=new g.VertexArrayObject(c,new Map([["a_position",0]]),{geometry:[new h.VertexElementDescriptor("a_position",2,b.DataType.SHORT,0,4)]},{geometry:this._vertexBuffer});this._count=e.length/2}var a=d.prototype;
+a.bind=function(){this._vao.bind()};a.unbind=function(){this._vao.unbind()};a.dispose=function(){this._vao.dispose(!1);this._vertexBuffer.dispose()};a.draw=function(){this.rctx.bindVAO(this._vao);this.rctx.drawArrays(b.PrimitiveType.TRIANGLE_STRIP,0,this._count)};return d}()});

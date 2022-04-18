@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../TimeExtent ../../TimeInterval ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../support/TimeInfo ../support/fieldUtils ../../portal/timeUnitKebabDictionary".split(" "),function(g,h,d,m,k,e,u,v,w,n,p,q,r,t){g.TemporalLayer=a=>{a=function(l){function f(){var b=
 l.apply(this,arguments)||this;b.timeExtent=null;b.timeOffset=null;b.useViewTime=!0;return b}h._inheritsLoose(f,l);f.prototype.readOffset=function(b,c){c=c.timeInfo.exportOptions;if(!c)return null;b=c.timeOffset;c=t.timeUnitKebabDictionary.fromJSON(c.timeOffsetUnits);return b&&c?new k({value:b,unit:c}):null};h._createClass(f,[{key:"timeInfo",set:function(b){r.fixTimeInfoFields(b,this.fieldsIndex);this._set("timeInfo",b)}}]);return f}(a);d.__decorate([e.property({type:m,json:{write:!1}})],a.prototype,

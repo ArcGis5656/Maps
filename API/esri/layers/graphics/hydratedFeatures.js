@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../Graphic ../../core/has ../../core/lang ../../core/maybe ../../core/typedArrayUtil ../../geometry/support/jsonUtils ./dehydratedFeatures".split(" "),function(f,u,G,l,v,g,w,x){function m(a){return"declaredClass"in a}function h(a){return"declaredClass"in a}function n(a){return"declaredClass"in a}function p(a){return v.isNone(a)?null:m(a)?a:w.fromJSON(y(a))}function y(a){const b=a.spatialReference.toJSON();switch(a.type){case "point":{const {x:c,y:d,z:e,m:k}=a;return{x:c,y:d,z:e,
 m:k,spatialReference:b}}case "polygon":{const {rings:c,hasZ:d,hasM:e}=a;return{rings:q(c),hasZ:d,hasM:e,spatialReference:b}}case "polyline":{const {paths:c,hasZ:d,hasM:e}=a;return{paths:q(c),hasZ:d,hasM:e,spatialReference:b}}case "extent":{const {xmin:c,xmax:d,ymin:e,ymax:k,zmin:z,zmax:A,mmin:B,mmax:C,hasZ:D,hasM:E}=a;return{xmin:c,xmax:d,ymin:e,ymax:k,zmin:z,zmax:A,mmin:B,mmax:C,hasZ:D,hasM:E,spatialReference:b}}case "multipoint":{const {points:c,hasZ:d,hasM:e}=a;return{points:r(c)?t(c):c,hasZ:d,

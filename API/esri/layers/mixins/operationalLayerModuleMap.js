@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["require","exports","../../chunks/_rollupPluginBabelHelpers"],function(e,h,f){const g=a=>Object.freeze({__proto__:null,default:a}),k={ArcGISFeatureLayer:function(){var a=f._asyncToGenerator(function*(){return(yield new Promise((b,c)=>e(["../FeatureLayer"],d=>b(g(d)),c))).default});return function(){return a.apply(this,arguments)}}(),ArcGISImageServiceLayer:function(){var a=f._asyncToGenerator(function*(){return(yield new Promise((b,c)=>e(["../ImageryLayer"],d=>b(g(d)),c))).default});return function(){return a.apply(this,
 arguments)}}(),ArcGISImageServiceVectorLayer:()=>Promise.resolve(null),ArcGISMapServiceLayer:function(){var a=f._asyncToGenerator(function*(){return(yield new Promise((b,c)=>e(["../MapImageLayer"],d=>b(g(d)),c))).default});return function(){return a.apply(this,arguments)}}(),ArcGISSceneServiceLayer:function(){var a=f._asyncToGenerator(function*(){return(yield new Promise((b,c)=>e(["../SceneLayer"],d=>b(g(d)),c))).default});return function(){return a.apply(this,arguments)}}(),ArcGISStreamLayer:function(){var a=

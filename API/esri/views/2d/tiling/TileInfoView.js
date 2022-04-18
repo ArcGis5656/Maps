@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../geometry/support/spatialReferenceUtils ./LODInfo ./TileCoverage ./TileKey ./TileSpan".split(" "),function(v,w,x,y,z,u){const g=new z("0/0/0/0");let A=function(){function t(a,b,c,e,h,f,l,r){this.x=a;this.ymin=b;this.ymax=c;this.invM=e;this.leftAdjust=h;this.rightAdjust=f;this.leftBound=l;this.rightBound=r}t.create=function(a,b){a[1]>b[1]&&([a,b]=[b,a]);const [c,e]=a,[h,f]=b;a=h-c;b=f-e;b=0!==b?a/b:0;const l=(Math.ceil(e)-e)*b,r=(Math.floor(e)-
 e)*b;return new t(c,Math.floor(e),Math.ceil(f),b,0>a?l:r,0>a?r:l,0>a?h:c,0>a?c:h)};var k=t.prototype;k.incrRow=function(){this.x+=this.invM};k.getLeftCol=function(){return Math.max(this.x+this.leftAdjust,this.leftBound)};k.getRightCol=function(){return Math.min(this.x+this.rightAdjust,this.rightBound)};return t}();const p=[[0,0],[0,0],[0,0],[0,0]];return function(){function t(a,b=null){this.tileInfo=a;this.fullExtent=b;this.scales=[];this._lodInfos=null;this._infoByScale={};this._infoByLevel={};const c=

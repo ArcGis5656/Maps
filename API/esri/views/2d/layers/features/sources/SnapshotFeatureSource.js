@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../chunks/_rollupPluginBabelHelpers ../../../../../core/has ../../../../../core/Logger ../../../../../core/maybe ../../../../../core/promiseUtils ../../../../../core/RandomLCG ./BaseFeatureSource ../support/FeatureSetReaderPBFIndirect ../support/UpdateToken".split(" "),function(y,q,z,A,r,w,B,C,D,v){function E(n,k,l){var b=n.getXHydrated();n=n.getYHydrated();b=k.getColumnForX(b);b=Math.floor(k.normalizeCol(b));k=Math.floor(k.getRowForY(n));return`${l}/${k}/${b}`}function x(n,
 k){if(r.isNone(n))return null;k=k.transform;const l=n.getQuantizationTransform();if(r.isNone(l)){const [h,t]=k.scale,[u,p]=k.translate;return n.transform(-u/h,p/t,1/h,1/-t)}const [b,a]=l.scale,[c,d]=l.translate,[e,g]=k.scale,[f,m]=k.translate;return n.transform((c-f)/e,(-d+m)/g,b/e,a/g)}const F=A.getLogger("esri.views.2d.layers.features.sources.SnapshotFeatureSource");z=function(n){function k(b){var a=n.call(this,b)||this;a.mode="snapshot";a._loading=!0;a._controller=new AbortController;a._downloadPromise=

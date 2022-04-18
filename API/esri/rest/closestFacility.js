@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../chunks/_rollupPluginBabelHelpers ../request ../core/queryUtils ../geometry/support/normalizeUtils ./networkService ./utils ./support/ClosestFacilitySolveResult".split(" "),function(n,q,r,t,u,c,v,w){function l(){l=q._asyncToGenerator(function*(e,a,f){const m=[];var d=[],b={};const h={},p=v.parseUrl(e);({path:e}=p);a.incidents&&a.incidents.features&&c.collectGeometries(a.incidents.features,d,"incidents.features",b);a.facilities&&a.facilities.features&&c.collectGeometries(a.facilities.features,
 d,"facilities.features",b);a.pointBarriers&&a.pointBarriers.features&&c.collectGeometries(a.pointBarriers.features,d,"pointBarriers.features",b);a.polylineBarriers&&a.polylineBarriers.features&&c.collectGeometries(a.polylineBarriers.features,d,"polylineBarriers.features",b);a.polygonBarriers&&a.polygonBarriers.features&&c.collectGeometries(a.polygonBarriers.features,d,"polygonBarriers.features",b);d=yield u.normalizeCentralMeridian(d);for(const g in b){const k=b[g];m.push(g);h[g]=d.slice(k[0],k[1])}if(c.isInputGeometryZAware(h,

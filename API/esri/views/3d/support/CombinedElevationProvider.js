@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Accessor ../../../core/Evented ../../../core/maybe ../../../core/promiseUtils ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../layers/graphics/ElevationQuery".split(" "),function(l,t,r,w,x,n,u,v,B,C,D,y,z){function p(k,f,h,a,b,d,g){for(const e of f)f=e.getElevation(h,
 a,b,d,g),n.isSome(f)&&(k=n.isSome(k)?Math.max(f,k):f);return k}l.CombinedElevationProvider=function(k){function f(a){a=k.call(this,a)||this;a.im=[];a.ground=[];a.scene=[];a.handles=new Map;a.lastElevationQuery=null;a.elevationCacheEnabled=!1;return a}t._inheritsLoose(f,k);var h=f.prototype;h.destroy=function(){this._elevationQuery=n.destroyMaybe(this._elevationQuery)};h.enableElevationCache=function(a){a||(this.lastElevationQuery=null);this.elevationCacheEnabled=a};h.getElevation=function(a,b,d,g,

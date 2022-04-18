@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./Fullscreen/FullscreenViewModel ./support/decorators/accessibleHandler ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory ./support/widgetUtils".split(" "),function(k,d,l,c,u,v,e,p,q,m,r,t,w,h,x){c=function(n){function f(a,
 b){a=n.call(this,a,b)||this;a.element=null;a.label=void 0;a.messages=null;a.view=null;a.viewModel=new m;return a}k._inheritsLoose(f,n);var g=f.prototype;g.render=function(){var a;const b=null==(a=this.viewModel)?void 0:a.state;({fullscreenTitle:a}=this);return h.tsx("div",{bind:this,class:this.classes("esri-fullscreen esri-widget--button esri-widget",{["esri-disabled"]:"disabled"===b||"feature-unsupported"===b}),role:"button",tabIndex:0,onclick:this._toggle,onkeydown:this._toggle,"aria-label":a,title:a},

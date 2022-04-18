@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../core/maybe","../EditGeometry"],function(h,d,f){let m=function(){function k(c,a,b){this.editGeometry=c;this.edge=a;this.t=b;this.right=this.left=this.createdVertex=null}var g=k.prototype;g.apply=function(){let c="redo";const a=this.edge,b=a.component,e=a.leftVertex,l=a.rightVertex;b.edges.splice(b.edges.indexOf(a),1);d.isNone(this.createdVertex)&&(c="apply",this.createdVertex=new f.Vertex(a.component));b.vertices.push(this.createdVertex);this.createdVertex.pos=this.editGeometry.coordinateHelper.lerp(a.leftVertex.pos,
 a.rightVertex.pos,this.t,this.editGeometry.coordinateHelper.createVector());d.isNone(this.left)&&(this.left=new f.Edge(b,e,this.createdVertex));this.left.leftVertex.leftEdge?b.edges.push(this.left):b.edges.unshift(this.left);e.rightEdge=this.left;d.isNone(this.right)&&(this.right=new f.Edge(b,this.createdVertex,l));b.edges.push(this.right);l.leftEdge=this.right;b.updateVertexIndex(this.createdVertex,e.index+1);this.editGeometry.notifyChanges({operation:c,addedVertices:[this.createdVertex]})};g.undo=

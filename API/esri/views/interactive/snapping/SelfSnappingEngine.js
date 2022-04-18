@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Accessor ../../../core/Collection ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ./LineSnapper ./ParallelLineSnapper ./RightAngleSnapper ./RightAngleTriangleSnapper ./snappingUtils".split(" "),function(b,f,d,n,p,g,y,z,A,q,r,t,u,v,w){b.SelfSnappingEngine=function(k){function e(a){a=
 k.call(this,a)||this;a.updating=!1;a._snappers=new p;return a}f._inheritsLoose(e,k);var l=e.prototype;l.initialize=function(){this._snappers.push(new t.ParallelLineSnapper(this.view,this.options),new r.LineSnapper(this.view,this.options),new u.RightAngleSnapper(this.view,this.options),new v.RightAngleTriangleSnapper(this.view,this.options))};l.fetchCandidates=function(){var a=f._asyncToGenerator(function*(c,m){if(!this.options.effectiveSelfEnabled)return[];const h=[];for(const x of this._snappers.items)h.push(...x.snap(c,

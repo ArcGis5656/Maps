@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/watchUtils ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./Attribution/AttributionViewModel ./support/decorators/accessibleHandler ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory ./support/widgetUtils".split(" "),function(n,c,r,t,b,z,A,e,u,v,p,w,
 x,B,g,C){b=function(q){function h(a,d){a=q.call(this,a,d)||this;a._isOpen=!1;a._attributionTextOverflowed=!1;a._prevSourceNodeHeight=0;a.iconClass="esri-icon-description";a.itemDelimiter=" | ";a.label=void 0;a.messages=null;a.view=null;a.viewModel=new p;return a}n._inheritsLoose(h,q);var f=h.prototype;f.initialize=function(){this.own(r.on(this,"viewModel.items","change",()=>this.scheduleRender()))};f.render=function(){return g.tsx("div",{bind:this,class:this.classes("esri-attribution esri-widget",

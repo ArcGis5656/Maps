@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../geometry ../../core/has ../../core/Logger ../../core/maybe ../../core/unitUtils ../../geometry/support/aaBoundingRect ../../geometry/support/contains ../../geometry/support/webMercatorUtils ../../geometry/Point".split(" "),function(l,p,q,u,z,m,A,r,B,C,D){function v(b,f){const c=w(b,f.spatialReference);if(!c)return null;switch(b.type){case "point":b.z=m.unwrapOr(f.elevationAt(c),0);break;case "polyline":h.spatialReference=c.spatialReference;
 var a=b.hasM&&!b.hasZ;for(var e=0;e<b.paths.length;e++){var d=b.paths[e],g=c.paths[e];for(let k=0;k<d.length;k++){const n=d[k],x=g[k];h.x=x[0];h.y=x[1];a&&(n[3]=n[2]);n[2]=m.unwrapOr(f.elevationAt(h),0)}}b.hasZ=!0;break;case "multipoint":h.spatialReference=c.spatialReference;a=b.hasM&&!b.hasZ;for(e=0;e<b.points.length;e++)d=b.points[e],g=c.points[e],h.x=g[0],h.y=g[1],a&&(d[3]=d[2]),d[2]=m.unwrapOr(f.elevationAt(h),0);b.hasZ=!0}return b}function w(b,f){if(m.isNone(b))return null;const c=b.spatialReference;

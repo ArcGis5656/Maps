@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../chunks/_rollupPluginBabelHelpers","../../../../../core/maybe","../definitions"],function(h,k,l,m){let g=function(){function c(a){this._cursor=this._head=a}c.from=function(a,b=0,e=a.byteLength/f.BYTES_PER_RECORD-b){a=new f(new Int32Array(a,b*f.BYTES_PER_RECORD,e*f.ELEMENTS_PER_RECORD));return new c(a)};var d=c.prototype;d.size=function(){let a=this._cursor,b=0;for(;a;)b+=a.size(),a=a._link;return b};d.seekIndex=function(a){for(this._cursor=this._head;this._cursor;){const b=
 this._cursor.size();if(a<b)return this._cursor._index=a,!0;a-=b;this._cursor=this._cursor._link}return!1};d.forEach=function(a){const b=this.getCursor();for(;b.next();)a(b)};d.link=function(a){if(this._head){for(var b=this._head;b._link;)b=b._link;b._link=a._head;b._link._indexStart=b._indexStart+b.size()}else this._head=a._head};d.getCursor=function(){return this.copy()};d.lookup=function(a){for(this._cursor=this._head;this._cursor&&!this._cursor.lookup(a);){if(!this._cursor._link)return!1;this._cursor=

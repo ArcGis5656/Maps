@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/maybe ../core/string ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ./Geometry ./Point ./SpatialReference ./support/contains ./support/intersectsBase ./support/spatialReferenceUtils ./support/webMercatorUtils".split(" "),function(F,l,B,H,m,k,M,N,I,J,K,C,G,L,D,u){function w(y,v,g){return null==v?g:null==g?v:y(v,g)}var q;k=
 q=function(y){function v(...a){a=y.call(this,...a)||this;a.type="extent";a.xmin=0;a.ymin=0;a.mmin=void 0;a.zmin=void 0;a.xmax=0;a.ymax=0;a.mmax=void 0;a.zmax=void 0;return a}F._inheritsLoose(v,y);var g=v.prototype;g.normalizeCtorArgs=function(a,b,c,f,e){return!a||"esri.geometry.SpatialReference"!==a.declaredClass&&null==a.wkid?"object"===typeof a?(a.spatialReference=null==a.spatialReference?C.WGS84:a.spatialReference,a):{xmin:a,ymin:b,xmax:c,ymax:f,spatialReference:null==e?C.WGS84:e}:{spatialReference:a,

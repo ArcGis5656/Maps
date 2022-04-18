@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../TimeExtent ../../geometry/Extent ../../geometry/SpatialReference ../../chunks/persistableUrlUtils ../../support/timeUtils ../../symbols/support/ElevationInfo ../../webdoc/support/opacityUtils".split(" "),function(c,n,k,p,f,l,g,m){const q={type:Boolean,value:!0,json:{origins:{service:{read:!1,write:!1},"web-map":{read:!1,write:!1}},name:"screenSizePerspective",write:!0}},r={type:Boolean,value:!0,json:{name:"disablePopup",read:{reader(b,a){return!a.disablePopup}},write:{enabled:!0,
 writer(b,a,d){a[d]=!b}}}},t={type:Boolean,value:!0,json:{name:"showLabels",write:!0}};f={type:String,json:{origins:{"portal-item":{write:!1}},write:{isRequired:!0,ignoreOrigin:!0,writer:f.write}}};const u={type:Boolean,value:!0,json:{origins:{service:{read:{enabled:!1}}},name:"showLegend",write:!0}};g={value:null,type:g,json:{origins:{service:{name:"elevationInfo",write:!0}},name:"layerDefinition.elevationInfo",write:!0}};const e={type:Number,json:{origins:{"web-document":{write:!0,read:!0},"portal-item":{write:!0}}}},

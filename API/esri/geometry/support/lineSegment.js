@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../core/mathUtils ../../core/ObjectStack ../../chunks/vec3 ../../chunks/vec3f64 ./vectorStacks".split(" "),function(k,r,B,e,p,l){function t(b){return b?{origin:p.clone(b.origin),vector:p.clone(b.vector)}:{origin:p.create(),vector:p.create()}}function w(b,a){const c=C.get();c.origin=b;c.vector=a;return c}function x(b,a,c=t()){e.copy(c.origin,b);e.copy(c.vector,a);return c}function y(b,a){a=e.subtract(l.sv3d.get(),a,b.origin);var c=e.dot(b.vector,a);const m=e.dot(b.vector,b.vector);
 c=r.clamp(c/m,0,1);b=e.subtract(l.sv3d.get(),e.scale(l.sv3d.get(),b.vector,c),a);return e.dot(b,b)}function z(b,a,c,m,h){const {vector:f,origin:d}=b;a=e.subtract(l.sv3d.get(),a,d);a=e.dot(f,a)/e.squaredLength(f);e.scale(h,f,r.clamp(a,c,m));return e.add(h,h,b.origin)}function u(b,a,c,m){const h=b.origin;var f=e.add(l.sv3d.get(),h,b.vector);b=a.origin;var d=e.add(l.sv3d.get(),b,a.vector),g=l.sv3d.get();a=l.sv3d.get();g[0]=h[0]-b[0];g[1]=h[1]-b[1];g[2]=h[2]-b[2];a[0]=d[0]-b[0];a[1]=d[1]-b[1];a[2]=d[2]-

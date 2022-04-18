@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../core/asyncUtils ../../core/Error ../../core/maybe ../../core/promiseUtils ../../core/unitUtils ../../geometry/Multipoint ../../geometry/Point ../../geometry/Polyline ../../geometry/projection ../../geometry/support/aaBoundingRect ./ElevationSampler ./ElevationTile".split(" "),function(w,p,I,r,t,u,C,A,D,J,v,y,E,F){function B(m,k){let e=m.lods.length-1;0<k&&(m=m.lods.findIndex(a=>a.resolution<k),0===m?e=0:0<m&&(e=m-1));return e}let G=function(){function m(){}
 var k=m.prototype;k.queryAll=function(){var e=p._asyncToGenerator(function*(a,b,c){a=c&&c.ignoreInvisibleLayers?a.filter(f=>f.visible):a.slice();if(!a.length)throw new r("elevation-query:invalid-layer","Elevation queries require at least one elevation layer to fetch tiles from");var d=x.fromGeometry(b);b=!1;c&&c.returnSampleInfo||(b=!0);c={...z,...c,returnSampleInfo:!0};d=yield this.query(a[a.length-1],d,c);a=yield this._queryAllContinue(a,d,c);a.geometry=a.geometry.export();b&&delete a.sampleInfo;

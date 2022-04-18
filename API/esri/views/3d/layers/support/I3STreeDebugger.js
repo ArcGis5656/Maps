@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../geometry ../../../../core/maybe ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../chunks/mat4 ../../../../chunks/mat4f64 ../../../../chunks/vec3 ../../../../chunks/vec3f64 ../../../../geometry/projection ../../../support/TileTreeDebugger ../../../../geometry/Polygon".split(" "),
 function(l,u,m,B,q,r,C,D,E,v,w,x,c,y,k,z,A){l.I3STreeDebugger=function(t){function n(p){return t.call(this,p)||this}u._inheritsLoose(n,t);n.prototype.getTiles=function(){const p=this.lv.getVisibleNodes(),g=this.view.renderSpatialReference,h=this.nodeSR;return p.map(d=>{{const f=d.serviceObb;if(q.isNone(f)||q.isNone(g))d=null;else{w.fromQuat(e,f.quaternion);c.copy(a,f.center);k.projectBuffer(a,h,0,a,g,0,1);e[12]=a[0];e[13]=a[1];e[14]=a[2];var b=[[],[],[]];c.copy(a,f.halfSize);c.transformMat4(a,a,e);

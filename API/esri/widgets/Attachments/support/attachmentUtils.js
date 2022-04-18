@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../assets"],function(c,d){c.getIconPath=function(a){const b=d.getAssetUrl("esri/themes/base/images/files/");return a?"text/plain"===a?`${b}text-32.svg`:"application/pdf"===a?`${b}pdf-32.svg`:"text/csv"===a?`${b}csv-32.svg`:"application/gpx+xml"===a?`${b}gpx-32.svg`:"application/x-dwf"===a?`${b}cad-32.svg`:"application/postscript"===a||"application/json"===a||"text/xml"===a||"model/vrml"===a?`${b}code-32.svg`:"application/x-zip-compressed"===a||"application/x-7z-compressed"===
 a||"application/x-gzip"===a||"application/x-tar"===a||"application/x-gtar"===a||"application/x-bzip2"===a||"application/gzip"===a||"application/x-compress"===a||"application/x-apple-diskimage"===a||"application/x-rar-compressed"===a||"application/zip"===a?`${b}zip-32.svg`:-1!==a.indexOf("image/")?`${b}image-32.svg`:-1!==a.indexOf("audio/")?`${b}sound-32.svg`:-1!==a.indexOf("video/")?`${b}video-32.svg`:-1!==a.indexOf("msexcel")||-1!==a.indexOf("ms-excel")||-1!==a.indexOf("spreadsheetml")?`${b}excel-32.svg`:

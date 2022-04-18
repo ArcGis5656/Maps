@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../../core/has","./FreeList","./Utils"],function(w,r,t){const q=["FILL","LINE","MARKER","TEXT","LABEL"];return function(){function u(a,b,d,e){this._strides=a;this._displayList=b;this._freeListsAndStorage={};this._dirtyMap=null;this._dirtyMap=d;for(const f in a){this._freeListsAndStorage[f]={vtxFreeList:e?new r.FreeList(e):null,idxFreeList:e?new r.FreeList(e):null,vertexBuffers:{},indexBuffer:e?new Uint32Array(e):null};for(const c in a[f])this._freeListsAndStorage[f].vertexBuffers[c]=
 {data:e?t.allocateTypedArrayBuffer(e,a[f][c]):null,stride:a[f][c]}}}u.fromTileData=function(a,b){var d,e=a.getStrides(),f={};for(d=0;d<e.length;d++)f[q[d]]=e[d];d=f;e=[0,0,0,0,0];f=[0,0,0,0,0];var c=a.tileDisplayData.displayObjects;for(var g of c)for(var h of g.displayRecords)e[h.geometryType]=Math.max(e[h.geometryType],h.vertexFrom+h.vertexCount),f[h.geometryType]=Math.max(f[h.geometryType],h.indexFrom+h.indexCount);b=new u(d,a.tileDisplayData.displayList,b,null);for(g=0;g<a.tileBufferData.geometries.length;++g){h=

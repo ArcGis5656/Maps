@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../PopupTemplate ../../core/Error ../../intl/messages ./support/utils".split(" "),function(n,f,r,g,t,p){function u(a){return h.apply(this,arguments)}function h(){h=f._asyncToGenerator(function*(a){const {layer:c,renderer:d}=a;yield c.load();a=d||c.renderer;if("unique-value"!==a.type)throw new g("relationship-popup:invalid-parameters","renderer.type must be 'unique-value'");const b=a.authoringInfo;if(!b||"relationship"!==b.type)throw new g("relationship-popup:invalid-parameters",
 "renderer.authoringInfo.type must be 'relationship'");if(!(b.field1&&b.field1.field&&b.field2&&b.field2.field))throw new g("relationship-popup:invalid-parameters","'field1' and/or 'field2' properties are missing in renderer.authoringInfo");return{layer:c,renderer:a}});return h.apply(this,arguments)}function q(a,c){return k.apply(this,arguments)}function k(){k=f._asyncToGenerator(function*(a,c,d="divide"){const {fieldInfos:b,expressionInfos:e}=yield p.getFieldAndExpressionInfos({renderer:a,layer:c,

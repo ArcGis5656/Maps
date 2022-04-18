@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../core/PooledArray ../../../../../chunks/mat3 ../../../../../chunks/mat3f64 ../../../../../chunks/quat ../../../../../chunks/quatf64 ../../../../../chunks/vec3 ../../../../../chunks/vec3f64 ../../../../../geometry/support/plane ../../../support/orientedBoundingBox ../../lib/depthRange".split(" "),function(J,F,K,S,T,U,h,x,L,M,w){function G(b,d,a){return h.set(b,d.data[a+0],d.data[a+1],d.data[a+2])}function f(b,d){b.push(d[0]);b.push(d[1]);b.push(d[2])}function V(b,d,a,
 q){T.conjugate(N,b.quaternion);h.sub(l,d,b.center);h.transformQuat(l,l,N);const r=8*((l[0]<-b.halfSize[0]?-1:l[0]>b.halfSize[0]?1:0)+3*(l[1]<-b.halfSize[1]?-1:l[1]>b.halfSize[1]?1:0)+9*(l[2]<-b.halfSize[2]?-1:l[2]>b.halfSize[2]?1:0)+13);d=O[r];if(0===d)return d;K.fromQuat(C,b.quaternion);K.scale(C,C,b.halfSize);const p=(k,c)=>{c=O[r+c+1];h.set(k,((c&1)<<1)-1,(c&2)-1,((c&4)>>1)-1);h.transformMat3(k,k,C);return h.add(k,b.center,k)};a.length=0;f(a,p(H,0));f(a,p(P,1));f(a,p(l,2));f(a,p(Q,3));q(a);if(1===

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../chunks/languageUtils","../../intl/locale","../../chunks/datetime"],function(q,c,t,m){function r(g){g=new Date(g.getTime());const h=g.getFullYear();var e=new Date(0);e.setFullYear(h+1,0,4);e.setHours(0,0,0,0);e=n(e);var f=new Date(0);f.setFullYear(h,0,4);f.setHours(0,0,0,0);f=n(f);return g.getTime()>=e.getTime()?h+1:g.getTime()>=f.getTime()?h:h-1}function n(g){g=new Date(g.getTime());var h=g.getDay();h=(1>h?7:0)+h-1;g.setDate(g.getDate()-h);g.setHours(0,0,0,0);return g}function l(g){return null===
 g?g:isNaN(g.getTime())?null:g}const u=[0,31,59,90,120,151,181,212,243,273,304,334],v=[0,31,60,91,121,152,182,213,244,274,305,335];q.registerFunctions=function(g,h){g.today=function(e,f){return h(e,f,function(a,d,b){c.pcCheck(b,0,0);a=new Date;a.setHours(0,0,0,0);return a})};g.now=function(e,f){return h(e,f,function(a,d,b){c.pcCheck(b,0,0);return new Date})};g.timestamp=function(e,f){return h(e,f,function(a,d,b){c.pcCheck(b,0,0);a=new Date;return a=new Date(a.getUTCFullYear(),a.getUTCMonth(),a.getUTCDate(),

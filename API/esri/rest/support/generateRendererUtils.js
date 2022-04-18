@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(u){function x(a){const {classificationMethod:g,breakCount:h,normalizationType:f,definedInterval:k}=a.definition,e=[];var b=a.values;if(0===b.length)return[];b=b.sort((p,r)=>p-r);var d=b[0],l=b[b.length-1];if("equal-interval"===g)if(b.length>=h){b=(l-d)/h;a=d;for(var c=1;c<h;c++){var m=Number((d+c*b).toFixed(6));e.push({minValue:a,maxValue:m,label:q(a,m,f)});a=m}e.push({minValue:a,maxValue:l,label:q(a,l,f)})}else b.forEach(p=>{e.push({minValue:p,maxValue:p,label:q(p,p,f)})});
 else if("natural-breaks"===g){b=v(b);a=y(b.uniqueValues,a.valueFrequency||b.valueFrequency,h);for(c=1;c<h;c++)b.uniqueValues.length>c&&(m=Number(b.uniqueValues[a[c]].toFixed(6)),e.push({minValue:d,maxValue:m,label:q(d,m,f)}),d=m);e.push({minValue:d,maxValue:l,label:q(d,l,f)})}else if("quantile"===g)if(b.length>=h&&d!==l){a=Math.ceil(b.length/h);c=0;for(m=1;m<h;m++){var n=a+c-1;n>b.length&&(n=b.length-1);0>n&&(n=0);e.push({minValue:d,maxValue:b[n],label:q(d,b[n],f)});d=b[n];c+=a;a=Math.ceil((b.length-

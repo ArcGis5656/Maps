@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../support/debugFlags"],function(l,n){function u(a,e,f,m,h){g&&(g(),g=null);const d=c.height,b=k;b.beginPath();b.lineWidth=1;b.strokeStyle=h;b.moveTo(a,d-f);b.lineTo(e,d-f);b.stroke();b.lineTo(e,d-m);b.stroke();b.lineTo(e,d-f);b.stroke();b.lineTo(a,d-f);b.stroke();b.lineTo(a,d-f);b.stroke();b.closePath()}let p=!1,q=!1,r=!1,t=!1,g=null,c,k;l.drawAccelerationStruct=function(a,e){if(q&&k){g&&(g(),g=null);var f=k,m=0;for(let h=0;h<a.accBinsNumX;h++)for(let d=0;d<a.accBinsNumY;d++){const b=
 a.accBins[h][a.accBinsNumY-1-d];m+=b.length;const v=h*a.accBinsSizeX,x=(h+1)*a.accBinsSizeX,w=d*a.accBinsSizeY,y=(d+1)*a.accBinsSizeY;f.fillText(b.length.toFixed(),v+5,w+15);u(v,x,w,y,"blue")}f.fillText("total totalShownLabels: "+m,70,40);f.fillText("total visible labels: "+e.size,70,50);f.fillText("total numTests: "+a.accNumTests,70,30)}};l.drawPoly=function(a,e){p&&(e&&r||!e&&t)&&u(a.aabr[0],a.aabr[2],a.aabr[1],a.aabr[3],e?"green":"red")};l.prepare=function(a){r=n.DECONFLICTOR_SHOW_VISIBLE;t=n.DECONFLICTOR_SHOW_INVISIBLE;

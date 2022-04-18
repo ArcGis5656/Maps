@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/Handles ../../core/watchUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../support/GoTo".split(" "),function(d,e,b,l,h,f,p,q,r,m,n){b=function(k){function g(a){a=k.call(this,a)||this;a._handles=new l;a.orientation={x:0,y:0,z:0};a.view=null;a._updateForCamera=a._updateForCamera.bind(d._assertThisInitialized(a));
 a._updateForRotation=a._updateForRotation.bind(d._assertThisInitialized(a));a._updateRotationWatcher=a._updateRotationWatcher.bind(d._assertThisInitialized(a));return a}d._inheritsLoose(g,k);var c=g.prototype;c.initialize=function(){this._handles.add(h.init(this,"view",this._updateRotationWatcher))};c.destroy=function(){this._handles.destroy();this.view=this._handles=null};c.reset=function(){if(this.get("view.ready")){var a={};"2d"===this.view.type?a.rotation=0:a.heading=0;this.callGoTo({target:a})}};

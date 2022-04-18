@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../core/CircularArray ../../../../core/Evented ../../../../core/has ../../../../core/maybe ../../../../chunks/rbush ../../../../geometry/support/aaBoundingBox ./Store2D ./support/FeatureSetReaderPBFIndirect".split(" "),function(n,p,t,u,q,m,v,w,x,y){const r={getObjectId(h){return h.getObjectId()},getAttributes(h){return h.readAttributes()},getAttribute(h,k){return h.readAttribute(k)},cloneWithGeometry(h,k){return h},getGeometry(h){return h.readHydratedGeometry()},
 getCentroid(h,k){return h.readCentroid()}};q=function(h){function k(a,b,c){var d=h.call(this,a,b)||this;d.featureAdapter=r;d.events=new u;d._featureSetsByInstance=new Map;d._objectIdToDisplayId=new Map;d._spatialIndexInvalid=!0;d._indexSearchCache=new t(50);d._index=v.rbush(9,e=>({minX:d._storage.getXMin(e),minY:d._storage.getYMin(e),maxX:d._storage.getXMax(e),maxY:d._storage.getYMax(e)}));d._storage=b;d.mode=c;return d}p._inheritsLoose(k,h);var f=k.prototype;f.hasInstance=function(a){return this._featureSetsByInstance.has(a)};

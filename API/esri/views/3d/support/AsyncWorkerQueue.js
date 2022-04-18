@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../chunks/_rollupPluginBabelHelpers","../webgl-engine/lib/Util"],function(f,h,k){let m=function(d){this.typeWorkerQuota=d;this.tasks=[];this.numWorkers=0;this.statistics=new l},l=function(){this.speed=this.duration=this.size=this.requests=0},p=function(){function d(a,b,e,g){this._workerFunc=a;this._callbackFunc=b;this._maxTotalNumWorkers=e;this._totalNumWorkers=0;this._clients=g.map(n=>new m(n))}var c=d.prototype;c.hasQuota=function(a){return(a=this._clients[a])?this._totalNumWorkers<
 this._maxTotalNumWorkers||a.numWorkers+a.tasks.length<a.typeWorkerQuota:!1};c.push=function(a){const b=this._clients[a.client];b&&(this._totalNumWorkers<this._maxTotalNumWorkers?(b.numWorkers++,this._totalNumWorkers++,this._workerFunc(a,(e,g)=>this._taskCallback(e,g))):b.tasks.push(a))};c.cancel=function(a){this._taskFinished(a);a._cancelled=!0};c.destroy=function(){this._clients.length=0};c._taskFinished=function(a){const b=this._clients[a.client];this._totalNumWorkers--;b.numWorkers--;b.statistics.requests++;

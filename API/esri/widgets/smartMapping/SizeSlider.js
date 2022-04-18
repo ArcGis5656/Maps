@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../Color ../../core/maybe ../../core/accessorSupport/decorators/aliasOf ../../core/arrayUtils ../../core/has ../../core/accessorSupport/decorators/cast ../../core/accessorSupport/decorators/property ../../core/accessorSupport/decorators/subclass ../../renderers/visualVariables/SizeVariable ../../renderers/visualVariables/support/SizeStop ./SmartMappingSliderBase ./SizeSlider/SizeSliderViewModel ./support/utils ../support/widgetUtils ../support/decorators/messageBundle ../../core/Logger ../support/jsxFactory".split(" "),
 function(D,l,g,x,p,R,S,E,t,F,y,z,G,H,m,I,J,T,q){var w;const A={trackFillColor:new g([149,149,149]),trackBackgroundColor:new g([224,224,224])};g=w=function(B){function u(a,b){a=B.call(this,a,b)||this;a._maxRampFillWidth=1;a._minRampFillWidth=.2;a._rampNode=null;a.handlesSyncedToPrimary=null;a.label=void 0;a.messages=null;a.persistSizeRangeEnabled=null;a.primaryHandleEnabled=null;a.stops=null;a.style={...A};a.viewModel=new H;a.zoomOptions=null;return a}D._inheritsLoose(u,B);var n=u.prototype;n.castStyle=

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/JSONSupport ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../geometry/Extent ../../geometry/SpatialReference ./RasterStorageInfo".split(" "),function(f,c,b,n,d,t,u,v,p,g,q,r){b=function(h){function e(a){a=h.call(this,a)||this;a.attributeTable=null;a.bandCount=null;a.colormap=null;
 a.extent=null;a.format=void 0;a.height=null;a.width=null;a.histograms=null;a.keyProperties={};a.multidimensionalInfo=null;a.noDataValue=null;a.pixelSize=null;a.pixelType=null;a.isPseudoSpatialReference=!1;a.spatialReference=null;a.statistics=null;a.storageInfo=null;a.transform=null;return a}f._inheritsLoose(e,h);f._createClass(e,[{key:"dataType",get:function(){var a,k,l;const m=null!=(a=null==(k=this.keyProperties)?void 0:null==(l=k.DataType)?void 0:l.toLowerCase())?a:"generic";return"stdtime"===

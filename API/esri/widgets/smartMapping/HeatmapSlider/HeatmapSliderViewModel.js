@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../intl ../../../core/Handles ../../../core/maybe ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../SmartMappingSliderViewModel ../../../intl/locale ../../../intl/messages".split(" "),function(h,d,c,p,k,e,v,w,x,q,r,t,u){c=function(l){function g(b){var a=l.call(this,b)||this;a._handles=
 new p;a.hasTimeData=!1;a.labelFormatFunction=(f,m)=>"min"===m?a.messages.bottomLabel:"max"===m?a.messages.topLabel:f.toString();a.max=1;a.messages=null;a.min=0;a.zoomingEnabled=!1;return a}h._inheritsLoose(g,l);var n=g.prototype;n.initialize=function(){var b=this;const a=function(){var f=h._asyncToGenerator(function*(){return b.messages=yield u.fetchMessageBundle("esri/widgets/smartMapping/HeatmapSlider/t9n/HeatmapSlider")});return function(){return f.apply(this,arguments)}}();a();this._handles.add(t.onLocaleChange(a))};

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/has ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../chunks/MultipointDrawAction ./PointDrawAction ./PolygonDrawAction ./PolylineDrawAction ./SegmentDrawAction".split(" "),function(k,d,b,t,f,u,v,l,m,n,p,q,r){b=function(h){function g(){var c=h.apply(this,arguments)||this;c.activeAction=null;
 c.type="draw";c.view=null;return c}k._inheritsLoose(g,h);var e=g.prototype;e.destroy=function(){this.activeAction&&(this.activeAction.destroy(),this.activeAction=null)};e.create=function(c,a){this.reset();a={view:this.view,...a};switch(c){case "point":a.editGeometryType="point";this.activeAction=new n.PointDrawAction(a);break;case "polyline":a.editGeometryType="polyline";this.activeAction=new q.PolylineDrawAction(a);break;case "multipoint":a.editGeometryType="polygon";this.activeAction=new m.MultipointDrawAction(a);

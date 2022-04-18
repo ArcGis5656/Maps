@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["./ImmutableArray","../chunks/languageUtils","../core/promiseUtils","../geometry/Geometry"],function(q,e,m,n){function l(d,g=!1){if(null===d||void 0===d)return null;if(e.isNumber(d))return e.toNumber(d);if(e.isBoolean(d))return e.toBoolean(d);if(e.isString(d))return e.toString(d);if(e.isDate(d))return e.toDate(d);if(e.isArray(d)){var a=[];for(var c of d)a.push(l(c,g));return a}c=new p;c.immutable=!1;for(a of Object.keys(d)){const b=d[a];void 0!==b&&c.setField(a,l(b,g))}c.immutable=g;return c}
 let p=function(){function d(a){this.declaredClass="esri.arcade.Dictionary";this.attributes=null;this.plain=!1;this.immutable=!0;this.attributes=a instanceof d?a.attributes:void 0===a?{}:null===a?{}:a}var g=d.prototype;g.field=function(a){const c=a.toLowerCase(),b=this.attributes[a];if(void 0!==b)return b;for(const f in this.attributes)if(f.toLowerCase()===c)return this.attributes[f];throw Error("Field not Found : "+a);};g.setField=function(a,c){if(this.immutable)throw Error("Dictionary is Immutable");

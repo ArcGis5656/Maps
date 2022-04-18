@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../chunks/_rollupPluginBabelHelpers","../../../../../core/Error","../../../../../core/promiseUtils"],function(t,x,v,z){function G(a,d=0,b=a.length-d){let c=-1;for(let e=d,h=d+b;e<h;e++)c=c>>>8^A[(c^a[e])&255];return c^-1}function B(a){const d=a.constructor===Uint8Array?a:new Uint8Array(a);return y.some((b,c)=>b!==d[c])?!1:!0}function H(a,d){const b=new Uint8Array(d);if(y.some((m,l)=>m!==b[l]))return I;let c=!1;w(b,m=>!(c="acTL"===m));if(!c)return C;const e=[],h=[];let g=
 null,f=null,q=0;w(b,(m,l,k,u)=>{const n=new DataView(l.buffer);switch(m){case "IHDR":g=l.subarray(k+8,k+8+u);a.width=n.getUint32(k+8);a.height=n.getUint32(k+12);break;case "acTL":a.numPlays=n.getUint32(k+8+4);break;case "fcTL":f&&(a.frames.push(f),q++);f=new J;f.width=n.getUint32(k+8+4);f.height=n.getUint32(k+8+8);f.left=n.getUint32(k+8+12);f.top=n.getUint32(k+8+16);m=n.getUint16(k+8+20);l=n.getUint16(k+8+22);0===l&&(l=100);f.delay=1E3*m/l;10>=f.delay&&(f.delay=100);a.playTime+=f.delay;f.disposeOp=

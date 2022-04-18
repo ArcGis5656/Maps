@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/JSONSupport ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../geometry/SpatialReference ../../../networks/support/TraceConfiguration ../../../networks/support/typeUtils ./TraceLocation".split(" "),function(h,c,a,d,p,q,r,k,l,m,f,n){a=function(e){function g(b){b=e.call(this,
 b)||this;b.namedTraceConfigurationGlobalId=null;b.gdbVersion=null;b.traceLocations=[];b.moment=null;b.outSpatialReference=null;b.traceConfiguration=null;b.resultTypes=null;b.traceType=null;return b}h._inheritsLoose(g,e);return g}(a.JSONSupport);c.__decorate([d.property({type:String,json:{read:{source:"traceConfigurationGlobalId"},write:{target:"traceConfigurationGlobalId"}}})],a.prototype,"namedTraceConfigurationGlobalId",void 0);c.__decorate([d.property({type:String,json:{write:!0}})],a.prototype,

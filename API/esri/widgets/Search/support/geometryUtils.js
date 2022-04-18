@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../geometry ../../../core/Error ../../../core/Logger ../../../core/maybe ../../../geometry/support/scaleUtils ../../../geometry/Extent".split(" "),function(e,r,h,m,f,n,p){function k(a,b,c){const d=a.hasZ?a.z:void 0;return b&&b.map?(c?n.getExtentForScale(b,c):b.extent).clone().centerAt(a).set({zmax:d,zmin:d}):new p({xmin:a.x-.25,ymin:a.y-.25,xmax:a.x+.25,ymax:a.y+.25,spatialReference:a.spatialReference,zmin:d,zmax:d})}const l=m.getLogger("esri.widgets.Search.support.geometryUtils");
 e.createExtentFromGeometry=function(a,b,c){if(f.isNone(a))return null;if("extent"===a.type)return a;if("multipoint"===a.type||"polygon"===a.type||"polyline"===a.type)return a.extent;if("point"===a.type)return k(a,b,c)};e.getPointFromGeometry=function(a){if(f.isNone(a))return null;switch(a.type){case "point":return a;case "extent":return a.center;case "polygon":return a.centroid;case "multipoint":return a.getPoint(0);case "polyline":return a.getPoint(0,0)}return null};e.getPointWithElevation=function(a,

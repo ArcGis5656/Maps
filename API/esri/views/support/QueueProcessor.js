@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../core/maybe ../../core/promiseUtils ../../core/Queue ../../core/scheduling".split(" "),function(n,q,l,g,r,t){let u=function(h,b){this.item=h;this.controller=b;this.promise=null},w=function(){function h(a){this._deferreds=new Map;this._controllers=new Map;this._processingItems=new Map;this._isPaused=!1;this._task=this._schedule=null;this.concurrency=1;a.concurrency&&(this.concurrency=a.concurrency);this._queue=new r(a.peeker);this.process=
 a.process;const c=a.scheduler;a.priority&&l.isSome(c)&&(this._task=c.registerTask(a.priority,this))}var b=h.prototype;b.destroy=function(){this.clear();this._schedule&&(this._schedule.remove(),this._schedule=null);this._task&&(this._task.remove(),this._task=null)};b.abort=function(a){(a=this._controllers.get(a))&&a.abort()};b.clear=function(){this._queue.clear();const a=[];this._controllers.forEach(c=>a.push(c));this._controllers.clear();a.forEach(c=>c.abort());this._processingItems.clear();this._cancelNext()};

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../geometry ../../../core/maybe ./EphemeralBlockCache ../rasterFunctions/rasterProjectionHelper ../../../geometry/Point".split(" "),function(h,J,E,F,w,G){function H(a,b){if(!e.has(a))return null;a=e.get(a);return null==a[b]?null:a[b]}const e=new Map,m=new F;h.decreaseRefCount=function(a,b,c){if(!e.has(a))return null==b?m.decreaseRefCount(a,c):0;const d=e.get(a);if(null==d[b])return m.decreaseRefCount(a,c);b=d[b].cache;if(b.has(c)){a=b.get(c);a.refCount--;if(0===a.refCount){b.delete(c);
 for(b=0;b<d.length;b++)d[b]&&d[b].cache.has(c)&&d[b].cache.delete(c);a.controller&&a.controller.abort()}return a.refCount}return 0};h.deleteBlock=function(a,b,c){if(e.has(a)){var d=e.get(a);null==d[b]?m.deleteBlock(a,c):d[b].cache.delete(c)}else null==b&&m.deleteBlock(a,c)};h.deleteRaster=function(a){e.delete(a)};h.getBlock=function(a,b,c){if(!e.has(a))return null==b?m.getBlock(a,c):null;var d=e.get(a);if(null==d[b]){for(b=0;b<d.length;b++)if(d[b]&&d[b].cache.has(c))return c=d[b].cache.get(c),c.refCount++,

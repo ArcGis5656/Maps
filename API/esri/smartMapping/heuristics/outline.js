@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../core/maybe ../../geometry/support/scaleUtils ../../renderers/visualVariables/SizeVariable ../statistics/spatialStatistics ../support/adapters/support/layerUtils".split(" "),function(l,e,m,n,p,q,f){function r(a){return g.apply(this,arguments)}function g(){g=l._asyncToGenerator(function*(a){var {view:b}=a;if(!(a&&b&&a.layer))throw new e("outline:missing-parameters","'view' and 'layer' parameters are required");const {layer:d,...h}=
 a;a=f.createLayerAdapter(d,f.featureCapableLayerTypes);const c={layerAdapter:a,...h};if(!a)throw new e("outline:invalid-parameters","'layer' must be one of these types: "+f.getLayerTypeLabels(f.featureCapableLayerTypes).join(", "));yield b.when();b=m.isSome(c.signal)?{signal:c.signal}:null;yield a.load(b);if("polygon"!==a.geometryType)throw new e("outline:not-supported",`outline is not supported for geometryType: ${a.geometryType}`);return c});return g.apply(this,arguments)}function t(a,b){const d=

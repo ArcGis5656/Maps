@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/maybe ../../../core/accessorSupport/decorators/aliasOf ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/property ../../../core/accessorSupport/decorators/subclass ../../Widget ../BuildingPhase ../../support/widgetUtils ../../../core/Logger ../../support/jsxFactory".split(" "),function(n,h,k,t,e,x,y,l,u,v,p,q,z,f){const w={nextPhase:"nextPhase",
 previousPhase:"previousPhase",currentPhase:"{{value}}"};e=function(r){function m(a,b){a=r.call(this,a,b)||this;a._defaultViewModel=new p;a.viewModel=a._defaultViewModel;a.messages=w;a._phasesContainer=null;a._shouldScrollCurrentPhaseIntoView=!0;a._shouldFocusCurrentPhase=!1;return a}n._inheritsLoose(m,r);var d=m.prototype;d.initialize=function(){this.own(this.watch(["_currentPhase","_container"],()=>{this._shouldScrollCurrentPhaseIntoView=!0}))};d.destroy=function(){this.viewModel!==this._defaultViewModel&&

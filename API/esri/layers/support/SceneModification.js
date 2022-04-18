@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../core/JSONSupport ../../core/lang ../../core/Warning ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer ../../core/accessorSupport/decorators/persistable ../../geometry/projection ../../geometry/Polygon".split(" "),function(t,d,c,u,v,w,k,z,x,y,l,m,n){var e;c=e=function(p){function f(b){b=
 p.call(this,b)||this;b.geometry=null;b.type="clip";return b}t._inheritsLoose(f,p);var q=f.prototype;q.writeGeometry=function(b,g,h,a){if(a.layer&&a.layer.spatialReference&&!a.layer.spatialReference.equals(this.geometry.spatialReference)){if(!m.canProjectWithoutEngine(b.spatialReference,a.layer.spatialReference)){a&&a.messages&&a.messages.push(new w("scenemodification:unsupported","Scene modifications with incompatible spatial references are not supported",{modification:this,spatialReference:a.layer.spatialReference,

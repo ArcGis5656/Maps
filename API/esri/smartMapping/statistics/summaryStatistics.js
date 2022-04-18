@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../core/maybe ../../layers/support/fieldUtils ./support/utils ../support/utils ../support/adapters/support/layerUtils".split(" "),function(n,d,t,p,q,r,e){function u(a){return g.apply(this,arguments)}function g(){g=n._asyncToGenerator(function*(a){if(!(a&&a.layer&&(a.field||a.valueExpression||a.sqlExpression)))throw new d("summary-statistics:missing-parameters","'layer' and 'field', 'valueExpression' or 'sqlExpression' parameters are required");
 if(a.valueExpression&&!a.sqlExpression&&!a.view)throw new d("summary-statistics:missing-parameters","View is required when 'valueExpression' is specified");const {layer:h,...k}=a;var b=e.createLayerAdapter(h,e.defaultSupportedLayerTypes);a={layerAdapter:b,...k};a.normalizationType=r.getNormalizationType(a);if(!b)throw new d("summary-statistics:invalid-parameters","'layer' must be one of these types: "+e.getLayerTypeLabels(e.defaultSupportedLayerTypes).join(", "));var f=t.isSome(a.signal)?{signal:a.signal}:

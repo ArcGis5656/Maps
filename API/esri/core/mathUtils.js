@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../chunks/vec3","../chunks/vec4"],function(c,h,r){function g(a,b,d){return Math.min(Math.max(a,b),d)}function l(a,b,d){return a+(b-a)*d}function m(a){return Math.asin(g(a,-1,1))}function n(a){p[0]=a;return p[0]}const p=new Float32Array(1),k=n(3.4028234663852886E38);c.NUMBER_MAX_FLOAT32=k;c.acosClamped=function(a){return Math.acos(g(a,-1,1))};c.applyOpacity=function(a,b,d){return r.set(a,b[0],b[1],b[2],b[3]*d)};c.asinClamped=m;c.cartesianToSpherical=function(a,b){const d=h.length(a),
 e=m(a[2]/d);h.set(b,d,e,Math.atan2(a[1]/d,a[0]/d));return b};c.clamp=g;c.clampFloat32=function(a){return n(Math.max(-k,Math.min(a,k)))};c.deg2rad=function(a){return a*Math.PI/180};c.floatEqualAbsolute=function(a,b,d=1E-6){return isNaN(a)||isNaN(b)?!1:(a>b?a-b:b-a)<=d};c.floatEqualRelative=function(a,b,d=1E-6){if(isNaN(a)||isNaN(b))return!1;if(a===b)return!0;const e=Math.abs(a-b),f=Math.abs(a),q=Math.abs(b);if(0===a||0===b||1E-12>f&&1E-12>q){if(e>.01*d)return!1}else if(e/(f+q)>d)return!1;return!0};

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../core/floatRGBA","../../geometry/support/jsonUtils","./Rect"],function(z,D,E,F){function B(b){if(!b)return null;switch(b.type){case "CIMPointSymbol":var a=b.symbolLayers;if(!a||1!==a.length)break;return B(a[0]);case "CIMVectorMarker":b=b.markerGraphics;if(!b||1!==b.length)break;var c=b[0];if(!c)break;b=c.geometry;if(!b)break;c=c.symbol;if(!c||"CIMPolygonSymbol"!==c.type&&"CIMLineSymbol"!==c.type||null!=(a=c.symbolLayers)&&a.some(f=>!!f.effects))break;return{geom:b,asFill:"CIMPolygonSymbol"===
 c.type};case "sdf":return{geom:b.geom,asFill:b.asFill}}return null}function C(b){let a=Infinity,c=-Infinity,f=Infinity,d=-Infinity;for(const e of b)for(const h of e)h[0]<a&&(a=h[0]),h[0]>c&&(c=h[0]),h[1]<f&&(f=h[1]),h[1]>d&&(d=h[1]);return[a,f,c,d]}z.buildSDF=function(b){var a=b.geom;var c=a?a.rings?a.rings:a.paths?a.paths:void 0!==a.xmin&&void 0!==a.ymin&&void 0!==a.xmax&&void 0!==a.ymax?[[[a.xmin,a.ymin],[a.xmin,a.ymax],[a.xmax,a.ymax],[a.xmax,a.ymin],[a.xmin,a.ymin]]]:null:null;a=Infinity;var f=

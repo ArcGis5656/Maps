@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/jsonMap ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/decorators/cast ../../core/accessorSupport/decorators/subclass".split(" "),function(n,c,e,b,d,h,k,p,u){var l;h=new e.JSONMap({percentTotal:"percent-of-total",ratio:"ratio",percent:"percent"});e=new e.JSONMap({sizeInfo:"size",colorInfo:"color",transparencyInfo:"opacity",rotationInfo:"rotation"});
 k={key(f){return"number"===typeof f?"number":"string"},typeMap:{number:Number,string:String},base:null};const q=["high-to-low","above-and-below","centered-on","extremes"],r=[...new Set("high-to-low above-and-below centered-on extremes 90-10 above below high-to-low above-and-below 90-10 above below".split(" "))],t="seconds minutes hours days months years".split(" ");b=l=function(f){function g(a){a=f.call(this,a)||this;a.endTime=null;a.field=null;a.maxSliderValue=null;a.minSliderValue=null;a.startTime=

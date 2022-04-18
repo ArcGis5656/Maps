@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./spatialReferenceUtils"],function(m,u){function p(a,b){const e=b[0]-a[0],c=b[1]-a[1];return 2<a.length&&2<b.length?(a=a[2]-b[2],Math.sqrt(e*e+c*c+a*a)):Math.sqrt(e*e+c*c)}function q(a,b,e){const c=a[0]+e*(b[0]-a[0]),g=a[1]+e*(b[1]-a[1]);return 2<a.length&&2<b.length?[c,g,a[2]+e*(b[2]-a[2])]:[c,g]}function r(a,b,e){const c=a.length;let g=0,d=0,k=0;for(let f=0;f<c;f++){const h=a[f],l=a[(f+1)%c];let n=2;g+=h[0]*l[1]-l[0]*h[1];2<h.length&&2<l.length&&e&&(d+=h[0]*l[2]-l[0]*h[2],n=3);
 h.length>n&&l.length>n&&b&&(k+=h[0]*l[n]-l[0]*h[n])}return 0>=g&&0>=d&&0>=k}function t(a,b){if(b=u.getInfo(b)){var e=b.valid[0],c=b.valid[1],g=c-e;for(const d of a){let k=Infinity,f=-Infinity;d.forEach(h=>{let l=h[0];for(;l<e;)l+=g;for(;l>c;)l-=g;k=Math.min(k,l);f=Math.max(f,l);h[0]=l});a=f-k;g-a<a&&d.forEach(h=>{0>h[0]&&(h[0]+=g)})}}}m.closeRings=function(a){if("rings"in a)for(const b of a.rings)3>b.length||b[0][0]===b[b.length-1][0]&&b[0][1]===b[b.length-1][1]||b.push([b[0][0],b[0][1]])};m.closeRingsAndFixWinding=

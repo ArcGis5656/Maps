@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["./Utils"],function(h){return function(){function e(){this.geometries=[{indexBuffer:void 0,vertexBuffer:{}},{indexBuffer:void 0,vertexBuffer:{}},{indexBuffer:void 0,vertexBuffer:{}},{indexBuffer:void 0,vertexBuffer:{}},{indexBuffer:void 0,vertexBuffer:{}}]}var f=e.prototype;f.clone=function(){const c=new e;for(let a=0;a<this.geometries.length;a++){const b=this.geometries[a],d=c.geometries[a];d.indexBuffer=b.indexBuffer.slice();d.vertexBuffer={};for(const g in b.vertexBuffer){const {data:k,
 stride:l}=b.vertexBuffer[g];d.vertexBuffer[g]={data:k.slice(),stride:l}}}return c};e.deserialize=function(c){const a=new e;for(let b=0;5>b;++b){a.geometries[b].indexBuffer=new Uint32Array(c.geometries[b].indexBuffer);a.geometries[b].vertexBuffer={};for(const d in c.geometries[b].vertexBuffer)a.geometries[b].vertexBuffer[d]={data:h.allocateTypedArrayBufferwithData(c.geometries[b].vertexBuffer[d].data,c.geometries[b].vertexBuffer[d].stride),stride:c.geometries[b].vertexBuffer[d].stride}}return a};f.serialize=

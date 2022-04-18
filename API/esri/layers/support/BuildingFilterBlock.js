@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/JSONSupport ../../core/lang ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./BuildingFilterMode ./BuildingFilterModeSolid ./BuildingFilterModeWireFrame ./BuildingFilterModeXRay".split(" "),function(n,c,b,p,e,k,q,r,f,l,m){var g;k={nonNullable:!0,types:{key:"type",base:r,typeMap:{solid:f,"wire-frame":l,"x-ray":m}},json:{read:a=>{switch(a&&
 a.type){case "solid":return f.fromJSON(a);case "wireFrame":return l.fromJSON(a);case "x-ray":return m.fromJSON(a)}},write:{enabled:!0,isRequired:!0}}};b=g=function(a){function h(){var d=a.apply(this,arguments)||this;d.filterExpression=null;d.filterMode=new f;d.title="";return d}n._inheritsLoose(h,a);h.prototype.clone=function(){return new g({filterExpression:this.filterExpression,filterMode:p.clone(this.filterMode),title:this.title})};return h}(b.JSONSupport);c.__decorate([e.property({type:String,

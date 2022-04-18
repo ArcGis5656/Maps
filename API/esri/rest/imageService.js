@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../chunks/_rollupPluginBabelHelpers ../geometry ../request ../core/maybe ../geometry/support/normalizeUtils ./utils ./support/ImageAngleResult ./support/ImageIdentifyResult ./support/ImageSampleResult ./support/ImagePixelLocationResult ../geometry/SpatialReference".split(" "),function(h,k,J,l,m,q,g,D,E,F,G,z){function A(b){const a=null==b?void 0:b.time;if(a&&(null!=a.start||null!=a.end)){const c=[];null!=a.start&&c.push(a.start);null!=a.end&&-1===c.indexOf(a.end)&&c.push(a.end);b.time=
 c.join(",")}}function B(b,a,c){return r.apply(this,arguments)}function r(){r=k._asyncToGenerator(function*(b,a,c){b=g.parseUrl(b);var d=yield q.normalizeCentralMeridian(a.geometry?[a.geometry]:[]);a=a.toJSON();A(a);d=d&&d[0];m.isSome(d)&&(a.geometry=d.toJSON());b=g.encode({...b.query,f:"json",...a});return g.asValidOptions(b,c)});return r.apply(this,arguments)}function t(){t=k._asyncToGenerator(function*(b,a,c){var d,e=a.toJSON();m.isSome(e.angleName)&&(e.angleName=e.angleName.join(","));m.isSome(a.point)&&

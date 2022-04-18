@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(f){function p(a,b){const c=[];let d,e;if(a[0].length!==b.length)throw"dimensions do not match";const q=a.length,r=a[0].length;let l=0;for(d=0;d<q;d++){for(e=l=0;e<r;e++)l+=a[d][e]*b[e];c.push(l)}return c}function h(a){a=[a.r/255,a.g/255,a.b/255].map(b=>.04045>=b?b/12.92:((b+.055)/1.055)**2.4);a=p(t,a);return{x:100*a[0],y:100*a[1],z:100*a[2]}}function k(a){a=p(u,[a.x/100,a.y/100,a.z/100]).map(b=>Math.min(1,Math.max(.0031308>=b?12.92*b:1.055*b**(1/2.4)-.055,0)));return{r:Math.round(255*
 a[0]),g:Math.round(255*a[1]),b:Math.round(255*a[2])}}function m(a){a=[a.x/95.047,a.y/100,a.z/108.883].map(b=>b>(6/29)**3?b**(1/3):1/3*(29/6)**2*b+4/29);return{l:116*a[1]-16,a:500*(a[0]-a[1]),b:200*(a[1]-a[2])}}function n(a){const b=a.l;a=[(b+16)/116+a.a/500,(b+16)/116,(b+16)/116-a.b/200].map(c=>c>6/29?c**3:3*(6/29)**2*(c-4/29));return{x:95.047*a[0],y:100*a[1],z:108.883*a[2]}}function g(a){if("r"in a&&"g"in a&&"b"in a)return a;if("l"in a&&"c"in a&&"h"in a){var b=a.c;var c=a.h;b={l:a.l,a:b*Math.cos(c),

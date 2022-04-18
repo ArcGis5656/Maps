@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../core/maybe ../../intl/messages ../../renderers/support/AuthoringInfo ../../renderers/support/AuthoringInfoVisualVariable ../../renderers/support/numberUtils ../../renderers/visualVariables/OpacityVariable ../heuristics/outline ./size ./type ./support/utils ../statistics/predominantCategories ../statistics/summaryStatistics ../statistics/support/predominanceUtils ../support/adapters/support/layerUtils ../../chunks/predominance".split(" "),
 function(F,m,n,w,x,G,M,N,O,P,Q,R,l,S,T,U,u,H){function V(a){return y.apply(this,arguments)}function y(){y=m._asyncToGenerator(function*(a){if(!(a&&a.layer&&a.view&&a.fields&&a.fields.length))throw new n("predominance-renderer:missing-parameters","'layer', 'view' and 'fields' parameters are required");if(2>a.fields.length)throw new n("predominance-renderer:invalid-parameters","Minimum 2 fields are required");if(10<a.fields.length)throw new n("predominance-renderer:invalid-parameters","Maximum 10 fields are supported");

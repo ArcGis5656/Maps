@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../Logger ../../../object ../../../Warning ../../metadata ./type".split(" "),function(p,B,C,D,E,F){function w(a){var b;const c=null!=(b=a.ndimArray)?b:0;if(1<c)return G(a);if(1===c)return x(a);if("type"in a&&y(a.type)){var g,e;b=null==(g=a.type.prototype)?void 0:null==(e=g.itemType)?void 0:e.Type;const f=x("function"===typeof b?{type:b}:{types:b});return(h,d,l)=>(h=f(h,d,l))?new a.type(h):h}return q(a)}function q(a){return"type"in a?H(a.type):I(a.types)}function H(a){return a.prototype.read?
 (b,c,g)=>{if(null==b)return b;c=typeof b;if("object"!==c)r.error(`Expected JSON value of type 'object' to deserialize type '${a.prototype.declaredClass}', but got '${c}'`);else return c=new a,c.read(b,g),c}:a.fromJSON}function z(a,b,c,g){return 0!==g&&Array.isArray(b)?b.map(e=>z(a,e,c,g-1)):a(b,void 0,c)}function G(a){var b;const c=q(a),g=z.bind(null,c),e=null!=(b=a.ndimArray)?b:0;return(f,h,d)=>{if(null==f)return f;f=g(f,d,e);h=e;for(d=f;0<h&&Array.isArray(d);)h--,d=d[0];if(void 0!==d)for(d=0;d<

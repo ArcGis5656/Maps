@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../chunks/_rollupPluginBabelHelpers","../support/FeatureSet","../support/IdSet","../support/shared","../../../core/promiseUtils"],function(v,q,p,g,l){return function(r){function n(a){var b=r.call(this,a)||this;b._topnum=0;b.declaredClass="esri.arcade.featureset.actions.Top";b._countedin=0;b._maxProcessing=100;b._topnum=a.topnum;b._parent=a.parentfeatureset;return b}v._inheritsLoose(n,r);var k=n.prototype;k._getSet=function(a){return null===this._wset?this._ensureLoaded().then(()=>this._parent._getSet(a)).then(b=>
 {this._wset=new p(b._candidates.slice(0),b._known.slice(0),!1,this._clonePageDefinition(b.pagesDefinition));this._setKnownLength(this._wset)>this._topnum&&(this._wset._known=this._wset._known.slice(0,this._topnum));this._setKnownLength(this._wset)>=this._topnum&&(this._wset._candidates=[]);return this._wset}):l.resolve(this._wset)};k._setKnownLength=function(a){return 0<a._known.length&&"GETPAGES"===a._known[a._known.length-1]?a._known.length-1:a._known.length};k._isInFeatureSet=function(a){const b=

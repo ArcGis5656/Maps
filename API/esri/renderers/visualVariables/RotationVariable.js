@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Error ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer ./VisualVariable".split(" "),function(h,c,m,d,a,r,t,n,p,q){var g;a=g=function(k){function e(b){b=k.call(this,b)||this;b.axis=null;b.type="rotation";b.rotationType="geographic";b.valueExpressionTitle=null;
 return b}h._inheritsLoose(e,k);var l=e.prototype;l.writeValueExpressionTitleWebScene=function(b,u,v,f){f&&f.messages&&f.messages.push(new m("property:unsupported",this.type+"VisualVariable.valueExpressionTitle is not supported in Web Scene. Please remove this property to save the Web Scene.",{instance:this,propertyName:`visualVariables[${this.index}]`+".valueExpressionTitle",context:f}))};l.clone=function(){return new g({axis:this.axis,rotationType:this.rotationType,field:this.field,valueExpression:this.valueExpression,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../../chunks/_rollupPluginBabelHelpers ../../../../../core/Evented ../../../../../core/has ../../../../../chunks/rbush ./Tile ../../../tiling/TileCoverage ../../../tiling/TileKey".split(" "),function(q,r,t,u,n,v,w){const f={added:[],removed:[]},l=new Set,x=new w(0,0,0,0);return function(p){function m(a){var c=p.call(this)||this;c._tiles=new Map;c._index=u.rbush(9,t("esri-csp-restrictions")?b=>({minX:b.bounds[0],minY:b.bounds[1],maxX:b.bounds[2],maxY:b.bounds[3]}):[".bounds[0]",".bounds[1]",
 ".bounds[2]",".bounds[3]"]);c.tiles=[];c.tileScheme=a;return c}q._inheritsLoose(m,p);var g=m.prototype;g.destroy=function(){this.clear()};g.clear=function(){this.tiles.length=0;this._tiles.clear();this._index.clear()};g.has=function(a){return this._tiles.has(a)};g.get=function(a){return this._tiles.get(a)};g.boundsIntersections=function(a){return this._index.search({minX:a[0],minY:a[1],maxX:a[2],maxY:a[3]})};g.updateTiles=function(a){const c={added:[],removed:[]};for(const b of a.added)if(!this.has(b)){const d=

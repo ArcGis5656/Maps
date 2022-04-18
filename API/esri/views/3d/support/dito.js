@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(ha){function M(a,b,d,f,e,c){if(!(1E-6>b[0]*b[0]+b[1]*b[1]+b[2]*b[2]))for(A(ia,d,b),A(ja,f,b),A(ka,e,b),P(a,b,l),Q[1]=l[0],R[1]=l[1],Y[1]=R[1]-Q[1],d=[d,f,e],f=[ia,ja,ka],e=0;3>e;++e){P(a,d[e],l);Q[0]=l[0];R[0]=l[1];P(a,f[e],l);Q[2]=l[0];R[2]=l[1];Y[0]=R[0]-Q[0];Y[2]=R[2]-Q[2];const m=da(Y);m<c.quality&&(v(c.b0,d[e]),v(c.b1,b),v(c.b2,f[e]),c.quality=m)}}function P(a,b,d){const {data:f,size:e}=a;d[0]=Number.POSITIVE_INFINITY;d[1]=Number.NEGATIVE_INFINITY;for(a=0;a<f.length;a+=
 e){const c=f[a]*b[0]+f[a+1]*b[1]+f[a+2]*b[2];d[0]=Math.min(d[0],c);d[1]=Math.max(d[1],c)}}function la(a,b,d){v(d.center,a);N(d.halfSize,b,.5);d.quaternion[0]=0;d.quaternion[1]=0;d.quaternion[2]=0;d.quaternion[3]=1}function ma(a,b,d,f,e,c){P(a,b,l);e[0]=l[0];c[0]=l[1];P(a,d,l);e[1]=l[0];c[1]=l[1];P(a,f,l);e[2]=l[0];c[2]=l[1]}function na(a,b,d,f,e,c,m){H[0]=a[0];H[1]=a[1];H[2]=a[2];H[3]=b[0];H[4]=b[1];H[5]=b[2];H[6]=d[0];H[7]=d[1];H[8]=d[2];var k=m.quaternion,g=H,h=g[0]+g[4]+g[8];if(0<h)h=Math.sqrt(h+

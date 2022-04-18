@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/Collection ../core/Error ../core/lang ../core/maybe ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/enumeration ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer ./ExtrudeSymbol3DLayer ./FillSymbol3DLayer ./IconSymbol3DLayer ./LineSymbol3DLayer ./ObjectSymbol3DLayer ./Symbol3D ./TextSymbol3DLayer ./WaterSymbol3DLayer".split(" "),
 function(z,h,k,A,l,B,C,H,D,E,F,p,m,q,r,t,d,G,u){var e;const v=k.ofType({base:null,key:"type",typeMap:{extrude:p,fill:m,icon:q,line:r,object:t,text:G,water:u}});k=k.ofType({base:null,key:"type",typeMap:{extrude:p,fill:m,icon:q,line:r,object:t,water:u}});d=e=function(w){function f(a){a=w.call(this,a)||this;a.symbolLayers=new v;a.type="polygon-3d";return a}z._inheritsLoose(f,w);var x=f.prototype;x.writeSymbolLayers=function(a,b,n,c){const y=a.filter(g=>"text"!==g.type);c&&c.messages&&y.length<a.length&&

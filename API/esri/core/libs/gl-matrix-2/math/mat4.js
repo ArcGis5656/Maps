@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../chunks/vec3f64","../../../../chunks/common","../../../../chunks/mat4"],function(a,c,d,b){a.add=b.add;a.adjoint=b.adjoint;a.copy=b.copy;a.determinant=b.determinant;a.equals=b.equals;a.exactEquals=b.exactEquals;a.frob=b.frob;a.fromQuat=b.fromQuat;a.fromQuat2=b.fromQuat2;a.fromRotation=b.fromRotation;a.fromRotationTranslation=b.fromRotationTranslation;a.fromRotationTranslationScale=b.fromRotationTranslationScale;a.fromRotationTranslationScaleOrigin=b.fromRotationTranslationScaleOrigin;
 a.fromScaling=b.fromScaling;a.fromTranslation=b.fromTranslation;a.fromXRotation=b.fromXRotation;a.fromYRotation=b.fromYRotation;a.fromZRotation=b.fromZRotation;a.frustum=b.frustum;a.getRotation=b.getRotation;a.getScaling=b.getScaling;a.getTranslation=b.getTranslation;a.identity=b.identity;a.invert=b.invert;a.isOrthoNormal=b.isOrthoNormal;a.lookAt=b.lookAt;a.mul=b.mul;a.multiply=b.multiply;a.multiplyScalar=b.multiplyScalar;a.multiplyScalarAndAdd=b.multiplyScalarAndAdd;a.ortho=b.ortho;a.perspective=

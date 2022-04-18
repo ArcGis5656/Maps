@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../geometry ../../request ../../core/Error ../../core/Logger ../../core/maybe ../../geometry/support/spatialReferenceUtils ../../geometry/support/webMercatorUtils ../graphics/featureConversionUtils ../graphics/OptimizedFeatureSet ../graphics/sources/geojson/geojson ../graphics/sources/support/clientSideDefaults ../support/FieldsIndex ../support/fieldType ../../geometry/SpatialReference".split(" "),function(m,r,ka,t,q,S,h,T,N,A,U,B,V,W,X,v){function C(){C=
 r._asyncToGenerator(function*(a,b,c={},f=5){({links:a}=a);a=p(a,"items","application/geo+json")||p(a,"http://www.opengis.net/def/rel/ogc/1.0/items","application/geo+json");if(h.isNone(a))throw new q("ogc-feature-layer:missing-items-page","Missing items url");({data:c}=yield t(a.href,{signal:c.signal,query:{limit:f,...c.customParameters,token:c.apiKey},headers:{accept:"application/geo+json"}}));yield B.validateGeoJSON(c);const e=B.inferLayerProperties(c,{geometryType:b.geometryType});c=b.fields||e.fields||

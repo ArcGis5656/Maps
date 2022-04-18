@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/shaderModules/interfaces"],function(c,b){c.DiscardNonSilhouetteEdges=function(a,d){a=a.vertex;d.silhouette?(a.code.add(b.glsl`bool isSilhouetteEdge(vec3 viewDir, vec3 normalA, vec3 normalB) {
 float faceAVisible = dot(viewDir, normalA);

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Collection ../../core/JSONSupport ../../core/lang ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer ../../core/accessorSupport/extensions/serializableProperty/writePolicyUtils ./SearchLayer ./SearchTable".split(" "),function(n,c,a,p,q,d,z,r,t,u,h,v,
 w){var e;const k=a.ofType(v),l=a.ofType(w);a=e=function(m){function f(b){b=m.call(this,b)||this;b.addressSearchEnabled=!0;b.enabled=!0;b.hintText=null;b.layers=new k;b.tables=new l;return b}n._inheritsLoose(f,m);var g=f.prototype;g.readAddressSearchEnabled=function(b){return!b};g.writeAddressSearchEnabled=function(b,x,y){x[y]=!b};g.clone=function(){return new e(q.clone({addressSearchEnabled:this.addressSearchEnabled,enabled:this.enabled,hintText:this.hintText,layers:this.layers,tables:this.tables}))};

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../Color ../../../core/JSONSupport ../../../core/accessorSupport/decorators/property ../../../core/accessorSupport/decorators/subclass".split(" "),function(h,k,c,l,a,d,m){let e=function(f){function g(){var b=f.apply(this,arguments)||this;b.enabled=!0;return b}k._inheritsLoose(g,f);return g}(a.JSONSupport);c.__decorate([d.property({type:Boolean})],e.prototype,"enabled",void 0);e=c.__decorate([m.subclass("esri.views.interactive.snapping.Settings.DefaultSnappingAlgorithm")],
 e);a=function(f){function g(b){b=f.call(this,b)||this;b.lineSnapper=new e;b.parallelLineSnapper=new e;b.rightAngleSnapper=new e;b.rightAngleTriangleSnapper=new e;b.shortLineThreshold=15;b.distance=5;b.pointThreshold=1E-6;b.intersectionParallelLineThreshold=1E-6;b.parallelLineThreshold=1E-6;b.touchSensitivityMultiplier=1.5;b.pointOnLineThreshold=1E-6;b.orange=new l([255,127,0]);b.lineHintWidthReference=3;b.lineHintWidthTarget=3;b.lineHintFadedExtensions=.3;b.parallelLineHintWidth=2;b.parallelLineHintLength=

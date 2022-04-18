@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../chunks/_rollupPluginBabelHelpers","../../../core/time"],function(l,p,g){let n=function(){function m(a){a&&this.update(a)}var h=m.prototype;h.update=function(a){a&&(this.definition?this.definition.copyFrom(a):this.definition=a.clone());this._updatePrecomputedVariables();this._updatePixelFlow()};h._updatePrecomputedVariables=function(){var a=this.definition;const b=a.compared,c=b.sourceZoom,f=b.targetZoom;this._zoomSign=c>f?1:-1;this._panPixelsAtSource=b.pan*a.source.pixelsPerPanAtZoom(c);
 a=(a.source.pixelsPerRotateAtZoom(c)+a.target.pixelsPerRotateAtZoom(f))/2;this._rotatePixels=b.rotate*a};h._updatePixelFlow=function(){var a=this.definition.compared.sourceZoom,b=this.definition.compared.targetZoom;const {hasZoom:c,hasPan:f,hasRotate:k}=this.definition;var d=0,e=0;c&&(f&&(d=(b/a-1)/(-1/(this._zoomSign*this.definition.halfWindowSize)*Math.LN2*this._panPixelsAtSource)),k&&(e=Math.log(a/b)/Math.LN2*this._zoomSign*this.definition.halfWindowSize/this._rotatePixels));this._rotatePixelFlow=

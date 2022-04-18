@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../request ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../layers/support/source/DataLayerSource ../renderers/support/jsonUtils ../rest/support/Query ../rest/support/StatisticDefinition ./QueryTask ./Task".split(" "),function(p,g,u,k,f,B,C,v,w,x,y,q,z,A){f=function(r){function l(a){a=r.call(this,a)||this;a._field=null;a.checkValueRange=
 null;a.gdbVersion=null;a.source=null;return a}p._inheritsLoose(l,r);var m=l.prototype;m.execute=function(a,e){var {classificationDefinition:c}=a;a={...a.toJSON(),f:"json"};this._field="esri.rest.support.ClassBreaksDefinition"===c.declaredClass?c.classificationField:c.attributeField;if(this.source){var b;c={source:null==(b=this.source)?void 0:b.toJSON()};a.layer=JSON.stringify(c)}this.gdbVersion&&(a.gdbVersion=this.gdbVersion);a.classificationDef&&(a.classificationDef=JSON.stringify(a.classificationDef));

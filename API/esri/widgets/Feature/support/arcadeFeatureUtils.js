@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/Logger ../../../core/promiseUtils ../../../layers/FeatureLayer ./featureUtils".split(" "),function(y,p,q,z,v,A,m){function B(b){return`<ul class="esri-widget__list">${b.map(a=>`<li>${"string"===typeof a?m.applyTextFormattingHTML(m.htmlEntities(a)):a}</li>`).join("")}</ul>`}function C(b){return`<table class="esri-widget__table">${b.keys().map(a=>{var c=b.field(a);c="string"===typeof c?m.applyTextFormattingHTML(m.htmlEntities(c)):
 c;return`<tr><th>${a}</th><td>${c}</td></tr>`}).join("")}</table>`}function D({aggregatedFeatures:b,arcadeUtils:a,featureSetVars:c,context:e,viewInfo:g,map:l,graphic:k,interceptor:h}){c.forEach(d=>{d=d.toLowerCase();var f={map:l,spatialReference:g.sr,interceptor:h};"$map"===d&&(e.vars[d]=a.convertMapToFeatureSetCollection(f));"$layer"===d&&(e.vars[d]=a.convertFeatureLayerToFeatureSet({layer:k.sourceLayer,spatialReference:g.sr,interceptor:h}));"$datastore"===d&&(e.vars[d]=a.convertServiceUrlToWorkspace({url:k.sourceLayer.url,

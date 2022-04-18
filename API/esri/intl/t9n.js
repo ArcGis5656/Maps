@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../chunks/_rollupPluginBabelHelpers ../request ../core/Error ../core/maybe ./messages".split(" "),function(g,p,t,h,u,v){function w(b,a,d,c){return k.apply(this,arguments)}function k(){k=p._asyncToGenerator(function*(b,a,d,c){var e=a.exec(d);if(!e)throw new h("esri-intl:invalid-bundle",`Bundle id "${d}" is not compatible with the pattern "${a}"`);a=e[1]?`${e[1]}/`:"";e=e[2];const f=v.normalizeMessageBundleLocale(c);c=`${a}${e}.json`;a=f?`${a}${e}_${f}.json`:c;let l;try{l=yield q(b(a))}catch(x){if(a===
 c)throw new h("intl:unknown-bundle",`Bundle "${d}" cannot be loaded`,{error:x});try{l=yield q(b(c))}catch(y){throw new h("intl:unknown-bundle",`Bundle "${d}" cannot be loaded`,{error:y});}}return l});return k.apply(this,arguments)}function q(b){return m.apply(this,arguments)}function m(){m=p._asyncToGenerator(function*(b){if(u.isSome(n.fetchBundleAsset))return n.fetchBundleAsset(b);b=yield t(b,{responseType:"text"});return JSON.parse(b.data)});return m.apply(this,arguments)}let r=function(){function b({base:a=

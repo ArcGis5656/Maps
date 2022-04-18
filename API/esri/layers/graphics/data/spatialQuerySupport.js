@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/Error ../../../geometry/support/contains ../../../geometry/support/intersects ../../../geometry/support/jsonUtils ../../../geometry/support/spatialReferenceUtils ../contains ../featureConversionUtils ../OptimizedGeometry ./projectionSupport ./utils".split(" "),function(w,k,x,m,q,y,f,r,t,u,v,z,l){function A(){return new Promise((b,a)=>w(["../../../geometry/geometryEngineJSON"],b,a))}function n(){n=x._asyncToGenerator(function*(b,
 a,c){const {spatialRel:g,geometry:e}=b;if(e){if(!0!==p.spatialRelationship[g])throw new m("feature-store:unsupported-query","Unsupported query spatial relationship",{query:b});if(r.isValid(e.spatialReference)&&r.isValid(c)){if(!0!==p.queryGeometry[f.getJsonType(e)])throw new m("feature-store:unsupported-query","Unsupported query geometry type",{query:b});if(!0!==p.layerGeometry[a])throw new m("feature-store:unsupported-query","Unsupported layer geometry type",{query:b});if(b.outSR)return z.checkProjectionSupport(b.geometry&&

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../chunks/_rollupPluginBabelHelpers","../../../../chunks/vec2"],function(h,m,n){let l=function(){function g(a,b,c=0,e,f){this.TypedArrayConstructor=a;this.elementCount=2;a=this.TypedArrayConstructor;void 0===e&&(e=2*a.BYTES_PER_ELEMENT);const k=0===b.byteLength?0:c;this.typedBuffer=null==f?new a(b,k):new a(b,k,(f-c)/a.BYTES_PER_ELEMENT);this.typedBufferStride=e/a.BYTES_PER_ELEMENT;this.count=Math.ceil(this.typedBuffer.length/this.typedBufferStride);this.stride=this.typedBufferStride*
 this.TypedArrayConstructor.BYTES_PER_ELEMENT}var d=g.prototype;d.sliceBuffer=function(a,b,c=this.count-b){b=this.typedBuffer.byteOffset+b*this.stride;return new a(this.buffer,b,this.stride,b+c*this.stride)};d.getVec=function(a,b){a*=this.typedBufferStride;return n.set(b,this.typedBuffer[a],this.typedBuffer[a+1])};d.setVec=function(a,b){a*=this.typedBufferStride;this.typedBuffer[a++]=b[0];this.typedBuffer[a]=b[1]};d.get=function(a,b){return this.typedBuffer[a*this.typedBufferStride+b]};d.set=function(a,

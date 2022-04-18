@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../intl ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../Widget ./support/relationshipUtils ./support/univariateUtils ../support/styleUtils ../../support/Heading ../../support/widgetUtils ../../support/decorators/messageBundle ../../../core/Logger ../../support/jsxFactory ../../../intl/number".split(" "),
 function(E,w,u,y,N,O,P,F,G,H,p,n,I,Q,J,R,b,K){const C={display:"flex",alignItems:"flex-start"},z={marginLeft:"3px"},v={display:"table-cell",verticalAlign:"middle"};u=function(D){function A(a,c){a=D.call(this,a,c)||this;a.activeLayerInfos=null;a.headingLevel=3;a.messages=null;a.type="classic";return a}E._inheritsLoose(A,D);var r=A.prototype;r.render=function(){var a=this.activeLayerInfos;a=a&&a.toArray().map(c=>this._renderLegendForLayer(c)).filter(c=>!!c);return b.tsx("div",null,a&&a.length?a:b.tsx("div",

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["require","exports","../../../chunks/_rollupPluginBabelHelpers","../../../Color","./utils"],function(u,l,p,g,x){function v(a,c){const b=[],d=a.length-1;5===a.length?b.push(0,2,4):b.push(0,d);return a.map((e,h)=>-1<b.indexOf(h)?x.createStopLabel(e,h,d,c):null)}function q(){q=p._asyncToGenerator(function*(a,c,b){let d=!1,e=[],h=[];if(a.stops){var f=a.stops;e=f.map(k=>k.value);(d=f.some(k=>!!k.label))&&(h=f.map(k=>k.label))}f=e[e.length-1];if(null==e[0]&&null==f)return null;const m=d?null:v(e,
 b);return(yield Promise.all(e.map(function(){var k=p._asyncToGenerator(function*(n,r){const B="opacity"===a.type?yield y(n,a,c):(yield new Promise((z,A)=>u(["../../../renderers/visualVariables/support/visualVariableUtils"],z,A))).getColor(a,n);return{value:n,color:B,label:d?h[r]:m[r]}});return function(n,r){return k.apply(this,arguments)}}()))).reverse()});return q.apply(this,arguments)}function y(a,c){return t.apply(this,arguments)}function t(){t=p._asyncToGenerator(function*(a,c,b=C){b=new g(b);

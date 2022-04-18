@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../Widget ./SearchViewModel ../support/decorators/accessibleHandler ../support/decorators/messageBundle ../../core/Logger ../support/jsxFactory ../support/widgetUtils".split(" "),function(r,g,k,f,A,B,t,u,v,p,w,C,c,D){f=function(q){function l(a,b){a=q.call(this,a,
 b)||this;a.messages=null;a.showMoreResultsOpen=!1;a.viewModel=null;return a}r._inheritsLoose(l,q);var d=l.prototype;d.render=function(){return c.tsx("div",{class:"esri-search-result-renderer esri-widget"},c.tsx("div",{key:"esri-search-renderer__container",class:this.classes("esri-search-result-renderer__more-results",{["esri-search-result-renderer__more-results--show-more-results"]:this.showMoreResultsOpen})},this.renderSearchResultName(),this.renderMoreResults()))};d.renderMoreResults=function(){return c.tsx("div",

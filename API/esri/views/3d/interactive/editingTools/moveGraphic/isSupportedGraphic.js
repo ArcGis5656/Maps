@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../../../../core/has","../../../../../core/maybe","../../../../../support/elevationInfoUtils"],function(b,f,e,c){b.isSupportedGraphic=function(a){var d;if("graphics"!==(null==(d=a.layer)?void 0:d.type))return 1;if(e.isNone(a.geometry))return 2;switch(a.geometry.type){case "polygon":case "point":case "polyline":case "mesh":break;case "multipoint":case "extent":return 3;default:return 3}return"on-the-ground"!==c.getGraphicEffectiveElevationMode(a)&&c.hasGraphicFeatureExpressionInfo(a)?
-4:0};Object.defineProperty(b,"__esModule",{value:!0})});
+define(["exports","../../../../../core/has","../../../../../core/maybe","../../../../../support/elevationInfoUtils","../isSupportedGraphicUtils"],function(c,g,f,d,a){c.isSupportedGraphic=function(b){var e;if("graphics"!==(null==(e=b.layer)?void 0:e.type))return a.SupportedGraphicResult.GRAPHICS_LAYER_MISSING;if(f.isNone(b.geometry))return a.SupportedGraphicResult.GEOMETRY_MISSING;switch(b.geometry.type){case "polygon":case "point":case "polyline":case "mesh":break;case "multipoint":case "extent":return a.SupportedGraphicResult.GEOMETRY_TYPE_UNSUPPORTED;
+default:return a.SupportedGraphicResult.GEOMETRY_TYPE_UNSUPPORTED}return"on-the-ground"!==d.getGraphicEffectiveElevationMode(b)&&d.hasGraphicFeatureExpressionInfo(b)?a.SupportedGraphicResult.ELEVATION_MODE_UNSUPPORTED:a.SupportedGraphicResult.SUPPORTED};Object.defineProperty(c,"__esModule",{value:!0})});

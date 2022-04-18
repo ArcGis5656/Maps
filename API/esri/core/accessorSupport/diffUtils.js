@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../Accessor","../Collection","../maybe","./utils"],function(h,t,u,f,y){function v(a){return a instanceof u?Object.keys(a.items):a instanceof t?y.getProperties(a).keys():a?Object.keys(a):[]}function q(a,b){return a instanceof u?a.items[b]:a[b]}function z(a,b){return Array.isArray(a)&&Array.isArray(b)?a.length!==b.length:!1}function k(a){return a?a.declaredClass:null}function w(a,b){const e=a.diff;if(e&&"function"===typeof e)return e(a,b);const l=v(a),m=v(b);if(0!==l.length||0!==
 m.length){if(!l.length||!m.length||z(a,b))return{type:"complete",oldValue:a,newValue:b};var n=m.filter(d=>-1===l.indexOf(d)),c=l.filter(d=>-1===m.indexOf(d));c=l.filter(d=>-1<m.indexOf(d)&&q(a,d)!==q(b,d)).concat(n,c).sort();if((n=k(a))&&-1<A.indexOf(n)&&c.length)return{type:"complete",oldValue:a,newValue:b};var r;n=a instanceof t&&b instanceof t;for(const d of c){c=q(a,d);const g=q(b,d);!(n||"function"!==typeof c&&"function"!==typeof g)||c===g||null==c&&null==g||(c=e&&e[d]&&"function"===typeof e[d]?

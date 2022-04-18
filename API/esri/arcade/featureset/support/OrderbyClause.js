@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(function(){return function(){function h(b){b=b.split(",");this._fields=[];this._directions=[];for(let a=0;a<b.length;a++){const d=b[a].match(/\S+/g);this._fields.push(d[0]);2===d.length?"asc"===d[1].toLowerCase()?this._directions.push(1):this._directions.push(0):this._directions.push(1)}}var g=h.prototype;g.constructClause=function(){let b="";for(let a=0;a<this._fields.length;a++)0!==a&&(b+=","),b+=this._fields[a],b=1===this._directions[a]?b+" ASC":b+" DESC";return b};g.order=function(b){b.sort((a,
 d)=>{for(let c=0;c<this._fields.length;c++){const e=this.featureValue(a.feature,this._fields[c],c),f=this.featureValue(d.feature,this._fields[c],c);let k=0;k=1===this._directions[c]?e===f?0:null===e?-1:null===f?1:e<f?-1:1:-1*(e===f?0:null===e?-1:null===f?1:e<f?-1:1);if(0!==k)return k}return 0})};g.scanForField=function(b){for(let a=0;a<this._fields.length;a++)if(this._fields[a].toLowerCase().trim()===b.toLowerCase().trim())return!0;return!1};g.replaceFields=function(b){let a="";for(let d=0;d<this._fields.length;d++){0!==

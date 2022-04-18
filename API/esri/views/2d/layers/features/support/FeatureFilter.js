@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../../chunks/_rollupPluginBabelHelpers ../../../../../core/Error ../../../../../core/Logger ../../../../../core/maybe ../../../../../geometry/support/aaBoundingRect ../../../../../geometry/support/boundsUtils ../../../../../layers/graphics/data/spatialQuerySupport ../../../../../layers/graphics/data/timeSupport ../../../../../layers/graphics/data/utils ../../../../../rest/support/Query ../FeatureStore2D ./whereUtils".split(" "),function(h,m,n,p,q,r,t,u,v,w,x,y){const z=n.getLogger("esri.views.2d.layers.features.controllers.FeatureFilter");
 return function(){function k(a){this._geometryBounds=q.create();this._idToVisibility=new Map;this._serviceInfo=a}var c=k.prototype;c.check=function(a){return this._applyFilter(a)};c.clear=function(){const a=this._resetAllHiddenIds();this.update();return{show:a,hide:[]}};c.invalidate=function(){this._idToVisibility.forEach((a,b)=>{this._idToVisibility.set(b,0)})};c.setKnownIds=function(a){for(const b of a)this._idToVisibility.set(b,1)};c.setTrue=function(a){const b=[],d=[],e=new Set(a);this._idToVisibility.forEach((f,

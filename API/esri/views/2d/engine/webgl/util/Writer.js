@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../../../chunks/_rollupPluginBabelHelpers"],function(f){return function(){function e(a,b){this._pos=0;b=b?this._roundToNearest(b,a.BYTES_PER_ELEMENT):40;this._array=new ArrayBuffer(b);this._buffer=new a(this._array);this._ctor=a;this._i16View=new Int16Array(this._array)}var c=e.prototype;c._roundToNearest=function(a,b){a=Math.round(a);return a+(b-a%b)};c._ensureSize=function(a){if(this._pos+a>=this._buffer.length){a=this._roundToNearest(1.25*(this._array.byteLength+a*this._buffer.BYTES_PER_ELEMENT),
 this._buffer.BYTES_PER_ELEMENT);a=new ArrayBuffer(a);const b=new this._ctor(a);b.set(this._buffer,0);this._array=a;this._buffer=b;this._i16View=new Int16Array(this._array)}};c.ensureSize=function(a){this._ensureSize(a)};c.writeF32=function(a){this._ensureSize(1);const b=this._pos;(new Float32Array(this._array,4*this._pos,1))[0]=a;this._pos++;return b};c.push=function(a){this._ensureSize(1);const b=this._pos;this._buffer[this._pos++]=a;return b};c.writeFixed=function(a){this._buffer[this._pos++]=a};

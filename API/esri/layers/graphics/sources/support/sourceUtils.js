@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["require","exports","../../../../chunks/_rollupPluginBabelHelpers","../../../../geometry/support/spatialReferenceUtils","../../../support/fieldUtils"],function(y,e,t,u,g){function m(a){return new z(a)}function v(){return n.apply(this,arguments)}function n(){n=t._asyncToGenerator(function*(){return h?h:h=yield new Promise((a,b)=>y(["../../../../geometry/geometryEngineJSON"],a,b))});return n.apply(this,arguments)}function p(){p=t._asyncToGenerator(function*(a,b){!u.isValid(a)||"esriGeometryPolygon"!==
 b&&"esriGeometryPolyline"!==b||(yield v())});return p.apply(this,arguments)}let A=function(){this.description=this.code=null},z=function(a){this.error=new A;this.objectId=this.globalId=null;this.success=!1;this.uniqueId=null;this.error.description=a},B=function(a){this.globalId=null;this.success=!0;this.objectId=this.uniqueId=a};const q=new Set;let h;e.createFeatureEditErrorResult=m;e.createFeatureEditSuccessResult=function(a){return new B(a)};e.loadGeometryEngine=v;e.loadGeometryEngineForSimplify=

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("./chunks/_rollupPluginBabelHelpers ./chunks/tslib.es6 ./Basemap ./Ground ./core/Accessor ./core/CollectionFlattener ./core/Evented ./core/maybe ./core/accessorSupport/decorators/property ./core/arrayUtils ./core/has ./core/accessorSupport/decorators/cast ./core/accessorSupport/decorators/subclass ./layers/support/editableLayers ./support/basemapUtils ./support/groundUtils ./support/LayersMixin ./support/TablesMixin".split(" "),function(t,f,u,n,d,k,v,w,g,C,D,p,x,y,l,z,A,B){d=function(q){function m(b){var a=
 q.call(this,b)||this;a.allLayers=new k({getCollections:()=>{var c,e,r;return[null==(c=a.basemap)?void 0:c.baseLayers,null==(e=a.ground)?void 0:e.layers,a.layers,null==(r=a.basemap)?void 0:r.referenceLayers]},getChildrenFunction:c=>"layers"in c?c.layers:null});a.allTables=new k({getCollections:()=>[a.tables,a.layers],getChildrenFunction:c=>{const e=[];"tables"in c&&e.push(c.tables);"layers"in c&&e.push(c.layers);return e},itemFilterFunction:c=>{const e=c.parent;return e&&"tables"in e&&e.tables.includes(c)}});

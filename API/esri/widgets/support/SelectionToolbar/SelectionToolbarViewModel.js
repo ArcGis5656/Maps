@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Evented ../../../core/handleUtils ../../../core/maybe ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../Selector2D".split(" "),function(k,d,b,n,l,f,r,t,u,p,q){b=function(m){function g(a){a=m.call(this,a)||this;a._operationHandlesGroup=null;a.activeOperation=null;a.layers=null;
 a.selector=new q;return a}k._inheritsLoose(g,m);var e=g.prototype;e.destroy=function(){this._operationHandlesGroup=l.removeMaybe(this._operationHandlesGroup);this.selector.destroy()};e.cancel=function(){"active"===this.state&&(this.activeOperation.cancel(),this.activeOperation=null);this.selector.candidates=null};e.activate=function(a){const {state:c}=this;if("disabled"!==c)return"active"===c&&this.cancel(),this.selector.candidates=this._getCandidates(),a=this.selector.draw(a),this._operationHandlesGroup=

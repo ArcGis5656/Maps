@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../geometry ../../core/Error ../../core/unitUtils ./geodesicConstants ../Polyline ../Polygon ../Point ../SpatialReference".split(" "),function(A,S,y,K,v,O,P,Q,R){function L(a){if(!a)return null;if(a.isGeographic&&a.wkid){var b=v.spheroids[a.wkid];if(b)return b}return a.wkt&&((a=v.WKT_SPHEROID_REGEX.exec(a.wkt))&&2===a.length?(b=a[1].split(","),!b||3>b.length?a=null:(a=parseFloat(b[1]),b=parseFloat(b[2]),a=isNaN(a)||isNaN(b)?null:{a,f:0===b?0:1/b})):a=null,a)?a:null}function H(a){a=
 L(a||R.WGS84);if("b"in a&&"eSq"in a&&"radius"in a)return a;const b=a.a*(1-a.f);return Object.assign(a,{b,eSq:1-(b/a.a)**2,radius:(2*a.a+b)/3,densificationRatio:1E4/((2*a.a+b)/3)})}function M(a){return 0>a?a+360:a}function I(a,b,e){const {a:d,eSq:c}=H(e);e=Math.sqrt(c);const f=Math.sin(b[1]*v.toRadians);b=d*b[0]*v.toRadians;e=0<c?d*(1-c)*(f/(1-c*f*f)-1/(2*e)*Math.log((1-e*f)/(1+e*f)))*.5:d*f;a[0]=b;a[1]=e;return a}function E(a){return null!==L(a)}function N(a,b){if("polyline"!==a.type&&"polygon"!==

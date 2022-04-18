@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../core/maybe","../symbols/support/unitConversionUtils"],function(h,c,u){function n(a,b){return c.isNone(b)||!b.mode?a?"absolute-height":"on-the-ground":b.mode}function l(a,b){return n(c.isSome(a)?a.hasZ:!1,b)}function p(a){const b=m(a);return l(a.geometry,b)}function m(a){return a.layer&&"elevationInfo"in a.layer?a.layer.elevationInfo:null}function q(a,b,d,e,f,k,g=null){if(!c.isNone(k)){var r=c.isSome(g)?g.mode:"absolute-height";if("on-the-ground"===r)return 0;a:{k=t(b,d,e,f,a,
 k);g=c.isSome(g)&&c.isSome(g.offset)?g.offset:0;switch(r){case "absolute-height":a=k-g;break a;case "relative-to-ground":a=k-(c.unwrapOr(a.elevationProvider.getElevation(b,d,e,f,"ground"),0)+g);break a;case "relative-to-scene":a=k-(c.unwrapOr(a.elevationProvider.getElevation(b,d,e,f,"scene"),0)+g);break a}a=void 0}return a}}function t(a,b,d,e,f,k){const g=c.isSome(k.offset)?k.offset:0;switch(k.mode){case "absolute-height":return d+g;case "on-the-ground":return c.unwrapOr(f.elevationProvider.getElevation(a,

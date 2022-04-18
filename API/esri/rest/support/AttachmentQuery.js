@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/JSONSupport ../../core/lang ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer".split(" "),function(m,c,a,n,d,p,q,g){var e;a=e=function(h){function f(b){b=h.call(this,b)||this;b.attachmentTypes=null;b.attachmentsWhere=null;b.keywords=null;b.globalIds=null;b.name=null;b.num=null;b.objectIds=null;
 b.returnMetadata=!1;b.size=null;b.start=null;b.where=null;return b}m._inheritsLoose(f,h);var k=f.prototype;k.writeStart=function(b,l){l.resultOffset=this.start;l.resultRecordCount=this.num||10};k.clone=function(){return new e(n.clone({attachmentTypes:this.attachmentTypes,attachmentsWhere:this.attachmentsWhere,keywords:this.keywords,where:this.where,globalIds:this.globalIds,name:this.name,num:this.num,objectIds:this.objectIds,returnMetadata:this.returnMetadata,size:this.size,start:this.start}))};return f}(a.JSONSupport);

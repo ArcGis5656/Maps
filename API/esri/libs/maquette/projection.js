@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../widgets/support/widgetUtils"],function(x,G){let H=[],z=(b,a)=>{let g={};Object.keys(b).forEach(c=>{g[c]=b[c]});a&&Object.keys(a).forEach(c=>{g[c]=a[c]});return g},A=(b,a)=>b.vnodeSelector!==a.vnodeSelector?!1:b.properties&&a.properties?b.properties.key!==a.properties.key?!1:b.properties.bind===a.properties.bind:!b.properties&&!a.properties,I=b=>{if("string"!==typeof b)throw Error("Style values must be strings");},B=(b,a,g,c)=>{let l=b[a];if(""!==l.vnodeSelector){var d=l.properties;
 if(!(d&&(void 0===d.key?d.bind:d.key)))for(d=0;d<b.length;d++)if(d!==a&&A(b[d],l))throw Error(`${g.vnodeSelector} had a ${l.vnodeSelector} child ${"added"===c?c:"removed"}, but there is now more than one. You must add unique key properties to make them distinguishable.`);}},C=[],D=!1,J=b=>{(b.children||[]).forEach(J);b.properties&&b.properties.afterRemoved&&b.properties.afterRemoved.apply(b.properties.bind||b.properties,[b.domNode])},K=()=>{D=!1;C.forEach(J);C.length=0},L=b=>{C.push(b);D||(D=!0,"undefined"!==

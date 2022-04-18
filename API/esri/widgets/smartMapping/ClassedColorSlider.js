@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/accessorSupport/decorators/aliasOf ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/property ../../core/accessorSupport/decorators/subclass ../../renderers/support/ClassBreakInfo ./SmartMappingSliderBase ./ClassedColorSlider/ClassedColorSliderViewModel ../support/widgetUtils ../support/decorators/messageBundle ../../core/Logger ../support/jsxFactory".split(" "),
 function(p,g,q,e,y,z,l,r,t,u,v,A,w,B,f){var m;e=m=function(n){function h(a,b){a=n.call(this,a,b)||this;a._bgFillId=null;a._rampFillId=null;a.breaks=null;a.label=void 0;a.messages=null;a.viewModel=new v;a._bgFillId=`${a.id}-bg-fill`;a._rampFillId=`${a.id}-linear-gradient`;return a}p._inheritsLoose(h,n);h.fromRendererResult=function(a,b){({renderer:{classBreakInfos:a}}=a);a=a.map(c=>({min:c.minValue,max:c.maxValue,color:c.symbol.color}));return new m({breaks:a,histogramConfig:{bins:b?b.bins:[]}})};

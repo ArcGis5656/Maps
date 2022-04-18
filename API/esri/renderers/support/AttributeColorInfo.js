@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../Color ../../core/JSONSupport ../../core/Logger ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/decorators/cast ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/ensureType".split(" "),function(k,c,l,b,m,d,t,u,n,p,q){var e;const r=m.getLogger("esri.renderers.support.AttributeColorInfo");b=e=function(h){function f(a){a=h.call(this,a)||this;
 a.color=null;a.field=null;a.label=null;a.valueExpression=null;a.valueExpressionTitle=null;return a}k._inheritsLoose(f,h);var g=f.prototype;g.castField=function(a){return null==a?a:"function"===typeof a?(r.error(".field: field must be a string value"),null):q.ensureString(a)};g.getAttributeHash=function(){return`${this.field}-${this.valueExpression}`};g.clone=function(){return new e({color:this.color&&this.color.clone(),field:this.field,label:this.label,valueExpression:this.valueExpression,valueExpressionTitle:this.valueExpressionTitle})};

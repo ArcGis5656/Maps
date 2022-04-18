@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./contains"],function(m,n){function z(a,b){return n.extentContainsPoint(a,b)}function A(a,b){var c=a.hasZ&&b.hasZ;if(a.xmin<=b.xmin){var d=b.xmin;if(a.xmax<d)return!1}else if(d=a.xmin,b.xmax<d)return!1;if(a.ymin<=b.ymin){if(d=b.ymin,a.ymax<d)return!1}else if(d=a.ymin,b.ymax<d)return!1;if(c&&b.hasZ)if(a.zmin<=b.zmin){if(c=b.zmin,a.zmax<c)return!1}else if(c=a.zmin,b.zmax<c)return!1;return!0}function B(a,b){const {points:c,hasZ:d}=b;b=d?n.extentContainsCoords3D:n.extentContainsCoords2D;
 for(const e of c)if(b(a,e))return!0;return!1}function C(a,b){p[0]=a.xmin;p[1]=a.ymax;q[0]=a.xmax;q[1]=a.ymax;r[0]=a.xmin;r[1]=a.ymin;t[0]=a.xmax;t[1]=a.ymin;for(var c of H)if(n.polygonContainsCoords(b,c))return!0;for(const d of b.rings)if(d.length){b=d[0];if(n.extentContainsCoords2D(a,b))return!0;for(c=1;c<d.length;c++){const e=d[c];if(n.extentContainsCoords2D(a,e)||D(b,e,E))return!0;b=e}}return!1}function F(a,b){p[0]=a.xmin;p[1]=a.ymax;q[0]=a.xmax;q[1]=a.ymax;r[0]=a.xmin;r[1]=a.ymin;t[0]=a.xmax;

@@ -1,13 +1,13 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../util/ScreenSizePerspective.glsl","../../shaderModules/interfaces"],function(f,h,d){function g(b,a,c,e=k){e.screenLength=b.screenLength;e.perDistance=Math.tan(.5*a)/(.5*c);e.minWorldLength=b.minWorldLength;e.maxWorldLength=b.maxWorldLength;return e}const k={screenLength:0,perDistance:0,minWorldLength:0,maxWorldLength:0};f.VerticalOffset=function(b,a){const c=b.vertex.code;a.verticalOffsetEnabled?(b.vertex.uniforms.add("verticalOffset","vec4"),a.screenSizePerspectiveEnabled&&(b.include(h.ScreenSizePerspective),
-b.vertex.uniforms.add("screenSizePerspectiveAlignment","vec4")),c.add(d.glsl`
+define(["exports","../../../../../ViewingMode","../util/ScreenSizePerspective.glsl","../../shaderModules/interfaces"],function(f,h,k,d){function g(b,a,c,e=l){e.screenLength=b.screenLength;e.perDistance=Math.tan(.5*a)/(.5*c);e.minWorldLength=b.minWorldLength;e.maxWorldLength=b.maxWorldLength;return e}const l={screenLength:0,perDistance:0,minWorldLength:0,maxWorldLength:0};f.VerticalOffset=function(b,a){const c=b.vertex.code;a.verticalOffsetEnabled?(b.vertex.uniforms.add("verticalOffset","vec4"),a.screenSizePerspectiveEnabled&&
+(b.include(k.ScreenSizePerspective),b.vertex.uniforms.add("screenSizePerspectiveAlignment","vec4")),c.add(d.glsl`
     vec3 calculateVerticalOffset(vec3 worldPos, vec3 localOrigin) {
       float viewDistance = length((view * vec4(worldPos, 1.0)).xyz);
-      ${1===a.viewingMode?d.glsl`vec3 worldNormal = normalize(worldPos + localOrigin);`:d.glsl`vec3 worldNormal = vec3(0.0, 0.0, 1.0);`}
+      ${a.viewingMode===h.ViewingMode.Global?d.glsl`vec3 worldNormal = normalize(worldPos + localOrigin);`:d.glsl`vec3 worldNormal = vec3(0.0, 0.0, 1.0);`}
       ${a.screenSizePerspectiveEnabled?d.glsl`
-          float cosAngle = dot(worldNormal, normalize(worldPos - camPos));
+          float cosAngle = dot(worldNormal, normalize(worldPos - cameraPosition));
           float verticalOffsetScreenHeight = screenSizePerspectiveScaleFloat(verticalOffset.x, abs(cosAngle), viewDistance, screenSizePerspectiveAlignment);`:d.glsl`
           float verticalOffsetScreenHeight = verticalOffset.x;`}
       // Screen sized offset in world space, used for example for line callouts

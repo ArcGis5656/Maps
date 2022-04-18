@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../core/jsonMap ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../geometry/Polygon ../../geometry/SpatialReference ../../geometry/support/jsonUtils".split(" "),function(p,c,q,b,r,e,z,A,B,t,u,l,v){const w=new b.JSONMap({9001:"meters",9002:"feet",9036:"kilometers",9093:"miles",
 109012:"nautical-miles",109001:"yards"});b=function(m){function k(a){a=m.call(this,a)||this;a.bufferSpatialReference=null;a.distances=null;a.geodesic=!1;a.geometries=null;a.outSpatialReference=null;a.unionResults=!1;a.unit=null;return a}p._inheritsLoose(k,m);k.prototype.toJSON=function(){const a={unit:w.toJSON(this.unit),unionResults:this.unionResults,geodesic:this.geodesic},n=this.distances,g=this.outSpatialReference,h=this.bufferSpatialReference,d=this.geometries;if(d&&0<d.length){const x=d.map(function(f){f=

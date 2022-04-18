@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require ../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/Error ../core/JSONSupport ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ./PortalFolder ./PortalGroup".split(" "),function(u,p,d,q,c,e,x,y,z,v,w,r){var n;c=n=function(t){function m(...a){a=t.call(this,...a)||this;a.access=null;a.created=null;a.culture=null;a.description=null;a.email=null;a.fullName=null;a.modified=
 null;a.orgId=null;a.portal=null;a.preferredView=null;a.privileges=null;a.region=null;a.role=null;a.roleId=null;a.sourceJSON=null;a.units=null;a.username=null;a.userType=null;return a}p._inheritsLoose(m,t);var h=m.prototype;h.addItem=function(a){const b=a&&a.item;var g=a&&a.data;a=a&&a.folder;const f={method:"post"};b&&(f.query=b.createPostQuery(),null!=g&&("string"===typeof g?f.query.text=g:"object"===typeof g&&(f.query.text=JSON.stringify(g))));g=this.userContentUrl;a&&(g+="/"+("string"===typeof a?

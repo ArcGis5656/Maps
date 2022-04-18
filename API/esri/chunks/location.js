@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../Color","../smartMapping/symbology/support/symbologyUtils","../smartMapping/symbology/support/utils"],function(f,d,g,h){function l(a){return g.getThemesforBasemap(m,a)}function n(a){const b=g.getRawSchemes({basemap:a.basemap,geometryType:a.geometryType,basemapTheme:a.basemapTheme,theme:m.get("default")});if(b){var {schemesInfo:c,basemapId:e,basemapTheme:k}=b;return{primaryScheme:p(a,c.primary),secondarySchemes:c.secondary.map(r=>p(a,r)).filter(Boolean),basemapId:e,basemapTheme:k}}}
 function q(a){if(a)return a={...a},a.color&&(a.color=new d(a.color)),"outline"in a&&a.outline&&(a.outline={color:a.outline.color&&new d(a.outline.color),width:a.outline.width}),a}function p(a,b){var c="mesh"!==a.geometryType&&a.worldScale?a.view:null;switch(a.geometryType){case "point":case "multipoint":a={...b.outline};var e=b.size;return{color:new d(b.color),outline:{color:new d(a.color),width:a.width},size:c?h.toWorldScale(e,c):e,opacity:1};case "polyline":return a=b.width,{color:new d(b.color),

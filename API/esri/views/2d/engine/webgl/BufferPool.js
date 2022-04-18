@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../chunks/_rollupPluginBabelHelpers","../../../../core/has","../../../../core/maybe","./cpuMapped/FreeList"],function(l,f,g,h,p){const m=g("esri-2d-log-allocations");g=function(){function b(a){this._array=a}b.create=function(a){a=e.acquire(a);return new b(a)};var c=b.prototype;c.expand=function(a){a=e.acquire(a);a.set(this._array);e.release(this._array);this._array=a};c.destroy=function(){e.release(this._array)};c.set=function(a,d){this._array.set(a._array,d)};c.slice=
 function(){const a=e.acquire(this._array.byteLength);a.set(this._array);return new b(a)};f._createClass(b,[{key:"array",get:function(){return this._array}},{key:"length",get:function(){return this._array.length}}]);return b}();let k=function(){function b(){this._data=new ArrayBuffer(b.BYTE_LENGTH);this._freeList=new p.FreeList({start:0,end:this._data.byteLength})}var c=b.prototype;c.allocate=function(a){const d=this._freeList.firstFit(a);return h.isNone(d)?null:new Uint32Array(this._data,d,a/Uint32Array.BYTES_PER_ELEMENT)};

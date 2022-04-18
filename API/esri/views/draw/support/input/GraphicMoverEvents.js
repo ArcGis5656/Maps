@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(f){let p=function(){function a(b,c,d,e,g,h,k,l,m,n){this.graphic=b;this.allGraphics=c;this.index=d;this.x=e;this.y=g;this.dx=h;this.dy=k;this.totalDx=l;this.totalDy=m;this.viewEvent=n;this.defaultPrevented=!1;this.type="graphic-move-start"}a.prototype.preventDefault=function(){this.defaultPrevented=!0};return a}(),q=function(){function a(b,c,d,e,g,h,k,l,m,n){this.graphic=b;this.allGraphics=c;this.index=d;this.x=e;this.y=g;this.dx=h;this.dy=k;this.totalDx=l;this.totalDy=
 m;this.viewEvent=n;this.defaultPrevented=!1;this.type="graphic-move"}a.prototype.preventDefault=function(){this.defaultPrevented=!0};return a}(),r=function(){function a(b,c,d,e,g,h,k,l,m,n){this.graphic=b;this.allGraphics=c;this.index=d;this.x=e;this.y=g;this.dx=h;this.dy=k;this.totalDx=l;this.totalDy=m;this.viewEvent=n;this.defaultPrevented=!1;this.type="graphic-move-stop"}a.prototype.preventDefault=function(){this.defaultPrevented=!0};return a}();f.GraphicClickEvent=function(a,b,c,d,e){this.graphic=

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../chunks/_rollupPluginBabelHelpers ../../../../core/has ../../../../core/maybe ../../../../chunks/mat3f32 ../brushes ../Container ./ClippingInfo ./enums".split(" "),function(k,v,g,p,q,r,t,d){return function(e){function f(){var a=e.apply(this,arguments)||this;a.name=a.constructor.name;return a}k._inheritsLoose(f,e);var c=f.prototype;c._createTransforms=function(){return{dvs:p.create()}};c.doRender=function(a){const b=this.createRenderParams(a),{painter:h,globalOpacity:u,profiler:l,
 drawPhase:m}=b,n=m===d.WGLDrawPhase.LABEL||m===d.WGLDrawPhase.HIGHLIGHT?1:u*this.computedOpacity;l.recordContainerStart(this.name);h.beforeRenderLayer(b,this._clippingInfos?255:0,n);this.updateTransforms(a.state);this.renderChildren(b);h.compositeLayer(b,n);l.recordContainerEnd()};c.renderChildren=function(a){g.isNone(this._renderPasses)&&(this._renderPasses=this.prepareRenderPasses(a.painter));for(const b of this.children)b.beforeRender(a);for(const b of this._renderPasses)try{b.render(a)}catch(h){}for(const b of this.children)b.afterRender(a)};

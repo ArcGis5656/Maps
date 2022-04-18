@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require ../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../geometry ../core/Error ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../geometry/support/aaBoundingRect ./Layer ./support/TileInfo ../geometry/SpatialReference ../geometry/Extent".split(" "),function(q,r,d,b,t,f,y,z,A,u,v,w,n,l,x){const e={id:"0/0/0",level:0,row:0,col:0,extent:null};b=function(p){function m(){var a=p.apply(this,
 arguments)||this;a.tileInfo=n.create({spatialReference:l.WebMercator,size:256});a.fullExtent=new x(-2.0037508342787E7,-2.003750834278E7,2.003750834278E7,2.0037508342787E7,l.WebMercator);a.spatialReference=l.WebMercator;a.type="base-elevation";return a}r._inheritsLoose(m,p);var g=m.prototype;g.getTileBounds=function(a,c,h,k){k=k||v.ZERO;e.level=a;e.row=c;e.col=h;e.extent=k;this.tileInfo.updateTileInfo(e);e.extent=null;return k};g.fetchTile=function(){throw new t("BaseElevationLayer:fetchtile-not-implemented",

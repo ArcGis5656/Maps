@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../layers/support/RangeDomain","../FieldConfig","../FieldGroupConfig"],function(m,p,q,r){function n(h,c,d,k=!0){return h.map(a=>{if("field"===a.type){{const {description:t,domain:e,editable:u,fieldName:v,hint:w,input:b,label:x,requiredExpression:y,visibilityExpression:z}=a;a=new q({description:t,domain:e,editable:u,hint:w,label:x,name:v,requiredExpression:c[y]||null,visibilityExpression:c[z]||null});if(b)if("barcode-scanner"===b.type||"text-area"===b.type||"text-box"===b.type)a.editorType=
 b.type,a.minLength=b.minLength,a.maxLength=b.maxLength;else if("combo-box"===b.type||"radio-buttons"===b.type)a.editorType=b.type,a.noValueOptionLabel=b.noValueOptionLabel,a.showNoValueOption=b.showNoValueOption;else if("switch"===b.type)a.editorType=b.type,a.offValue=b.offValue,a.onValue=b.onValue;else if("datetime-picker"===b.type){a.editorType=b.type;a.includeTime=b.includeTime;const {max:f,min:g}=b;if(f||g){var l="range"===(null==e?void 0:e.type)?Math.min(null==f?void 0:f.getTime(),e.maxValue):

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../kernel ../../request ../../core/colorUtils ../../core/Error ../../core/has ../../libs/maquette/projection ../../libs/maquette/projector ./svgUtils ./utils".split(" "),function(t,w,x,u,y,z,G,A,B,C){function D(d,f,b){return d?x(d,{responseType:"image"}).then(g=>{g=g.data;const l=g.width,a=g.height,m=l/a;let h=f;b&&(h=Math.min(h,Math.max(l,a)));return{image:g,width:1>=m?Math.ceil(h*m):h,height:1>=m?h:Math.ceil(h/m)}}):Promise.reject(new y("renderUtils: imageDataSize","href not provided."))}
 const E=A.createProjector();t.renderSymbol=function(d,f,b){const g=Math.ceil(f[0]);f=Math.ceil(f[1]);if(!d.some(a=>!!a.length))return null;const l=b&&b.node||document.createElement("div");null!=b.opacity&&(l.style.opacity=b.opacity.toString());null!=b.effectView&&(l.style.filter=C.getCSSFilterFromEffectList(b.effectView));E.append(l,B.renderSVG.bind(null,d,g,f,b));return l};t.tintImageWithColor=function(d,f,b,g,l){return D(d,f,l).then(a=>{const m=a.width?a.width:f,h=a.height?a.height:f;var e;if(e=

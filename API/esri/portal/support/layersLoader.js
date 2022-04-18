@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../layers/support/lazyLayerLoader ../Portal ./jsonContext ../../renderers/support/styleUtils ../../support/requestPresets".split(" "),function(l,m,v,n,B,C,D,w){function q(){q=m._asyncToGenerator(function*(a,c){var b=a.instance.portalItem;if(!b||!b.id)return Promise.resolve();yield b.load(c);b=a.instance.portalItem;if(-1===a.supportedTypes.indexOf(b.type))throw new v("portal:invalid-layer-item-type","Invalid layer item type '${type}', expected '${expectedType}'",
 {type:b.type,expectedType:a.supportedTypes.join(", ")});return E(a,c)});return q.apply(this,arguments)}function E(a,c){return r.apply(this,arguments)}function r(){r=m._asyncToGenerator(function*(a,c){const b=a.instance,g=b.portalItem,{url:f,title:d}=g,e=C.createForItem(g);if("group"===b.type)return b.read({title:d},e),F(b,a);f&&b.read({url:f},e);(a=yield x(a,c))&&b.read(a,e);b.resourceReferences={portalItem:g,paths:e.readResourcePaths};b.read({title:d},e);return D.loadStyleRenderer(b,e)});return r.apply(this,

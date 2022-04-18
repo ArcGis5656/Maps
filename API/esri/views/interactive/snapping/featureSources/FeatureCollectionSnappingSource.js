@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/Accessor ../../../../core/maybe ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ./queryEngineUtils".split(" "),function(b,d,e,n,p,g,u,v,w,q,r){b.FeatureCollectionSnappingSource=function(h){function c(f){return h.call(this,f)||this}d._inheritsLoose(c,
 h);var k=c.prototype;k.refresh=function(){};k.fetchCandidates=function(){var f=d._asyncToGenerator(function*(a,l){const m=this.layerSource.layer.source;return m.querySnapping?(yield m.querySnapping({distance:a.distance,point:a.coordinateHelper.vectorToPoint(a.point).toJSON(),types:a.types,query:p.isSome(a.filter)?a.filter.createQuery().toJSON():{where:"1\x3d1"}},{signal:l})).candidates.map(t=>r.convertSnappingCandidate(t,a.coordinateHelper)):[]});return function(a,l){return f.apply(this,arguments)}}();

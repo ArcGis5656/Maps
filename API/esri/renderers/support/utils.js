@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../core/arrayUtils ../../core/Logger ../../intl/date ./numberUtils ../visualVariables/support/ColorStop".split(" "),function(k,y,v,q,n,z){function w(a,d,f){let b="";0===d?b=r.lt+" ":d===f&&(b=r.gt+" ");return b+a}function t(a){let d=a.minValue,f=a.maxValue;const b=a.isFirstBreak?"":r.gt+" ";a="percent-of-total"===a.normalizationType?r.pct:"";d=null==d?"":n.format(d);f=null==f?"":n.format(f);return b+d+a+" "+r.ld+" "+f+a}function p(a,d){return"normalizationField"in a&&a.normalizationField?
 {type:"normalized-field",field:a.field,normalizationField:a.normalizationField}:"field"in a&&a.field?{type:"field",field:a.field}:"valueExpression"in a&&a.valueExpression?{type:"expression",expression:a.valueExpression,title:a.valueExpressionTitle,returnType:d}:null}const x=v.getLogger("esri.renderers.support.utils"),r={lte:"\x3c\x3d",gte:"\x3e\x3d",lt:"\x3c",gt:"\x3e",pct:"%",ld:"\u2013"},A={millisecond:0,second:1,minute:2,hour:3,day:4,month:5,year:6},B={millisecond:"long-month-day-year-long-time",

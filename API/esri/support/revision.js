@@ -1,4 +1,4 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports"],function(a){a.buildDate="20211214";a.commitHash="2f62aa11eb308d30278a805efbaca7231370b0d8";Object.defineProperty(a,"__esModule",{value:!0})});
+define(["exports"],function(a){a.buildDate="20220404";a.commitHash="ecb69ff5e08a61c162de0ddc0b1f397ed5d4071b";Object.defineProperty(a,"__esModule",{value:!0})});

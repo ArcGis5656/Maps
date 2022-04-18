@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./Locate/LocateViewModel ./support/decorators/accessibleHandler ./support/decorators/messageBundle ../core/Logger ./support/decorators/vmEvent ./support/jsxFactory ./support/widgetUtils".split(" "),function(q,c,d,b,w,x,f,r,t,l,u,m,
 y,v,h,z){b=function(n){function k(a,e){a=n.call(this,a,e)||this;a.geolocationOptions=null;a.goToLocationEnabled=null;a.goToOverride=null;a.graphic=null;a.iconClass="esri-icon-north-navigation";a.label=void 0;a.messages=null;a.messagesCommon=null;a.popupEnabled=null;a.scale=null;a.useHeadingEnabled=null;a.view=null;a.viewModel=new l;return a}q._inheritsLoose(k,n);var g=k.prototype;g.cancelLocate=function(){};g.locate=function(){};g.render=function(){const a=this.get("viewModel.state");var e="locating"===

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../core/maybe ../../layers/support/fieldUtils ./support/utils ../support/utils ../support/adapters/support/layerUtils".split(" "),function(m,c,t,n,p,q,f){function u(a){return g.apply(this,arguments)}function g(){g=m._asyncToGenerator(function*(a){if(!(a&&a.layer&&(a.field||a.valueExpression||a.sqlExpression)))throw new c("histogram:missing-parameters","'layer' and 'field', 'valueExpression' or 'sqlExpression' parameters are required");
 if(a.valueExpression&&!a.sqlExpression&&!a.view)throw new c("histogram:missing-parameters","View is required when 'valueExpression' is specified");const {layer:h,...k}=a;var b=f.createLayerAdapter(h,f.defaultSupportedLayerTypes);a={layerAdapter:b,...k};a.normalizationType=q.getNormalizationType(a);if(!b)throw new c("histogram:invalid-parameters","'layer' must be one of these types: "+f.getLayerTypeLabels(f.defaultSupportedLayerTypes).join(", "));var e=t.isSome(a.signal)?{signal:a.signal}:null;yield b.load(e);

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/Logger ../core/maybe ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../core/support/OwningCollection ../geometry/projection ./Layer ../support/AnalysesCollection".split(" "),function(l,e,b,f,h,y,z,A,t,u,v,w,m){const x=b.getLogger("esri.layers.AnalysisLayer");b=function(n){function g(a){a=n.call(this,a)||this;a.type="analysis";
 a.analyses=new m.AnalysesCollection;return a}l._inheritsLoose(g,n);var c=g.prototype;c.destroy=function(){this.analyses.destroy()};c.add=function(a){this.analyses.add(a)};c.addMany=function(a){this.analyses.addMany(a)};c.remove=function(a){this.analyses.remove(a)};c.removeMany=function(a){this.analyses.removeMany(a)};c._calculateFullExtent=function(){return this.analyses.reduce((a,k)=>{var d=k.extent;if(f.isNone(d))return a;d=v.tryProjectWithZConversion(d,this.spatialReference);if(f.isNone(d)){var p,

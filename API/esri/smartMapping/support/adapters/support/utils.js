@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../core/promiseUtils ../../../../renderers/support/heatmapUtils ../../../statistics/support/predominanceUtils ../../utils ../../../../statistics/utils".split(" "),function(m,E,F,A,G,p,H){function x(){x=E._asyncToGenerator(function*(a,c,b){const d=[];if(c)for(const f of c)c=a.getField(f),"availableFields"in b&&-1===b.availableFields.indexOf(c.name)&&d.push(c.name);return d});return x.apply(this,arguments)}function B(a){const {field:c,
 normalizationType:b,normalizationField:d,normalizationTotal:f,layer:k}=a;a=p.isIntegerField(k,c);let l=c;"percent-of-total"===b?l=`((${a?p.castIntegerFieldToFloat(c):c} / ${f}) * 100)`:"log"===b?l=`(log(${c}) * ${I})`:"field"===b?l=`(${a?p.castIntegerFieldToFloat(c):c} / ${d})`:"natural-log"===b?l=`(log(${a?p.castIntegerFieldToFloat(c):c}))`:"square-root"===b&&(l=`(power(${a?p.castIntegerFieldToFloat(c):c}, 0.5))`);return l}function C(a,c){let b;c=c.toLowerCase();if(a)for(const d in a)if(d.toLowerCase()!==

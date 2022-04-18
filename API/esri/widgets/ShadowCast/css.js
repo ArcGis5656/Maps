@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(a){a.BASE="esri-shadow-cast";a.CSS={base:"esri-shadow-cast",esriWidget:"esri-widget--panel esri-widget",esriWidgetDisabled:"esri-widget--disabled",widgetIcon:"esri-icon-measure-building-height-shadow",timeRange:"esri-shadow-cast__time-range",timeRangePrimaryTick:"esri-shadow-cast__time-range__primary-tick",timeRangePrimaryTickLabel:"esri-shadow-cast__time-range__primary-tick-label",timeRangeSecondaryTick:"esri-shadow-cast__time-range__secondary-tick",timeRangeAMPMLabel:"esri-shadow-cast__time-range__ampm",
 timeRangeIndicator:"esri-shadow-cast__time-range__indicator",datePickerContainer:"esri-shadow-cast__date-picker-container",visualization:"esri-shadow-cast__visualization",visualizationSelect:"esri-shadow-cast__visualization__select",visualizationConfigHidden:"esri-shadow-cast__visualization__config--hidden"};a.DISCRETE_CONFIGURATOR_BASE="esri-shadow-cast__discrete-config";a.DISCRETE_CONFIGURATOR_CSS={base:"esri-shadow-cast__discrete-config"};a.DURATION_CONFIGURATOR_BASE="esri-shadow-cast__duration-config";

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../shaderModules/interfaces"],function(b,c){b.EvaluateAmbientOcclusion=function(a,d){a=a.fragment;d.receiveAmbientOcclusion?(a.uniforms.add("ssaoTex","sampler2D"),a.uniforms.add("viewportPixelSz","vec4"),a.code.add(c.glsl`float evaluateAmbientOcclusion() {
 return 1.0 - texture2D(ssaoTex, (gl_FragCoord.xy - viewportPixelSz.xy) * viewportPixelSz.zw).a;

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../PopupTemplate ../layers/support/fieldUtils ../popup/content/AttachmentsContent ../popup/content/Content ../popup/content/CustomContent ../popup/content/ExpressionContent ../popup/content/FieldsContent ../popup/content/MediaContent ../popup/content/TextContent ../popup/FieldInfo ../popup/support/FieldInfoFormat".split(" "),function(g,p,q,r,D,E,F,l,G,H,t,h){function u(a,c){const b=a;c&&(a=a.filter(d=>-1===c.indexOf(d.type)));a===b&&(a=a.slice());a.sort(v);return a}function v(a,c){return"oid"===
 a.type?-1:"oid"===c.type?1:m(a)?-1:m(c)?1:(a.alias||a.name).toLocaleLowerCase().localeCompare((c.alias||c.name).toLocaleLowerCase())}function n(a,c){if(!a||!c)return!1;const {creationDateField:b,creatorField:d,editDateField:e,editorField:f}=c;return-1!==[b&&b.toLowerCase(),d&&d.toLowerCase(),e&&e.toLowerCase(),f&&f.toLowerCase()].indexOf(a.toLowerCase())}function k({editFieldsInfo:a,fields:c,objectIdField:b},d){return u(c,(null==d?void 0:d.ignoreFieldTypes)||w).map(e=>{var f=e.name;var y=e.editable&&

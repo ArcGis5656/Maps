@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../Basemap ../../../core/Collection ../../../core/Error ../../../core/Handles ../../../core/Loadable ../../../core/Logger ../../../core/Promise ../../../core/promiseUtils ../../../core/watchUtils ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../portal/Portal ./LocalBasemapsSource".split(" "),
 function(k,c,b,q,r,t,u,v,w,x,y,d,C,D,E,z,l,A){const m=q.ofType(b),B=v.getLogger("esri.widgets.BasemapGallery.support.PortalBasemapsSource");b=function(n){function g(a){a=n.call(this,a)||this;a._handles=new t;a.basemaps=new m;a.filterFunction=null;a.portal=l.getDefault();a.query=null;a.updateBasemapsCallback=null;return a}k._inheritsLoose(g,n);var e=g.prototype;e.initialize=function(){this._handles.add([y.init(this,"filterFunction loadStatus portal.basemapGalleryGroupQuery portal.user query updateBasemapsCallback".split(" "),

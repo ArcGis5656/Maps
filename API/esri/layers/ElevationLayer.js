@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require ../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../request ../core/Error ../core/Logger ../core/maybe ../core/MultiOriginJSONSupport ../core/promiseUtils ../core/urlUtils ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/reader ../core/accessorSupport/decorators/subclass ../geometry/HeightModelInfo ./Layer ./mixins/ArcGISCachedService ./mixins/ArcGISService ./mixins/OperationalLayer ./mixins/PortalLayer ./support/commonProperties ./support/LercDecoder".split(" "),
 function(t,m,f,u,x,d,q,y,r,z,g,L,M,N,A,B,C,D,E,F,G,H,I,J){const v=d.getLogger("esri.layers.ElevationLayer");d=function(w){function p(...a){a=w.call(this,...a)||this;a.copyright=null;a.heightModelInfo=null;a.path=null;a.opacity=1;a.operationalLayerType="ArcGISTiledElevationServiceLayer";a.sourceJSON=null;a.type="elevation";a.url=null;a.version=null;a._lercDecoder=J.acquireDecoder();return a}m._inheritsLoose(p,w);var h=p.prototype;h.normalizeCtorArgs=function(a,b){return"string"===typeof a?{url:a,...b}:

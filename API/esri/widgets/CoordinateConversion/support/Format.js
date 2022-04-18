@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../geometry ../../../core/Accessor ../../../core/Error ../../../core/maybe ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../geometry/coordinateFormatter ../../../geometry/projection ../../../geometry/support/spatialReferenceUtils ../../../geometry/support/webMercatorUtils ./coordinateConversionUtils ../../../geometry/SpatialReference".split(" "),
 function(t,f,e,w,p,x,g,B,C,D,y,h,u,z,A,m,q){e=function(v){function n(a){a=v.call(this,a)||this;a.conversionInfo=null;a.coordinateSegments=null;a.defaultPattern=null;a.name=null;a.viewModel=null;return a}t._inheritsLoose(n,v);var k=n.prototype;k.convert=function(a){if(!m.isValidPoint(a))return Promise.reject(new p("format:invalid-point","Could not convert invalid point.",{point:a}));const b=this.get("conversionInfo.convert");return b?Promise.resolve().then(()=>b(a)):this._project(a,this.spatialReference).then(c=>

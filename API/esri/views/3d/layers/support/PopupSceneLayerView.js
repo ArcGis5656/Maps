@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/Error ../../../../core/maybe ../../../../core/Logger ../../../../core/accessorSupport/ensureType ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/set ../../../../core/accessorSupport/decorators/subclass ../../../../layers/support/fieldUtils ../../../layers/support/popupUtils".split(" "),function(p,h,v,q,r,x,y,z,A,B,w,t,k){p.PopupSceneLayerView=e=>{e=function(u){function l(){return u.apply(this,
 arguments)||this}h._inheritsLoose(l,u);var m=l.prototype;m._validateFetchPopupFeatures=function(c){const {layer:a}=this,{popupEnabled:b}=a;if(!b)return new q("scenelayerview3d:fetchPopupFeatures","Popups are disabled",{layer:a});if(!k.getFetchPopupTemplate(a,c))return new q("scenelayerview3d:fetchPopupFeatures","Layer does not define a popup template",{layer:a})};m.prepareFetchPopupFeatures=function(){var c=h._asyncToGenerator(function*(a){});return function(a){return c.apply(this,arguments)}}();

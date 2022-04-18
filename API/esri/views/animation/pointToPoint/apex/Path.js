@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../easing ../Path ../Segment ./planning".split(" "),function(n,r,p,h,k,t){h=function(q){function l(b,c){var a=q.call(this)||this;a._preallocSegments=[new k.Segment,new k.Segment,new k.Segment];a.update(b,c);return a}r._inheritsLoose(l,q);var f=l.prototype;f.update=function(b,c){if(b){this.definition?this.definition.copyFrom(b):this.definition=b.clone();var a=null;c&&c.apex&&(a=t.optimalDistance(b,c.apex));this.segments.length=0;this._descensionSegment=
 this._ascensionSegment=null;null==a?this._updateWithoutApex():this._updateWithApex(a,c.apex)}};f.segmentInterpolateComponentsAt=function(b,c,a){a=b.interpolateComponentsAt(c,a);b===this._ascensionSegment?a.zoom=p.outQuad(a.zoom):b===this._descensionSegment&&(a.zoom=p.inQuad(a.zoom));return a};f._updateWithApex=function(b,c){const [a,d,e]=this._preallocSegments,g=null!=c.ascensionFactor?c.ascensionFactor:.5;c=Math.min(1-g,null!=c.ascensionFactor?c.descensionFactor:.5);const m=1-g-c;a.definition?a.definition.copyFrom(this.definition):

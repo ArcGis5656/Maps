@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../assets ../../Color ../../request ../../core/ItemCache ../../core/screenUtils ./cimSymbolUtils".split(" "),function(d,r,k,t,u,f,v){function m(a){if(!a)return null;let b;switch(a.type){case "simple-fill":case "picture-fill":case "simple-marker":b=m(a.outline);break;case "simple-line":{const c=f.pt2px(a.width);"none"!==a.style&&0!==c&&(b={color:a.color,style:n(a.style),width:c,cap:a.cap,join:"miter"===a.join?f.pt2px(a.miterLimit):a.join});break}default:b=null}return b}const w={left:"start",
 center:"middle",right:"end",justify:"start"},x={top:"text-before-edge",middle:"central",baseline:"alphabetic",bottom:"text-after-edge"},l=new u(1E3),n=function(){const a={};return function(b){if(a[b])return a[b];const c=b.replace(/-/g,"");return a[b]=c}}();k=new k([128,128,128]);d.defaultThematicColor=k;d.dekebabifyLineStyle=n;d.getFill=function(a){const b=a.style;let c=null;if(a)switch(a.type){case "simple-marker":"cross"!==b&&"x"!==b&&(c=a.color);break;case "simple-fill":"solid"===b?c=a.color:"none"!==

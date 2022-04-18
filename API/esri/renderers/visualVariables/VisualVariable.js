@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/jsonMap ../../core/JSONSupport ../../core/Logger ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/decorators/cast ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/ensureType ./support/VisualVariableLegendOptions".split(" "),function(h,c,e,b,l,d,t,u,m,n,p,q){const r=l.getLogger("esri.renderers.visualVariables.VisualVariable");e=new e.JSONMap({colorInfo:"color",
 transparencyInfo:"opacity",rotationInfo:"rotation",sizeInfo:"size"});b=function(k){function f(a){a=k.call(this,a)||this;a.index=null;a.type=null;a.field=null;a.valueExpression=null;a.valueExpressionTitle=null;a.legendOptions=null;return a}h._inheritsLoose(f,k);var g=f.prototype;g.castField=function(a){return null==a?a:"function"===typeof a?(r.error(".field: field must be a string value"),null):p.ensureString(a)};g.clone=function(){};g.getAttributeHash=function(){return`${this.type}-${this.field}-${this.valueExpression}`};

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./TraceConfiguration".split(" "),function(g,c,d,a,l,m,h,k){a=function(e){function f(b){b=e.call(this,b)||this;b.filterBarriers=[];b.domainNetworkName=null;b.filterBitsetNetworkAttributeName=null;b.filterFunctionBarriers=[];b.filterScope=null;b.includeContainers=
 null;b.includeContent=null;b.includeIsolated=null;b.includeStructures=null;b.includeUpToFirstSpatialContainer=null;b.nearestNeighbor=null;b.outputFilterCategories=[];b.outputFilters=[];b.propagators=[];b.subnetworkName=null;b.targetTierName=null;b.tierName=null;b.validateLocatability=null;return b}g._inheritsLoose(f,e);return f}(k);c.__decorate([d.property({type:[Object],json:{write:!0}})],a.prototype,"filterBarriers",void 0);c.__decorate([d.property({type:String,json:{write:!0}})],a.prototype,"domainNetworkName",

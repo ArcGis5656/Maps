@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./events","./lang","./promiseUtils"],function(f,v,w,u){function x(a,c,d,b){var e=Array.isArray(c)?c:-1<c.indexOf(",")?c.split(","):[c];c=a.watch(c,d,b);for(const g of e)e=g.trim().replace(G,"$1"),b=a.get(e),d.call(a,b,b,e,a);return c}function p(a,c,d,b,e){e=a.watch(c,(k,q,l,m)=>{if(!d||d(k))null==b?void 0:b.call(a,k,q,l,m)},e);if(Array.isArray(c))for(var g of c){const k=a.get(g);d&&d(k)&&(null==b?void 0:b.call(a,k,k,c,a))}else g=a.get(c),d&&d(g)&&(null==b?void 0:b.call(a,g,g,c,
 a));return e}function n(a,c,d,b,e){function g(){m&&(m.remove(),m=null)}const k="function"===typeof b?b:null,q="object"===typeof b?b:null;"boolean"===typeof b&&(e=b);let l=!1,m;const h=u.createDeferred();u.onAbort(q,()=>{g();h.reject(u.createAbortError())});b={then:h.promise.then.bind(h.promise),catch:h.promise.catch.bind(h.promise),remove:g};Object.freeze(b);m=p(a,c,d,(r,t,y,z)=>{l=!0;g();k&&k.call(a,r,t,y,z);h.resolve({value:r,oldValue:t,propertyName:y,target:z})},e);l&&g();return b}function A(a){return!!a}

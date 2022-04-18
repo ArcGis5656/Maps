@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/mathUtils","../../../geometry/support/aaBoundingRect","../../../geometry/support/boundsUtils","../../../geometry/support/coordsUtils"],function(r,C,z,A,w){function u(a,e,f,b){null==b||a.hasZ||(b=void 0);if("point"===a.type)return a.x+=e,a.y+=f,a.hasZ&&null!=b&&(a.z+=b),a;if("multipoint"===a.type){var c=a.points;for(var d=0;d<c.length;d++)c[d]=B(c[d],e,f,b);return a}if("extent"===a.type)return a.xmin+=e,a.xmax+=e,a.ymin+=f,a.ymax+=f,null!=b&&(a.zmin+=b,a.zmax+=b),a;
 c=w.geometryToCoordinates(a);d="polyline"===a.type?a.paths:a.rings;for(let g=0;g<c.length;g++){const h=c[g];for(let k=0;k<h.length;k++)h[k]=B(h[k],e,f,b)}"paths"in a?a.paths=d:a.rings=d;return a}function B(a,e,f,b){return v(a,a[0]+e,a[1]+f,null!=a[2]&&null!=b?a[2]+b:void 0)}function v(a,e,f,b){e=[e,f];2<a.length&&e.push(null!=b?b:a[2]);3<a.length&&e.push(a[3]);return e}r.cloneMove=function(a,e,f,b,c){a=a.clone();var d=b.resolution;if("point"===a.type)return c?u(a,e*d,-f*d):(c=b.state.transform,b=

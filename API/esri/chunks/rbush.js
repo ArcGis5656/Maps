@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./quickselect"],function(D,E){function u(a,b){if(!(this instanceof u))return new u(a,b);this._maxEntries=Math.max(4,a||9);this._minEntries=Math.max(2,Math.ceil(.4*this._maxEntries));b&&("function"===typeof b?this.toBBox=b:this._initFormat(b));this.clear()}function p(a,b){r(a,0,a.children.length,b,a)}function r(a,b,c,e,d){d||(d=q(null));d.minX=Infinity;d.minY=Infinity;d.maxX=-Infinity;d.maxY=-Infinity;for(var g;b<c;b++)g=a.children[b],t(d,a.leaf?e(g):g);return d}function t(a,b){a.minX=
 Math.min(a.minX,b.minX);a.minY=Math.min(a.minY,b.minY);a.maxX=Math.max(a.maxX,b.maxX);a.maxY=Math.max(a.maxY,b.maxY);return a}function A(a,b){return a.minX-b.minX}function B(a,b){return a.minY-b.minY}function y(a){return(a.maxX-a.minX)*(a.maxY-a.minY)}function v(a){return a.maxX-a.minX+(a.maxY-a.minY)}function z(a,b){return a.minX<=b.minX&&a.minY<=b.minY&&b.maxX<=a.maxX&&b.maxY<=a.maxY}function w(a,b){return b.minX<=a.maxX&&b.minY<=a.maxY&&b.maxX>=a.minX&&b.maxY>=a.minY}function q(a){return{children:a,

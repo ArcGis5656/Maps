@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../core/maybe","../EditGeometry"],function(g,a,e){let k=function(){function h(d,b,c){this.editGeometry=d;this.component=b;this.pos=c;this.right=this.left=this.originalEdge=this.addedVertex=null}var f=h.prototype;f.apply=function(){let d="redo";a.isNone(this.addedVertex)&&(d="apply",this.addedVertex=new e.Vertex(this.component));const b=this.component.getLastVertex();if(a.isNone(b))this.component.vertices.push(this.addedVertex),this.addedVertex.pos=this.pos,this.addedVertex.index=
 0;else{let c=null;b.rightEdge&&(this.originalEdge=b.rightEdge,c=this.originalEdge.rightVertex,this.component.edges.splice(this.component.edges.indexOf(this.originalEdge),1));this.component.vertices.push(this.addedVertex);this.addedVertex.pos=this.pos;a.isNone(this.left)&&(this.left=new e.Edge(this.component,b,this.addedVertex));this.component.edges.push(this.left);b.rightEdge=this.left;a.isSome(this.originalEdge)&&a.isSome(c)&&(a.isNone(this.right)&&(this.right=new e.Edge(this.component,this.addedVertex,

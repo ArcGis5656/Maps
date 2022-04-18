@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/ObjectPool","../../../core/PooledArray","../../../chunks/vec4","../../../chunks/vec4f64"],function(g,l,h,m,n){let p=function(){this.extent=n.create();this.maxLevel=this.minLevel=0;this.callback=null},q=function(){function k(){this._queries=new h({initialSize:10});this._queriesInvPtr=0;this._queryQueue=new h({initialSize:30});this._queryPool=new l(p)}var e=k.prototype;e.queryVisibleLevelRange=function(a,c,d,f){const b=this._queryPool.acquire();m.copy(b.extent,a);b.minLevel=
 c?c:-Number.MAX_VALUE;b.maxLevel=null!=d?d:Number.MAX_VALUE;b.callback=f;this._queryQueue.push(b)};e.hasPendingQueries=function(){return 0!==this._queryQueue.length};e.prepareQueries=function(){for(;this._queries.length<this._queries.data.length&&0<this._queryQueue.length;){const a=this._queryQueue.pop();this._queries.push(a)}this._queriesInvPtr=this._queries.length};e.processQueries=function(){for(let a=0;a<this._queries.length;a++){const c=this._queries.data[a];this._queryPool.release(c);c.callback(a>=

@@ -1,4 +1,4 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../intersectorUtils"],function(b,c){b.isLodIntersectorResult=function(a){return c.isValidIntersectorResult(a)&&6===a.intersector&&!!a.target};Object.defineProperty(b,"__esModule",{value:!0})});
+define(["exports","../IntersectorInterfaces","../intersectorUtils"],function(b,c,d){b.isLodIntersectorResult=function(a){return d.isValidIntersectorResult(a)&&a.intersector===c.IntersectorType.LOD&&!!a.target};Object.defineProperty(b,"__esModule",{value:!0})});

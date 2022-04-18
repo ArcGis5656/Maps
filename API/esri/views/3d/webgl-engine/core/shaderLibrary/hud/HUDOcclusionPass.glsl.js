@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../output/ReadLinearDepth.glsl","../shading/MultipassGeometryTest.glsl","../util/RgbaFloatEncoding.glsl","../../shaderModules/interfaces"],function(d,e,f,g,c){d.HUDOcclusionPass=function(a,b){b.multipassGeometryEnabled&&a.vertex.include(f.multipassGeometryTest);b.multipassTerrainEnabled&&a.varyings.add("depth","float");a.vertex.code.add(c.glsl`
   void main(void) {
@@ -32,7 +32,7 @@ define(["exports","../output/ReadLinearDepth.glsl","../shading/MultipassGeometry
     gl_Position = posProjCenter;
     gl_PointSize = 1.0;
   }
-  `);b.multipassTerrainEnabled&&a.fragment.include(e.ReadLinearDepth);a.fragment.uniforms.add("terrainDepthTexture","sampler2D");a.fragment.uniforms.add("cameraNearFar","vec2");a.fragment.uniforms.add("inverseViewport","vec2");a.fragment.include(g.RgbaFloatEncoding);a.fragment.code.add(c.glsl`
+  `);b.multipassTerrainEnabled&&a.fragment.include(e.ReadLinearDepth);a.fragment.uniforms.add("terrainDepthTexture","sampler2D");a.fragment.uniforms.add("nearFar","vec2");a.fragment.uniforms.add("inverseViewport","vec2");a.fragment.include(g.RgbaFloatEncoding);a.fragment.code.add(c.glsl`
   void main() {
     gl_FragColor = vec4(1, 1, 1, 1);
     ${b.multipassTerrainEnabled?c.glsl`
@@ -42,7 +42,7 @@ define(["exports","../output/ReadLinearDepth.glsl","../shading/MultipassGeometry
           //Read the rgba data from the texture linear depth
           vec4 terrainDepthData = texture2D(terrainDepthTexture, uv);
 
-          float terrainDepth = linearDepthFromFloat(rgba2float(terrainDepthData), cameraNearFar);
+          float terrainDepth = linearDepthFromFloat(rgba2float(terrainDepthData), nearFar);
 
           //If HUD vertex is behind terrain and the terrain depth is not the initialize value (e.g. we are not looking at the sky)
           //Mark the HUD vertex as occluded by transparent terrain

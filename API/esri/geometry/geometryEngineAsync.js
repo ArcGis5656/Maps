@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../chunks/_rollupPluginBabelHelpers ../geometry ../core/workers/workers ./Point ./support/jsonUtils".split(" "),function(d,h,S,Q,n,O){function f(a){var b;return Array.isArray(a)?null==(b=a[0])?void 0:b.spatialReference:null==a?void 0:a.spatialReference}function P(a){return a?Array.isArray(a)?a.map(P):a.toJSON?a.toJSON():a:a}function k(a){return Array.isArray(a)?a.map(b=>O.fromJSON(b)):O.fromJSON(a)}function R(){return p.apply(this,arguments)}function p(){p=h._asyncToGenerator(function*(){q||
 (q=Q.open("geometryEngineWorker",{strategy:"distributed"}));return q});return p.apply(this,arguments)}function e(a,b){return r.apply(this,arguments)}function r(){r=h._asyncToGenerator(function*(a,b){return(yield R()).invoke("executeGEOperation",{operation:a,parameters:P(b)})});return r.apply(this,arguments)}function t(){t=h._asyncToGenerator(function*(a,b){a=yield e("clip",[f(a),a,b]);return k(a)});return t.apply(this,arguments)}function u(){u=h._asyncToGenerator(function*(a,b){a=yield e("cut",[f(a),

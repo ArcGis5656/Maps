@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../request ../core/Error ../core/jsonMap ../core/maybe ../core/MultiOriginJSONSupport ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../geometry/SpatialReference ./BaseTileLayer ./mixins/BlendLayer ./mixins/OperationalLayer ./support/TileInfo".split(" "),function(p,c,r,f,b,m,x,d,C,D,E,y,t,z,A,B,u){const q=new b.JSONMap({BingMapsAerial:"aerial",
 BingMapsRoad:"road",BingMapsHybrid:"hybrid"});b=function(v){function n(a){a=v.call(this,a)||this;a.type="bing-maps";a.tileInfo=new u({size:[256,256],dpi:96,origin:{x:-2.0037508342787E7,y:2.0037508342787E7,spatialReference:t.WebMercator},spatialReference:t.WebMercator,lods:[{level:1,resolution:78271.5169639999,scale:2.95828763795777E8},{level:2,resolution:39135.7584820001,scale:1.47914381897889E8},{level:3,resolution:19567.8792409999,scale:7.3957190948944E7},{level:4,resolution:9783.93962049996,scale:3.6978595474472E7},

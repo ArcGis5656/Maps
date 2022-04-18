@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../engine/webgl/DisplayId","./DisplayIdGenerator","./StaticBitSet"],function(m,d,q,r){function g(f,c,a){if(!(f.length>c))for(;f.length<=c;)f.push(a)}let t=function(){function f(){this._numerics=[];this._strings=[];this._idGenerator=new q.DisplayIdGenerator;this._allocatedSize=256;this._bitsets=[];this._instanceIds=[];this._bounds=[]}var c=f.prototype;c.createBitset=function(){const a=this._bitsets.length;this._bitsets.push(r.StaticBitSet.create(this._allocatedSize,d.DISPLAY_ID_TEXEL_MASK));
 return a+1};c.getBitset=function(a){return this._bitsets[a-1]};c._expand=function(){this._allocatedSize<<=1;for(const a of this._bitsets)a.resize(this._allocatedSize)};c._ensureNumeric=function(a,b){this._numerics[a]||(this._numerics[a]=[]);g(this._numerics[a],b,0)};c._ensureInstanceId=function(a){g(this._instanceIds,a,0)};c._ensureString=function(a,b){this._strings[a]||(this._strings[a]=[]);g(this._strings[a],b,null)};c.createDisplayId=function(a=!1){const b=this._idGenerator.createId();b>this._allocatedSize&&

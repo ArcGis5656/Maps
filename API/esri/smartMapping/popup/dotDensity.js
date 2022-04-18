@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../PopupTemplate ../../core/Error ../../intl/messages ../../popup/ExpressionInfo ../../popup/FieldInfo ./support/utils ../statistics/support/predominanceUtils".split(" "),function(r,g,k,w,x,t,u,e,v){function y(a){return l.apply(this,arguments)}function l(){l=g._asyncToGenerator(function*(a){const {layer:b,renderer:c}=a;yield b.load();a=c||b.renderer;if("dot-density"!==a.type)throw new w("dot-density-popup:invalid-parameters","renderer.type must be 'dot-density'");
 return{layer:b,renderer:a}});return l.apply(this,arguments)}function z(a,b){return m.apply(this,arguments)}function m(){m=g._asyncToGenerator(function*(a,b){const {fieldInfos:c,expressionInfos:d}=yield e.getFieldAndExpressionInfos({renderer:a,layer:b});return new k({content:yield e.getContentFromFieldInfos(b,{fieldInfos:c,expressionInfos:d}),expressionInfos:d,fieldInfos:c})});return m.apply(this,arguments)}function A(a,b,c){return n.apply(this,arguments)}function n(){n=g._asyncToGenerator(function*(a,

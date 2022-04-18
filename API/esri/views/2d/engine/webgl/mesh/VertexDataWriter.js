@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../chunks/_rollupPluginBabelHelpers","../definitions","./heuristics","../util/Writer"],function(q,t,r,u,l){let A=function(){function m(a,d,c){this._start={index:0,vertex:0};c=u.getMeshSizeHint(a,d,c);d/=4;this.geometryType=a;this._records=new l(Int32Array,c.recordBytes);this._indices=new l(Uint32Array,c.indexBytes);this._vertices=new l(Uint32Array,c.vertexBytes);this._metrics=new l(Float32Array,0);this._strideInt=d}var e=m.prototype;e.serialize=function(a){const d=this._records.buffer(),
 c=this._indices.buffer(),b=this._vertices.buffer(),f=this._metrics.length?this._metrics.buffer():null,g=4*this._strideInt;a.push(d,c,b);return{stride:g,records:d,indices:c,vertices:b,metrics:f}};e.vertexEnsureSize=function(a){this._vertices.ensureSize(a)};e.indexEnsureSize=function(a){this._indices.ensureSize(a)};e.recordStart=function(){this._start.index=this._indices.length;this._start.vertex=this._vertices.length};e.recordEnd=function(a,d,c,b,f,g,n,p){this._records.push(a);this._records.push(d);

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../geometry/SpatialReference ../rest/locator/addressToLocations ../rest/locator/addressesToLocations ../rest/locator/locationToAddress ../rest/locator/suggestLocations ./Task".split(" "),function(k,e,g,c,u,v,l,m,n,p,q,r,t){c=function(h){function f(a){a=h.call(this,a)||this;a.outSpatialReference=
 null;a.url=null;return a}k._inheritsLoose(f,h);var d=f.prototype;d.addressToLocations=function(a,b){!a.outSpatialReference&&this.outSpatialReference&&(a.outSpatialReference=this.outSpatialReference);return n.addressToLocations(this.url,a,{...this.requestOptions,...b})};d.suggestLocations=function(a,b){return r.suggestLocations(this.url,a,{...this.requestOptions,...b})};d.addressesToLocations=function(a,b){!a.outSpatialReference&&this.outSpatialReference&&(a.outSpatialReference=this.outSpatialReference);

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/maybe ../../../../core/promiseUtils ../../../../core/Logger ../../../../core/accessorSupport/ensureType ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/set ../../../../core/accessorSupport/decorators/subclass ../../../ViewAnimation ./CameraController".split(" "),function(b,h,m,e,f,p,q,r,t,u,n,k,a){b.AnimationController=function(l){function c(){return l.apply(this,
 arguments)||this}h._inheritsLoose(c,l);var d=c.prototype;d.onControllerStart=function(){this.state=a.State.Running;e.isSome(this.viewAnimation)&&this.viewAnimation.when(()=>this.updateStateFromViewAnimation(),()=>this.updateStateFromViewAnimation())};d.updateStateFromViewAnimation=function(){!e.isSome(this.viewAnimation)||this.state!==a.State.Ready&&this.state!==a.State.Running||(this.viewAnimation.state===k.State.FINISHED?this.finish():this.viewAnimation.state===k.State.STOPPED&&(this.state=a.State.Stopped))};

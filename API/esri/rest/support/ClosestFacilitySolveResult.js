@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../Graphic ../../core/JSONSupport ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../../geometry/SpatialReference ./DirectionsFeatureSet ./FeatureSet ./NAMessage ../../geometry/Point ../../geometry/Polyline ../../geometry/Polygon".split(" "),
 function(n,c,b,m,p,q,e,B,C,D,h,r,t,u,v,w,l,x,y){function z(g){return g.features.map(d=>{const f=t.fromJSON(g.spatialReference);d=m.fromJSON(d);q.isSome(d.geometry)&&(d.geometry.spatialReference=f);return d})}function k(g){return v.fromJSON(g).features.map(d=>d.geometry)}b=function(g){function d(a){a=g.call(this,a)||this;a.directions=null;a.facilities=null;a.incidents=null;a.messages=null;a.pointBarriers=null;a.polylineBarriers=null;a.polygonBarriers=null;a.routes=null;return a}n._inheritsLoose(d,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/arrayUtils ../core/lang ../core/maybe ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer ./Extent ./Geometry ./Point ./SpatialReference ./support/centroid ./support/contains ./support/coordsUtils ./support/extentUtils ./support/intersectsBase ./support/webMercatorUtils ./support/zmUtils".split(" "),function(u,l,A,
 v,n,p,h,B,C,D,E,m,F,G,H,I,J,K,L,w){var t;h=t=function(x){function q(...a){a=x.call(this,...a)||this;a.rings=[];a.type="polygon";return a}u._inheritsLoose(q,x);q.fromExtent=function(a){var b=a.clone().normalize();a=a.spatialReference;let c=!1,f=!1;for(const d of b)d.hasZ&&(c=!0),d.hasM&&(f=!0);b={rings:b.map(function(d){const e=[[d.xmin,d.ymin],[d.xmin,d.ymax],[d.xmax,d.ymax],[d.xmax,d.ymin],[d.xmin,d.ymin]];if(c&&d.hasZ){var k=d.zmin+.5*(d.zmax-d.zmin);for(let r=0;r<e.length;r++)e[r].push(k)}if(f&&

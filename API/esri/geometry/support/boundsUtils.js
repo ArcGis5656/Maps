@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(v){function E(a){return void 0!==a.xmin&&void 0!==a.ymin&&void 0!==a.xmax&&void 0!==a.ymax}function F(a){return(b,c)=>null==b?c:null==c?b:a(b,c)}function y(a,b,c,d){const m=c?3:2;if(!b.length||!b[0].length)return null;let [n,k]=b[0][0],[e,f]=b[0][0],g=void 0,h=void 0,p=void 0;var l=void 0;for(let w=0;w<b.length;w++){const u=b[w];for(let x=0;x<u.length;x++){const q=u[x],[z,A]=q;n=r(n,z);k=r(k,A);e=t(e,z);f=t(f,A);if(c&&2<q.length){const B=q[2];g=r(g,B);h=t(h,B)}d&&q.length>
 m&&(l=q[m],p=r(g,l),l=t(h,l))}}if(c){if(d)return a[0]=n,a[1]=k,a[2]=g,a[3]=p,a[4]=e,a[5]=f,a[6]=h,a[7]=l,a.length=8,a;a[0]=n;a[1]=k;a[2]=g;a[3]=e;a[4]=f;a[5]=h;a.length=6;return a}if(d)return a[0]=n,a[1]=k,a[2]=p,a[3]=e,a[4]=f,a[5]=l,a.length=6,a;a[0]=n;a[1]=k;a[2]=e;a[3]=f;a.length=4;return a}function C(a,b,c,d,m,n){c=b.xmin;d=b.xmax;const k=b.ymin,e=b.ymax;let f=b.zmin,g=b.zmax,h=b.mmin;b=b.mmax;if(m){f=f||0;g=g||0;if(n)return a[0]=c,a[1]=k,a[2]=f,a[3]=h||0,a[4]=d,a[5]=e,a[6]=g,a[7]=b||0,a;a[0]=

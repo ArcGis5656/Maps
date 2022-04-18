@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/Collection ../../core/compilerUtils ../../core/Handles ../../core/watchUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../layers/Layer ../../views/layers/support/ClipRect".split(" "),function(p,d,c,x,y,z,v,f,D,E,F,A,B,q){function C(r,g){g=10**g;return Math.round(r*g)/g}
 const t=x.ofType(B),u={left:0,right:0,top:0,bottom:0};c=function(r){function g(a){a=r.call(this,a)||this;a._handles=new z;a._leadingClips=new Map;a._trailingClips=new Map;a.direction="horizontal";a.leadingLayers=new t;a.max=100;a.min=0;a.precision=4;a.step=.5;a.stepMultiplier=10;a.trailingLayers=new t;a.view=null;return a}p._inheritsLoose(g,r);var e=g.prototype;e.initialize=function(){this._handles.add([v.init(this,["view","view.ready","position","direction"],()=>this._clipLayers()),v.on(this,"leadingLayers",

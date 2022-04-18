@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../request ../core/Loadable ../core/Logger ../core/maybe ../core/MultiOriginJSONSupport ../core/promiseUtils ../core/urlUtils ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../geometry/Extent ../geometry/SpatialReference ../layers/support/arcgisLayerUrl".split(" "),function(h,d,m,b,t,n,u,v,w,e,C,D,E,x,y,z,p){const A=t.getLogger("esri.networks.Network");
 b=function(q){function l(a){a=q.call(this,a)||this;a.id=null;a.title=null;a.layerUrl=null;a.dataElement=null;a.fullExtent=null;a.spatialReference=null;a.type=null;a.sourceJSON=null;return a}h._inheritsLoose(l,q);var k=l.prototype;k.initialize=function(){this.when().catch(a=>{if(!v.isAbortError(a)){var c,f;A.error("#load()",`Failed to load layer (title: '${null!=(c=this.title)?c:"no title"}', id: '${null!=(f=this.id)?f:"no id"}')`,{error:a})}})};k.load=function(){var a=h._asyncToGenerator(function*(c){this.addResolvingPromise(this._fetchDataElement(this.featureServiceUrl,

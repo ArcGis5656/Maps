@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/AsyncUpdate ../../../../core/HandleOwner ../../../../core/Logger ../../../../core/maybe ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../layers/support/fieldUtils".split(" "),function(b,l,d,q,r,t,k,f,y,z,A,u,m){function n(g){return p.apply(this,
 arguments)}function p(){p=l._asyncToGenerator(function*(g){const e=new Set;try{return yield g(e),Array.from(e).sort()}catch(a){return v.error(a),null}});return p.apply(this,arguments)}const v=t.getLogger("esri.views.3d.layers.support.SceneLayerViewRequiredFields");b.SceneLayerViewRequiredFields=function(g){function e(a){return g.call(this,a)||this}l._inheritsLoose(e,g);e.prototype.initialize=function(){this.layer=this.layerView.layer;this.handles.add([this.autoUpdateAsync("rendererFields",()=>{const {fieldsIndex:a,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../chunks/_rollupPluginBabelHelpers","../config","./has","./maybe","./string"],function(n,h,g,l,p){const m={info:0,warn:1,error:2,none:3};g=function(){function b(a){this.level=null;this._module="";this.writer=this._parent=null;this._loggedMessages={error:new Map,warn:new Map,info:new Map};null!=a.level&&(this.level=a.level);null!=a.writer&&(this.writer=a.writer);this._module=a.module;b._loggers[this.module]=this;a=this.module.lastIndexOf(".");-1!==a&&(this._parent=b.getLogger(this.module.slice(0,
 a)))}var c=b.prototype;c.error=function(...a){this._log("error","always",...a)};c.warn=function(...a){this._log("warn","always",...a)};c.info=function(...a){this._log("info","always",...a)};c.errorOnce=function(...a){this._log("error","once",...a)};c.warnOnce=function(...a){this._log("warn","once",...a)};c.infoOnce=function(...a){this._log("info","once",...a)};c.errorOncePerTick=function(...a){this._log("error","oncePerTick",...a)};c.warnOncePerTick=function(...a){this._log("warn","oncePerTick",...a)};

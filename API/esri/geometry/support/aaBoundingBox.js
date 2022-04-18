@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../core/maybe","../Extent","./aaBoundingRect"],function(d,u,x,C){function t(a=y){return[a[0],a[1],a[2],a[3],a[4],a[5]]}function z(a,b,c,f,e,h,k=t()){k[0]=a;k[1]=b;k[2]=c;k[3]=f;k[4]=e;k[5]=h;return k}function n(a){return a[0]>=a[3]?0:a[3]-a[0]}function p(a){return a[1]>=a[4]?0:a[4]-a[1]}function q(a){return a[2]>=a[5]?0:a[5]-a[2]}function A(a,b){return Math.max(b[0],a[0])<=Math.min(b[3],a[3])&&Math.max(b[1],a[1])<=Math.min(b[4],a[4])&&Math.max(b[2],a[2])<=Math.min(b[5],a[5])}
 function B(a,b){a[0]=b[0];a[1]=b[1];a[2]=b[2];a[3]=b[3];a[4]=b[4];a[5]=b[5];return a}function v(a){return 6===a.length}const w=[Infinity,Infinity,Infinity,-Infinity,-Infinity,-Infinity],y=[0,0,0,0,0,0],D=t();d.NEGATIVE_INFINITY=w;d.POSITIVE_INFINITY=[-Infinity,-Infinity,-Infinity,Infinity,Infinity,Infinity];d.ZERO=y;d.allFinite=function(a){for(let b=0;6>b;b++)if(!isFinite(a[b]))return!1;return!0};d.center=function(a,b=[0,0,0]){b[0]=a[0]+n(a)/2;b[1]=a[1]+p(a)/2;b[2]=a[2]+q(a)/2;return b};d.contains=

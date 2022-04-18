@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../core/has ../../core/Error ../../core/maybe ../../core/screenUtils ../../geometry/support/scaleUtils ../../renderers/visualVariables/SizeVariable ./scaleRange ../support/adapters/support/layerUtils".split(" "),function(x,S,l,y,m,D,n,E,q){function F(a){return t.apply(this,arguments)}function t(){t=x._asyncToGenerator(function*(a){var {view:c}=a;if(!(a&&c&&a.layer))throw new l("size-range:missing-parameters","'view' and 'layer' parameters are required");
 const {layer:e,...d}=a,b=q.createLayerAdapter(e,q.featureCapableLayerTypes);a={layerAdapter:b,...d};if(!b)throw new l("size-range:invalid-parameters","'layer' must be one of these types: "+q.getLayerTypeLabels(q.featureCapableLayerTypes).join(", "));yield c.when();c=y.isSome(a.signal)?{signal:a.signal}:null;yield b.load(c);c=b.geometryType;if("point"!==c&&"multipoint"!==c&&"polyline"!==c&&"polygon"!==c)throw new l("size-range:not-supported",`sizeRange is not supported for geometryType: ${c}`);return a});

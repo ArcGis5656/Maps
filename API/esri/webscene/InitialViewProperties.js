@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../Viewpoint ../core/JSONSupport ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../geometry/SpatialReference ./Environment".split(" "),function(g,c,l,a,d,p,q,r,m,n,h){var f;a=f=function(k){function e(b){b=k.call(this,b)||this;b.environment=new h;b.spatialReference=null;b.viewpoint=null;return b}g._inheritsLoose(e,k);e.prototype.clone=
 function(){return new f({environment:this.environment.clone(),spatialReference:this.spatialReference?this.spatialReference.clone():null,viewingMode:this.viewingMode,viewpoint:this.viewpoint?this.viewpoint.clone():null})};g._createClass(e,[{key:"viewingMode",set:function(b){this._set("viewingMode",b)}}]);return e}(a.JSONSupport);c.__decorate([d.property({type:h,json:{write:{isRequired:!0}}})],a.prototype,"environment",void 0);c.__decorate([d.property({type:n})],a.prototype,"spatialReference",void 0);

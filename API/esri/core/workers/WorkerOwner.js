@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../kernel ../Error ../Logger ../promiseUtils ./utils ./workerFactory".split(" "),function(r,u,v,w,q,l,x){const y=w.getLogger("esri.core.workers"),{ABORT:t,INVOKE:z,OPEN:A,OPENED:B,RESPONSE:m}=l.MessageType;return function(){function n(a,c){this._outJobs=new Map;this._inJobs=new Map;this.worker=a;this.id=c;a.addEventListener("message",this._onMessage.bind(this));a.addEventListener("error",b=>{b.preventDefault();y.error(b)})}n.create=function(){var a=
 r._asyncToGenerator(function*(c){const b=yield x.createWorker();return new n(b,c)});return function(c){return a.apply(this,arguments)}}();var d=n.prototype;d.terminate=function(){this.worker.terminate()};d.open=function(){var a=r._asyncToGenerator(function*(c,b={}){const {signal:e}=b,f=l.newJobId();return new Promise((h,p)=>{const k=q.onAbortOrThrow(e,()=>{this._outJobs.delete(f);this._post({type:t,jobId:f})});this._outJobs.set(f,{resolve:h,reject:p,abortHandle:k});this._post({type:A,jobId:f,modulePath:c})})});

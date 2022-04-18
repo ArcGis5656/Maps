@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./Compass/CompassViewModel ./support/decorators/accessibleHandler ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory ./support/widgetUtils".split(" "),function(r,c,n,b,y,z,e,t,u,p,v,w,A,k,B){b=function(q){function l(a,
 f){a=q.call(this,a,f)||this;a.goToOverride=null;a.iconClass="esri-icon-locate-circled";a.label=void 0;a.messages=null;a.view=null;a.viewModel=new p;return a}r._inheritsLoose(l,q);var g=l.prototype;g.reset=function(){return this.viewModel.reset()};g.render=function(){const {orientation:a,state:f}=this.viewModel;var d="disabled"===f,h="compass"===("rotation"===f?"rotation":"compass");const x=d?-1:0;d={["esri-disabled"]:d,["esri-interactive"]:!d};h={["esri-icon-compass"]:h,["esri-icon-dial"]:!h};const {messages:m}=

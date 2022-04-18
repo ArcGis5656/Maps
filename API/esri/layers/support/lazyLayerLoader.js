@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["require","exports","../../chunks/_rollupPluginBabelHelpers"],function(e,h,f){const g=a=>Object.freeze({__proto__:null,default:a}),k={BingMapsLayer:function(){var a=f._asyncToGenerator(function*(){return(yield new Promise((b,c)=>e(["../BingMapsLayer"],d=>b(g(d)),c))).default});return function(){return a.apply(this,arguments)}}(),BuildingSceneLayer:function(){var a=f._asyncToGenerator(function*(){return(yield new Promise((b,c)=>e(["../BuildingSceneLayer"],d=>b(g(d)),c))).default});return function(){return a.apply(this,
 arguments)}}(),CSVLayer:function(){var a=f._asyncToGenerator(function*(){return(yield new Promise((b,c)=>e(["../CSVLayer"],d=>b(g(d)),c))).default});return function(){return a.apply(this,arguments)}}(),ElevationLayer:function(){var a=f._asyncToGenerator(function*(){return(yield new Promise((b,c)=>e(["../ElevationLayer"],d=>b(g(d)),c))).default});return function(){return a.apply(this,arguments)}}(),FeatureLayer:function(){var a=f._asyncToGenerator(function*(){return(yield new Promise((b,c)=>e(["../FeatureLayer"],

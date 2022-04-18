@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Accessor ../../../core/deprecate ../../../core/Logger ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../state/Constraints".split(" "),function(a,e,c,m,f,g,h,p,q,r,n,k){a.AltitudeConstraint=function(l){function d(){var b=l.apply(this,arguments)||this;b.min=k.earthAltitudeConstraint.min;
 b.max=k.earthAltitudeConstraint.max;return b}e._inheritsLoose(d,l);e._createClass(d,[{key:"mode",get:function(){f.deprecated(g.getLogger(this.declaredClass),"esri.views.SceneView.constraints.altitude.mode is deprecated. The altitude constraint no longer applies to local scenes and does not have an automatic mode anymore.",{version:"4.6"});return"manual"},set:function(b){f.deprecated(g.getLogger(this.declaredClass),"esri.views.SceneView.constraints.altitude.mode is deprecated. The altitude constraint no longer applies to local scenes and does not have an automatic mode anymore.",

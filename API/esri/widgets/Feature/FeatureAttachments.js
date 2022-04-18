@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/watchUtils ../../core/accessorSupport/decorators/aliasOf ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/property ../../core/accessorSupport/decorators/subclass ../Attachments ../Widget ./FeatureAttachments/FeatureAttachmentsViewModel ./support/FeatureElementInfo ../support/widgetUtils ../../core/Logger ../support/jsxFactory".split(" "),function(n,c,k,e,
 b,w,x,g,p,q,r,l,t,y,z,u){b=function(m){function h(a,d){a=m.call(this,a,d)||this;a._featureElementInfo=null;a.attachmentsWidget=new q;a.description=null;a.displayType=null;a.graphic=null;a.headingLevel=2;a.title=null;a.viewModel=new l;return a}n._inheritsLoose(h,m);var f=h.prototype;f.initialize=function(){this._featureElementInfo=new t;k.init(this,["viewModel.description","viewModel.title","headingLevel"],()=>this._setupFeatureElementInfo());k.init(this,"viewModel.graphic",a=>this.attachmentsWidget.graphic=

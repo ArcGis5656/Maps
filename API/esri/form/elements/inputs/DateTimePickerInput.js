@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/reader ../../../core/accessorSupport/decorators/subclass ../../../core/accessorSupport/decorators/writer ./Input".split(" "),function(p,c,g,b,t,u,l,q,m,r){function n(e){return null!=e?new Date(e):null}var h;b=h=function(e){function k(a){a=e.call(this,
 a)||this;a.includeTime=!1;a.max=null;a.min=null;a.type="datetime-picker";return a}p._inheritsLoose(k,e);var f=k.prototype;f.readMax=function(a,d){return n(d.max)};f.writeMax=function(a,d){d.max=a?a.getTime():null};f.readMin=function(a,d){return n(d.min)};f.writeMin=function(a,d){d.min=a?a.getTime():null};f.clone=function(){return new h({includeTime:this.includeTime,max:this.max,min:this.min,type:this.type})};return k}(r);c.__decorate([g.property({type:Boolean,json:{write:!0}})],b.prototype,"includeTime",

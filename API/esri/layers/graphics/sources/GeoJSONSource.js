@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../geometry ../../../core/Error ../../../core/has ../../../core/Loadable ../../../core/Logger ../../../core/maybe ../../../core/promiseUtils ../../../core/workers/workers ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ./support/clientSideDefaults ../../../rest/support/FeatureSet ../../../geometry/Extent ../../../geometry/Polygon ../../../geometry/support/typeUtils".split(" "),
 function(f,p,k,L,u,z,A,B,v,C,D,m,M,N,E,F,G,H,I,J){const w=B.getLogger("esri.layers.graphics.sources.GeoJSONSource");f.GeoJSONSource=function(x){function q(){var a=x.apply(this,arguments)||this;a.type="geojson";a.refresh=C.debounce(function(){var b=p._asyncToGenerator(function*(e){yield a.load();const {extent:g,timeExtent:h}=yield a._connection.invoke("refresh",e);a.sourceJSON.extent=g;h&&(a.sourceJSON.timeInfo.timeExtent=[h.start,h.end]);return{dataChanged:!0,updates:{extent:a.sourceJSON.extent,timeInfo:a.sourceJSON.timeInfo}}});

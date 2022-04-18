@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/jsonMap ../core/lang ../core/screenUtils ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/enumeration ../core/accessorSupport/decorators/subclass ./LineSymbol ./LineSymbolMarker".split(" "),function(u,d,g,v,n,h,z,w,x,b,y){var m;g=new g.JSONMap({esriSLSSolid:"solid",esriSLSDash:"dash",esriSLSDot:"dot",esriSLSDashDot:"dash-dot",esriSLSDashDotDot:"long-dash-dot-dot",
 esriSLSNull:"none",esriSLSInsideFrame:"inside-frame",esriSLSShortDash:"short-dash",esriSLSShortDot:"short-dot",esriSLSShortDashDot:"short-dash-dot",esriSLSShortDashDotDot:"short-dash-dot-dot",esriSLSLongDash:"long-dash",esriSLSLongDashDot:"long-dash-dot"});b=m=function(e){function k(...a){a=e.call(this,...a)||this;a.type="simple-line";a.style="solid";a.cap="round";a.join="round";a.marker=null;a.miterLimit=2;return a}u._inheritsLoose(k,e);var c=k.prototype;c.normalizeCtorArgs=function(a,l,p,q,r,t){if(a&&

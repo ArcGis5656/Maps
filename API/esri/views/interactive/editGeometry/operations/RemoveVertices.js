@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../core/maybe","../EditGeometry"],function(g,k,l){let m=function(){function h(b,a,d=0){this.editGeometry=b;this.vertices=a;this.minNumberOfVertices=d;this.removedVertices=null}var f=h.prototype;f.apply=function(){let b="redo";null==this.removedVertices?(this.removedVertices=[],this.vertices.forEach(a=>{a=this._removeVertex(a);k.isSome(a)&&this.removedVertices.push(a)}),b="apply"):this.removedVertices.forEach(a=>{this._removeVertex(a.removedVertex)});this.editGeometry.notifyChanges({operation:b,
 removedVertices:this.vertices})};f.undo=function(){this.removedVertices.forEach(b=>{this._undoRemoveVertex(b)});this.editGeometry.notifyChanges({operation:"undo",addedVertices:this.vertices})};f.accumulate=function(){return!1};f._removeVertex=function(b){const a=b.component;if(a.vertices.length<=this.minNumberOfVertices)return null;const d={removedVertex:b,createdEdge:null},e=b.leftEdge,c=b.rightEdge;a.vertices.splice(a.vertices.indexOf(b),1);e&&(a.edges.splice(a.edges.indexOf(e),1),e.leftVertex.rightEdge=

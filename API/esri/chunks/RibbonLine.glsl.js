@@ -1,10 +1,11 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define("exports ../views/3d/webgl-engine/core/shaderLibrary/Slice.glsl ../views/3d/webgl-engine/core/shaderLibrary/attributes/RibbonVertexPosition.glsl ../views/3d/webgl-engine/core/shaderLibrary/output/OutputDepth.glsl ../views/3d/webgl-engine/core/shaderLibrary/output/ReadLinearDepth.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/LineStipple.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/MultipassTerrainTest.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/PiUtils.glsl ../views/3d/webgl-engine/core/shaderLibrary/util/AlphaDiscard.glsl ../views/3d/webgl-engine/core/shaderLibrary/util/ColorConversion.glsl ../views/3d/webgl-engine/core/shaderModules/interfaces ../views/3d/webgl-engine/core/shaderModules/ShaderBuilder".split(" "),
-function(e,n,p,q,r,t,u,v,f,w,b,x){function k(c){const a=new x.ShaderBuilder,d=c.stippleEnabled&&c.roundCaps,g=c.falloffEnabled||d,h=c.innerColorEnabled,l=c.stippleEnabled&&c.stippleScaleWithLineWidth||c.roundCaps,m=c.stippleEnabled&&c.stippleScaleWithLineWidth;a.extensions.add("GL_OES_standard_derivatives");a.include(v.PiUtils);a.include(p.RibbonVertexPosition,c);a.include(t.LineStipple,{...c,stippleRequiresStretchMeasure:d});1===c.output&&a.include(q.OutputDepth,c);a.vertex.uniforms.add("proj","mat4").add("view",
-"mat4").add("cameraNearFar","vec2").add("pixelRatio","float").add("miterLimit","float").add("screenSize","vec2");a.attributes.add("position","vec3");a.attributes.add("subdivisionFactor","float");a.attributes.add("uv0","vec2");a.attributes.add("auxpos1","vec3");a.attributes.add("auxpos2","vec3");a.varyings.add("vColor","vec4");a.varyings.add("vpos","vec3");a.varyings.add("linearDepth","float");c.multipassTerrainEnabled&&a.varyings.add("depth","float");l&&a.varyings.add("vLineWidth","float");m&&a.varyings.add("vLineSizeInv",
-"float");h&&a.varyings.add("vLineDistance","float");g&&a.varyings.add("vLineDistanceNorm","float");c.falloffEnabled&&a.fragment.uniforms.add("falloff","float");c.innerColorEnabled&&(a.fragment.uniforms.add("innerColor","vec4"),a.fragment.uniforms.add("innerWidth","float"));c.roundCaps&&a.varyings.add("vCapPosition","vec2");d&&a.varyings.add("vStipplePatternStretch","float");a.vertex.code.add(b.glsl`#define PERPENDICULAR(v) vec2(v.y, -v.x);
+define("exports ../views/3d/webgl-engine/core/shaderLibrary/ShaderOutputOptions ../views/3d/webgl-engine/core/shaderLibrary/Slice.glsl ../views/3d/webgl-engine/core/shaderLibrary/attributes/RibbonVertexPosition.glsl ../views/3d/webgl-engine/core/shaderLibrary/output/OutputDepth.glsl ../views/3d/webgl-engine/core/shaderLibrary/output/ReadLinearDepth.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/LineStipple.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/MultipassTerrainTest.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/PiUtils.glsl ../views/3d/webgl-engine/core/shaderLibrary/util/AlphaDiscard.glsl ../views/3d/webgl-engine/core/shaderLibrary/util/ColorConversion.glsl ../views/3d/webgl-engine/core/shaderModules/interfaces ../views/3d/webgl-engine/core/shaderModules/ShaderBuilder ../views/3d/webgl-engine/lib/VertexAttribute".split(" "),
+function(d,f,r,t,u,v,w,x,y,h,z,c,A,g){function m(b){const a=new A.ShaderBuilder,B=b.capType!==d.CapType.BUTT,e=b.capType===d.CapType.ROUND,n=b.stippleEnabled&&e,k=b.falloffEnabled||n,l=b.innerColorEnabled||e,p=b.stippleEnabled&&b.stippleScaleWithLineWidth||e,q=b.stippleEnabled&&b.stippleScaleWithLineWidth,C=b.stippleEnabled||e;a.include(y.PiUtils);a.include(t.RibbonVertexPosition,b);a.include(w.LineStipple,{...b,stippleRequiresStretchMeasure:!0});b.output===f.ShaderOutput.Depth&&a.include(u.OutputDepth,
+b);a.vertex.uniforms.add("proj","mat4").add("view","mat4").add("nearFar","vec2").add("pixelRatio","float").add("miterLimit","float").add("screenSize","vec2").add("inverseProjectionMatrix","mat4");a.vertex.constants.add("LARGE_HALF_FLOAT","float",65500);a.attributes.add(g.VertexAttribute.POSITION,"vec3");a.attributes.add(g.VertexAttribute.SUBDIVISIONFACTOR,"float");a.attributes.add(g.VertexAttribute.UV0,"vec2");a.attributes.add(g.VertexAttribute.AUXPOS1,"vec3");a.attributes.add(g.VertexAttribute.AUXPOS2,
+"vec3");a.varyings.add("vColor","vec4");a.varyings.add("vpos","vec3");a.varyings.add("linearDepth","float");b.multipassTerrainEnabled&&a.varyings.add("depth","float");p&&a.varyings.add("vLineWidth","float");q&&a.varyings.add("vLineSizeInv","float");l&&a.varyings.add("vLineDistance","float");k&&a.varyings.add("vLineDistanceNorm","float");b.falloffEnabled&&a.fragment.uniforms.add("falloff","float");b.innerColorEnabled&&(a.fragment.uniforms.add("innerColor","vec4"),a.fragment.uniforms.add("innerWidth",
+"float"));e&&(a.varyings.add("vSegmentSDF","float"),a.varyings.add("vReverseSegmentSDF","float"));a.vertex.code.add(c.glsl`#define PERPENDICULAR(v) vec2(v.y, -v.x);
 float interp(float ncp, vec4 a, vec4 b) {
 return (-ncp - a.z) / (b.z - a.z);
 }
@@ -13,28 +14,27 @@ float s = sin(a);
 float c = cos(a);
 mat2 m = mat2(c, -s, s, c);
 return m * v;
-}`);a.vertex.code.add(b.glsl`vec4 projectAndScale(vec4 pos) {
+}`);a.vertex.code.add(c.glsl`vec4 projectAndScale(vec4 pos) {
 vec4 posNdc = proj * pos;
 posNdc.xy *= screenSize / posNdc.w;
 return posNdc;
-}`);a.vertex.code.add(b.glsl`
+}`);a.vertex.code.add(c.glsl`
     void clipAndTransform(inout vec4 pos, inout vec4 prev, inout vec4 next, in bool isStartVertex) {
-      float vnp = cameraNearFar[0] * 0.99;
+      float vnp = nearFar[0] * 0.99;
 
-      //current pos behind ncp --> we need to clip
-      if(pos.z > -cameraNearFar[0]) {
+      if(pos.z > -nearFar[0]) {
+        //current pos behind ncp --> we need to clip
         if (!isStartVertex) {
-          //previous in front of ncp
-          if(prev.z < -cameraNearFar[0]) {
+          if(prev.z < -nearFar[0]) {
+            //previous in front of ncp
             pos = mix(prev, pos, interp(vnp, prev, pos));
             next = pos;
           } else {
             pos = vec4(0.0, 0.0, 0.0, 1.0);
           }
-        }
-        //next in front of ncp
-        if(isStartVertex) {
-          if(next.z < -cameraNearFar[0]) {
+        } else {
+          if(next.z < -nearFar[0]) {
+            //next in front of ncp
             pos = mix(pos, next, interp(vnp, pos, next));
             prev = pos;
           } else {
@@ -43,30 +43,29 @@ return posNdc;
         }
       } else {
         //current position visible
-        //previous behind ncp
-        if (prev.z > -cameraNearFar[0]) {
+        if (prev.z > -nearFar[0]) {
+          //previous behind ncp
           prev = mix(pos, prev, interp(vnp, pos, prev));
         }
-        //next behind ncp
-        if (next.z > -cameraNearFar[0]) {
+        if (next.z > -nearFar[0]) {
+          //next behind ncp
           next = mix(next, pos, interp(vnp, next, pos));
         }
       }
 
-      ${c.multipassTerrainEnabled?"depth \x3d pos.z;":""}
-      linearDepth = (-pos.z - cameraNearFar[0]) / (cameraNearFar[1] - cameraNearFar[0]);
+      ${b.multipassTerrainEnabled?"depth \x3d pos.z;":""}
+      linearDepth = (-pos.z - nearFar[0]) / (nearFar[1] - nearFar[0]);
 
       pos = projectAndScale(pos);
       next = projectAndScale(next);
       prev = projectAndScale(prev);
     }
-`);a.vertex.code.add(b.glsl`
+  `);a.vertex.code.add(c.glsl`
   void main(void) {
     // unpack values from uv0.y
     bool isStartVertex = abs(abs(uv0.y)-3.0) == 1.0;
 
     float coverage = 1.0;
-    vpos = position;
 
     // Check for special value of uv0.y which is used by the Renderer when graphics
     // are removed before the VBO is recompacted. If this is the case, then we just
@@ -81,8 +80,8 @@ return posNdc;
       float lineSize = getSize();
       float lineWidth = lineSize * pixelRatio;
 
-      ${l?b.glsl`vLineWidth = lineWidth;`:""}
-      ${m?b.glsl`vLineSizeInv = 1.0 / lineSize;`:""}
+      ${p?c.glsl`vLineWidth = lineWidth;`:""}
+      ${q?c.glsl`vLineSizeInv = 1.0 / lineSize;`:""}
 
       // convert sub-pixel coverage to alpha
       if (lineWidth < 1.0) {
@@ -106,10 +105,12 @@ return posNdc;
 
       float leftLen = length(left);
       float rightLen = length(right);
-  `);c.stippleEnabled&&a.vertex.code.add(b.glsl`float isEndVertex = float(!isStartVertex);
-vec4 segmentInfo = mix(vec4(pos.xy, right), vec4(prev.xy, left), isEndVertex);
-vec2 segmentOrigin = segmentInfo.xy;
-vec2 segment = segmentInfo.zw;`);a.vertex.code.add(b.glsl`left = (leftLen > 0.001) ? left/leftLen : vec2(0.0, 0.0);
+  `);C&&a.vertex.code.add(c.glsl`
+      float isEndVertex = float(!isStartVertex);
+      vec2 segmentOrigin = mix(pos.xy, prev.xy, isEndVertex);
+      vec2 segment = mix(right, left, isEndVertex);
+      ${e?c.glsl`vec2 segmentEnd = mix(next.xy, pos.xy, isEndVertex);`:""}
+    `);a.vertex.code.add(c.glsl`left = (leftLen > 0.001) ? left/leftLen : vec2(0.0, 0.0);
 right = (rightLen > 0.001) ? right/rightLen : vec2(0.0, 0.0);
 vec2 capDisplacementDir = vec2(0, 0);
 vec2 joinDisplacementDir = vec2(0, 0);
@@ -125,33 +126,18 @@ if (!isOutside) {
 displacementLen = min(displacementLen, min(leftLen, rightLen)/abs(nDotSeg));
 }
 }
-if (isOutside && (displacementLen > miterLimit * lineWidth)) {`);c.roundJoins?a.vertex.code.add(b.glsl`
-        vec2 startDir;
-        vec2 endDir;
-
-        if (leftLen < 0.001) {
-          startDir = right;
-        }
-        else{
-          startDir = left;
-        }
-        startDir = normalize(startDir);
+if (isOutside && (displacementLen > miterLimit * lineWidth)) {`);b.roundJoins?a.vertex.code.add(c.glsl`
+        vec2 startDir = leftLen < 0.001 ? right : left;
         startDir = PERPENDICULAR(startDir);
 
-        if (rightLen < 0.001) {
-          endDir = left;
-        }
-        else{
-          endDir = right;
-        }
-        endDir = normalize(endDir);
+        vec2 endDir = rightLen < 0.001 ? left : right;
         endDir = PERPENDICULAR(endDir);
 
-        float factor = ${c.stippleEnabled?b.glsl`min(1.0, subdivisionFactor * ${b.glsl.float(1.5)})`:b.glsl`subdivisionFactor`};
+        float factor = ${b.stippleEnabled?c.glsl`min(1.0, subdivisionFactor * ${c.glsl.float(1.5)})`:c.glsl`subdivisionFactor`};
 
         float rotationAngle = acos(clamp(dot(startDir, endDir), -1.0, 1.0));
         joinDisplacementDir = rotate(startDir, -sign(uv0.y) * factor * rotationAngle);
-      `):a.vertex.code.add(b.glsl`if (leftLen < 0.001) {
+      `):a.vertex.code.add(c.glsl`if (leftLen < 0.001) {
 joinDisplacementDir = right;
 }
 else if (rightLen < 0.001) {
@@ -160,52 +146,40 @@ joinDisplacementDir = left;
 else {
 joinDisplacementDir = (isStartVertex || subdivisionFactor > 0.0) ? right : left;
 }
-joinDisplacementDir = normalize(joinDisplacementDir);
-joinDisplacementDir = PERPENDICULAR(joinDisplacementDir);`);a.vertex.code.add(b.glsl`displacementLen = lineWidth;
-}
-} else {
-if (leftLen < 0.001) {
-joinDisplacementDir = right;
-}
-else if (rightLen < 0.001) {
-joinDisplacementDir = left;
-}
-else {
-joinDisplacementDir = isStartVertex ? right : left;
-}
-joinDisplacementDir = normalize(joinDisplacementDir);
-joinDisplacementDir = PERPENDICULAR(joinDisplacementDir);
-displacementLen = lineWidth;
-capDisplacementDir = isStartVertex ? -right : left;
-capDisplacementDir *= subdivisionFactor;
-}`);a.vertex.code.add(b.glsl`
+joinDisplacementDir = PERPENDICULAR(joinDisplacementDir);`);a.vertex.code.add(c.glsl`
+        displacementLen = lineWidth;
+      }
+    } else {
+      // CAP handling ---------------------------------------------------
+      joinDisplacementDir = isStartVertex ? right : left;
+      joinDisplacementDir = PERPENDICULAR(joinDisplacementDir);
+
+      ${B?c.glsl`capDisplacementDir = isStartVertex ? -right : left;`:""}
+    }
+  `);a.vertex.code.add(c.glsl`
     // Displacement (in pixels) caused by join/or cap
     vec2 dpos = joinDisplacementDir * sign(uv0.y) * displacementLen + capDisplacementDir * displacementLen;
 
-    ${g||h?b.glsl`float lineDistNorm = sign(uv0.y) * pos.w;`:""}
+    ${k||l?c.glsl`float lineDistNorm = sign(uv0.y) * pos.w;`:""}
 
-    ${h?b.glsl`vLineDistance = lineWidth * lineDistNorm;`:""}
-    ${g?b.glsl`vLineDistanceNorm = lineDistNorm;`:""}
-
-    ${c.roundCaps?b.glsl`vCapPosition = isJoin ? vec2(0.0) : dpos;`:""}
+    ${l?c.glsl`vLineDistance = lineWidth * lineDistNorm;`:""}
+    ${k?c.glsl`vLineDistanceNorm = lineDistNorm;`:""}
 
     pos.xy += dpos;
-  `);c.stippleEnabled&&(c.draped||a.vertex.code.add(b.glsl`vec3 segmentCenter = mix((auxpos2 + position) * 0.5, (position + auxpos1) * 0.5, isEndVertex);
-float worldToScreenRatio = computeWorldToScreenRatio(segmentCenter);`),a.vertex.code.add(b.glsl`float segmentLengthScreenDouble = length(segment);
+  `);e&&a.vertex.code.add(c.glsl`vec2 segmentDir = normalize(segment);
+vSegmentSDF = (isJoin && isStartVertex) ? LARGE_HALF_FLOAT : (dot(pos.xy - segmentOrigin, segmentDir) * pos.w) ;
+vReverseSegmentSDF = (isJoin && !isStartVertex) ? LARGE_HALF_FLOAT : (dot(pos.xy - segmentEnd, -segmentDir) * pos.w);`);b.stippleEnabled&&(b.draped||a.vertex.code.add(c.glsl`vec3 segmentCenter = mix((auxpos2 + position) * 0.5, (position + auxpos1) * 0.5, isEndVertex);
+float worldToScreenRatio = computeWorldToScreenRatio(segmentCenter);`),a.vertex.code.add(c.glsl`float segmentLengthScreenDouble = length(segment);
 float segmentLengthScreen = segmentLengthScreenDouble * 0.5;
 float discreteWorldToScreenRatio = discretizeWorldToScreenRatio(worldToScreenRatio);
-float segmentLengthRender = length(mix(auxpos2 - position, position - auxpos1, isEndVertex));`),c.draped?a.vertex.code.add(b.glsl`float segmentLengthPseudoScreen = segmentLengthScreen / pixelRatio * discreteWorldToScreenRatio / worldToScreenRatio;
-float startPseudoScreen = uv0.x * discreteWorldToScreenRatio - mix(0.0, segmentLengthPseudoScreen, isEndVertex);`):a.vertex.code.add(b.glsl`float startPseudoScreen = mix(uv0.x, uv0.x - segmentLengthRender, isEndVertex) * discreteWorldToScreenRatio;
-float segmentLengthPseudoScreen = segmentLengthRender * discreteWorldToScreenRatio;`),a.vertex.code.add(b.glsl`
-      float patternLength = ${c.stippleScaleWithLineWidth?"lineSize * ":""} stipplePatternPixelSize;
+float segmentLengthRender = length(mix(auxpos2 - position, position - auxpos1, isEndVertex));
+vStipplePatternStretch = worldToScreenRatio / discreteWorldToScreenRatio;`),b.draped?a.vertex.code.add(c.glsl`float segmentLengthPseudoScreen = segmentLengthScreen / pixelRatio * discreteWorldToScreenRatio / worldToScreenRatio;
+float startPseudoScreen = uv0.x * discreteWorldToScreenRatio - mix(0.0, segmentLengthPseudoScreen, isEndVertex);`):a.vertex.code.add(c.glsl`float startPseudoScreen = mix(uv0.x, uv0.x - segmentLengthRender, isEndVertex) * discreteWorldToScreenRatio;
+float segmentLengthPseudoScreen = segmentLengthRender * discreteWorldToScreenRatio;`),a.vertex.code.add(c.glsl`
+      float patternLength = ${b.stippleScaleWithLineWidth?"lineSize * ":""} stipplePatternPixelSize;
 
       // Compute the coordinates at both start and end of the line segment, because we need both to clamp to in the fragment shader
-      // The 0.5 factor on the screen length is to correct for pixel ratio (it is calculated at double resolution)
-      ${d?b.glsl`
-            vec3 stippleSegmentInfo = computeStippleDistanceLimits(startPseudoScreen, segmentLengthPseudoScreen, segmentLengthScreen, patternLength);
-            vStippleDistanceLimits = stippleSegmentInfo.xy;
-            vStipplePatternStretch = stippleSegmentInfo.z;`:b.glsl`
-            vStippleDistanceLimits = computeStippleDistanceLimits(startPseudoScreen, segmentLengthPseudoScreen, segmentLengthScreen, patternLength);`}
+      vStippleDistanceLimits = computeStippleDistanceLimits(startPseudoScreen, segmentLengthPseudoScreen, segmentLengthScreen, patternLength);
 
       vStippleDistance = mix(vStippleDistanceLimits.x, vStippleDistanceLimits.y, isEndVertex);
 
@@ -223,44 +197,67 @@ float segmentLengthPseudoScreen = segmentLengthRender * discreteWorldToScreenRat
       // Cancel out perspective correct interpolation because we want this length the really represent the screen distance
       vStippleDistanceLimits *= pos.w;
       vStippleDistance *= pos.w;
-    `));a.vertex.code.add(b.glsl`pos.xy = pos.xy / screenSize * pos.w;
-vColor = getColor();
-vColor.a *= coverage;
-gl_Position = pos;
-}
-}`);c.multipassTerrainEnabled&&(a.fragment.include(r.ReadLinearDepth),a.include(u.multipassTerrainTest,c));a.include(n.Slice,c);a.fragment.uniforms.add("intrinsicColor","vec4");a.fragment.include(w.ColorConversion);a.fragment.code.add(b.glsl`
+
+      // Disable stipple distance limits on caps
+      vStippleDistanceLimits = isJoin ?
+                                 vStippleDistanceLimits :
+                                 isStartVertex ?
+                                  vec2(-1e038, vStippleDistanceLimits.y) :
+                                  vec2(vStippleDistanceLimits.x, 1e038);
+    `));a.vertex.code.add(c.glsl`
+      // Convert back into NDC
+      pos.xy = (pos.xy / screenSize) * pos.w;
+
+      vColor = getColor();
+      vColor.a *= coverage;
+
+      ${b.wireframe&&!b.draped?"pos.z -\x3d 0.001 * pos.w;":""}
+
+      // transform final position to camera space for slicing
+      vpos = (inverseProjectionMatrix * pos).xyz;
+      gl_Position = pos;
+    }
+  }
+  `);b.multipassTerrainEnabled&&(a.fragment.include(v.ReadLinearDepth),a.include(x.multipassTerrainTest,b));a.include(r.Slice,b);a.fragment.uniforms.add("intrinsicColor","vec4");a.fragment.include(z.ColorConversion);a.fragment.code.add(c.glsl`
   void main() {
     discardBySlice(vpos);
-    ${c.multipassTerrainEnabled?"terrainDepthTest(gl_FragCoord, depth);":""}
-  `);c.roundCaps&&a.fragment.code.add(b.glsl`
-    float fragmentRadius = length(vCapPosition);
-    float fragmentSDF = (fragmentRadius - vLineWidth) * 0.5; // Divide by 2 to transform from double pixel scale
-    float capCoverage = clamp(0.5 - fragmentSDF, 0.0, 1.0);
-    if (capCoverage < ${b.glsl.float(f.symbolAlphaCutoff)}) {
-      discard;
-    }
-  `);d?a.fragment.code.add(b.glsl`
+    ${b.multipassTerrainEnabled?"terrainDepthTest(gl_FragCoord, depth);":""}
+  `);b.wireframe?a.fragment.code.add(c.glsl`vec4 finalColor = vec4(1.0, 0.0, 1.0, 1.0);`):(e&&a.fragment.code.add(c.glsl`
+      float sdf = min(vSegmentSDF, vReverseSegmentSDF);
+      vec2 fragmentPosition = vec2(
+        min(sdf, 0.0),
+        vLineDistance
+      ) * gl_FragCoord.w;
+
+      float fragmentRadius = length(fragmentPosition);
+      float fragmentCapSDF = (fragmentRadius - vLineWidth) * 0.5; // Divide by 2 to transform from double pixel scale
+      float capCoverage = clamp(0.5 - fragmentCapSDF, 0.0, 1.0);
+
+      if (capCoverage < ${c.glsl.float(h.symbolAlphaCutoff)}) {
+        discard;
+      }
+    `),n?a.fragment.code.add(c.glsl`
       vec2 stipplePosition = vec2(
-        max(1.0 - getStippleSDF() * 2.0 * vStipplePatternStretch, 0.0),
+        min(getStippleSDF() * 2.0 - 1.0, 0.0),
         vLineDistanceNorm * gl_FragCoord.w
       );
       float stippleRadius = length(stipplePosition * vLineWidth);
       float stippleCapSDF = (stippleRadius - vLineWidth) * 0.5; // Divide by 2 to transform from double pixel scale
       float stippleCoverage = clamp(0.5 - stippleCapSDF, 0.0, 1.0);
-      float stippleAlpha = step(${b.glsl.float(f.symbolAlphaCutoff)}, stippleCoverage);
-    `):a.fragment.code.add(b.glsl`float stippleAlpha = getStippleAlpha();`);a.fragment.code.add(b.glsl`discardByStippleAlpha(stippleAlpha, stippleAlphaColorDiscard);
-vec4 color = intrinsicColor * vColor;`);a.fragment.uniforms.add("pixelRatio","float");c.innerColorEnabled&&a.fragment.code.add(b.glsl`float distToInner = abs(vLineDistance * gl_FragCoord.w) - innerWidth;
+      float stippleAlpha = step(${c.glsl.float(h.symbolAlphaCutoff)}, stippleCoverage);
+      `):a.fragment.code.add(c.glsl`float stippleAlpha = getStippleAlpha();`),a.fragment.code.add(c.glsl`discardByStippleAlpha(stippleAlpha, stippleAlphaColorDiscard);
+vec4 color = intrinsicColor * vColor;`),b.innerColorEnabled&&a.fragment.code.add(c.glsl`float distToInner = abs(vLineDistance * gl_FragCoord.w) - innerWidth;
 float innerAA = clamp(0.5 - distToInner, 0.0, 1.0);
 float innerAlpha = innerColor.a + color.a * (1.0 - innerColor.a);
-color = mix(color, vec4(innerColor.rgb, innerAlpha), innerAA);`);a.fragment.code.add(b.glsl`vec4 finalColor = blendStipple(color, stippleAlpha);`);c.falloffEnabled&&a.fragment.code.add(b.glsl`finalColor.a *= pow(max(0.0, 1.0 - abs(vLineDistanceNorm * gl_FragCoord.w)), falloff);`);a.fragment.code.add(b.glsl`
-    if (finalColor.a < ${b.glsl.float(f.symbolAlphaCutoff)}) {
+color = mix(color, vec4(innerColor.rgb, innerAlpha), innerAA);`),a.fragment.code.add(c.glsl`vec4 finalColor = blendStipple(color, stippleAlpha);`),b.falloffEnabled&&a.fragment.code.add(c.glsl`finalColor.a *= pow(max(0.0, 1.0 - abs(vLineDistanceNorm * gl_FragCoord.w)), falloff);`));a.fragment.code.add(c.glsl`
+    if (finalColor.a < ${c.glsl.float(h.symbolAlphaCutoff)}) {
       discard;
     }
 
-    ${7===c.output?b.glsl`gl_FragColor = vec4(finalColor.a);`:""}
-    ${0===c.output?b.glsl`gl_FragColor = highlightSlice(finalColor, vpos);`:""}
-    ${0===c.output&&c.OITEnabled?"gl_FragColor \x3d premultiplyAlpha(gl_FragColor);":""}
-    ${4===c.output?b.glsl`gl_FragColor = vec4(1.0);`:""}
-    ${1===c.output?b.glsl`outputDepth(linearDepth);`:""}
+    ${b.output===f.ShaderOutput.Alpha?c.glsl`gl_FragColor = vec4(finalColor.a);`:""}
+    ${b.output===f.ShaderOutput.Color?c.glsl`gl_FragColor = highlightSlice(finalColor, vpos);`:""}
+    ${b.output===f.ShaderOutput.Color&&b.oitEnabled?"gl_FragColor \x3d premultiplyAlpha(gl_FragColor);":""}
+    ${b.output===f.ShaderOutput.Highlight?c.glsl`gl_FragColor = vec4(1.0);`:""}
+    ${b.output===f.ShaderOutput.Depth?c.glsl`outputDepth(linearDepth);`:""}
   }
-  `);return a}const y=Object.freeze({__proto__:null,NUM_ROUND_JOIN_SUBDIVISIONS:1,build:k});e.NUM_ROUND_JOIN_SUBDIVISIONS=1;e.RibbonLineShader=y;e.build=k});
+  `);return a}d.CapType=void 0;(function(b){b[b.BUTT=0]="BUTT";b[b.SQUARE=1]="SQUARE";b[b.ROUND=2]="ROUND";b[b.COUNT=3]="COUNT"})(d.CapType||(d.CapType={}));const D=Object.freeze({__proto__:null,NUM_ROUND_JOIN_SUBDIVISIONS:1,get CapType(){return d.CapType},build:m});d.NUM_ROUND_JOIN_SUBDIVISIONS=1;d.RibbonLineShader=D;d.build=m});

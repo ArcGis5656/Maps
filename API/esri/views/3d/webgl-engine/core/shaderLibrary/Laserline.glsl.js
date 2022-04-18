@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./output/ReadLinearDepth.glsl","./util/CameraSpace.glsl","../shaderModules/interfaces"],function(c,e,f,b){c.Laserline=function(a,d){a.extensions.add("GL_OES_standard_derivatives");a.fragment.include(e.ReadLinearDepth);a.include(f.CameraSpace);a.fragment.uniforms.add("glowColor","vec3");a.fragment.uniforms.add("glowWidth","float");a.fragment.uniforms.add("glowFalloff","float");a.fragment.uniforms.add("innerColor","vec3");a.fragment.uniforms.add("innerWidth","float");a.fragment.uniforms.add("depthMap",
 "sampler2D");a.fragment.uniforms.add("nearFar","vec2");a.fragment.uniforms.add("frameColor","sampler2D");d.contrastControlEnabled&&a.fragment.uniforms.add("globalAlphaContrastBoost","float");a.fragment.code.add(b.glsl`vec4 blendPremultiplied(vec4 source, vec4 dest) {

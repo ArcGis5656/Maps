@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../geometry ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../geometry/Point ./WebTileLayer ./support/LOD ./support/TileInfo ../portal/PortalItem ../geometry/SpatialReference ../geometry/Extent".split(" "),function(h,c,b,d,t,u,v,m,n,p,a,k,q,f,r){b=function(l){function g(...e){e=l.call(this,...e)||this;e.portalItem=null;e.isReference=
 null;e.tileInfo=new k({size:[256,256],dpi:96,format:"png8",compressionQuality:0,origin:new n({x:-2.0037508342787E7,y:2.0037508342787E7,spatialReference:f.WebMercator}),spatialReference:f.WebMercator,lods:[new a({level:0,scale:5.91657527591555E8,resolution:156543.033928}),new a({level:1,scale:2.95828763795777E8,resolution:78271.5169639999}),new a({level:2,scale:1.47914381897889E8,resolution:39135.7584820001}),new a({level:3,scale:7.3957190948944E7,resolution:19567.8792409999}),new a({level:4,scale:3.6978595474472E7,

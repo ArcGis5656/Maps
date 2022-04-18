@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../geometry ../../../../Viewpoint ../../../../core/Accessor ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../chunks/vec2 ../../../../chunks/vec2f64 ../../viewpointUtils ../../../navigation/RotationMomentumEstimator ../../../navigation/ZoomMomentumEstimator ../../../../geometry/Point".split(" "),
 function(x,n,h,y,z,q,E,F,G,A,t,u,v,B,C,D){h=function(w){function r(b){var a=w.call(this,b)||this;a._animationTime=0;a._momentumFinished=!1;a._rotationMomentumEstimator=new B.RotationMomentumEstimator(.6,.15,.95);a._rotationDirection=1;a._zoomDirection=1;a._zoomMomentumEstimator=new C.ZoomMomentumEstimator;a._zoomOnly=null;a.zoomMomentum=null;a.rotateMomentum=null;a.viewpoint=new y({targetGeometry:new D,scale:0,rotation:0});a.watch("_momentumFinished",d=>{d&&a.navigation.stop()});return a}x._inheritsLoose(r,

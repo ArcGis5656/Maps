@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/HandleOwner ../../core/watchUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./ScaleRanges ../Slider/SliderViewModel".split(" "),function(m,g,e,t,p,k,x,y,z,u,q,v){e=function(r){function l(a){a=r.call(this,a)||this;a.layer=null;a.scaleRanges=q.fromScaleRange({minScale:0,maxScale:0});
 ({max:b}=a._getSliderIndexRange(a.scaleRanges.length-1));var b=new v({precision:10,min:0,max:b,values:[0,b]});a.sliderViewModel=b;return a}m._inheritsLoose(l,r);var d=l.prototype;d.initialize=function(){var a=this;this.handles.add([p.init(this,"sliderViewModel.values",()=>{if(this._hasTiledLayer()){var [b,c]=this.sliderViewModel.values,f=this.mapScaleToSlider(this._getTiledLayerMaxScale()),h=this.mapScaleToSlider(this._getTiledLayerMinScale());if(c>f||b<h)this.sliderViewModel.values=[Math.max(b,h),

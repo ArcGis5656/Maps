@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./SmartMappingSliderViewModel".split(" "),function(t,m,r,l,y,z,u,v){l=function(n){function p(a){a=n.call(this,a)||this;a.handlesSyncedToPrimary=!0;return a}t._inheritsLoose(p,n);var q=p.prototype;q.setValue=function(a,b){const {max:d,min:k,values:e}=this;var h=e[a];
 if(!(isNaN(b)||h===b||b>d||b<k)){b=this.toPrecision(b);if(h=this.primaryHandleEnabled&&this.handlesSyncedToPrimary){var c=e.slice().sort((f,g)=>f>g?1:-1)[1];0===a&&b>c?b=c:2===a&&b<c&&(b=c)}c=this.getStopChanges(a,b);this.updateStops(c);h?this.notifyChange("values"):(e[a]=b,this._set("values",[...e]));this.notifyChange("labels")}};q.getStopIndexFromValueIndex=function(a){const {handlesSyncedToPrimary:b,primaryHandleEnabled:d}=this;if(d){const {values:k}=this,e=k[a];if(b)return a;a=k.slice().sort((c,

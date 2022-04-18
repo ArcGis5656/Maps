@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/maybe ../core/promiseUtils ../core/watchUtils ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./Spinner/SpinnerViewModel ./support/widgetUtils ../core/Logger ./support/jsxFactory".split(" "),function(m,e,n,p,q,g,c,w,x,r,t,u,k,y,z,v){c=function(l){function h(a,b){a=l.call(this,
 a,b)||this;a._animationDelay=500;a._animationPromise=null;a.location=null;a.view=null;a.viewModel=new k;a.visible=!1;return a}m._inheritsLoose(h,l);var d=h.prototype;d.initialize=function(){this.own([q.watch(this,"visible",a=>this._visibleChange(a))])};d.destroy=function(){this._animationPromise=null};d.show=function(a){const {location:b,promise:f}=a;b&&(this.viewModel.location=b);this.visible=!0;a=()=>this.hide();f&&f.catch(()=>{}).then(a)};d.hide=function(){this.visible=!1};d.render=function(){var {visible:a}=

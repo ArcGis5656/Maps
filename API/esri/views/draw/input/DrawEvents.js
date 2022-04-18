@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(f){let g=function(){function a(c,b,e,d){this.view=c;this.native=b;this.vertexIndex=e;this.vertices=d;this.defaultPrevented=!1;this.type="vertex-add"}a.prototype.preventDefault=function(){this.defaultPrevented=!0};return a}(),h=function(){function a(c,b,e,d){this.view=c;this.native=b;this.vertexIndex=e;this.vertices=d;this.defaultPrevented=!1;this.type="vertex-update"}a.prototype.preventDefault=function(){this.defaultPrevented=!0};return a}(),k=function(){function a(c,b,
 e,d){this.view=c;this.native=b;this.vertexIndex=e;this.vertices=d;this.defaultPrevented=!1;this.type="vertex-remove"}a.prototype.preventDefault=function(){this.defaultPrevented=!0};return a}(),m=function(){function a(c,b,e,d,l=null){this.view=c;this.native=b;this.vertexIndex=e;this.vertices=d;this.mapPoint=l;this.coordinates=null;this.defaultPrevented=!1;this.type="cursor-update";this.coordinates=1===d.length?d[0]:null}a.prototype.preventDefault=function(){this.defaultPrevented=!0};return a}(),n=

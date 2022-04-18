@@ -1,5 +1,5 @@
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 */
-function l(l){return"global"===l?1:2}function n(l){return 1===l?"global":"local"}export{n as s,l as v};
+var l;function a(a){return"global"===a?l.Global:l.Local}function o(a){return a===l.Global?"global":"local"}!function(l){l[l.Global=1]="Global",l[l.Local=2]="Local"}(l||(l={}));export{l as V,o as s,a as v};

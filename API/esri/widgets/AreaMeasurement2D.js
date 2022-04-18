@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/promiseUtils ../core/unitUtils ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./AreaMeasurement2D/AreaMeasurement2DViewModel ./support/decorators/accessibleHandler ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory ./support/widgetUtils".split(" "),function(F,
 d,G,H,k,c,O,P,g,I,J,w,x,y,Q,b,R){c=function(z){function q(a,r){a=z.call(this,a,r)||this;a.active=null;a.iconClass="esri-icon-measure-area";a.label=void 0;a.messages=null;a.messagesUnits=null;a.unit=null;a.unitOptions=null;a.view=null;a.viewModel=new w;return a}F._inheritsLoose(q,z);var t=q.prototype;t.render=function(){const {id:a,viewModel:r,visible:K}=this,{active:A,supported:B,measurementLabel:C,state:m,unit:L,unitOptions:M}=r;var n="disabled"===m;const u="measuring"===m||"measured"===m,{messages:e,

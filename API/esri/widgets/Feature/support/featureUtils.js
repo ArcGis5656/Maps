@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../intl ../../../core/Logger ../../../core/maybe ../../../core/string ../../../intl/date ../../../intl/number ../../../layers/support/fieldUtils ../../../popup/support/FieldInfoFormat ../../../support/arcadeOnDemand".split(" "),function(g,l,ja,M,p,q,m,B,N,O,P){function r(){r=l._asyncToGenerator(function*(a,b){return"function"===typeof a?a.call(null,b):a});return r.apply(this,arguments)}function C(a){return a?D.test(a):!1}function Q(a,
 b){if(!C(b)||!a)return null;const c=b.replace(D,"").toLowerCase();let e;a.some(d=>d.name.toLowerCase()===c?(e=d,!0):!1);return e}function t(a,b){return(b=u(b,a))?b.name:a}function u(a,b){return a&&"function"===typeof a.getField?a.getField(b):null}function E({formattedAttributes:a,template:b,fieldInfoMap:c}){return`${q.replace(q.replace(b,e=>{{const d=c.get(e.toLowerCase());e=`{${d&&d.fieldName||e}}`}return e}),a).replace(R,"")}`.trim()}function S(a,b,c=!1){const e=b[a];"string"===typeof e&&(c=(c?

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../Color"],function(f,c){function d(b,g){if(g)for(const h in g)b[h]=g[h]}const a={main:new c([255,127,0]),selected:new c([255,255,255]),outline:new c([0,0,0,.5]),selectedOutline:new c([255,255,255]),hoverOutline:new c([255,255,255]),secondary:new c([255,255,255]),secondaryOutline:new c([100,100,100]),transparent:new c([0,0,0,0])};let e=function(b){this.size=8;this.hoverSize=10;this.hoverColor=this.color=a.main;this.outlineColor=a.outline;this.hoverOutlineColor=a.hoverOutline;
 d(this,b)},k=function(b){this.color=a.secondary;this.hoverColor=a.main;d(this,b)},l=function(b){this.hoverColor=this.color=a.transparent;this.hoverOutlineColor=this.outlineColor=a.main;this.stagedColor=a.transparent;this.stagedOutlineColor=a.secondary;d(this,b)},m=function(b){this.vertex=new e;this.midpoint=new e({color:a.secondary,outlineColor:a.secondaryOutline,size:6});this.selected=new e({color:a.selected,hoverColor:a.selected,hoverOutlineColor:a.hoverOutline});d(this,b)},n=function(b){this.center=

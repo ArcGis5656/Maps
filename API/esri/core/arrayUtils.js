@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./maybe","./RandomLCG"],function(h,m,y){function q(a){return a}function r(a,c=q){if(a&&0!==a.length){var b=a[0],d=c(b);for(let e=1;e<a.length;++e){const f=a[e],g=Number(c(f));g>d&&(d=g,b=f)}return b}}function t(a,c,b,d){d=d||u;var e=Math.max(0,d.last-10);for(let f=e;f<b;++f)if(a[f]===c)return d.last=f;b=Math.min(e,b);for(e=0;e<b;++e)if(a[e]===c)return d.last=e;return-1}function v(a){return a?(w.seed=a,()=>w.getFloat()):Math.random}const z=!!Array.prototype.fill;let x=function(){this.last=
 0};const u=new x,k=new Set,w=new y;h.PositionHint=x;h.binaryFindClosest=function(a,c,b){if(a&&0!==a.length){var d=a.length-1,e=a[0];if(c<=b(e))return e;e=a[d];if(c>=b(e))return e;var f=0;e=0;for(var g=d;f<g;){e=f+Math.floor((g-f)/2);const n=a[e],p=b(n);if(p===c)return n;if(c<p){if(0<e){g=a[e-1];var l=b(g);if(c>l)return c-l>=p-c?n:g}g=e}else{if(e<d&&(f=a[e+1],l=b(f),c<l))return c-p>=l-c?f:n;f=e+1}}return a[e]}};h.binaryIndexOf=function(a,c,b){const d=a.length;let e=0;for(var f=d-1;e<f;){const g=e+

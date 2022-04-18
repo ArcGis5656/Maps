@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../core/CircularArray ../../../../core/Evented ../../../../core/has ../../../../core/maybe ../../../webgl/capabilities/DisjointTimerQuery".split(" "),function(p,r,t,u,l,m,v){const d=l("esri-2d-profiler");l=function(){function n(a,f){this._events=new u;this._entries=new Map;this._timings=new t(10);if(d){this._ext=v.createDisjointTimerQuery(a.gl,{});this._debugOutput=f;var c=a.gl;if(this.enableCommandLogging)for(const e in c)if("function"===
 typeof c[e]){const g=c[e],b=-1!==e.indexOf("draw");c[e]=(...k)=>{this._events.emit("command",{container:this._currentContainer,pass:this._currentPass,brush:this._currentBrush,method:e,args:k,isDrawCommand:b});this._currentSummary&&(this._currentSummary.commands++,b&&this._currentSummary.drawCommands++);return g.apply(c,k)}}}}var h=n.prototype;h.recordContainerStart=function(a){d&&(this._currentContainer=a)};h.recordContainerEnd=function(){d&&(this._currentContainer=null)};h.recordPassStart=function(a){d&&

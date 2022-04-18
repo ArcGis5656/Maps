@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/Logger ../core/maybe ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/decorators/cast ../core/accessorSupport/decorators/reader ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer ../core/accessorSupport/ensureType ./Geometry ./SpatialReference ./support/offset ./support/pointUtils ./support/spatialReferenceUtils ./support/webMercatorUtils".split(" "),
 function(x,h,f,z,m,M,N,A,B,C,D,E,F,G,H,I,J,n){function y(l){return l&&("esri.geometry.SpatialReference"===l.declaredClass||null!=l.wkid)}var v;const q=[0,0],w=f.getLogger("esri.geometry.Point");f=v=function(l){function r(...a){a=l.call(this,...a)||this;a.x=0;a.y=0;a.z=void 0;a.m=void 0;a.type="point";return a}x._inheritsLoose(r,l);r.copy=function(a,b){b._set("x",a._get("x"));b._set("y",a._get("y"));b._set("z",a._get("z"));b._set("m",a._get("m"));a=a._get("spatialReference");b._set("spatialReference",

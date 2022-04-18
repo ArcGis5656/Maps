@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/Accessor ../../../../core/Collection ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass".split(" "),function(d,g,e,n,k,r,t,u,p){e=function(m){function h(){var a=m.apply(this,arguments)||this;a.itemCache=new n;a.state="ready";return a}d._inheritsLoose(h,m);
 var c=h.prototype;c.destroy=function(){this.itemCache.destroy();this._set("itemCache",null)};c.addItems=function(){var a=d._asyncToGenerator(function*(b){this.itemCache.addMany(null==b?void 0:b.items)});return function(b){return a.apply(this,arguments)}}();c.fetchItems=function(){var a=d._asyncToGenerator(function*(b){const {page:l,pageSize:f}=b;b=l*f;return this.itemCache.items.slice(b,b+f)});return function(b){return a.apply(this,arguments)}}();c.getLocalItemAt=function(a){return this.itemCache.getItemAt(a)};

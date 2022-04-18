@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/lang ../core/screenUtils ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/enumeration ../core/accessorSupport/decorators/subclass ./FillSymbol ./support/urlUtils".split(" "),function(t,c,m,e,d,b,u,v,w,n){var g;b=g=function(h){function k(...a){a=h.call(this,...a)||this;a.type="picture-fill";a.url=null;a.xscale=1;a.yscale=1;a.width=12;a.height=12;a.xoffset=0;a.yoffset=
 0;a.source=null;return a}t._inheritsLoose(k,h);var l=k.prototype;l.normalizeCtorArgs=function(a,p,q,r){if(a&&"string"!==typeof a&&null==a.imageData)return a;const f={};a&&(f.url=a);p&&(f.outline=p);null!=q&&(f.width=e.toPt(q));null!=r&&(f.height=e.toPt(r));return f};l.clone=function(){const a=new g({color:m.clone(this.color),height:this.height,outline:this.outline&&this.outline.clone(),url:this.url,width:this.width,xoffset:this.xoffset,xscale:this.xscale,yoffset:this.yoffset,yscale:this.yscale});

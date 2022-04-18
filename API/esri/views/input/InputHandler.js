@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../chunks/_rollupPluginBabelHelpers","../../core/Logger","./EventMatch"],function(l,m,k,p){const n=k.getLogger("esri.views.input.InputHandler");k=function(){function e(a){this._manager=null;this._incoming={};this._outgoing={};this._outgoingEventTypes=this._incomingEventTypes=this._incomingEventMatches=null;this._hasSideEffects=a}var d=e.prototype;d.onInstall=function(a){this._manager?n.error("This InputHandler has already been registered with an InputManager"):(a.setEventCallback(b=>
 this._handleEvent(b)),a.setUninstallCallback(()=>this._onUninstall()),this._manager=a)};d.onUninstall=function(){};d.registerIncoming=function(a,b,c){"function"===typeof b?(c=b,b=[]):b=b||[];a="string"===typeof a?new p.EventMatch(a,b):a;const h=()=>{this._incomingEventMatches=this._incomingEventTypes=null};b=f=>{const g=this._incoming[f.match.eventType];g&&(f=g.indexOf(f),g.splice(f,1),h(),this._manager&&this._manager.updateDependencies())};c=new q(a,c,{onPause:b,onRemove:b,onResume:f=>{const g=this._incoming[f.match.eventType];

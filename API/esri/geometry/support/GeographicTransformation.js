@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["./GeographicTransformationStep"],function(f){return function(){function c(a){this.steps=[];this._cached_projection={};this._chain="";this._gtlistentry=null;if(a&&a.steps)for(const b of a.steps)b instanceof f?this.steps.push(b):this.steps.push(new f({wkid:b.wkid,wkt:b.wkt,isInverse:b.isInverse}))}c.cacheKey=function(a,b){return[void 0!==a.wkid&&null!==a.wkid?a.wkid.toString():"-1",void 0!==a.wkt&&null!==a.wkt?a.wkt.toString():"",void 0!==b.wkid&&null!==b.wkid?b.wkid.toString():"-1",void 0!==
 b.wkt&&null!==b.wkt?b.wkt.toString():""].join()};c.fromGE=function(a){const b=new c;let d="";for(const g of a.steps)a=f.fromGE(g),b.steps.push(a),d+=a.uid.toString()+",";b._cached_projection={};b._gtlistentry=null;b._chain=d;return b};var e=c.prototype;e.getInverse=function(){const a=new c;a.steps=[];for(let b=this.steps.length-1;0<=b;b--)a.steps.push(this.steps[b].getInverse());return a};e.getGTListEntry=function(){let a="";for(const b of this.steps)a+=b.uid.toString()+",";a!==this._chain&&(this._gtlistentry=

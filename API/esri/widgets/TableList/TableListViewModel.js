@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Collection ../../core/Evented ../../core/Handles ../../core/promiseUtils ../../core/watchUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../LayerList/support/layerListUtils ./ListItem".split(" "),function(g,h,e,t,u,n,k,l,x,y,z,v,w,p){const q=e.ofType(p);e=function(r){function m(a){var b=r.call(this,
 a)||this;b._handles=new u;b.listItemCreatedFunction=null;b.tableItems=new q;b.map=null;b._callListItemsCreatedDebounced=n.debounce(g._asyncToGenerator(function*(){return b._callListItemsCreated()}),300);return b}g._inheritsLoose(m,r);var d=m.prototype;d.initialize=function(){this._handles.add([k.init(this,["map","map.loaded"],()=>this._mapHandles())],"map")};d.destroy=function(){this._handles.destroy();this.map=this._handles=null;this.tableItems.removeAll()};d.triggerAction=function(a,b){a&&!a.disabled&&

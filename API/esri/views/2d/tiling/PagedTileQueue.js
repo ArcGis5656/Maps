@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Accessor ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../chunks/vec2 ../../support/QueueProcessor".split(" "),function(x,m,h,p,F,G,H,B,C,D){function E(q,r){q.length=0;r.forEach(d=>q.push(d));return q}const w=new Set,u=[],t=new Map,y=[0,0];h=function(q){function r(a){a=
 q.call(this,a)||this;a._keyToItem=new Map;a.concurrency=6;a.strategy="scale-first";a.tileInfoView=null;return a}x._inheritsLoose(r,q);var d=r.prototype;d.initialize=function(){const {concurrency:a,process:k}=this;this._queue=new D.QueueProcessor({concurrency:a,process:(b,g)=>{b=this._keyToItem.get(b);return k(b,{signal:g})},peeker:b=>b.values().next().value})};d.destroy=function(){this.clear();this._queue.destroy();this._queue=null};d.abort=function(a){this._queue.abort("string"===typeof a?a:a.id)};

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../chunks/geometryEngineBase","./geometryAdapters/hydrated"],function(c,d,f){function g(a){return Array.isArray(a)?a[0].spatialReference:a&&a.spatialReference}function l(a){return"xmin"in a?"center"in a?a.center:null:"x"in a?a:"extent"in a?a.extent.center:null}c.buffer=function(a,b,e,h=!1){return d.GeometryEngineApi.buffer(f.hydratedAdapter,g(a),a,b,e,h)};c.clip=function(a,b){return d.GeometryEngineApi.clip(f.hydratedAdapter,g(a),a,b)};c.contains=function(a,b){return d.GeometryEngineApi.contains(f.hydratedAdapter,
 g(a),a,b)};c.convexHull=function(a,b=!1){return d.GeometryEngineApi.convexHull(f.hydratedAdapter,g(a),a,b)};c.crosses=function(a,b){return d.GeometryEngineApi.crosses(f.hydratedAdapter,g(a),a,b)};c.cut=function(a,b){return d.GeometryEngineApi.cut(f.hydratedAdapter,g(a),a,b)};c.densify=function(a,b,e){return d.GeometryEngineApi.densify(f.hydratedAdapter,g(a),a,b,e)};c.difference=function(a,b){return d.GeometryEngineApi.difference(f.hydratedAdapter,g(a),a,b)};c.disjoint=function(a,b){return d.GeometryEngineApi.disjoint(f.hydratedAdapter,

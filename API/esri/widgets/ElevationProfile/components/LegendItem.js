@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../intl ../../../core/maybe ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../Widget ../css ./Statistics ../support/intlUtils ../../support/widgetUtils ../../support/decorators/messageBundle ../../../core/Logger ../../support/jsxFactory ../../../intl/substitute".split(" "),
 function(b,p,e,B,t,h,C,D,E,u,v,c,w,q,F,x,G,f,y){b.LegendItem=function(r){function l(a,d){a=r.call(this,a,d)||this;a.expanded=!1;a.checkboxVisible=!0;a._messages=null;return a}p._inheritsLoose(l,r);var g=l.prototype;g.initialize=function(){this._statistics=new w.Statistics(this._statisticsProps);this.own(this.watch("_statisticsProps",a=>{this._statistics.set(a)}))};g.destroy=function(){this._statistics=t.destroyMaybe(this._statistics)};g.render=function(){const a=this.expanded;return f.tsx("div",{key:this,

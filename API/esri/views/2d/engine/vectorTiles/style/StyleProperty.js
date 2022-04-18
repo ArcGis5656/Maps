@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../../../Color","../GeometryUtils","../expression/expression","../expression/types"],function(m,q,l,g){return function(){function k(a,b){this.isDataDriven=!1;this.interpolator=null;switch(a.type){case "number":var d=!0;break;case "color":d=!0;break;case "array":d="number"===a.value;break;default:d=!1}null==b&&(b=a.default);if(Array.isArray(b)&&0<b.length&&l.ops[b[0]]){d={number:g.NumberType,color:g.ColorType,string:g.StringType,boolean:g.BooleanType,enum:g.StringType};try{var e="array"===
 a.type?g.arrayType(d[a.value]||g.ValueType,a.length):d[a.type];const c=l.createExpression(b,null,e);this.getValue=this._buildExpression(c,a);this.isDataDriven=!0;c instanceof l.Interpolate&&c.input instanceof l.Zoom&&(this.interpolator=c)}catch(c){console.log(c.message),this.getValue=this._buildSimple(a.default)}}else{d&&"interval"===b.type&&(d=!1);if(e=b&&b.stops&&0<b.stops.length)for(const c of b.stops)c[1]=this._validate(c[1],a);if(this.isDataDriven=b?!!b.property:!1)if(void 0!==b.default&&(b.default=

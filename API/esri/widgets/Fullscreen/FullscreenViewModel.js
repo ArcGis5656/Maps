@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/Logger ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass".split(" "),function(f,d,c,l,e,n,p,q,m){const h=l.getLogger("esri.widgets.Fullscreen.FullscreenViewModel");c=function(k){function g(a){a=k.call(this,a)||this;a._vendorInfo=null;a._fullscreenStyle="width: 100%; height: 100%;";
 a.view=null;a._errorHandler=a._errorHandler.bind(f._assertThisInitialized(a));a._stateHandler=a._stateHandler.bind(f._assertThisInitialized(a));return a}f._inheritsLoose(g,k);var b=g.prototype;b.destroy=function(){this._removeFullscreenListeners();this.view=null};b.enter=function(){this._enterFullscreen()};b.exit=function(){this._exitFullscreen()};b.toggle=function(){this._isActive()?this._exitFullscreen():this._enterFullscreen()};b._isSupported=function(){this._removeFullscreenListeners();const a=

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Collection ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../../geometry/Extent ./TileMatrixSet ./WMTSStyle".split(" "),function(m,c,n,b,d,w,x,y,p,t,h,u,v){var k;b=k=function(q){function g(a){a=q.call(this,a)||this;a.fullExtent=null;
 a.fullExtents=null;a.imageFormats=null;a.id=null;a.layer=null;a.styles=null;a.tileMatrixSetId=null;a.tileMatrixSets=null;return a}m._inheritsLoose(g,q);var l=g.prototype;l.readFullExtent=function(a,e){return(a=e.fullExtent)?h.fromJSON(a):null};l.readFullExtents=function(a,e){var r;return null!=(r=e.fullExtents)&&r.length?e.fullExtents.map(f=>h.fromJSON(f)):e.tileMatrixSets.map(f=>h.fromJSON(f.fullExtent)).filter(f=>f)};l.clone=function(){const a=new k;this.hasOwnProperty("description")&&(a.description=

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./Expand/ExpandViewModel ./support/widget ./support/decorators/messageBundle ./support/decorators/accessibleHandler ./support/jsxFactory".split(" "),function(p,d,l,c,A,B,g,w,x,t,q,u,y,h){c=function(v){function m(b,e){var a=v.call(this,
 b,e)||this;a.autoCollapse=null;a.closeOnEsc=!0;a.collapseTooltip="";a.content="";a.expanded=null;a.expandTooltip="";a.group=null;a.iconNumber=0;a.label=void 0;a.messages=null;a.messagesCommon=null;a.mode="auto";a.view=null;a.viewModel=new t;a._handleKeyDown=k=>{const {closeOnEsc:n,_toggleButtonEl:r,expanded:z}=p._assertThisInitialized(a);z&&n&&k.target!==r&&"Escape"===k.key&&("function"===typeof n?n(k):n)&&(a.expanded=!1,null==r?void 0:r.focus())};return a}p._inheritsLoose(m,v);var f=m.prototype;

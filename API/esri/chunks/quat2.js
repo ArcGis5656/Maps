@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ./quatf64 ./vec3f64 ./common ./mat4 ./quat".split(" "),function(m,z,A,v,G,x){function D(a,b,c){const d=.5*c[0],e=.5*c[1];c=.5*c[2];const f=b[0],g=b[1],h=b[2];b=b[3];a[0]=f;a[1]=g;a[2]=h;a[3]=b;a[4]=d*b+e*h-c*g;a[5]=e*b+c*f-d*h;a[6]=c*b+d*g-e*f;a[7]=-d*f-e*g-c*h;return a}function H(a,b){a[0]=0;a[1]=0;a[2]=0;a[3]=1;a[4]=.5*b[0];a[5]=.5*b[1];a[6]=.5*b[2];a[7]=0;return a}function I(a,b){a[0]=b[0];a[1]=b[1];a[2]=b[2];a[3]=b[3];a[4]=0;a[5]=0;a[6]=0;a[7]=0;return a}function J(a,b){const c=
 ha;G.getRotation(c,b);const d=ia;G.getTranslation(d,b);D(a,c,d);return a}function E(a,b){a[0]=b[0];a[1]=b[1];a[2]=b[2];a[3]=b[3];a[4]=b[4];a[5]=b[5];a[6]=b[6];a[7]=b[7];return a}function K(a){a[0]=0;a[1]=0;a[2]=0;a[3]=1;a[4]=0;a[5]=0;a[6]=0;a[7]=0;return a}function L(a,b,c,d,e,f,g,h,k){a[0]=b;a[1]=c;a[2]=d;a[3]=e;a[4]=f;a[5]=g;a[6]=h;a[7]=k;return a}function M(a,b){a[0]=b[4];a[1]=b[5];a[2]=b[6];a[3]=b[7];return a}function N(a,b){a[4]=b[0];a[5]=b[1];a[6]=b[2];a[7]=b[3];return a}function O(a,b){const c=

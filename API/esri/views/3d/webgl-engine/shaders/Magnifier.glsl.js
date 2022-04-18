@@ -1,7 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../core/shaderModules/interfaces","../core/shaderModules/ShaderBuilder"],function(b,c,d){b.build=function(){const a=new d.ShaderBuilder;a.attributes.add("position","vec2");a.vertex.uniforms.add("proj","mat4");a.vertex.uniforms.add("drawPosition","vec4");a.varyings.add("vUV","vec2");a.vertex.code.add(c.glsl`void main(void) {
+define(["exports","../core/shaderModules/interfaces","../core/shaderModules/ShaderBuilder","../lib/VertexAttribute"],function(b,c,d,e){b.build=function(){const a=new d.ShaderBuilder;a.attributes.add(e.VertexAttribute.POSITION,"vec2");a.vertex.uniforms.add("proj","mat4");a.vertex.uniforms.add("drawPosition","vec4");a.varyings.add("vUV","vec2");a.vertex.code.add(c.glsl`void main(void) {
 vUV = position;
 gl_Position = vec4(drawPosition.xy + vec2(position - 0.5) * drawPosition.zw, 0.0, 1.0);
 }`);a.fragment.uniforms.add("textureInput","sampler2D");a.fragment.uniforms.add("textureMask","sampler2D");a.fragment.uniforms.add("textureOverlay","sampler2D");a.fragment.uniforms.add("maskEnabled","bool");a.fragment.uniforms.add("overlayEnabled","bool");a.fragment.code.add(c.glsl`const float barrelFactor = 1.1;

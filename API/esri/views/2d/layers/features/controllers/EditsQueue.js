@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../chunks/_rollupPluginBabelHelpers ../../../../../chunks/tslib.es6 ../../../../../core/Accessor ../../../../../core/promiseUtils ../../../../../core/accessorSupport/decorators/property ../../../../../core/arrayUtils ../../../../../core/has ../../../../../core/accessorSupport/ensureType ../../../../../core/accessorSupport/decorators/subclass".split(" "),function(d,l,p,x,r,t,C,D,E,y){d.EditsQueue=function(u){function m(a){a=u.call(this,a)||this;a._queue=[];a._onGoingRequest=
 null;a._abortController=new AbortController;return a}l._inheritsLoose(m,u);var n=m.prototype;n.destroy=function(){this.clear()};n.clear=function(){if(this.destroyed)throw Error("instance is already destroyed");let a=this._queue.pop();for(;a;)a.resolver.reject(r.createAbortError()),a=this._queue.pop();this._queue.length=0;this._abortController.abort();this._abortController=new AbortController};n.push=function(){var a=l._asyncToGenerator(function*(e){if(this.destroyed)throw Error("instance is already destroyed");

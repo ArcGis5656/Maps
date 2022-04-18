@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/Error ../core/maybe ../core/MultiOriginJSONSupport ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Layer ./mixins/BlendLayer ./mixins/CustomParametersMixin ./mixins/ImageryTileMixin ./mixins/OperationalLayer ./mixins/PortalLayer ./mixins/RefreshableLayer ./mixins/ScaleRangeLayer ./mixins/TemporalLayer ./support/commonProperties ./support/Field ./support/rasterDatasets/WCSRaster ../support/popupUtils".split(" "),
 function(n,d,w,q,c,x,M,N,O,e,y,z,A,B,C,D,E,F,G,H,I,p,J,K){const L=new Set("milliseconds seconds minutes hours days weeks months years decades centuries".split(" "));c=function(r){function l(...a){a=r.call(this,...a)||this;a.coverageId=null;a.coverageInfo=null;a.version=null;a.isReference=null;a.type="wcs";a.popupEnabled=!0;a.popupTemplate=null;a.fields=null;return a}n._inheritsLoose(l,r);var m=l.prototype;m.normalizeCtorArgs=function(a,b){return"string"===typeof a?{url:a,...b}:a};m.load=function(a){a=

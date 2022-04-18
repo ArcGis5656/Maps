@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/jsonMap ../../core/Logger ../../core/Warning ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./ColorVariable ./OpacityVariable ./RotationVariable ./SizeVariable".split(" "),function(m,n,f,r,t,u,v,F,G,H,w,x,y,z,A){const B=t.getLogger("esri.renderers.visualVariables.VisualVariableFactory"),
 C={color:x,size:A,opacity:y,rotation:z},D=new r.JSONMap({colorInfo:"color",transparencyInfo:"opacity",rotationInfo:"rotation",sizeInfo:"size"}),E=/^\[([^\]]+)\]$/i;f=function(p){function g(){var a=p.apply(this,arguments)||this;a.colorVariables=null;a.opacityVariables=null;a.rotationVariables=null;a.sizeVariables=null;return a}m._inheritsLoose(g,p);var h=g.prototype;h.readVariables=function(a,b,c){const {rotationExpression:d,rotationType:k}=b;if(b=(b=d&&d.match(E))&&b[1])a||(a=[]),a.push({type:"rotationInfo",

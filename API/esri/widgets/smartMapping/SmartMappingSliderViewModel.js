@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../Slider/SliderViewModel ./support/utils".split(" "),function(u,h,f,k,g,z,A,x,y,v){g=function(w){function t(a){var b=w.call(this,a)||this;b._initialStopValues=[];b._max=null;b._min=null;b.hasTimeData=!1;b.inputFormatFunction=(d,c)=>"max"===c?b.getUnzoomedMax().toString():
 "min"===c?b.getUnzoomedMin().toString():d.toString();b.inputParseFunction=null;b.labelFormatFunction=d=>{if(b.hasTimeData)return v.formatDateLabel(d);const {max:c,min:e,precision:l}=u._assertThisInitialized(b);return v.formatNumberLabel(parseFloat(d.toFixed(10<c-e?2:l)))};b.thumbsConstrained=!1;b.zoomingEnabled=!0;return b}u._inheritsLoose(t,w);var m=t.prototype;m.getStopIndexFromValueIndex=function(a){const {stops:b}=this,d=this.values[a];return 0===a?d<=this.values[1]?0:b.length-1:1===a?this.values[0]>=

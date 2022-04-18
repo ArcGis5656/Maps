@@ -1,24 +1,24 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../../core/shaderLibrary/util/RgbaFloatEncoding.glsl","../../../core/shaderModules/interfaces","./EdgeUtil.glsl","./UnpackAttributes.glsl"],function(f,g,a,h,k){f.LineOffset=function(c,e){const b=c.vertex;c.include(k.UnpackAttributes,e);const d=c.fragment;h.EdgeUtil.usesSketchLogic(e)&&(b.uniforms.add("uStrokesTextureScale","vec2"),b.uniforms.add("uStrokesLog2Resolution","float"),b.uniforms.add("uStrokeVariants","float"),c.varyings.add("vStrokeUV","vec2"),d.uniforms.add("uStrokesTexture",
-"sampler2D"),d.uniforms.add("uStrokesNormalizationScale","float"),b.code.add(a.glsl`void calculateStyleOutputsSketch(float lineLength, UnpackedAttributes unpackedAttributes) {
+define(["exports","../../../core/shaderLibrary/util/RgbaFloatEncoding.glsl","../../../core/shaderModules/interfaces","./EdgeUtil.glsl","./UnpackAttributes.glsl"],function(g,h,a,e,k){g.LineOffset=function(c,f){const b=c.vertex;c.include(k.UnpackAttributes,f);const d=c.fragment;e.usesSketchLogic(f)&&(b.uniforms.add("strokesTextureScale","vec2"),b.uniforms.add("strokesLog2Resolution","float"),b.uniforms.add("strokeVariants","float"),c.varyings.add("vStrokeUV","vec2"),d.uniforms.add("strokesTexture",
+"sampler2D"),d.uniforms.add("strokesNormalizationScale","float"),b.code.add(a.glsl`void calculateStyleOutputsSketch(float lineLength, UnpackedAttributes unpackedAttributes) {
 vec2 sidenessNorm = unpackedAttributes.sidenessNorm;
-float lineIndex = clamp(ceil(log2(lineLength)), 0.0, uStrokesLog2Resolution);
-vStrokeUV = vec2(exp2(lineIndex) * sidenessNorm.y, lineIndex * uStrokeVariants + variantStroke + 0.5) * uStrokesTextureScale;
+float lineIndex = clamp(ceil(log2(lineLength)), 0.0, strokesLog2Resolution);
+vStrokeUV = vec2(exp2(lineIndex) * sidenessNorm.y, lineIndex * strokeVariants + variantStroke + 0.5) * strokesTextureScale;
 vStrokeUV.x += variantOffset;
-}`),c.fragment.include(g.RgbaFloatEncoding),d.code.add(a.glsl`float calculateLineOffsetSketch() {
-float offsetNorm = rgba2float(texture2D(uStrokesTexture, vStrokeUV));
-return (offsetNorm - 0.5) * uStrokesNormalizationScale;
+}`),c.fragment.include(h.RgbaFloatEncoding),d.code.add(a.glsl`float calculateLineOffsetSketch() {
+float offsetNorm = rgba2float(texture2D(strokesTexture, vStrokeUV));
+return (offsetNorm - 0.5) * strokesNormalizationScale;
 }
 float calculateLinePressureSketch() {
-return rgba2float(texture2D(uStrokesTexture, vStrokeUV + vec2(0.0, 0.5)));
-}`));switch(e.mode){case 0:b.code.add(a.glsl`void calculateStyleOutputs(UnpackedAttributes unpackedAttributes) {}`);d.code.add(a.glsl`float calculateLineOffset() {
+return rgba2float(texture2D(strokesTexture, vStrokeUV + vec2(0.0, 0.5)));
+}`));switch(f.mode){case e.EdgeUtilMode.SOLID:b.code.add(a.glsl`void calculateStyleOutputs(UnpackedAttributes unpackedAttributes) {}`);d.code.add(a.glsl`float calculateLineOffset() {
 return 0.0;
 }
 float calculateLinePressure() {
 return 1.0;
-}`);break;case 1:b.code.add(a.glsl`void calculateStyleOutputs(UnpackedAttributes unpackedAttributes)
+}`);break;case e.EdgeUtilMode.SKETCH:b.code.add(a.glsl`void calculateStyleOutputs(UnpackedAttributes unpackedAttributes)
 {
 calculateStyleOutputsSketch(vLineLengthPixels, unpackedAttributes);
 }`);d.code.add(a.glsl`float calculateLineOffset() {
@@ -26,7 +26,7 @@ return calculateLineOffsetSketch();
 }
 float calculateLinePressure() {
 return calculateLinePressureSketch();
-}`);break;case 2:c.varyings.add("vType","float"),b.code.add(a.glsl`void calculateStyleOutputs(UnpackedAttributes unpackedAttributes)
+}`);break;case e.EdgeUtilMode.MIXED:c.varyings.add("vType","float"),b.code.add(a.glsl`void calculateStyleOutputs(UnpackedAttributes unpackedAttributes)
 {
 vType = unpackedAttributes.type;
 if (unpackedAttributes.type <= 0.0) {
@@ -47,4 +47,4 @@ return calculateLinePressureSketch();
 else {
 return 1.0;
 }
-}`)}};Object.defineProperty(f,"__esModule",{value:!0})});
+}`)}};Object.defineProperty(g,"__esModule",{value:!0})});

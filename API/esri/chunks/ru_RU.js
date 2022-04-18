@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./_commonjsHelpers"],function(k,h){var c={exports:{}};(function(e,f){(function(a){a=a(h.commonjsRequire,f);void 0!==a&&(e.exports=a)})(function(a,b){Object.defineProperty(b,"__esModule",{value:!0});b.default={_decimalSeparator:",",_thousandSeparator:" ",_date_millisecond:"mm:ss SSS",_date_second:"HH:mm:ss",_date_minute:"HH:mm",_date_hour:"HH:mm",_date_day:"dd MMM",_date_week:"ww",_date_month:"MMM",_date_year:"yyyy",_duration_millisecond:"SSS",_duration_second:"ss",_duration_minute:"mm",
 _duration_hour:"hh",_duration_day:"dd",_duration_week:"ww",_duration_month:"MM",_duration_year:"yyyy",_era_ad:"\u043d.\u044d.",_era_bc:"\u0434\u043e \u043d.\u044d.",A:"\u0423",P:"\u0412",AM:"\u0443\u0442\u0440\u0430",PM:"\u0432\u0435\u0447\u0435\u0440\u0430","A.M.":"\u0434\u043e \u043f\u043e\u043b\u0443\u0434\u043d\u044f","P.M.":"\u043f\u043e\u0441\u043b\u0435 \u043f\u043e\u043b\u0443\u0434\u043d\u044f",January:"\u044f\u043d\u0432\u0430\u0440\u044f",February:"\u0444\u0435\u0432\u0440\u0430\u043b\u044f",

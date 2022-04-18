@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../PopupTemplate ../../core/Error ../../intl/messages ../../intl/substitute ../../popup/ExpressionInfo ../../popup/FieldInfo ./support/utils ../statistics/support/predominanceUtils".split(" "),function(w,x,m,B,C,l,q,r,G,t){function n(a,c){return{fieldInfo:new r({fieldName:"expression/predominant-category"}),expressionInfo:new q({name:"predominant-category",title:c.predominantCategory,expression:t.getArcadeForPredominantCategoryAlias(a)})}}
 function u(a,c){a=a.map(b=>b.fieldName);return{fieldInfo:new r({fieldName:"expression/predominant-value",format:{digitSeparator:!0,places:1}}),expressionInfo:new q({name:"predominant-value",title:c.predominantCategoryValue,expression:t.getArcadeForPredominantCategoryValue(a),returnType:"number"})}}function H(a,c){a=a.map(b=>b.fieldName);return{fieldInfo:new r({fieldName:"expression/predominant-margin",format:{digitSeparator:!0,places:0}}),expressionInfo:new q({name:"predominant-margin",title:c.marginOfVictory,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/jsonMap ../../../core/maybe ../../../core/unitUtils ../../../geometry/support/extentUtils ../../../geometry/support/jsonUtils ../../../geometry/support/normalizeUtils ../../../geometry/support/spatialReferenceUtils ../centroid ../featureConversionUtils ../OptimizedGeometry ./projectionSupport".split(" "),function(G,l,m,H,n,I,J,K,L,p,M,k,q,r){function E(a,b,e,c=a.hasZ,f=a.hasM){if(n.isNone(b))return null;const g=a.hasZ&&
 c,h=a.hasM&&f;return e?(a=k.quantizeOptimizedGeometry(v,b,a.hasZ,a.hasM,"esriGeometryPoint",e,c,f),k.convertToPoint(a,g,h)):k.convertToPoint(b,g,h)}function w(){w=m._asyncToGenerator(function*(a,b,e){const {outFields:c,orderByFields:f,groupByFieldsForStatistics:g,outStatistics:h}=a;if(c)for(var d=0;d<c.length;d++)c[d]=c[d].trim();if(f)for(d=0;d<f.length;d++)f[d]=f[d].trim();if(g)for(d=0;d<g.length;d++)g[d]=g[d].trim();if(h)for(d=0;d<h.length;d++)h[d].onStatisticField&&(h[d].onStatisticField=h[d].onStatisticField.trim());

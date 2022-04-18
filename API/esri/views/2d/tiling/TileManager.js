@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/maybe","./TileCoverage","./TileKey"],function(n,u,v,p){let y=function(){function q(a){this._tiles=new Map;this.buffer=0;this.acquireTile=a.acquireTile;this.releaseTile=a.releaseTile;this.tileInfoView=a.tileInfoView;this.buffer=a.buffer}var e=q.prototype;e.destroy=function(){};e.clear=function(){this._tiles.forEach(a=>this._releaseTile(a))};e.tileKeys=function(){const a=[];this._tiles.forEach((b,c)=>a.push(c));return a};e.update=function(a){a=this.tileInfoView.getTileCoverage(a.state,
 this.buffer,"closest");const {spans:b,lodInfo:c}=a,{level:f}=c,d=[],r=[],k=new Set,l=new Set;for(const {row:g,colFrom:w,colTo:x}of b)for(let h=w;h<=x;h++){const t=p.getId(f,g,c.normalizeCol(h),c.getWorldForColumn(h)),m=this._getOrAcquireTile(d,t);k.add(t);m.isReady?m.visible=!0:l.add(m.key)}l.forEach(g=>this._addPlaceholders(k,g));this._tiles.forEach(g=>{k.has(g.key.id)||(r.push(g.key.id),this._releaseTile(g))});v.pool.release(a);return{hasMissingTiles:0<l.size,added:d,removed:r}};e._getOrAcquireTile=

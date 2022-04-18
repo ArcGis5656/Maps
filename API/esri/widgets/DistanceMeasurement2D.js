@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/promiseUtils ../core/unitUtils ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./DistanceMeasurement2D/DistanceMeasurement2DViewModel ./support/decorators/accessibleHandler ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory ./support/widgetUtils".split(" "),
 function(D,d,E,F,k,c,O,P,g,G,H,v,w,x,Q,a,R){c=function(y){function q(b,e){b=y.call(this,b,e)||this;b.iconClass="esri-icon-measure-line";b.label=void 0;b.messages=null;b.messagesUnits=null;b.unit=null;b.unitOptions=null;b.view=null;b.viewModel=new v;return b}D._inheritsLoose(q,y);var r=q.prototype;r.render=function(){const {id:b,messages:e,messagesUnits:z,viewModel:I,visible:J}=this,{active:A,supported:B,measurementLabel:K,state:m,unit:L,unitOptions:M}=I;var n="disabled"===m;const p="measuring"===

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../chunks/_rollupPluginBabelHelpers","../../../../core/Logger","../../../../layers/graphics/hydratedFeatures","../../../../support/arcadeOnDemand"],function(c,h,k,l,m){function g(){g=h._asyncToGenerator(function*(a,b,d){a=a&&a.expression;if("string"!==typeof a)return null;var e="0"===a?0:null;if(null!=e)return{cachedResult:e};e=yield m.loadArcade();const f=e.arcadeUtils;a=f.createSyntaxTree(a);return f.dependsOnView(a)?(null!=d&&d.error("Expressions containing '$view' are not supported on ElevationInfo"),
 {cachedResult:0}):{arcade:{func:f.createFunction(a),context:f.createExecContext(null,{sr:b}),modules:e}}});return g.apply(this,arguments)}const n=k.getLogger("esri.views.3d.layers.graphics.featureExpressionInfoUtils");c.clone=function(a){return{cachedResult:a.cachedResult,arcade:a.arcade?{func:a.arcade.func,context:a.arcade.modules.arcadeUtils.createExecContext(null,{sr:a.arcade.context.spatialReference}),modules:a.arcade.modules}:null}};c.createContext=function(a,b,d){return g.apply(this,arguments)};

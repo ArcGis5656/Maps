@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../layers/support/lazyLayerLoader ../PortalItem ./layersLoader ./portalItemUtils ../../support/requestPresets".split(" "),function(k,l,v,w,q,f,r,g){function t(a){switch(a.type){case "Map Service":return x(a);case "Feature Service":return y(a);case "Feature Collection":return z(a);case "Scene Service":return A(a);case "Image Service":return B(a);case "Stream Service":return{className:"StreamLayer"};case "Vector Tile Service":return{className:"VectorTileLayer"};
 case "KML":return{className:"KMLLayer"};case "WFS":return{className:"WFSLayer"};case "WMTS":return{className:"WMTSLayer"};case "WMS":return{className:"WMSLayer"};case "Feed":return{className:"StreamLayer"};default:return Promise.reject(new v("portal:unknown-item-type","Unknown item type '${type}'",{type:a.type}))}}function C(a){return(0,w.layerLookupMap[a.className])().then(b=>({constructor:b,properties:a.properties}))}function x(a){return D(a).then(b=>b?{className:"TileLayer"}:{className:"MapImageLayer"})}

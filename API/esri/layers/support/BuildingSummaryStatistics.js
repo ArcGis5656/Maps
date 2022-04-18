@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../request ../../core/JSONSupport ../../core/Loadable ../../core/Logger ../../core/maybe ../../core/Promise ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass".split(" "),function(k,b,n,h,p,a,q,r,f,u,v,w,m){const t=a.getLogger("esri.layers.support.BuildingSummaryStatistics");a=function(e){function c(){var d=e.apply(this,
 arguments)||this;d.fieldName=null;d.modelName=null;d.label=null;d.min=null;d.max=null;d.mostFrequentValues=null;d.subLayerIds=null;return d}k._inheritsLoose(c,e);return c}(h.JSONSupport);b.__decorate([f.property({type:String})],a.prototype,"fieldName",void 0);b.__decorate([f.property({type:String})],a.prototype,"modelName",void 0);b.__decorate([f.property({type:String})],a.prototype,"label",void 0);b.__decorate([f.property({type:Number})],a.prototype,"min",void 0);b.__decorate([f.property({type:Number})],

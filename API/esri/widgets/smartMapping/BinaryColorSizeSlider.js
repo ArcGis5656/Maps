@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../Color ../../core/maybe ../../core/accessorSupport/decorators/aliasOf ../../core/arrayUtils ../../core/has ../../core/accessorSupport/decorators/cast ../../core/accessorSupport/decorators/property ../../core/accessorSupport/decorators/subclass ../../renderers/visualVariables/support/SizeStop ../../symbols/support/cimSymbolUtils ./SmartMappingSliderBase ./BinaryColorSizeSlider/BinaryColorSizeSliderViewModel ./support/utils ../support/widgetUtils ../support/decorators/messageBundle ../../core/Logger ../support/jsxFactory".split(" "),
 function(I,k,d,D,x,P,Q,J,y,K,E,F,L,M,A,N,O,R,q){var B;const G={trackBackgroundColor:new d([224,224,224]),trackAboveFillColor:new d([149,149,149]),trackBelowFillColor:new d([149,149,149])};d=B=function(H){function z(a,b){a=H.call(this,a,b)||this;a._minRampFillWidth=.2;a._rampNode=null;a._rampFillId=null;a.handlesSyncedToPrimary=null;a.label=void 0;a.messages=null;a.persistSizeRangeEnabled=null;a.stops=null;a.style={...G};a.viewModel=new M;a.zoomOptions=null;a._rampFillId=`${a.id}-linear-gradient`;

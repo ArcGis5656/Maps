@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../Graphic ../../core/Collection ../../core/Error ../../core/lang ../../core/maybe ../../core/urlUtils ../../geometry/support/normalizeUtils".split(" "),function(w,m,B,n,f,C,x,D,E){function p(){p=m._asyncToGenerator(function*(a,b,d,e={}){let c,k;const h={edits:d,result:new Promise((g,q)=>{c=g;k=q})};a.emit("apply-edits",h);try{var y;const {results:g,edits:q}=yield F(a,b,d,e);b=G=>G.filter(H=>!H.error).map(C.clone);const l={edits:q,addedFeatures:b(g.addFeatureResults),
 updatedFeatures:b(g.updateFeatureResults),deletedFeatures:b(g.deleteFeatureResults),addedAttachments:b(g.addAttachmentResults),updatedAttachments:b(g.updateAttachmentResults),deletedAttachments:b(g.deleteAttachmentResults)};null!=(y=g.editedFeatureResults)&&y.length&&(l.editedFeatures=g.editedFeatureResults);(l.addedFeatures.length||l.updatedFeatures.length||l.deletedFeatures.length||l.addedAttachments.length||l.updatedAttachments.length||l.deletedAttachments.length)&&a.emit("edits",l);c(l);return g}catch(g){throw k(g),

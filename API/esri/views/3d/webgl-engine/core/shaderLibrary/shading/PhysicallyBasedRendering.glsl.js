@@ -1,7 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","./AnalyticalSkyModel.glsl","./PiUtils.glsl","../../shaderModules/interfaces"],function(e,f,g,a){e.PhysicallyBasedRendering=function(d,c){const b=d.fragment.code;d.include(g.PiUtils);if(3===c.pbrMode||4===c.pbrMode)b.add(a.glsl`
+define(["exports","./AnalyticalSkyModel.glsl","./PhysicallyBasedRenderingParameters.glsl","./PiUtils.glsl","../../shaderModules/interfaces"],function(f,g,d,h,a){f.PhysicallyBasedRendering=function(e,c){const b=e.fragment.code;e.include(h.PiUtils);if(c.pbrMode===d.PBRMode.Water||c.pbrMode===d.PBRMode.WaterOnIntegratedMesh)b.add(a.glsl`
     struct PBRShadingWater
     {
         float NdotL;   // cos angle between normal and light direction
@@ -36,7 +36,7 @@ return ((dSun + dSunHaze) * V) * F;
 }
 vec3 tonemapACES(const vec3 x) {
 return (x * (2.51 * x + 0.03)) / (x * (2.43 * x + 0.59) + 0.14);
-}`);else if(1===c.pbrMode||2===c.pbrMode)d.include(f.AnalyticalSkyModel),b.add(a.glsl`struct PBRShadingInfo
+}`);else if(c.pbrMode===d.PBRMode.Normal||c.pbrMode===d.PBRMode.Schematic)e.include(g.AnalyticalSkyModel),b.add(a.glsl`struct PBRShadingInfo
 {
 float NdotL;
 float NdotV;
@@ -88,4 +88,4 @@ outColor.x = gamutMapChanel(inColor.x, p) ;
 outColor.y = gamutMapChanel(inColor.y, p) ;
 outColor.z = gamutMapChanel(inColor.z, p) ;
 return outColor;
-}`)};Object.defineProperty(e,"__esModule",{value:!0})});
+}`)};Object.defineProperty(f,"__esModule",{value:!0})});

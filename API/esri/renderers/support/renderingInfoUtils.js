@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../chunks/_rollupPluginBabelHelpers","../../Color","../../core/maybe","../visualVariables/support/visualVariableUtils"],function(g,n,r,h,p){function k(a,b){if(!a||a.symbol)return null;b=b&&b.renderer;return a&&h.isSome(b)&&b.getObservationRenderer?b.getObservationRenderer(a):b}function q(a,b){return l.apply(this,arguments)}function l(){l=n._asyncToGenerator(function*(a,b){if(h.isSome(a.symbol))return a.symbol;const d=k(a,b);return h.isSome(d)&&d.getSymbolAsync(a,{...b,abortOptions:{signal:b.signal}})});
 return l.apply(this,arguments)}function m(){m=n._asyncToGenerator(function*(a,b){var d=k(a,b),c=yield q(a,b);if(!c)return null;c={renderer:d,symbol:c};if(!(d&&"visualVariables"in d&&d.visualVariables))return c;b=p.getVisualVariableValues(d,a,b);a=["proportional","proportional","proportional"];for(const {variable:e,value:f}of b)"color"===e.type?c.color=r.toUnitRGBA(f):"size"===e.type?"outline"===e.target?c.outlineSize=f:(b=e.axis,d=e.useSymbolValue?"symbol-value":f,"width"===b?a[0]=d:"depth"===b?a[1]=

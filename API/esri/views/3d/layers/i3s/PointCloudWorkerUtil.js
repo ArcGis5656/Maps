@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../core/maybe ../../../../renderers/PointCloudClassBreaksRenderer ../../../../renderers/PointCloudStretchRenderer ../../../../renderers/PointCloudUniqueValueRenderer ./I3SBinaryReader ./LEPCC".split(" "),function(q,v,A,B,C,w,D){function y(a,c){const h=new Float64Array(c);for(let l=0;l<c;l++)h[l]=a[3*l+2];return h}function x(a){return null==a||"none"===a?null:"low-four-bit"===a?c=>c&15:"high-four-bit"===a?c=>(c&240)>>4:"absolute-value"===a?c=>Math.abs(c):"modulo-ten"===a?c=>
 c%10:null}function z(a){let c=0;for(const h of a?a:[])c|=1<<h;return c}q.elevationFromPositions=y;q.evaluateRenderer=function(a,c,h,l){const {rendererJSON:m,isRGBRenderer:n}=a;var f=a=null;if(c&&n)a=c;else if(c&&"pointCloudUniqueValueRenderer"===m.type){f=C.fromJSON(m);var b=f.colorUniqueValueInfos;a=new Uint8Array(3*l);var g=x(f.fieldTransformType);for(var e=0;e<l;e++){var k=(g?g(c[e]):c[e])+"";for(var d=0;d<b.length;d++)if(0<=b[d].values.indexOf(k)){a[3*e]=b[d].color.r;a[3*e+1]=b[d].color.g;a[3*

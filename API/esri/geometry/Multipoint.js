@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/lang ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer ./Extent ./Geometry ./Point ./support/zmUtils".split(" "),function(A,h,B,n,f,K,L,M,N,C,D){function E(k){return(g,d)=>null==g?d:null==d?g:k(g,d)}var p;f=p=function(k){function g(...a){a=k.call(this,...a)||this;a.points=[];a.type="multipoint";return a}A._inheritsLoose(g,
 k);var d=g.prototype;d.normalizeCtorArgs=function(a,b){if(!a&&!b)return null;const c={};Array.isArray(a)?(c.points=a,c.spatialReference=b):!a||"esri.geometry.SpatialReference"!==a.declaredClass&&null==a.wkid?(a.points&&(c.points=a.points),a.spatialReference&&(c.spatialReference=a.spatialReference),a.hasZ&&(c.hasZ=a.hasZ),a.hasM&&(c.hasM=a.hasM)):c.spatialReference=a;if(a=c.points&&c.points[0])void 0===c.hasZ&&void 0===c.hasM?(c.hasZ=2<a.length,c.hasM=!1):void 0===c.hasZ?c.hasZ=3<a.length:void 0===

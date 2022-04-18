@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../core/Handles ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./DrawingMode ./DrawAction ./DrawTool ./input/DrawEvents ../input/InputManager ../interactive/keybindings ../support/screenUtils ../../geometry/Point".split(" "),function(h,r,l,B,t,d,p,C,D,E,w,u,x,y,g,f,
 k,q,z){h.PolygonDrawAction=function(m){function n(a){a=m.call(this,a)||this;a._panEnabled=!1;a._popVertexOnPointerMove=!1;a._addVertexOnPointerUp=!1;a._activePointerId=null;a._viewHandles=new t;a._undoRedoHandles=new t;a.mode=u.defaultDrawingMode;return a}r._inheritsLoose(n,m);var c=n.prototype;c.initialize=function(){"2d"===this.view.type?(this._addViewHandles(),this._addUndoRedoHandles()):this._addDrawTool(this.view)};c.destroy=function(){"2d"===this.view.type?(this._removeViewHandles(),this._viewHandles.destroy(),

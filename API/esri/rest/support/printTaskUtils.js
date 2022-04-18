@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../core/screenUtils","../../renderers/visualVariables/support/visualVariableUtils"],function(c,m,n){function p(a){return a&&"blendMode"in a&&"effect"in a}function q(a){return a&&"esri.views.2d.layers.GroupLayerView2D"===a.declaredClass}c.applyVisualVariables=function(a,d){const {graphic:f,renderer:b,symbol:g}=d;d=g.type;if("text"!==d&&"shield-label-symbol"!==d&&"visualVariables"in b&&b.visualVariables){var e=b.getVisualVariablesForType("size"),l=b.getVisualVariablesForType("color"),
 k=b.getVisualVariablesForType("opacity"),h=b.getVisualVariablesForType("rotation");e=e[0];l=l[0];k=k[0];h=h[0];e&&(e=n.getSize(e,f,{shape:"simple-marker"===d?g.style:null}),null!=e&&("simple-marker"===d?a.size=m.px2pt(e):"picture-marker"===d?(a.width=m.px2pt(e),a.height=m.px2pt(e)):"simple-line"===d?a.width=m.px2pt(e):a.outline&&(a.outline.width=m.px2pt(e))));l&&((e=n.getColor(l,f))&&"simple-marker"===d||"simple-line"===d||"simple-fill"===d)&&(a.color=e?e.toJSON():void 0);k&&(d=n.getOpacity(k,f),

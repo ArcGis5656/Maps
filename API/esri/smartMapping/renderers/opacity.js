@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../core/maybe ../../renderers/support/AuthoringInfo ../../renderers/support/AuthoringInfoVisualVariable ../../renderers/visualVariables/OpacityVariable ./support/utils ../statistics/summaryStatistics ../support/utils ../support/adapters/support/layerUtils".split(" "),function(m,n,g,p,q,r,t,h,u,v,f){function w(b){return k.apply(this,arguments)}function k(){k=n._asyncToGenerator(function*(b){if(!(b&&b.layer&&(b.field||b.valueExpression||
 b.sqlExpression)))throw new g("opacity-visual-variable:missing-parameters","'layer' and 'field', 'valueExpression' or 'sqlExpression' parameters are required");if(b.valueExpression&&!b.view)throw new g("opacity-visual-variable:missing-parameters","View is required when 'valueExpression' is specified");b={...b};var a=f.createLayerAdapter(b.layer,f.featureCapableLayerTypes);b.layer=a;if(!a)throw new g("opacity-visual-variable:invalid-parameters","'layer' must be one of these types: "+f.getLayerTypeLabels(f.featureCapableLayerTypes).join(", "));

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../chunks/_rollupPluginBabelHelpers","../../request","../../core/Error","../../core/Logger","../../core/urlUtils"],function(l,m,p,q,n){const r=q.getLogger("esri.layers.support.SpriteSource");return function(){function h(d,e,f,g){this.baseURL=d;this.devicePixelRatio=e;this.maxTextureSize=f;this._spriteImageFormat=g;this._isRetina=!1;this._spritesData={};this.height=this.width=this.image=null;this.loadStatus="not-loaded"}var k=h.prototype;k.getSpriteInfo=function(d){return this._spritesData[d]};
 k.load=function(){var d=l._asyncToGenerator(function*(e){if(this.baseURL){this.loadStatus="loading";try{yield this._loadSprites(e),this.loadStatus="loaded"}catch{this.loadStatus="failed"}}else this.loadStatus="failed"});return function(e){return d.apply(this,arguments)}}();k._loadSprites=function(d){this._isRetina=1.15<this.devicePixelRatio?!0:!1;const e=n.urlToObject(this.baseURL),f=e.query?"?"+n.objectToQuery(e.query):"",g=this._isRetina?"@2x":"",t=`${e.path}${g}.${this._spriteImageFormat}${f}`;

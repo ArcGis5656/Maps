@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../geometry/Point","../../geometry/support/intersectsBase"],function(m,v,z){function A(a,b,c){const e={x:0,y:0};b&&(e.z=0);c&&(e.m=0);let g=0;var d=a[0];for(let w=0;w<a.length;w++){const p=a[w];a:if(p.length!==d.length)var f=!1;else{for(f=0;f<p.length;f++)if(p[f]!==d[f]){f=!1;break a}f=!0}if(!1===f){f=B(d,p,b);{var h=p,n=b,l=c;const t={x:(d[0]+h[0])/2,y:(d[1]+h[1])/2};n&&(t.z=(d[2]+h[2])/2);n&&l?t.m=(d[3]+h[3])/2:l&&(t.m=(d[2]+h[2])/2);d=t}d.x*=f;d.y*=f;e.x+=d.x;e.y+=d.y;b&&
 (d.z*=f,e.z+=d.z);c&&(d.m*=f,e.m+=d.m);g+=f;d=p}}0<g?(e.x/=g,e.y/=g,b&&(e.z/=g),c&&(e.m/=g)):(e.x=a[0][0],e.y=a[0][1],b&&(e.z=a[0][2]),c&&b?e.m=a[0][3]:c&&(e.m=a[0][2]));return e}function B(a,b,c){const e=b[0]-a[0];a=b[1]-a[1];return c?(b=b[2]-b[2],Math.sqrt(e*e+a*a+b*b)):Math.sqrt(e*e+a*a)}function u(a,b,c=0){for(;a<c;)a+=b;for(c+=b;a>=c;)a-=b;return a}function x(a,b){return Math.atan2(b.y-a.y,b.x-a.x)}function y(a,b,c){var e=a.x-b.x;a=a.y-b.y;var g=c.x-b.x;b=c.y-b.y;return Math.atan2(e*b-g*a,e*

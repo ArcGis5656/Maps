@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/events ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./support/widgetUtils ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory ./Swipe/SwipeViewModel".split(" "),function(r,e,z,t,d,D,E,n,A,B,F,C,G,p,w){const x={handle:!0,divider:!0};d=function(y){function u(a,
 b){a=y.call(this,a,b)||this;a.direction=null;a.disabled=!1;a.dragLabel=void 0;a.iconClass="esri-icon-up-down-arrows";a.label=void 0;a.leadingLayers=null;a.messages=null;a.position=null;a.trailingLayers=null;a.view=null;a.viewModel=new w;a._pointerOffset=null;a._container=null;a._onContainerPointerDown=a._onContainerPointerDown.bind(r._assertThisInitialized(a));a._onContainerPointerMove=a._onContainerPointerMove.bind(r._assertThisInitialized(a));a._onContainerPointerUp=a._onContainerPointerUp.bind(r._assertThisInitialized(a));

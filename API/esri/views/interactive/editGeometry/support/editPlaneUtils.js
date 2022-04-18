@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/vec2 ../../../../chunks/vec3 ../../../../chunks/vec3f64 ../../../../chunks/boundedPlane ../../../../geometry/support/vectorStacks ../operations/MoveVertex ../operations/RotateVertex ../operations/ScaleVertex ../operations/UpdateVertices".split(" "),function(p,h,c,r,t,l,v,w,x,y){function u(a,b,f){if(a instanceof y.UpdateVertices){if(a.operation instanceof v.MoveVertex)return z(a.operation,b,f),!0;if(a.operation instanceof w.RotateVertex)return A(a.operation,b,f),
 !0;if(a.operation instanceof x.ScaleVertex)return B(a.operation,b,f),!0}return!1}function z(a,b,f=!1){f=f?-1:1;a=r.fromValues(f*a.dx,f*a.dy,f*a.dz);c.add(b.origin,b.origin,a)}function A(a,b,f=!1){a=f?-a.angle:a.angle;c.rotateZ(b.basis1,b.basis1,r.ZEROS,a);c.rotateZ(b.basis2,b.basis2,r.ZEROS,a)}function B(a,b,f=!1){const k=f?1/a.factor1:a.factor1;f=f?1/a.factor2:a.factor2;c.scale(b.basis1,b.basis1,k);c.scale(b.basis2,b.basis2,f);h.projectAndScale(b.origin,b.origin,a.origin,a.axis1,k);h.projectAndScale(b.origin,

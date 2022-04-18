@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/jsonMap ../../../core/JSONSupport ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/decorators/cast ../../../core/accessorSupport/decorators/enumeration ../../../core/accessorSupport/decorators/reader ../../../core/accessorSupport/decorators/subclass ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/extensions/serializableProperty/reader ../Field ./MapLayerSource ./QueryTableDataSource ./RasterDataSource ./TableDataSource".split(" "),
 function(a,w,c,m,x,f,M,N,l,n,y,z,p,D,E,F,G,H,I){function A(){q||(q=D.createTypeReader({types:r()}));return q}function r(){t||(t={key:"type",base:null,typeMap:{"data-layer":a.DataLayerSource,"map-layer":F.MapLayerSource}});return t}var u,v;m=m.strict()({esriLeftInnerJoin:"left-inner-join",esriLeftOuterJoin:"left-outer-join"});a.JoinTableDataSource=u=function(h){function e(b){b=h.call(this,b)||this;b.type="join-table";return b}w._inheritsLoose(e,h);var d=e.prototype;d.readLeftTableSource=function(b,

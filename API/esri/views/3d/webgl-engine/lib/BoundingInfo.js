@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../core/PooledArray","../../../../chunks/vec3","../../../../chunks/vec3f64","./Util"],function(y,B,t,p,q){let C=function(){function r(c,b,a,e){this.primitiveIndices=c;this._numIndexPerPrimitive=b;this.indices=a;this.position=e;this.center=p.create();q.assert(1<=c.length);q.assert(0===a.length%this._numIndexPerPrimitive);q.assert(a.length>=c.length*this._numIndexPerPrimitive);q.assert(3===e.size||4===e.size);const {data:d,size:m}=e;e=c.length;b=m*a[this._numIndexPerPrimitive*
 c[0]];l.clear();l.push(b);this.bbMin=p.fromValues(d[b],d[b+1],d[b+2]);this.bbMax=p.clone(this.bbMin);for(var g=0;g<e;++g){var f=this._numIndexPerPrimitive*c[g];for(var k=0;k<this._numIndexPerPrimitive;++k){b=m*a[f+k];l.push(b);let h=d[b];this.bbMin[0]=Math.min(h,this.bbMin[0]);this.bbMax[0]=Math.max(h,this.bbMax[0]);h=d[b+1];this.bbMin[1]=Math.min(h,this.bbMin[1]);this.bbMax[1]=Math.max(h,this.bbMax[1]);h=d[b+2];this.bbMin[2]=Math.min(h,this.bbMin[2]);this.bbMax[2]=Math.max(h,this.bbMax[2])}}t.lerp(this.center,

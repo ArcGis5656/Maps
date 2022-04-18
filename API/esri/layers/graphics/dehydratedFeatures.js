@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../core/byteSizeEstimations ../../core/has ../../core/maybe ../../core/typedArrayUtil ../../core/uid ../../geometry/SpatialReference ../../geometry/support/aaBoundingBox ../../geometry/support/aaBoundingRect ../../geometry/support/quantizationUtils ../../geometry/support/typeUtils ../support/Field ./dehydratedFeatureComparison".split(" "),function(e,y,D,h,m,z,A,k,l,n,q,B,C){function r(a,b,c){if(h.isNone(a))return null;switch(b){case "point":return{x:a.x,y:a.y,z:a.z,m:a.m,hasZ:null!=
 a.z,hasM:null!=a.m,type:"point",spatialReference:c};case "polyline":return{paths:a.paths,hasZ:!!a.hasZ,hasM:!!a.hasM,type:"polyline",spatialReference:c};case "polygon":return{rings:a.rings,hasZ:!!a.hasZ,hasM:!!a.hasM,type:"polygon",spatialReference:c};case "multipoint":return{points:a.points,hasZ:!!a.hasZ,hasM:!!a.hasM,type:"multipoint",spatialReference:c}}}function t(a){if(h.isNone(a))return 0;let b=32;switch(a.type){case "point":b+=42;break;case "polyline":case "polygon":{var c=0;const g=2+(a.hasZ?

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../../core/floatRGBA","../../../../core/promiseUtils"],function(t,p){return function(){function q(a){this.size=a;const f=document.createElement("canvas");f.width=f.height=a;this._context=f.getContext("2d");this._gridOuter=new Float64Array(a*a);this._gridInner=new Float64Array(a*a);this._f=new Float64Array(a);this._d=new Float64Array(a);this._z=new Float64Array(a+1);this._v=new Int16Array(a)}var l=q.prototype;l.dispose=function(){this._context=this._gridOuter=this._gridInner=this._f=
 this._d=this._z=this._v=null;this._svg&&(document.body.removeChild(this._svg),this._svg=null)};l.draw=function(a,f,d=31){this._initSVG();const g=this.createSVGString(a);return new Promise((k,c)=>{const b=new Image;b.src="data:image/svg+xml; charset\x3dutf8, "+encodeURIComponent(g);b.onload=()=>{b.onload=null;this._context.clearRect(0,0,this.size,this.size);this._context.drawImage(b,0,0,this.size,this.size);var e=this._context.getImageData(0,0,this.size,this.size);const r=new Uint8Array(this.size*

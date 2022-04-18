@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./BuildingNumericFilterViewModel ./support/buildingLayerUtils ./support/filterUtils ./support/validation".split(" "),function(l,f,k,g,e,w,x,r,t,m,u,v){e=function(n){function h(){var a=n.apply(this,arguments)||this;a._createdPhaseFieldName=null;a._demolishedPhaseFieldName=
 null;a._parseValueFromFilter=b=>{var c=a._createdPhaseFieldName;c=new RegExp(`${c}\\s*<=\\s*(\\d+)\\s*OR\\s*${c}\\s*IS\\s*NULL`,"gi");var d=a._demolishedPhaseFieldName;d=new RegExp(`${d}\\s*>\\s*(\\d+)\\s*OR\\s*${d}\\s*IS\\s*NULL`,"gi");for(const {filterExpression:p}of b.filterBlocks.items){var q;if(b=null!=(q=c.exec(p))?q:d.exec(p))return parseInt(b[1],10)}return null};return a}l._inheritsLoose(h,n);h.prototype._setup=function(){const a=[];this.layers.forEach(c=>{const d=m.findFieldInfoByModelName(c,

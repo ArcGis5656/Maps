@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/Accessor ../core/jsonMap ../core/lang ../core/maybe ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../geometry/Extent ../geometry/SpatialReference ../geometry/support/webMercatorUtils".split(" "),function(k,c,b,q,r,t,d,A,u,v,w,x){var h;const y=new q.JSONMap({avgRating:"avg-rating",numRatings:"num-ratings",numComments:"num-comments",numViews:"num-views"});
 b=h=function(l){function g(a){a=l.call(this,a)||this;a.categories=null;a.disableExtraQuery=!1;a.extent=null;a.filter=null;a.num=10;a.query=null;a.sortField=null;a.start=1;return a}k._inheritsLoose(g,l);var m=g.prototype;m.clone=function(){return new h({categories:this.categories?r.clone(this.categories):null,disableExtraQuery:this.disableExtraQuery,extent:this.extent?this.extent.clone():null,filter:this.filter,num:this.num,query:this.query,sortField:this.sortField,sortOrder:this.sortOrder,start:this.start})};

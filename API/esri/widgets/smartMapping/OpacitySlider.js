@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../Color ../../core/accessorSupport/decorators/aliasOf ../../core/arrayUtils ../../core/has ../../core/accessorSupport/decorators/cast ../../core/accessorSupport/decorators/property ../../core/accessorSupport/decorators/subclass ./SmartMappingSliderBase ./OpacitySlider/OpacitySliderViewModel ../support/widgetUtils ../support/decorators/messageBundle ../../core/Logger ../support/jsxFactory".split(" "),function(w,d,c,t,C,D,x,l,
 y,z,A,E,B,F,h){var p;const u={trackFillColor:new c([0,121,193])};c=p=function(v){function m(a,b){a=v.call(this,a,b)||this;a._bgFillId=null;a._rampFillId=null;a.label=void 0;a.messages=null;a.stops=null;a.style={...u};a.viewModel=new A;a.zoomOptions=null;a._rampFillId=`${a.id}-ramp-fill`;a._bgFillId=`${a.id}-bg-fill`;return a}w._inheritsLoose(m,v);var n=m.prototype;n.castStyle=function(a){return{...u,...a}};m.fromVisualVariableResult=function(a,b){const {visualVariable:{stops:f},statistics:e}=a,{avg:g,

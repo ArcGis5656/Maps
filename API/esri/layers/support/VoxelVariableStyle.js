@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Collection ../../core/collectionUtils ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./VoxelIsosurface ./VoxelTransferFunctionStyle ./VoxelUniqueValue".split(" "),function(h,c,d,k,b,e,r,t,n,p,l,q,m){b=function(f){function g(a){a=f.call(this,a)||this;a.variableId=0;a.label=null;
 a.transferFunction=null;a.uniqueValues=new d;a.isosurfaces=new d;return a}h._inheritsLoose(g,f);h._createClass(g,[{key:"uniqueValues",set:function(a){this._set("uniqueValues",k.referenceSetter(a,this._get("uniqueValues"),d.ofType(m)))}},{key:"isosurfaces",set:function(a){this._set("isosurfaces",k.referenceSetter(a,this._get("isosurfaces"),d.ofType(l)))}}]);return g}(b.JSONSupport);c.__decorate([e.property({type:n.Integer,json:{write:{enabled:!0,isRequired:!0}}})],b.prototype,"variableId",void 0);

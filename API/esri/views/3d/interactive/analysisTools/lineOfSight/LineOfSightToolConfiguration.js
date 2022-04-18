@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../chunks/_rollupPluginBabelHelpers ../../../../../chunks/tslib.es6 ../../../../../Color ../../../../../core/Accessor ../../../../../core/accessorSupport/decorators/property ../../../../../core/arrayUtils ../../../../../core/has ../../../../../core/accessorSupport/ensureType ../../../../../core/accessorSupport/decorators/subclass".split(" "),function(b,k,c,d,l,e,n,p,q,m){b.LineOfSightLaserLineConfiguration=function(f){function g(a){a=f.call(this,a)||this;a.enabled=!0;a.glowColor=
 new d([255,127,0]);a.glowWidth=8;a.innerColor=new d([255,255,255]);a.innerWidth=.75;a.globalAlpha=.75;return a}k._inheritsLoose(g,f);return g}(l);c.__decorate([e.property({type:Boolean})],b.LineOfSightLaserLineConfiguration.prototype,"enabled",void 0);c.__decorate([e.property({type:d})],b.LineOfSightLaserLineConfiguration.prototype,"glowColor",void 0);c.__decorate([e.property({type:Number})],b.LineOfSightLaserLineConfiguration.prototype,"glowWidth",void 0);c.__decorate([e.property({type:d})],b.LineOfSightLaserLineConfiguration.prototype,

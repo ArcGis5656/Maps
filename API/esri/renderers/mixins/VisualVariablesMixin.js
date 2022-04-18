@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer ../../layers/support/fieldUtils ../visualVariables/ColorVariable ../visualVariables/OpacityVariable ../visualVariables/RotationVariable ../visualVariables/SizeVariable ../visualVariables/VisualVariable ../visualVariables/VisualVariableFactory".split(" "),
 function(n,l,h,q,C,D,E,r,t,u,m,v,w,x,y,z,A){const B={base:z,key:"type",typeMap:{opacity:w,color:v,rotation:x,size:y}};n.VisualVariablesMixin=e=>{e=function(p){function k(){var b=p.apply(this,arguments)||this;b._vvFactory=new A;return b}l._inheritsLoose(k,p);var g=k.prototype;g.readVisualVariables=function(b,a,c){return this._vvFactory.readVariables(b,a,c)};g.writeVisualVariables=function(b,a,c,d){a[c]=this._vvFactory.writeVariables(b,d)};g.hasVisualVariables=function(b,a){return b?0<this.getVisualVariablesForType(b,

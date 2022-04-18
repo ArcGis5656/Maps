@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/Logger ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../core/sql/WhereClause ../i3s/I3SUtil".split(" "),function(h,k,e,n,g,u,v,w,p,q,r){const d=n.getLogger("esri.views.3d.layers.support.DefinitionExpressionSceneLayerView");h.DefinitionExpressionSceneLayerView=
 c=>{c=function(l){function f(){var a=l.apply(this,arguments)||this;a._definitionExpressionErrors=0;a._maxDefinitionExpressionErrors=20;a.logError=b=>{a._definitionExpressionErrors<a._maxDefinitionExpressionErrors&&d.error("Error while evaluating definitionExpression: "+b);a._definitionExpressionErrors++;a._definitionExpressionErrors===a._maxDefinitionExpressionErrors&&d.error("Further errors are ignored")};return a}k._inheritsLoose(f,l);var m=f.prototype;m._evaluateClause=function(a,b){try{return a.testFeature(b)}catch(t){return this.logError(t),

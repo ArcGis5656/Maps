@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../request ../../core/has ../../geometry/support/normalizeUtils ../../layers/support/Field ../../layers/support/MapImage ../utils ../support/DataFile ../support/FeatureSet ../support/LinearUnit ../support/ParameterValue ../support/RasterData".split(" "),function(h,D,E,L,F,t,u,v,l,m,w,G,x){function n(){n=D._asyncToGenerator(function*(c,d,a,b,e){const f={},y={},z=[];A(b,z,f);return F.normalizeCentralMeridian(z).then(g=>{const {outSpatialReference:p,
 processExtent:B,processSpatialReference:q,returnFeatureCollection:H,returnM:I,returnZ:J}=a,{path:K}=v.parseUrl(c);for(var k in f){const C=f[k];y[k]=g.slice(C[0],C[1])}g=p?p.wkid||p:null;k=q?q.wkid||q:null;g=r({...B?{context:{extent:B,outSR:g,processSR:k}}:{"env:outSR":g,"env:processSR":k},...b,..."execute"===d?{returnFeatureCollection:H||void 0,returnM:I||void 0,returnZ:J||void 0}:null,f:"json"},null,y);return E(`${K}/${d}`,{...e,query:g})})});return n.apply(this,arguments)}function A(c,d,a){for(const e in c){var b=

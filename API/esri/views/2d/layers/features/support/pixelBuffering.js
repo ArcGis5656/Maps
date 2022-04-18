@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../chunks/_rollupPluginBabelHelpers ../../../../../core/screenUtils ../../../../../symbols/cim/CIMSymbolHelper ../../../../../symbols/cim/Rect ../../../engine/webgl/definitions ../../graphics/graphicsUtils ../../support/cimSymbolUtils".split(" "),function(l,m,x,y,z,A,B,C){function r(a){if(!("visualVariables"in a&&a.hasVisualVariables("size")))return 0;a=a.getVisualVariablesForType("size");if(!a[0])return 0;a=a[0];if("outline"===a.target)return 0;if("stops"===a.transformationType)return a.stops.map(b=>
 b.size).reduce(k,0);if("clamped-linear"===a.transformationType){let b=-Infinity,c=-Infinity;b="number"===typeof a.maxSize?a.maxSize:a.maxSize.stops.map(d=>d.size).reduce(k,0);c="number"===typeof a.minSize?a.minSize:a.minSize.stops.map(d=>d.size).reduce(k,0);return Math.max(b,c)}if("real-world-size"===a.transformationType)return 30}function n(){n=m._asyncToGenerator(function*(a,b,c,d,f,e){if(!a||e&&"cluster"===e.type)return 0;if("heatmap"===a.type)return Math.round(3*a.blurRadius);if("dot-density"===

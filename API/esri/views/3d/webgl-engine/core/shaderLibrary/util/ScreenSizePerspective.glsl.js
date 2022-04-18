@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../shaderModules/interfaces","../../../materials/internal/MaterialUtil"],function(d,b,e){d.ScreenSizePerspective=function(a){a.vertex.code.add(b.glsl`float screenSizePerspectiveMinSize(float size, vec4 factor) {
 float nonZeroSize = 1.0 - step(size, 0.0);
@@ -29,7 +29,7 @@ size,
 screenSizePerspectiveScaleFactor(absCosAngle, distanceToCamera, params)
 );
 }`);a.vertex.code.add(b.glsl`vec2 applyScreenSizePerspectiveScaleFactorVec2(vec2 size, vec4 factor) {
-return mix(size * clamp(factor.x, screenSizePerspectiveMinSize(size.y, factor) / size.y, 1.0), size, factor.y);
+return mix(size * clamp(factor.x, screenSizePerspectiveMinSize(size.y, factor) / max(1e-5, size.y), 1.0), size, factor.y);
 }`);a.vertex.code.add(b.glsl`vec2 screenSizePerspectiveScaleVec2(vec2 size, float absCosAngle, float distanceToCamera, vec4 params) {
 return applyScreenSizePerspectiveScaleFactorVec2(size, screenSizePerspectiveScaleFactor(absCosAngle, distanceToCamera, params));
 }`)};d.bindScreenSizePerspectiveUniforms=function(a,c){c.screenSizePerspective&&(e.bindScreenSizePerspective(c.screenSizePerspective,a,"screenSizePerspective"),e.bindScreenSizePerspective(c.screenSizePerspectiveAlignment||c.screenSizePerspective,a,"screenSizePerspectiveAlignment"))};Object.defineProperty(d,"__esModule",{value:!0})});

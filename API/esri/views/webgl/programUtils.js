@@ -1,5 +1,4 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","./Program"],function(e,g){e.createProgram=function(d,c,b,a){b=b||{};a=a||"";b="function"===typeof c.shaders?c.shaders(b):c.shaders;return new g.Program(d,a+b.vertexShader,a+b.fragmentShader,c.attributes)};e.glslifyDefineMap=function(d){let c="";for(const b in d){const a=d[b];if("boolean"===typeof a)a&&(c+=`#define ${b}\n`);else if("number"===typeof a)c+=`#define ${b} ${a.toFixed()}\n`;else if("object"===typeof a){const f=a.options;let h=0;for(const k in f)c+=`#define ${f[k]} ${(h++).toFixed()}\n`;
-c+=`#define ${b} ${f[a.value]}\n`}}return c};Object.defineProperty(e,"__esModule",{value:!0})});
+define(["exports"],function(e){e.glslifyDefineMap=function(f){let b="";for(const c in f){const a=f[c];if("boolean"===typeof a)a&&(b+=`#define ${c}\n`);else if("number"===typeof a)b+=`#define ${c} ${a.toFixed()}\n`;else if("object"===typeof a){const d=a.options;let g=0;for(const h in d)b+=`#define ${d[h]} ${(g++).toFixed()}\n`;b+=`#define ${c} ${d[a.value]}\n`}}return b};Object.defineProperty(e,"__esModule",{value:!0})});

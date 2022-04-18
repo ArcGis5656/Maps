@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../core/arrayUtils ../../core/maybe ../../core/MD5 ../../renderers/visualVariables/support/sizeVariableUtils ../popup/support/utils ./utils".split(" "),function(d,u,n,v,w,x,y){function p(b,a){if(b){var {field:c,valueExpression:e,normalizationField:f,normalizationType:k,normalizationTotal:l}=b;var h=null;if(e)h=e;else if(c){var g=y.getNormalizationType({normalizationType:k,normalizationField:f,normalizationTotal:l});g&&(g=g.toLowerCase(),h=c.toLowerCase()+",norm:"+g,f?h+=","+f.toLowerCase():
 "percent-of-total"===g&&(g=l,w.isValidNumber(g)&&0!==g||(g=null),h+=","+g))}}else h=null;b=n.isSome(h)?v.createMD5Hash(h):b.field;return`${a}_${b}`}function q(b,a){return(b=a.getField(b))&&b.type}function r(b,a){const c="field"in a&&a.field;b=c?q(c,b):null;return{field:c,fieldType:n.isSome(b)?b:null,valueExpression:"valueExpression"in a?a.valueExpression:null,valueExpressionTitle:"valueExpressionTitle"in a?a.valueExpressionTitle:null,normalizationField:"normalizationField"in a?a.normalizationField:

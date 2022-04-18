@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../shaderModules/interfaces"],function(d,b){d.TerrainTexture=function(a,c){a.varyings.add("vtc","vec2");a.vertex.uniforms.add("texOffsetAndScale","vec4");a.fragment.uniforms.add("tex","sampler2D");a.fragment.uniforms.add("textureOpacities","vec3");c.textureFadingEnabled&&(a.vertex.uniforms.add("nextTexOffsetAndScale","vec4"),a.varyings.add("nvtc","vec2"),a.fragment.uniforms.add("texNext","sampler2D"),a.fragment.uniforms.add("nextTexOpacities","vec3"),a.fragment.uniforms.add("fadeFactor",
 "float"));a.vertex.code.add(b.glsl`

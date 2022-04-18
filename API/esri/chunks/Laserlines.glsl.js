@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../core/mathUtils ../views/3d/webgl-engine/core/shaderLibrary/Laserline.glsl ../views/3d/webgl-engine/core/shaderLibrary/ScreenSpacePass ../views/3d/webgl-engine/core/shaderModules/interfaces ../views/3d/webgl-engine/core/shaderModules/ShaderBuilder".split(" "),function(e,d,g,h,c,k){function f(b){const a=new k.ShaderBuilder;a.extensions.add("GL_OES_standard_derivatives");a.include(h.ScreenSpacePass);a.include(g.Laserline,b);a.fragment.uniforms.add("angleCutoff","vec2");a.fragment.uniforms.add("globalAlpha",
 "float");b.heightManifoldEnabled&&a.fragment.uniforms.add("heightPlane","vec4");b.pointDistanceEnabled&&a.fragment.uniforms.add("pointDistanceSphere","vec4");b.lineVerticalPlaneEnabled&&a.fragment.uniforms.add("lineVerticalPlane","vec4").add("lineVerticalStart","vec3").add("lineVerticalEnd","vec3");(b.heightManifoldEnabled||b.pointDistanceEnabled||b.lineVerticalPlaneEnabled)&&a.fragment.uniforms.add("maxPixelDistance","float");b.intersectsLineEnabled&&a.fragment.uniforms.add("intersectsLineStart",

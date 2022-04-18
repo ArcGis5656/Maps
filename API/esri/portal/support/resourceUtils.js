@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../request ../../core/Error ../../core/maybe ../../core/urlUtils".split(" "),function(e,m,z,w,l,h){function p(){p=m._asyncToGenerator(function*(a,b={},d){yield a.load(d);var c=h.join(a.itemUrl,"resources");const {start:k=1,num:f=10,sortOrder:n="asc",sortField:g="created"}=b;b={query:{start:k,num:f,sortOrder:n,sortField:g,token:a.apiKey},signal:l.get(d,"signal")};c=yield a.portal._request(c,b);return{total:c.total,nextStart:c.nextStart,resources:c.resources.map(({created:A,
 size:B,resource:C})=>({created:new Date(A),size:B,resource:a.resourceFromPath(C)}))}});return p.apply(this,arguments)}function q(){q=m._asyncToGenerator(function*(a,b,d,c){if(!a.hasPath())throw new w(`portal-item-resource-${b}:invalid-path`,"Resource does not have a valid path");const k=a.portalItem;yield k.load(c);b=h.join(k.userItemUrl,"add"===b?"addResources":"updateResources");const [f,n]=x(a.path);d=yield y(d);const g=new FormData;f&&"."!==f&&g.append("resourcesPrefix",f);g.append("fileName",

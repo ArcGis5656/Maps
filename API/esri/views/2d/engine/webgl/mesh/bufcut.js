@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(H){function I(a,d,b,e,c,f,m){let g;b=0;for(let l=e,n=c-f;l<c;l+=f)b+=(a[n+d*f]-a[l+d*f])*(a[l+1+d*f]+a[n+1+d*f]),n=l;if(m===0<b)for(;e<c;e+=f)g=J(e+d*f,a[e+d*f],a[e+1+d*f],g);else for(c-=f;c>=e;c-=f)g=J(c+d*f,a[c+d*f],a[c+1+d*f],g);g&&v(g,g.next)&&(y(g),g=g.next);return g}function z(a,d=a){if(!a)return a;let b;do if(b=!1,a.steiner||!v(a,a.next)&&0!==q(a.prev,a,a.next))a=a.next;else{y(a);a=d=a.prev;if(a===a.next)break;b=!0}while(b||a!==d);return d}function A(a,d,b,e,c,f,
 m,g){if(a){!g&&f&&(a=K(a,e,c,f));for(var l=a;a.prev!==a.next;){var n=a.prev,k=a.next;if(f)var h=N(a,e,c,f);else a:{h=a;var p=h.prev,t=h;const u=h.next;if(0<=q(p,t,u)){h=!1;break a}let r=h.next.next;const C=r;let w=0;for(;r!==h.prev&&(0===w||r!==C);){w++;if(x(p.x,p.y,t.x,t.y,u.x,u.y,r.x,r.y)&&0<=q(r.prev,r,r.next)){h=!1;break a}r=r.next}h=!0}if(h)d.push(n.index/b+m),d.push(a.index/b+m),d.push(k.index/b+m),y(a),l=a=k.next;else if(a=k,a===l){if(!g)A(z(a),d,b,e,c,f,m,1);else if(1===g){g=d;l=b;n=m;k=a;

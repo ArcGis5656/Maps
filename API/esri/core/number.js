@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./string","../intl/locale"],function(l,t,w){function p(a){a||(a=w.getLocale());let b=a in q;if(!b){const f=a.split("-");1<f.length&&f[0]in q&&(a=f[0],b=!0);b||(a="en")}const [e,c,d="#,##0.###"]=q[a];return{decimal:e,group:c,pattern:d}}function x(a,b,e){e=e||{};!0===e.places&&(e.places=0);Infinity===e.places&&(e.places=6);b=b.split(".");var c="string"===typeof e.places&&e.places.indexOf(","),d=e.places;c?d=e.places.substring(c+1):0<=d||(d=(b[1]||[]).length);0>e.round||(a=Number(a.toFixed(Number(d))));
 a=String(Math.abs(a)).split(".");const f=a[1]||"";b[1]||e.places?(c&&(e.places=e.places.substring(0,c)),c=void 0!==e.places?e.places:b[1]&&b[1].lastIndexOf("0")+1,c>f.length&&(a[1]=f.padEnd(Number(c),"0")),d<f.length&&(a[1]=f.substr(0,Number(d)))):a[1]&&a.pop();d=b[0].replace(",","");c=d.indexOf("0");-1!==c&&(c=d.length-c,c>a[0].length&&(a[0]=a[0].padStart(c,"0")),-1===d.indexOf("#")&&(a[0]=a[0].substr(a[0].length-c)));d=b[0].lastIndexOf(",");let h,g;-1!==d&&(h=b[0].length-d-1,b=b[0].substr(0,d),

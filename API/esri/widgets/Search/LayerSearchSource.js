@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/lang ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./SearchSource ./support/layerSearchUtils".split(" "),function(k,d,n,e,c,r,t,p){var m;c=m=function(q){function l(a){var b=q.call(this,a)||this;b.displayField=null;b.exactMatch=null;b.orderByFields=null;b.searchFields=null;b.searchTemplate=null;b.suggestionTemplate=null;b.getResults=
 (f,g)=>p.getResults({source:k._assertThisInitialized(b),...f},g);b.getSuggestions=(f,g)=>p.getSuggestions({source:k._assertThisInitialized(b),...f},g);return b}k._inheritsLoose(l,q);var h=l.prototype;h.clone=function(){return new m({autoNavigate:this.autoNavigate,filter:this.filter,maxResults:this.maxResults,maxSuggestions:this.maxSuggestions,minSuggestCharacters:this.minSuggestCharacters,outFields:this.outFields?n.clone(this.outFields):null,placeholder:this.placeholder,popupEnabled:this.popupEnabled,

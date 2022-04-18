@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../chunks/_rollupPluginBabelHelpers ../../request ../../core/Error ../../core/maybe ../../core/urlUtils ./arcgisLayerUrl ./lazyLayerLoader".split(" "),function(H,y,k,I,J,m,z,A,K){function p(){p=k._asyncToGenerator(function*(a){var b,c=null==(b=a.properties)?void 0:b.customParameters;b=yield L(a.url,c);a={...a.properties,url:a.url};if(!b.sublayerIds)return null!=b.layerOrTableId&&(a.layerId=b.layerOrTableId,a.sourceJSON=b.sourceJSON),new b.Constructor(a);c=new (yield new Promise((e,
 d)=>H(["../GroupLayer"],g=>e(Object.freeze({__proto__:null,default:g})),d))).default({title:b.parsedUrl.title});M(c,b,a);return c});return p.apply(this,arguments)}function B(a,b){return a?a.find(c=>c.id===b):null}function M(a,b,c){function e(d,g){d={...c,layerId:d,sublayerTitleMode:"service-name"};m.isSome(g)&&(d.sourceJSON=g);return new b.Constructor(d)}b.sublayerIds.forEach(d=>{d=e(d,B(b.sublayerInfos,d));a.add(d)});b.tableIds.forEach(d=>{d=e(d,B(b.tableInfos,d));a.tables.add(d)})}function L(a,

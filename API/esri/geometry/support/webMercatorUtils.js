@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../core/lang ../../core/maybe ../SpatialReference ./Ellipsoid ./spatialReferenceUtils".split(" "),function(h,n,x,p,m,k){function q(a,b,c,f,d){d.spatialReference=c;if("x"in a&&"x"in d)[d.x,d.y]=b(a.x,a.y,r,f);else if("xmin"in a&&"xmin"in d)[d.xmin,d.ymin]=b(a.xmin,a.ymin,r,f),[d.xmax,d.ymax]=b(a.xmax,a.ymax,r,f);else if("paths"in a&&"paths"in d||"rings"in a&&"rings"in d){a="paths"in a?a.paths:a.rings;c=[];for(let t=0;t<a.length;t++){const l=a[t];var e=[];c.push(e);for(let g=0;g<
 l.length;g++)e.push(b(l[g][0],l[g][1],[0,0],f)),2<l[g].length&&e[g].push(l[g][2]),3<l[g].length&&e[g].push(l[g][3])}"paths"in d?d.paths=c:d.rings=c}else if("points"in a&&"points"in d){a=a.points;c=[];for(e=0;e<a.length;e++)c[e]=b(a[e][0],a[e][1],[0,0],f),2<a[e].length&&c[e].push(a[e][2]),3<a[e].length&&c[e].push(a[e][3]);d.points=c}return d}function w(a,b){const c=a&&(null!=a.wkid||null!=a.wkt?a:a.spatialReference),f=b&&(null!=b.wkid||null!=b.wkt?b:b.spatialReference);return a&&"type"in a&&"mesh"===

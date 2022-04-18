@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../shaderModules/interfaces"],function(a,b){a.ColorConversion=function(c){c.code.add(b.glsl`vec4 premultiplyAlpha(vec4 v) {
 return vec4(v.rgb * v.a, v.a);

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/vec2f64 ../../chunks/vec3 ../../chunks/vec3f64 ../3d/state/utils/navigationUtils ./FilteredFiniteDifference ./FilteredValue ./Momentum".split(" "),function(m,v,w,f,h,r,n,t,p){let u=function(g){function d(a,c,e,k,l,q=0,x){a=g.call(this,a,c,e)||this;a.angularVelocity1=k;a.axis1=l;a.angularVelocity2=q;a.axis2=x;return a}v._inheritsLoose(d,g);var b=d.prototype;b.value1=function(a){return g.prototype.valueFromInitialVelocity.call(this,
 this.angularVelocity1,a)};b.value2=function(a){return g.prototype.valueFromInitialVelocity.call(this,this.angularVelocity2,a)};return d}(p.Momentum);p=function(){function g(b=300,a=12,c=.84){this.minimumInitialVelocity=b;this.stopVelocity=a;this.friction=c;this.enabled=!0;this.tmpAxis1=h.create();this.tmpAxis2=h.create();this.tmpAngles=w.create();this.time=new n.FilteredFiniteDifference(.3);this.screen=[new n.FilteredFiniteDifference(.4),new n.FilteredFiniteDifference(.4)];this.angle1=new t.FilteredValue(.6);

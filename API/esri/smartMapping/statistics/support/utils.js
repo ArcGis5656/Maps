@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/Error ../../../core/maybe ../../../geometry/SpatialReference ../../../layers/support/fieldUtils ../../../statistics/utils ../../../support/arcadeOnDemand".split(" "),function(e,w,x,p,y,q,z,A){function n(){n=w._asyncToGenerator(function*(a,b){if(!b)return[];const c=a.field,d=a.valueExpression,h=a.normalizationType,B=a.normalizationField,C=a.normalizationTotal,r=[];a=a.viewInfoParams;let t=null,u=null;if(d){if(!k){const {arcadeUtils:m}=
 yield A.loadArcade();k=m}t=k.createFunction(d);u=a&&k.getViewInfo({viewingMode:a.viewingMode,scale:a.scale,spatialReference:new y(a.spatialReference)})}b.forEach(m=>{var l=m.attributes;if(d){var f=k.createExecContext(m,u);f=k.executeFunction(t,f)}else l&&(f=l[c]);h&&isFinite(f)&&(l=l&&parseFloat(l[B]),f=z.getNormalizedValue(f,h,l,C));r.push(f)});return r});return n.apply(this,arguments)}function g(a,b){return new x(a,b)}function v(a,b){a=p.isSome(a)?a:"";p.isSome(b)&&b&&(a=a?"("+a+") AND ("+b+")":

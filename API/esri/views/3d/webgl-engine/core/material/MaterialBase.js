@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../chunks/_rollupPluginBabelHelpers"],function(f,l){let m=function(){function a(){this._dirty=!0}var b=a.prototype;b._setDirty=function(){this._dirty=!0};b._setClean=function(){this._dirty=!1;if(null!=this._parameterBlocks)for(const d of this._parameterBlocks)this[d]._setClean()};b._checkParameterBlocksDirty=function(){if(null==this._parameterBlocks)return!1;for(const d of this._parameterBlocks)if(this[d].dirty)return!0;return!1};l._createClass(a,[{key:"dirty",get:function(){return this._dirty||
 this._checkParameterBlocksDirty()}}]);return a}(),n=function(){function a(){this._dirty=!0}var b=a.prototype;b._setDirty=function(){this._dirty=!0};b._setClean=function(){this._dirty=!1};l._createClass(a,[{key:"dirty",get:function(){return this._dirty}}]);return a}();f.MaterialBase=m;f.MaterialParameterBlock=n;f.parameter=function(a={}){return(b,d)=>{var e;const c=null!=(e=b._parameterCount)?e:0;b._parameterCount=c+1;if(a.vectorOps){const g=a.vectorOps;Object.defineProperty(b,d,{get(){return this[c]},

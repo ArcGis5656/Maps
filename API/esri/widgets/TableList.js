@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/Collection ../core/events ../core/Handles ../core/watchUtils ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./support/decorators/accessibleHandler ./support/decorators/messageBundle ../core/Logger ./support/decorators/vmEvent ./support/jsxFactory ./support/widgetUtils ./TableList/ListItem ./TableList/TableListViewModel ./TableList/support/tableListUtils ../chunks/sortable.esm".split(" "),
 function(D,l,g,E,F,q,r,M,N,O,m,G,H,t,w,P,I,h,Q,J,x,u,K){const L=g.ofType(J);g=function(y){function v(a,b){a=y.call(this,a,b)||this;a._handles=new F;a._sortable=null;a._sortableNode=null;a._focusSortUid=null;a.visibleItems=null;a.iconClass="esri-icon-table";a.label=void 0;a.listItemCreatedFunction=null;a.map=null;a.messages=null;a.messagesCommon=null;a.multipleSelectionEnabled=!1;a.selectionEnabled=!1;a.selectedItems=new L;a.tableItems=null;a.viewModel=new x;return a}D._inheritsLoose(v,y);var e=v.prototype;

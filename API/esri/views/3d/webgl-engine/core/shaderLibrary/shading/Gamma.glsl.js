@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../shaderModules/interfaces"],function(a,b){a.Gamma=function(c){c.fragment.code.add(b.glsl`const float GAMMA = 2.2;
 const float INV_GAMMA = 0.4545454545;

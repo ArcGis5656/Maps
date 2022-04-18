@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./commonProperties ../../geometry/Point ../../geometry/SpatialReference ../../geometry/Extent".split(" "),function(g,d,b,h,e,r,t,k,l,m,n,p,q){b=function(a){function f(c){c=a.call(this,c)||this;c.address=null;c.apiKey=null;c.categories=
 null;c.countryCode=null;c.forStorage=null;c.location=null;c.locationType=null;c.magicKey=null;c.maxLocations=null;c.outFields=null;c.outSpatialReference=null;c.searchExtent=null;return c}g._inheritsLoose(f,a);return f}(h.JSONSupport);d.__decorate([e.property({type:Object,json:{write:!0}})],b.prototype,"address",void 0);d.__decorate([e.property(m.apiKey)],b.prototype,"apiKey",void 0);d.__decorate([e.property({type:[String],json:{read:{source:"category",reader:a=>a?a.split(","):null},write:{target:"category",

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./ElevationProfileInteraction ./support/constants ./support/ElevationProfileView".split(" "),function(a,h,c,m,e,q,r,t,n,d,f,p){a.ElevationProfileTool=function(k){function g(b){b=k.call(this,b)||this;b.editable=!0;b.visible=!0;b.highlightEnabled=
 !0;return b}h._inheritsLoose(g,k);var l=g.prototype;l.initialize=function(){this.view=new p.ElevationProfileView({tool:this});this.interaction=new d.ElevationProfileInteraction({tool:this})};l.destroy=function(){this.interaction.destroy();this.view.destroy()};h._createClass(g,[{key:"state",get:function(){var b;switch(null==(b=this.interaction)?void 0:b.state){case d.State.Ready:return f.ElevationProfileState.Ready;case d.State.Creating:return f.ElevationProfileState.Creating;case d.State.Selecting:return f.ElevationProfileState.Selecting;

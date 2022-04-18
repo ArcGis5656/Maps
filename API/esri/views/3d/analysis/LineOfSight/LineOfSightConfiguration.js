@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../Color ../../../../core/Accessor ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass".split(" "),function(a,h,d,b,k,e,m,n,p,l){a.LineOfSightConfiguration=function(f){function g(c){c=f.call(this,c)||this;c.innerWidth=2;c.outerWidth=8;c.visibleInnerColor=
 new b([3,252,111,1]);c.visibleOuterColor=new b([3,252,111,.15]);c.occludedInnerColor=new b([252,3,69,1]);c.occludedOuterColor=new b([252,3,69,.1]);c.undefinedInnerColor=new b([255,255,255,1]);c.undefinedOuterColor=new b([127,127,127,.2]);return c}h._inheritsLoose(g,f);return g}(k);d.__decorate([e.property({type:Number})],a.LineOfSightConfiguration.prototype,"innerWidth",void 0);d.__decorate([e.property({type:Number})],a.LineOfSightConfiguration.prototype,"outerWidth",void 0);d.__decorate([e.property({type:b})],

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Logger ../../../core/promiseUtils ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../engine/BitmapContainer ./LayerView2D ./support/ExportStrategy ../../layers/LayerView ../../layers/RefreshableLayerView".split(" "),function(g,e,b,l,h,w,x,y,m,n,p,q,r,t){const u=b.getLogger("esri.views.2d.layers.BaseDynamicLayerView2D");
 b=function(k){function f(){return k.apply(this,arguments)||this}g._inheritsLoose(f,k);var a=f.prototype;a.update=function(c){this.strategy.update(c).catch(d=>{l.isAbortError(d)||u.error(d)});this.notifyChange("updating")};a.attach=function(){this._bitmapContainer=new n.BitmapContainer;this.container.addChild(this._bitmapContainer);this.strategy=new q({container:this._bitmapContainer,fetchSource:this.fetchBitmapData.bind(this),requestUpdate:this.requestUpdate.bind(this)})};a.detach=function(){this.strategy.destroy();

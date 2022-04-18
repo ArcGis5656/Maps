@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../TimeExtent ../../TimeInterval ../../core/JSONSupport ../../core/lang ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer ./TimeReference ../../portal/timeUnitKebabDictionary".split(" "),function(u,d,l,g,c,m,n,e,E,p,v,q,w,r){var h;c=h=function(t){function k(a){a=
 t.call(this,a)||this;a.cumulative=!1;a.endField=null;a.fullTimeExtent=null;a.hasLiveData=!1;a.interval=null;a.startField=null;a.timeReference=null;a.trackIdField=null;a.useTime=!0;return a}u._inheritsLoose(k,t);var f=k.prototype;f.readFullTimeExtent=function(a,b){return b.timeExtent&&Array.isArray(b.timeExtent)&&2===b.timeExtent.length?new l({start:new Date(b.timeExtent[0]),end:new Date(b.timeExtent[1])}):null};f.writeFullTimeExtent=function(a,b){a&&n.isSome(a.start)&&n.isSome(a.end)?b.timeExtent=

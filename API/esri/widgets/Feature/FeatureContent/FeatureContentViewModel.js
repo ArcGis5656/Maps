@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../Graphic ../../../core/Accessor ../../../core/HandleOwner ../../../core/watchUtils ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../support/featureUtils".split(" "),function(g,d,n,b,p,q,e,t,u,v,r,l){b=function(m){function h(f){var a=m.call(this,f)||this;a._loadingPromise=null;a.created=
 null;a.creator=null;a.destroyer=null;a.graphic=null;a.handles.add(q.init(g._assertThisInitialized(a),"creator",c=>{a._destroyContent();a._createContent(c)}));return a}g._inheritsLoose(h,m);var k=h.prototype;k.destroy=function(){this._destroyContent()};k._destroyContent=function(){const {created:f,graphic:a,destroyer:c}=this;f&&(l.graphicCallback(c,{graphic:a}).catch(()=>null),this._set("created",null))};k._createContent=function(){var f=g._asyncToGenerator(function*(a){var {graphic:c}=this;this._loadingPromise=

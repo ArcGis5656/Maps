@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../chunks/_rollupPluginBabelHelpers","../core/Error","../core/promiseUtils","./locale"],function(f,g,l,u,m){function n(a){var b;return null!=(b=v[a])?b:!1}function p(a){for(const b of d.keys())q(a.pattern,b)&&d.delete(b)}function h(){h=g._asyncToGenerator(function*(a){const b=m.getLocale();d.has(a)||d.set(a,w(a,b));a=d.get(a);yield x.add(a);return a});return h.apply(this,arguments)}function w(a,b){return k.apply(this,arguments)}function k(){k=g._asyncToGenerator(function*(a,b){const c=
 [];for(const r of e)if(q(r.pattern,a))try{return yield r.fetchMessageBundle(a,b)}catch(y){c.push(y)}if(c.length)throw new l("intl:message-bundle-error",`Errors occurred while loading "${a}"`,{errors:c});throw new l("intl:no-message-bundle-loader",`No loader found for message bundle "${a}"`);});return k.apply(this,arguments)}function q(a,b){return"string"===typeof a?b.startsWith(a):a.test(b)}const t=/^([a-z]{2})(?:[-_]([A-Za-z]{2}))?$/,v={ar:!0,bg:!0,bs:!0,ca:!0,cs:!0,da:!0,de:!0,el:!0,en:!0,es:!0,

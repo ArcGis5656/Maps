@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../geometry ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/enumeration ../../../core/accessorSupport/decorators/reader ../../../core/accessorSupport/decorators/subclass ../../../core/accessorSupport/decorators/writer ./BaseRasterTransform ../../../geometry/Point ../../../geometry/Extent".split(" "),
 function(t,n,m,q,C,D,E,y,u,z,v,A,w,B){function r(c,e,h){const {x:a,y:b}=e;if(2>h)return{x:c[0]+a*c[2]+b*c[4],y:c[1]+a*c[3]+b*c[5]};if(2===h){e=a*a;h=b*b;var d=a*b;return{x:c[0]+a*c[2]+b*c[4]+e*c[6]+d*c[8]+h*c[10],y:c[1]+a*c[3]+b*c[5]+e*c[7]+d*c[9]+h*c[11]}}e=a*a;h=b*b;d=a*b;const f=e*a,g=e*b,k=a*h,l=b*h;return{x:c[0]+a*c[2]+b*c[4]+e*c[6]+d*c[8]+h*c[10]+f*c[12]+g*c[14]+k*c[16]+l*c[18],y:c[1]+a*c[3]+b*c[5]+e*c[7]+d*c[9]+h*c[11]+f*c[13]+g*c[15]+k*c[17]+l*c[19]}}function x(c,e,h){const {xmin:a,ymin:b,

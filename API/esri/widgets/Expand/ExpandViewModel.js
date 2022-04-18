@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/Handles ../../core/watchUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass".split(" "),function(k,c,b,n,g,e,q,r,t,p){b=function(l){function h(a){a=l.call(this,a)||this;a._viewpointHandle=null;a._handles=new n;a.group=null;return a}k._inheritsLoose(h,l);var f=h.prototype;f.initialize=
 function(){this._handles.add(g.on(this,"view.ui","expand",a=>{({target:a}=a);a&&a!==this&&a.expanded&&a.group&&a.group===this.group&&this._collapse()}))};f.destroy=function(){this.view=this._viewpointHandle=null;this._handles.destroy();this._handles=null};f._viewpointHandleChange=function(a){this._viewpointHandle&&(a?g.whenTrueOnce(this.view,"stationary",()=>this._viewpointHandle.resume()):this._viewpointHandle.pause())};f._watchViewpoint=function(){this._handles.remove("viewpoint");this._viewpointHandle=

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../Color ../../core/maybe ../../core/accessorSupport/decorators/aliasOf ../../core/arrayUtils ../../core/has ../../core/accessorSupport/decorators/cast ../../core/accessorSupport/decorators/property ../../core/accessorSupport/decorators/subclass ../../renderers/support/ClassBreakInfo ./SmartMappingSliderBase ./ClassedSizeSlider/ClassedSizeSliderViewModel ./support/utils ../support/widgetUtils ../support/decorators/messageBundle ../../core/Logger ../support/jsxFactory".split(" "),
 function(C,g,f,x,D,M,N,E,l,F,G,H,I,y,J,K,O,k){var t;const z={trackFillColor:new f([149,149,149]),trackBackgroundColor:new f([224,224,224])};f=t=function(A){function m(a,c){a=A.call(this,a,c)||this;a._rampNode=null;a.breaks=null;a.label=void 0;a.messages=null;a.style={...z};a.viewModel=new I;return a}C._inheritsLoose(m,A);var h=m.prototype;h.castStyle=function(a){return{...z,...a}};m.fromRendererResult=function(a,c){({renderer:{classBreakInfos:a}}=a);a=a.map(b=>{const d=b.symbol;let e;switch(d.type){case "simple-line":e=

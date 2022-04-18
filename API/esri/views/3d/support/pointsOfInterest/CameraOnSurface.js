@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/promiseUtils ../../../../core/watchUtils ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../chunks/vec3 ../../../../chunks/vec3f64 ../../../../geometry/Point ../cameraUtils ../PropertiesPool ./PointOfInterest".split(" "),function(b,h,
 c,q,r,d,y,z,A,t,k,m,n,u,v,w){const x=Array;b.CameraOnSurface=function(p){function g(a){a=p.call(this,a)||this;a._dirty=!1;a._propertiesPool=new v.PropertiesPool({location:n,renderLocation:x},h._assertThisInitialized(a));a._estimatedSurfaceAltitude=0;a._pendingElevationQueryController=null;a.cameraName="camera";a.renderLocation=m.create();a.tmpPoint=new n;return a}h._inheritsLoose(g,p);var e=g.prototype;e.initialize=function(){this.scheduler&&this.handles.add(this.scheduler.registerTask(this.task,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Evented ../../core/Handles ../../core/maybe ../../core/watchUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass".split(" "),function(g,e,c,p,q,h,f,t,u,v,r){c=function(n){function k(b){var a=n.call(this,b)||this;a._anchorHandles=new p;a.location=null;a.screenLocation=null;a.screenLocationEnabled=!1;
 a.view=null;a._anchorHandles.add([h.watch(g._assertThisInitialized(a),["screenLocationEnabled","location","view.size","view.stationary"],()=>a._updateScreenPointAndHandle()),h.watch(g._assertThisInitialized(a),["view","view.ready"],()=>a._wireUpView())]);return a}g._inheritsLoose(k,n);var d=k.prototype;d.destroy=function(){this.view=null;this._anchorHandles&&this._anchorHandles.destroy();this._viewpointHandle=this._anchorHandles=null};d._wireUpView=function(){this._anchorHandles.remove("view");this._viewpointHandle=

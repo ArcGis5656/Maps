@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../core/has ./keys ./gamepad/GamepadSource ../support/screenUtils".split(" "),function(k,n,e,p,q,r){const l=e("trident"),m=e("edge"),t=e("chrome"),u=e("ff"),v=e("safari");e=function(){function f(a,b){this.input=b;this._active={};this._activePointerCaptures=new Set;this._keyDownState=new Set;this._eventId=1;this._browserTouchPanningEnabled=!1;this._element=a;a.getAttribute("tabindex")||a.setAttribute("tabindex","0");this._eventHandlers={"key-down":this._handleKey,
 "key-up":this._handleKey,"pointer-down":this._handlePointer,"pointer-move":this._handlePointerPreventDefault,"pointer-up":this._handlePointerPreventDefault,"pointer-enter":this._handlePointer,"pointer-leave":this._handlePointer,"pointer-cancel":this._handlePointer,"mouse-wheel":this._handleMouseWheel,"pointer-capture-lost":this._handlePointerCaptureLost};this._updateTouchAction();this._element.addEventListener("keydown",this._preventAltKeyDefault);this._gamepadSource=new q.GamepadSource(a,this.input);

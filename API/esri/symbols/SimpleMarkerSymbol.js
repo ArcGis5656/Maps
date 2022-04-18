@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../Color ../core/jsonMap ../core/lang ../core/screenUtils ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/enumeration ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer ./MarkerSymbol ./SimpleLineSymbol".split(" "),function(n,c,t,d,u,v,e,z,w,x,y,b,p){var l;d=new d.JSONMap({esriSMSCircle:"circle",esriSMSSquare:"square",esriSMSCross:"cross",
 esriSMSX:"x",esriSMSDiamond:"diamond",esriSMSTriangle:"triangle",esriSMSPath:"path"});b=l=function(m){function h(...a){a=m.call(this,...a)||this;a.color=new t([255,255,255,.25]);a.type="simple-marker";a.size=12;a.style="circle";a.outline=new p;return a}n._inheritsLoose(h,m);var k=h.prototype;k.normalizeCtorArgs=function(a,f,q,r){if(a&&"string"!==typeof a)return a;const g={};a&&(g.style=a);null!=f&&(g.size=v.toPt(f));q&&(g.outline=q);r&&(g.color=r);return g};k.writeColor=function(a,f){a&&"x"!==this.style&&

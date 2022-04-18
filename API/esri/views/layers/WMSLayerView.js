@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Error ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../layers/support/commonProperties ../../layers/support/ExportWMSImageParameters".split(" "),function(g,q,d,h,e,k,z,A,u,v,w){k=a=>{a=function(r){function f(){return r.apply(this,arguments)||this}q._inheritsLoose(f,r);var l=f.prototype;
 l.initialize=function(){this.exportImageParameters=new w.ExportWMSImageParameters({layer:this.layer})};l.destroy=function(){this.exportImageParameters.destroy();this.exportImageParameters=null};l.fetchPopupFeatures=function(b){var {layer:c}=this;if(!b)return Promise.reject(new h("wmslayerview:fetchPopupFeatures","Nothing to fetch without area",{layer:c}));const {popupEnabled:t}=c;if(!t)return Promise.reject(new h("wmslayerview:fetchPopupFeatures","popupEnabled should be true",{popupEnabled:t}));b=

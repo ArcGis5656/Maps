@@ -1,7 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../../collections/Component/Material/shader/DecodeSymbolColor.glsl","../../shaderModules/interfaces"],function(b,e,c){b.SymbolColor=function(a,d){d.symbolColor?(a.include(e.DecodeSymbolColor),a.attributes.add("symbolColor","vec4"),a.varyings.add("colorMixMode","mediump float")):a.fragment.uniforms.add("colorMixMode","int");d.symbolColor?a.vertex.code.add(c.glsl`int symbolColorMixMode;
+define(["exports","../../../collections/Component/Material/shader/DecodeSymbolColor.glsl","../../shaderModules/interfaces","../../../lib/VertexAttribute"],function(b,e,c,f){b.SymbolColor=function(a,d){d.symbolColor?(a.include(e.DecodeSymbolColor),a.attributes.add(f.VertexAttribute.SYMBOLCOLOR,"vec4"),a.varyings.add("colorMixMode","mediump float")):a.fragment.uniforms.add("colorMixMode","int");d.symbolColor?a.vertex.code.add(c.glsl`int symbolColorMixMode;
 vec4 getSymbolColor() {
 return decodeSymbolColor(symbolColor, symbolColorMixMode) * 0.003921568627451;
 }

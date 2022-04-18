@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/languageUtils ../support/FeatureSet ../support/IdSet ../support/OrderbyClause ../../../core/promiseUtils".split(" "),function(u,n,r,p,v,q){return function(t){function k(a){var b=t.call(this,a)||this;b._orderbyclause=null;b.declaredClass="esri.arcade.featureset.actions.OrderBy";b._maxProcessing=100;b._orderbyclause=a.orderbyclause;b._parent=a.parentfeatureset;return b}u._inheritsLoose(k,t);var g=k.prototype;g._getSet=function(a){return null===
 this._wset?this._ensureLoaded().then(()=>this._getFilteredSet("",null,null,this._orderbyclause,a)).then(b=>{this._checkCancelled(a);return this._wset=b}):q.resolve(this._wset)};g.manualOrderSet=function(a,b){return this.getIdColumnDictionary(a,[],-1,b).then(c=>{this._orderbyclause.order(c);const d=new p([],[],!0,null);for(let e=0;e<c.length;e++)d._known.push(c[e].id);return d})};g.getIdColumnDictionary=function(a,b,c,d){if(c<a._known.length-1){var e=this._maxQueryRate();if("GETPAGES"===a._known[c+

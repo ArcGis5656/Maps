@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../arcade/arcadeCompiler ../arcade/arcadeRuntime ../arcade/parser ../arcade/treeAnalysis ../core/has ../core/promiseUtils".split(" "),function(f,c,g,l,h,q,I,r){function J(a,b){return!0===b.useAsync||!0===a.isAsync?Y(a,b):I("esri-csp-restrictions")?function(d){return l.executeScript(a,d)}:g.compileScript(a,b)}function Y(a,b){if(null===e)throw Error("Async Arcade must be enabled for this script");return I("esri-csp-restrictions")?function(d){return e.executeScript(a,d)}:g.compileScript(a,
 b,!0)}function K(a){l.extend(a);g.extend(a,"sync");null===e?v.push(a):(g.extend(a,"async"),e.extend(a))}function w(a,b=[]){return h.parseScript(a,b)}function L(a,b,d=""){return h.validateScript(a,b,d)}function M(a,b,d,k=""){return h.scriptCheck(a,b,d,k)}function N(a,b,d=[]){a=h.parseScript(a,d);return x(a,b)}function x(a,b){if(!0===b.useAsync||!0===a.isAsync){if(null===e)throw Error("Async Arcade must be enabled for this script");return e.executeScript(a,b)}return l.executeScript(a,b)}function y(a,

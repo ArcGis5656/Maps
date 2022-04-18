@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../chunks/_rollupPluginBabelHelpers","../assets","../intl/messages"],function(c,f,a,g){function d(){d=f._asyncToGenerator(function*(b){if(b){var h=-1<b.indexOf("-vector")?b.slice(0,b.indexOf("-vector")):b,e=yield g.fetchMessageBundle("esri/t9n/basemaps");return e[b]||e[h]}});return d.apply(this,arguments)}c.esriBasemapDefinitions={streets:{id:"streets",classic:!0,deprecated:!0,get thumbnailUrl(){return a.getAssetUrl("esri/images/basemap/streets.jpg")},baseMapLayers:[{id:"streets-base-layer",
 url:"//services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",layerType:"ArcGISTiledMapServiceLayer",title:"World Street Map",showLegend:!1,visibility:!0,opacity:1}]},satellite:{id:"satellite",classic:!0,get thumbnailUrl(){return a.getAssetUrl("esri/images/basemap/satellite.jpg")},baseMapLayers:[{id:"satellite-base-layer",url:"//services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",layerType:"ArcGISTiledMapServiceLayer",title:"World Imagery",showLegend:!1,visibility:!0,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../core/maybe ../../../../../core/screenUtils ../definitions ./CollisionGrid ./visualVariableSimpleUtils".split(" "),function(A,y,D,B,x,E){function v(k,h){const d=[];k.forEachTile(b=>d.push(b));d.sort((b,e)=>b.instanceId-e.instanceId);d.forEach(b=>{y.isSome(b.labelMetrics)&&b.isReady&&h(b,b.labelMetrics.getCursor())})}function F(k){return h=>D.pt2px(E.getSizeForValueSimple(h,k))}function G(k){for(const d of k){var h;k=("featureReduction"in d&&"cluster"===(null==(h=d.featureReduction)?
 void 0:h.type)&&d.featureReduction).labelingInfo||[];k=[...d.labelingInfo||[],...k];if(d.labelsVisible&&k.length&&k.some(b=>"none"===b.deconflictionStrategy))return!0}return!1}let I=function(){function k(){}var h=k.prototype;h.run=function(d,b,e){const g=[];for(let t=d.length-1;0<=t;t--)a:{var f=g,a=d[t];if("feature"!==a.layer.type&&"csv"!==a.layer.type&&"geojson"!==a.layer.type&&"ogc-feature"!==a.layer.type&&"stream"!==a.layer.type&&"subtype-group"!==a.layer.type&&"wfs"!==a.layer.type)break a;const u=

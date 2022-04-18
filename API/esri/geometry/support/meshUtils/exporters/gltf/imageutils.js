@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../chunks/_rollupPluginBabelHelpers ../../../../../core/has ../../../../../core/Error ../../../../../core/maybe ../../../../../core/urlUtils".split(" "),function(d,g,q,h,k,l){function e(){e=g._asyncToGenerator(function*(a){const b=m(a);if(k.isNone(b))throw new h("imageToArrayBuffer","Unsupported image type");const c=yield n(a);a=yield new Promise(p=>b.toBlob(p,c));if(!a)throw new h("imageToArrayBuffer","Failed to encode image");return{data:yield a.arrayBuffer(),type:c}});
 return e.apply(this,arguments)}function n(a){return f.apply(this,arguments)}function f(){f=g._asyncToGenerator(function*(a){if(!(a instanceof HTMLImageElement))return"image/png";a=a.src;return l.isDataProtocol(a)?({mediaType:a}=l.dataComponents(a),"image/jpeg"===a?a:"image/png"):/\.png$/i.test(a)?"image/png":/\.(jpg|jpeg)$/i.test(a)?"image/jpeg":"image/png"});return f.apply(this,arguments)}function m(a){if(a instanceof HTMLCanvasElement)return a;if(a instanceof HTMLVideoElement)return null;const b=

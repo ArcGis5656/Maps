@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../symbols ../../core/Error ../../intl/messages ../../layers/support/LabelClass ../../layers/support/LabelExpressionInfo ../heuristics/clusterMinSize ../support/clusterUtils ../../views/2d/layers/support/clusterUtils ../../symbols/TextSymbol".split(" "),function(t,m,D,v,w,x,y,z,g,A,B){function C(a){return n.apply(this,arguments)}function n(){n=m._asyncToGenerator(function*(a){const {layer:b,renderer:h,view:c}=a;yield Promise.all([b.load(),
 c.when()]);a=h||b.renderer;return A.isClusterCompatibleRenderer(a)?{layer:b,renderer:a,view:c}:Promise.reject(new v("clusters-label-schemes:invalid-parameters","'renderer' is not valid"))});return n.apply(this,arguments)}function u(a){return p.apply(this,arguments)}function p(){p=m._asyncToGenerator(function*(a){const {renderer:b,view:h,statInfo:c}=a,f=null==c?void 0:c.statisticType,e=c?g.getClusterField(c.attributeInfo,f):g.clusterCountField;{a="type"===f?g.getPredominantTypeExpression("unique-value"===

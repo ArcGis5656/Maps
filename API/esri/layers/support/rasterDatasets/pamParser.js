@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../geometry","./xmlUtilities","../rasterTransforms/PolynomialTransform","../../../geometry/SpatialReference"],function(p,B,e,x,g){function t(a,d){if(!a||!d)return null;const b=[];for(let c=0;c<a.length;c++)b.push(a[c]),b.push(d[c]);return b}function y(a){var d,b=e.getElement(a,"GeodataXform");a=e.getElementNumericValue(b,"SpatialReference/WKID")||e.getElementValue(b,"SpatialReference/WKT");a=q(a);if("typens:PolynomialXform"!==b.getAttribute("xsi:type"))return{spatialReference:a,
 transform:null};var c=null!=(d=e.getElementNumericValue(b,"PolynomialOrder"))?d:1,f=e.getElementNumericValues(b,"CoeffX/Double");const h=e.getElementNumericValues(b,"CoeffY/Double");d=e.getElementNumericValues(b,"InverseCoeffX/Double");b=e.getElementNumericValues(b,"InverseCoeffY/Double");f=t(f,h);b=t(d,b);c=new x({spatialReference:a,polynomialOrder:c,forwardCoefficients:f,inverseCoefficients:b});return{spatialReference:a,transform:c}}function z(a){var d;const b=e.getElementNumericValue(a,"NoDataValue");

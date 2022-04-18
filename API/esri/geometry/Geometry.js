@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/JSONSupport ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/reader ../core/accessorSupport/decorators/subclass ./SpatialReference".split(" "),function(l,c,b,d,q,r,t,n,p,g){b=function(e){function h(...a){a=e.call(this,...a)||this;a.type=null;a.hasM=!1;a.hasZ=!1;a.spatialReference=g.WGS84;return a}l._inheritsLoose(h,e);var f=h.prototype;
 f.readSpatialReference=function(a,k){if(a instanceof g)return a;if(null!=a){const m=new g;m.read(a,k);return m}return a};f.clone=function(){console.warn(".clone() is not implemented for "+this.declaredClass);return null};f.clearCache=function(){this.notifyChange("cache")};f.getCacheValue=function(a){return this.cache[a]};f.setCacheValue=function(a,k){this.cache[a]=k};l._createClass(h,[{key:"cache",get:function(){this.commitProperty("spatialReference");return{}}},{key:"extent",get:function(){return null}}]);

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../kernel ../kernel ../../chunks/languageUtils ./centroid ../../core/promiseUtils ../../geometry/Extent ../../geometry/Geometry ../../geometry/geometryEngineAsync ../../geometry/Multipoint ../../geometry/Point ../../geometry/Polygon ../../geometry/Polyline ../../geometry/support/jsonUtils ../../core/unitUtils".split(" "),function(z,E,k,b,t,F,x,l,h,A,y,u,v,B,G){function C(d){return 0===E.version.indexOf("4.")?u.fromExtent(d):new u({spatialReference:d.spatialReference,rings:[[[d.xmin,
 d.ymin],[d.xmin,d.ymax],[d.xmax,d.ymax],[d.xmax,d.ymin],[d.xmin,d.ymin]]]})}function r(d){b.pcCheck(d,2,2);if(!(d[0]instanceof l&&d[1]instanceof l||d[0]instanceof l&&null===d[1]||d[1]instanceof l&&null===d[0]||null===d[0]&&null===d[1]))throw Error("Illegal Argument");}function D(d,e){if("polygon"!==d.type&&"polyline"!==d.type&&"extent"!==d.type)return F.resolve(0);var f=1;if(d.spatialReference.vcsWkid||d.spatialReference.latestVcsWkid){f=t.getMetersPerVerticalUnitForSR(d.spatialReference);var c=G.getMetersPerUnitForSR(d.spatialReference);

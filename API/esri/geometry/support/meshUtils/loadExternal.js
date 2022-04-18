@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/Error ../../../core/maybe ../../../core/promiseUtils ../../../core/urlUtils ../../Point".split(" "),function(v,w,h,z,m,k,x,A){function n(){n=h._asyncToGenerator(function*(a,b,c){const {loadGLTFMesh:e}=yield k.whenOrAbort(new Promise((p,q)=>v(["./loadGLTFMesh"],p,q)),c),d=yield y(b,c);b=e(new A({x:0,y:0,z:0,spatialReference:a.spatialReference}),d.url,{resolveFile:B(d),useTransform:!0,signal:m.isSome(c)?c.signal:null});
 b.then(()=>d.dispose(),()=>d.dispose());const {vertexAttributes:f,components:g}=yield b;a.vertexAttributes=f;a.components=g});return n.apply(this,arguments)}function B(a){const b=x.removeFile(a.url);return c=>{var e,d=x.makeRelative(c,b,b);d=d?d.replace(/^ *\.\//,""):null;return null!=(e=a.files.get(d))?e:c}}function y(a,b){return r.apply(this,arguments)}function r(){r=h._asyncToGenerator(function*(a,b){return a instanceof Blob?l.fromBlob(a):"string"===typeof a?new l(a):Array.isArray(a)?C(a,b):D(a,

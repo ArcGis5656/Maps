@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Error ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../geometry/Point ../../layers/support/commonProperties ../../rest/support/Query ./support/popupUtils".split(" "),function(l,q,f,r,t,g,m,E,F,w,u,x,y,z){m=b=>{b=function(n){function p(){var d=n.apply(this,arguments)||this;
 d.view=null;return d}q._inheritsLoose(p,n);var v=p.prototype;v.fetchPopupFeatures=function(){var d=q._asyncToGenerator(function*(a,e){const {layer:h}=this;if(!a)throw new r("imagerylayerview:fetchPopupFeatures","Nothing to fetch without area",{layer:h});var {popupEnabled:c}=h;const k=z.getFetchPopupTemplate(h,e);if(!c||!t.isSome(k))throw new r("imagerylayerview:fetchPopupFeatures","Missing required popupTemplate or popupEnabled",{popupEnabled:c,popupTemplate:k});const A=yield k.getRequiredFields();

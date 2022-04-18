@@ -1,4 +1,4 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../../core/time"],function(a,b){const c=b.Milliseconds(40);b=b.Milliseconds(50);a.DESIRED_ANIMATION_FPS=25;a.DESIRED_ANIMATION_MS=c;a.DESIRED_DRAPED_ANIMATION_FPS=20;a.DESIRED_DRAPED_ANIMATION_MS=b;Object.defineProperty(a,"__esModule",{value:!0})});
+define(["exports","../../../core/time"],function(a,b){b=b.Milliseconds(1E3/30);a.MAXIMUM_ANIMATION_LOAD=.5;a.MINIMUM_IDLE_ANIMATION_MS=b;Object.defineProperty(a,"__esModule",{value:!0})});

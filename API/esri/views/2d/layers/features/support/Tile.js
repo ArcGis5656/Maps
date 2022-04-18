@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../chunks/_rollupPluginBabelHelpers ../../../../../core/ArrayPool ../../../../../geometry/Extent ../../../../../geometry/support/aaBoundingRect ../../../../../rest/support/QuantizationParameters ../../../tiling/TileKey".split(" "),function(e,h,k,l,m,n,p){let g=function(){function c(b,a){this.key=new p(0,0,0,0);this.bounds=m.create();this.objectIds=new Set;this.key.set(a);a=b.getLODInfoAt(this.key);this.tileInfoView=b;this.tileInfoView.getTileBounds(this.bounds,this.key,
 !0);this.resolution=a.resolution;this.scale=a.scale;this.level=a.level}var f=c.prototype;f.createChildTiles=function(){const b=this.key.getChildKeys(),a=k.acquire();for(let d=0;d<b.length;d++)a[d]=new c(this.tileInfoView,b[d]);return a};f.getQuantizationParameters=function(){return n.fromJSON({mode:"view",originPosition:"upperLeft",tolerance:this.resolution,extent:{xmin:this.bounds[0],ymin:this.bounds[1],xmax:this.bounds[2],ymax:this.bounds[3],spatialReference:this.tileInfoView.tileInfo.spatialReference}})};

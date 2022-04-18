@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../core/maybe","../../../geometry/support/spatialReferenceUtils","./TileKey"],function(u,v,w){function n(l,e,a){l[0]=e;l[1]=a;return l}const g=new w("0/0/0/0");return function(){function l(a,b,c,d,f,m,h,k,p,q,r,t){this.level=a;this.resolution=b;this.scale=c;this.origin=d;this.first=f;this.last=m;this.size=h;this.norm=k;this.worldStart=p;this.worldEnd=q;this.worldSize=r;this.wrap=t}l.create=function(a,b,c=null){var d=v.getInfo(a.spatialReference);const f=b.origin||[a.origin.x,a.origin.y],
 m=[a.size[0]*b.resolution,a.size[1]*b.resolution],h=[-Infinity,-Infinity],k=[Infinity,Infinity],p=[Infinity,Infinity];u.isSome(c)&&(n(h,Math.max(0,Math.floor((c.xmin-f[0])/m[0])),Math.max(0,Math.floor((f[1]-c.ymax)/m[1]))),n(k,Math.max(0,Math.floor((c.xmax-f[0])/m[0])),Math.max(0,Math.floor((f[1]-c.ymin)/m[1]))),n(p,k[0]-h[0]+1,k[1]-h[1]+1));const {cols:q,rows:r}=b;!c&&q&&r&&(n(h,q[0],r[0]),n(k,q[1],r[1]),n(p,q[1]-q[0]+1,r[1]-r[0]+1));let t;a.isWrappable?(a=[Math.ceil(Math.round((d.valid[1]-d.valid[0])/

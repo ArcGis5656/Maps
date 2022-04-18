@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass".split(" "),function(q,l,g,m,v,w,x,t){function r(e,c){const d=u,b=d.length,a=[];let f,h=e;e=0<=e?e:0;c=0<c?c:d[b-1].minScale;for(let k=0;k<b;k++){const p=Math.min(d[k].minScale,c);f=Math.min(p,c);e<=p&&h<c&&a.push({id:d[k].id,maxScale:Math.max(h,
 e),minScale:f});h=f+1}a.reverse();0!==a.length&&([e]=a,c=a[a.length-1],e.minScale===e.maxScale&&(a.shift(),e.minScale+=1),c.minScale===c.maxScale&&(a.pop(),--c.maxScale));return a}var n;const u=[{id:"room",minScale:100},{id:"rooms",minScale:400},{id:"smallBuilding",minScale:800},{id:"building",minScale:1999},{id:"buildings",minScale:3999},{id:"street",minScale:7499},{id:"streets",minScale:14999},{id:"neighborhood",minScale:29999},{id:"town",minScale:59999},{id:"city",minScale:119999},{id:"cities",

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Evented ../../core/Logger ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../geometry/support/aaBoundingRect ../../geometry/support/contains ../../geometry/support/webMercatorUtils ../../layers/support/ElevationSampler ../3d/support/ElevationProvider ../3d/terrain/TerrainConst".split(" "),
 function(k,c,b,p,g,d,y,z,A,q,r,t,u,v,w,x){const l=p.getLogger("esri.views.support.GroundViewElevationSampler");b=function(m){function f(a){a=m.call(this,a)||this;a.demResolution={min:-1,max:-1};a.noDataValue=x.ELEVATION_NODATA_VALUE;return a}k._inheritsLoose(f,m);var h=f.prototype;h.initialize=function(){this.view.basemapTerrain.on("elevation-change",()=>this.emit("changed",{}))};h.elevationAt=function(a){var e=a.spatialReference;const n=this.spatialReference;return u.canProject(e,n)?g.isNone(this.extent)||

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../../../chunks/_rollupPluginBabelHelpers","../../../../../chunks/vec2f32"],function(h,g){return function(){function e(a,b,d,c){this.center=g.fromValues(a,b);this.centerT=g.create();this.halfWidth=d/2;this.halfHeight=c/2;this.width=d;this.height=c}var f=e.prototype;f.clone=function(){return new e(this.x,this.y,this.width,this.height)};f.serialize=function(a){a.writeF32(this.center[0]);a.writeF32(this.center[1]);a.push(this.width);a.push(this.height);return a};f.findCollisionDelta=function(a,
 b=4){return Math.log2(Math.min((a.halfWidth+this.halfWidth+b)/Math.abs(a.centerT[0]-this.centerT[0]),(a.halfHeight+this.halfHeight+b)/Math.abs(a.centerT[1]-this.centerT[1])))};f.extend=function(a){const b=Math.min(this.xmin,a.xmin),d=Math.min(this.ymin,a.ymin),c=Math.max(this.xmax,a.xmax)-b;a=Math.max(this.ymax,a.ymax)-d;this.width=c;this.height=a;this.halfWidth=c/2;this.halfHeight=a/2;this.x=b+c/2;this.y=d+a/2};e.deserialize=function(a){const b=a.readF32(),d=a.readF32(),c=a.readInt32();a=a.readInt32();

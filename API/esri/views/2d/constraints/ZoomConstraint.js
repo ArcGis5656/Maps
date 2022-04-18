@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Accessor ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass".split(" "),function(x,h,f,k,z,A,B,y){var q;f=q=function(t){function r(a){a=t.call(this,a)||this;a._lodByScale={};a._scales=[];a.effectiveLODs=null;a.effectiveMinZoom=-1;a.effectiveMaxZoom=-1;a.effectiveMinScale=0;a.effectiveMaxScale=
 0;a.lods=null;a.minZoom=-1;a.maxZoom=-1;a.minScale=0;a.maxScale=0;a.snapToZoom=!0;return a}x._inheritsLoose(r,t);var l=r.prototype;l.initialize=function(){let {lods:a,minScale:b,maxScale:c,minZoom:e,maxZoom:d}=this,m=-1,n=-1,u=!1,v=!1;0!==b&&0!==c&&b<c&&([b,c]=[c,b]);if(a&&a.length){a=a.map(g=>g.clone());a.sort((g,p)=>p.scale-g.scale);a.forEach((g,p)=>g.level=p);for(const g of a){!u&&0<b&&b>=g.scale&&(m=g.level,u=!0);!v&&0<c&&c>=g.scale&&(n=w?w.level:-1,v=!0);var w=g}-1===e&&(e=0===b?0:m);-1===d&&

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../core/Accessor ../../core/maybe ../../core/screenUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../geometry/support/geodesicUtils ../../geometry/support/normalizeUtils ../../geometry/support/spatialReferenceUtils ../../geometry/support/webMercatorUtils ../../geometry/support/WKIDUnitConversion ../../geometry/SpatialReference ../../geometry/Polyline ../../geometry/Point".split(" "),
 function(t,n,l,y,z,q,r,H,I,J,A,u,B,C,D,p,E,F,v){function w(m,k){const {x:g,y:a}="decimal-degrees"===m?D.webMercatorToGeographic(k,!0):k;return[g,a]}function x({state:{paddedViewState:m},spatialReference:k,width:g}){return k.isWrappable&&m.worldScreenWidth<g}l=function(m){function k(a){a=m.call(this,a)||this;a.scaleComputedFrom=q.createScreenPoint();a.view=null;return a}t._inheritsLoose(k,m);var g=k.prototype;g.getScaleBarProperties=function(a,b){if("disabled"===this.state||isNaN(a)||!b)return null;

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../../chunks/_rollupPluginBabelHelpers ../../../../../core/maybe ../../../../../chunks/vec3 ../../../../../chunks/vec3f64 ../../../../../geometry/support/aaBoundingBox ../../../../../geometry/support/buffer/BufferView ./ComponentIntersectionData ../../lib/ComponentUtils ../../lib/geometryDataUtils ../../materials/internal/MaterialUtil".split(" "),function(y,m,n,z,A,B,u,C,D,p){let K=function(){function q(a,b){this._indices=m.isSome(a.indices)?a.indices:D.generateDefaultIndexArray(a.positions.length/
 3);this._positions=new B.BufferViewVec3f(a.positions);this._components=b;this._componentIntersectionData=Array(b.count)}var l=q.prototype;l.getComponentAabb=function(a,b){if(m.isSome(this._perComponentAabbs)){for(let d=0;6>d;d++)b[d]=this._perComponentAabbs[6*a+d];return b}this._computePerComponentAabbs();return this.getComponentAabb(a,b)};l.getComponentPositions=function(a,b){b.indices=this._indices;b.data=this._positions.typedBuffer;b.stride=this._positions.typedBufferStride;b.startIndex=this._components.offsets[a];

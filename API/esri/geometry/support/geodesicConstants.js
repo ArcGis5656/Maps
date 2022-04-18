@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./Ellipsoid"],function(d,a){const e=Math.PI/180;var c=a.earth.radius;const b=a.earth.eccentricitySquared;c={a1:c*b,a2:c*b*c*b,a3:c*b*b/2,a4:c*b*c*b*2.5,a5:c*b+c*b*b/2,a6:1-b};a={4267:{a:6378206.4,f:1/294.9786982},4269:{a:6378137,f:1/298.257222101},4326:{a:a.earth.radius,f:a.earth.flattening},104900:{a:2439700,f:0},104901:{a:6051E3,f:0},104902:{a:6051800,f:0},104903:{a:a.moon.radius,f:a.moon.flattening},104904:{a:3393400,f:.005207166853303471},104905:{a:a.mars.radius,f:a.mars.flattening},
 104906:{a:6200,f:0},104907:{a:11100,f:0},104908:{a:71492E3,f:.06487439154031222},104909:{a:8200,f:0},104910:{a:83500,f:0},104911:{a:1E4,f:0},104912:{a:2409300,f:0},104913:{a:15E3,f:0},104914:{a:4E4,f:0},104915:{a:1562090,f:0},104916:{a:2632345,f:0},104917:{a:85E3,f:0},104918:{a:1821460,f:0},104919:{a:5E3,f:0},104920:{a:12E3,f:0},104921:{a:3E4,f:3},104922:{a:18E3,f:0},104923:{a:14E3,f:0},104924:{a:49300,f:0},104925:{a:60268E3,f:.09796243445941462},104926:{a:16E3,f:0},104927:{a:9500,f:0},104928:{a:56E4,

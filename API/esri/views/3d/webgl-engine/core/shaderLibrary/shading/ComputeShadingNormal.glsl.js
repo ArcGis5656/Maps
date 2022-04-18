@@ -1,20 +1,19 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../attributes/VertexNormal.glsl","../attributes/VertexPosition.glsl","../../shaderModules/interfaces"],function(f,g,e,c){f.ComputeShadingNormal=function(d,a){const b=d.fragment;0===a.doubleSidedMode?b.code.add(c.glsl`vec3 _adjustDoublesided(vec3 normal) {
+define("exports ../../../../../../core/compilerUtils ../../../../../ViewingMode ../attributes/NormalAttribute.glsl ../attributes/VertexNormal.glsl ../attributes/VertexPosition.glsl ./Normals.glsl ../../shaderModules/interfaces".split(" "),function(h,k,l,e,m,g,f,b){h.ComputeShadingNormal=function(d,a){const c=d.fragment;switch(a.doubleSidedMode){case f.NormalsDoubleSidedMode.None:c.code.add(b.glsl`vec3 _adjustDoublesided(vec3 normal) {
 return normal;
-}`):1===a.doubleSidedMode?(d.include(e.VertexPosition,a),b.uniforms.add("uTransform_ViewFromCameraLocal_T","vec3"),b.code.add(c.glsl`vec3 _adjustDoublesided(vec3 normal) {
-vec3 viewDir = vPositionWorldCameraRelative + uTransform_ViewFromCameraLocal_T;
-return dot(normal, viewDir) > 0.0 ? -normal : normal;
-}`)):2===a.doubleSidedMode&&b.code.add(c.glsl`vec3 _adjustDoublesided(vec3 normal) {
+}`);break;case f.NormalsDoubleSidedMode.View:d.include(g.VertexPosition,a);c.code.add(b.glsl`vec3 _adjustDoublesided(vec3 normal) {
+return dot(normal, vPositionWorldCameraRelative) > 0.0 ? -normal : normal;
+}`);break;case f.NormalsDoubleSidedMode.WindingOrder:c.code.add(b.glsl`vec3 _adjustDoublesided(vec3 normal) {
 return gl_FrontFacing ? normal : -normal;
-}`);0===a.normalType||1===a.normalType?(d.include(g.VertexNormal,a),b.code.add(c.glsl`vec3 shadingNormalWorld() {
+}`);break;default:k.neverReached(a.doubleSidedMode);case f.NormalsDoubleSidedMode.COUNT:}switch(a.normalType){case e.NormalAttributeType.Attribute:case e.NormalAttributeType.CompressedAttribute:d.include(m.VertexNormal,a);c.code.add(b.glsl`vec3 shadingNormalWorld() {
 return _adjustDoublesided(normalize(vNormalWorld));
 }
 vec3 shadingNormal_view() {
 vec3 normal = normalize(vNormalView);
 return gl_FrontFacing ? normal : -normal;
-}`)):3===a.normalType?(d.extensions.add("GL_OES_standard_derivatives"),d.include(e.VertexPosition,a),b.code.add(c.glsl`vec3 shadingNormalWorld() {
+}`);break;case e.NormalAttributeType.ScreenDerivative:d.extensions.add("GL_OES_standard_derivatives");d.include(g.VertexPosition,a);c.code.add(b.glsl`vec3 shadingNormalWorld() {
 return normalize(cross(
 dFdx(vPositionWorldCameraRelative),
 dFdy(vPositionWorldCameraRelative)
@@ -22,10 +21,10 @@ dFdy(vPositionWorldCameraRelative)
 }
 vec3 shadingNormal_view() {
 return normalize(cross(dFdx(vPosition_view),dFdy(vPosition_view)));
-}`)):2===a.normalType&&(1===a.viewingMode?(d.include(e.VertexPosition,a),b.code.add(c.glsl`vec3 shadingNormalWorld() {
+}`);break;case e.NormalAttributeType.Ground:a.viewingMode===l.ViewingMode.Global?(d.include(g.VertexPosition,a),c.code.add(b.glsl`vec3 shadingNormalWorld() {
 return normalize(positionWorld());
-}`)):2===a.viewingMode&&b.code.add(c.glsl`vec3 shadingNormalWorld() {
+}`)):a.viewingMode===l.ViewingMode.Local&&c.code.add(b.glsl`vec3 shadingNormalWorld() {
 return vec3(0.0, 0.0, 1.0);
-}`),d.extensions.add("GL_OES_standard_derivatives"),b.code.add(c.glsl`vec3 shadingNormal_view() {
+}`);d.extensions.add("GL_OES_standard_derivatives");c.code.add(b.glsl`vec3 shadingNormal_view() {
 return normalize(cross(dFdx(vPosition_view),dFdy(vPosition_view))).xyz;
-}`))};Object.defineProperty(f,"__esModule",{value:!0})});
+}`);break;default:k.neverReached(a.normalType);case e.NormalAttributeType.COUNT:}};Object.defineProperty(h,"__esModule",{value:!0})});

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../webgl/BufferObject ../../../webgl/FramebufferObject ../../../../core/has ../../../webgl/checkWebGLError ../../../webgl/enums ../../../../chunks/builtins ../../../webgl/Texture ../../../webgl/VertexArrayObject".split(" "),function(b,e,f,c,m,n,p,q,r,g){c=function(){function a(d,h,k,l){this.vao=new g(d,h,{geometry:k},{geometry:f.createVertex(d,35044)});this.array=new Float32Array(l);this.vao.vertexBuffers.geometry.setData(this.array)}
-a.prototype.dispose=function(){this.vao.dispose(!0)};e._createClass(a,[{key:"length",get:function(){return this.array.length}}]);return a}();b.StaticFloat32ArrayObject=c;Object.defineProperty(b,"__esModule",{value:!0})});
+define(["exports","../../../../chunks/_rollupPluginBabelHelpers","../../../webgl/BufferObject","../../../webgl/enums","../../../webgl/VertexArrayObject"],function(b,d,e,f,g){let m=function(){function a(c,h,k,l){this.vao=new g.VertexArrayObject(c,h,{geometry:k},{geometry:e.BufferObject.createVertex(c,f.Usage.STATIC_DRAW)});this.array=new Float32Array(l);this.vao.vertexBuffers.geometry.setSize(this.array.byteLength)}a.prototype.dispose=function(){this.vao.dispose(!0)};d._createClass(a,[{key:"length",
+get:function(){return this.array.length}}]);return a}();b.StaticFloat32ArrayObject=m;Object.defineProperty(b,"__esModule",{value:!0})});

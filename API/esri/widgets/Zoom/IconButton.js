@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../Widget ../support/decorators/accessibleHandler ../../core/Logger ../support/jsxFactory ../support/widgetUtils".split(" "),function(k,b,d,a,q,r,l,m,n,t,e,u){a=function(g){function f(){var c=g.apply(this,arguments)||this;c.enabled=!0;c.iconClass="";c.title="";return c}
 k._inheritsLoose(f,g);var h=f.prototype;h.render=function(){const c=this.enabled?0:-1,p={[this.iconClass]:!!this.iconClass};return e.tsx("div",{bind:this,class:this.classes("esri-widget--button esri-widget",{["esri-disabled"]:!this.enabled,["esri-interactive"]:this.enabled}),onclick:this._triggerAction,onkeydown:this._triggerAction,role:"button",tabIndex:c,title:this.title},e.tsx("span",{"aria-hidden":"true",role:"presentation",class:this.classes("esri-icon",p)}),e.tsx("span",{class:"esri-icon-font-fallback-text"},

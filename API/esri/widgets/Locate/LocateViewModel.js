@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../intl ../../PopupTemplate ../../core/Error ../../core/Handles ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../Popup/actions ../support/GeolocationPositioning ../support/geolocationUtils ../../intl/locale ../../intl/messages".split(" "),function(f,g,e,p,n,q,h,A,B,C,r,t,u,v,w,x){function y(){return m.apply(this,
 arguments)}function m(){m=f._asyncToGenerator(function*(){const b=yield x.fetchMessageBundle("esri/widgets/Locate/t9n/Locate");return new p({title:b.currentLocation,fieldInfos:[{fieldName:"timestamp",label:b.timestamp,format:{dateFormat:"short-date-short-time"}},{fieldName:"latitude",label:b.latitude,format:{places:4,digitSeparator:!0}},{fieldName:"longitude",label:b.longitude,format:{places:4,digitSeparator:!0}},{fieldName:"accuracy",label:b.accuracy,format:{places:0,digitSeparator:!0}},{fieldName:"altitude",

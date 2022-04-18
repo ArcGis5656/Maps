@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/maybe ../../../core/watchUtils ../../../core/Logger ../../../core/accessorSupport/ensureType ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/set ../../../core/accessorSupport/decorators/subclass ../../../layers/support/FeatureFilter ./FeatureLayerView2D".split(" "),function(k,l,m,n,g,t,u,v,w,p,q,r){g=function(e){function h(){return e.apply(this,arguments)||this}k._inheritsLoose(h,e);
 var f=h.prototype;f.initialize=function(){this.handles.add([n.init(this.view,"viewpoint",()=>this._update())])};f._injectOverrides=function(a){a=e.prototype._injectOverrides.call(this,a);const d=this.view.scale;var c=this.layer.sublayers.filter(b=>!b.visible||0!==b.minScale&&d>b.minScale||0!==b.maxScale&&d<b.maxScale).map(b=>b.subtypeCode);if(!c.length)return a;a=m.isSome(a)?a:(new q).toJSON();c=`NOT ${this.layer.subtypeField} IN (${c.join(",")})`;a.where=a.where?`(${a.where}) AND (${c})`:c;return a};

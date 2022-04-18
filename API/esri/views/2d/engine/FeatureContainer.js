@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/promiseUtils ../../../core/Queue ./webgl/AttributeStoreView ./webgl/TileContainer ./webgl/WGLRendererInfo".split(" "),function(l,m,n,p,q,h,r){h=function(g){function k(a){var b=g.call(this,a)||this;b._rendererInfo=new r.WGLRendererInfo;b._materialItemsRequestQueue=new p;b.attributeView=new q.AttributeStoreView(()=>b.onAttributeStoreUpdate());return b}m._inheritsLoose(k,g);var c=k.prototype;c.destroy=function(){this.removeAllChildren();
 this.children.forEach(a=>a.destroy());this.attributeView.destroy();this._materialItemsRequestQueue.clear()};c.setRendererInfo=function(a,b,d){this._rendererInfo.setInfo(a,b,d);this.requestRender()};c.getMaterialItems=function(){var a=m._asyncToGenerator(function*(b,d){if(!b||0===b.length)return null;const e=n.createResolver();this._materialItemsRequestQueue.push({items:b,abortOptions:d,resolver:e});this.requestRender();return e.promise});return function(b,d){return a.apply(this,arguments)}}();c.doRender=

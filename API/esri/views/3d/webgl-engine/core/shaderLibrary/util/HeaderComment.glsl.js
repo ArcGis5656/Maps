@@ -1,9 +1,9 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../shaderModules/interfaces","../../../../../webgl/checkWebGLError"],function(b,d,e){b.HeaderComment=function(c,a){a=d.glsl`
+define(["exports","../ShaderOutputOptions","../../shaderModules/interfaces","../../../../../webgl/checkWebGLError"],function(c,b,e,f){c.HeaderComment=function(d,a){a=e.glsl`
   /*
   *  ${a.name}
-  *  ${0===a.output?"RenderOutput: Color":1===a.output?"RenderOutput: Depth":3===a.output?"RenderOutput: Shadow":2===a.output?"RenderOutput: Normal":4===a.output?"RenderOutput: Highlight":""}
+  *  ${a.output===b.ShaderOutput.Color?"RenderOutput: Color":a.output===b.ShaderOutput.Depth?"RenderOutput: Depth":a.output===b.ShaderOutput.Shadow?"RenderOutput: Shadow":a.output===b.ShaderOutput.Normal?"RenderOutput: Normal":a.output===b.ShaderOutput.Highlight?"RenderOutput: Highlight":""}
   */
-  `;e.webglValidateShadersEnabled()&&(c.fragment.code.add(a),c.vertex.code.add(a))};Object.defineProperty(b,"__esModule",{value:!0})});
+  `;f.webglValidateShadersEnabled()&&(d.fragment.code.add(a),d.vertex.code.add(a))};Object.defineProperty(c,"__esModule",{value:!0})});

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../core/has","../../core/mathUtils"],function(p,W,D){function E(a,b){const {format:d,quality:k,rotation:f,disableDecorations:h}=a||{};var c=B(a,b.padding);var e=b.width-c.left-c.right;b=b.height-c.top-c.bottom;c={x:0,y:0,width:e,height:b};if(a&&a.area){null!=a.area.x&&(c.x=Math.floor(a.area.x));null!=a.area.y&&(c.y=Math.floor(a.area.y));var g=null!=a.area.width?Math.floor(a.area.width):null,m=null!=a.area.height?Math.floor(a.area.height):null;c.width=e-c.x;c.height=b-c.y;null!=
 g&&null!=m?(c.width=Math.min(c.width,g),c.height=Math.min(c.height,m)):null==g&&null!=m?(g=Math.min(c.width,g),c.height*=g/c.width,c.width=g):null!=g&&null==m&&(g=Math.min(c.height,m),c.width*=g/c.height,c.height=g)}c=O(c,a);g=Math.floor(Math.max(c.x,0));m=Math.floor(Math.max(c.y,0));e={x:g,y:m,width:Math.floor(Math.min(c.width,e-g)),height:Math.floor(Math.min(c.height,b-m))};b=e.width/e.height;c=c.width/c.height;c!==b&&(c>b?(b=Math.floor(e.width/c),e={x:e.x,y:Math.floor(e.y+(e.height-b)/2),width:e.width,

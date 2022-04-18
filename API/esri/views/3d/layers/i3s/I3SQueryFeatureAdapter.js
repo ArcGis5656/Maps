@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../core/maybe ../../../../geometry/support/aaBoundingBox ../../../../layers/graphics/centroid ../../../../layers/graphics/OptimizedGeometry ./I3SUtil".split(" "),function(l,g,q,r,k,m){let v=function(){function n(a){this.objectIdField=a.objectIdField;this.getFeatureExtent=a.getFeatureExtent}var f=n.prototype;f.getObjectId=function(a){return a.id};f.getAttributes=function(a){const {meta:c,index:d}=a,b={};this.objectIdField&&(b[this.objectIdField]=a.id);a=g.isSome(c.attributeInfo)&&
 c.attributeInfo.attributeData;if(g.isSome(a))for(const e of Object.keys(a))b[e]=m.getCachedAttributeValue(a[e],d);return b};f.getAttribute=function(a,c){if(c===this.objectIdField)return a.id;const {meta:d,index:b}=a;a=g.isSome(d.attributeInfo)&&d.attributeInfo.attributeData;return g.isSome(a)?m.getCachedAttributeValue(a[c],b):null};f.getGeometry=function(a){if(a.geometry)return a.geometry;const [c,d,b,e,h]=this.getFeatureExtent(a,p);return new k([5],[c,d,b,e,d,b,e,h,b,c,h,b,c,d,b])};f.getCentroid=

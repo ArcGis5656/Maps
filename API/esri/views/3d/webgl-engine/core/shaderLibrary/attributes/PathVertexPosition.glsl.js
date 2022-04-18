@@ -1,7 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","./PositionAttribute.glsl","../../shaderModules/interfaces"],function(d,e,c){d.PathVertexPosition=function(a,b){a.attributes.add("featureValue","vec4");a.vertex.code.add(c.glsl`bool isCapVertex() {
+define(["exports","./PositionAttribute.glsl","../../shaderModules/interfaces","../../../lib/VertexAttribute"],function(e,f,c,d){e.PathVertexPosition=function(a,b){a.attributes.add(d.VertexAttribute.FEATUREVALUE,"vec4");a.vertex.code.add(c.glsl`bool isCapVertex() {
 return featureValue.w == 1.0;
 }`);a.vertex.uniforms.add("size","vec3");b.vvSize?(a.vertex.uniforms.add("vvSizeMinSize","vec3"),a.vertex.uniforms.add("vvSizeMaxSize","vec3"),a.vertex.uniforms.add("vvSizeOffset","vec3"),a.vertex.uniforms.add("vvSizeFactor","vec3"),a.vertex.code.add(c.glsl`vec2 getSize() {
 return size.xy*clamp(vvSizeOffset + featureValue.x * vvSizeFactor, vvSizeMinSize, vvSizeMaxSize).xz;
@@ -39,7 +39,7 @@ return applyOpacity(mix(vvColorColors[i-1], vvColorColors[i], f));
 return applyOpacity(vvColorColors[vvColorNumber - 1]);
 }`)):a.vertex.code.add(c.glsl`vec4 getColor(){
 return applyOpacity(vec4(1, 1, 1, 1));
-}`);a.include(e.PositionAttribute);a.attributes.add("profileRight","vec4");a.attributes.add("profileUp","vec4");a.attributes.add("profileVertexAndNormal","vec4");a.vertex.code.add(c.glsl`vec3 calculateVPos() {
+}`);a.include(f.PositionAttribute);a.attributes.add(d.VertexAttribute.PROFILERIGHT,"vec4");a.attributes.add(d.VertexAttribute.PROFILEUP,"vec4");a.attributes.add(d.VertexAttribute.PROFILEVERTEXANDNORMAL,"vec4");a.vertex.code.add(c.glsl`vec3 calculateVPos() {
 vec2 size = getSize();
 vec3 origin = position;
 vec3 right = profileRight.xyz;
@@ -73,5 +73,5 @@ if(isCapVertex()) {
 normal += forward * profileUp.w;
 }
 return normal;
-}`)};d.setVVUniforms=function(a,b){b.vvSizeEnabled&&(a.setUniform3fv("vvSizeMinSize",b.vvSizeMinSize),a.setUniform3fv("vvSizeMaxSize",b.vvSizeMaxSize),a.setUniform3fv("vvSizeOffset",b.vvSizeOffset),a.setUniform3fv("vvSizeFactor",b.vvSizeFactor));b.vvColorEnabled&&(a.setUniform1fv("vvColorValues",b.vvColorValues),a.setUniform4fv("vvColorColors",b.vvColorColors));b.vvOpacityEnabled&&(a.setUniform1fv("vvOpacityValues",b.vvOpacityValues),a.setUniform1fv("vvOpacityOpacities",b.vvOpacityOpacities))};Object.defineProperty(d,
+}`)};e.setVVUniforms=function(a,b){b.vvSizeEnabled&&(a.setUniform3fv("vvSizeMinSize",b.vvSizeMinSize),a.setUniform3fv("vvSizeMaxSize",b.vvSizeMaxSize),a.setUniform3fv("vvSizeOffset",b.vvSizeOffset),a.setUniform3fv("vvSizeFactor",b.vvSizeFactor));b.vvColorEnabled&&(a.setUniform1fv("vvColorValues",b.vvColorValues),a.setUniform4fv("vvColorColors",b.vvColorColors));b.vvOpacityEnabled&&(a.setUniform1fv("vvOpacityValues",b.vvOpacityValues),a.setUniform1fv("vvOpacityOpacities",b.vvOpacityOpacities))};Object.defineProperty(e,
 "__esModule",{value:!0})});

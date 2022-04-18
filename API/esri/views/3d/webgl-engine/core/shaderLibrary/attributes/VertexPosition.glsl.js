@@ -1,28 +1,29 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define("exports ../../../../../../chunks/mat3f64 ../../../../../../chunks/mat4f64 ../../../../../../chunks/vec3f64 ./PositionAttribute.glsl ../util/DoublePrecision.glsl ../../shaderModules/interfaces".split(" "),function(f,g,k,d,l,m,h){function e(a,b){a.include(l.PositionAttribute);a.vertex.include(m.DoublePrecision,b);a.varyings.add("vPositionWorldCameraRelative","vec3");a.varyings.add("vPosition_view","vec3");a.vertex.uniforms.add("uTransform_WorldFromModel_RS","mat3");a.vertex.uniforms.add("uTransform_WorldFromModel_TH",
-"vec3");a.vertex.uniforms.add("uTransform_WorldFromModel_TL","vec3");a.vertex.uniforms.add("uTransform_WorldFromView_TH","vec3");a.vertex.uniforms.add("uTransform_WorldFromView_TL","vec3");a.vertex.uniforms.add("uTransform_ViewFromCameraRelative_RS","mat3");a.vertex.uniforms.add("uTransform_ProjFromView","mat4");a.vertex.code.add(h.glsl`vec3 positionWorldCameraRelative() {
-vec3 rotatedModelPosition = uTransform_WorldFromModel_RS * positionModel();
+define("exports ../../../../../../chunks/mat3f64 ../../../../../../chunks/mat4f64 ../../../../../../chunks/vec3f64 ./PositionAttribute.glsl ../util/DoublePrecision.glsl ../../shaderModules/interfaces".split(" "),function(c,e,g,d,h,k,f){c.VertexPosition=function(a,b){a.include(h.PositionAttribute);a.vertex.include(k.DoublePrecision,b);a.varyings.add("vPositionWorldCameraRelative","vec3");a.varyings.add("vPosition_view","vec3");a.vertex.uniforms.add("transformWorldFromModelRS","mat3");a.vertex.uniforms.add("transformWorldFromModelTH",
+"vec3");a.vertex.uniforms.add("transformWorldFromModelTL","vec3");a.vertex.uniforms.add("transformWorldFromViewTH","vec3");a.vertex.uniforms.add("transformWorldFromViewTL","vec3");a.vertex.uniforms.add("transformViewFromCameraRelativeRS","mat3");a.vertex.uniforms.add("transformProjFromView","mat4");a.vertex.code.add(f.glsl`vec3 positionWorldCameraRelative() {
+vec3 rotatedModelPosition = transformWorldFromModelRS * positionModel();
 vec3 transform_CameraRelativeFromModel = dpAdd(
-uTransform_WorldFromModel_TL,
-uTransform_WorldFromModel_TH,
--uTransform_WorldFromView_TL,
--uTransform_WorldFromView_TH
+transformWorldFromModelTL,
+transformWorldFromModelTH,
+-transformWorldFromViewTL,
+-transformWorldFromViewTH
 );
 return transform_CameraRelativeFromModel + rotatedModelPosition;
 }
 vec3 position_view() {
-return uTransform_ViewFromCameraRelative_RS * positionWorldCameraRelative();
+return transformViewFromCameraRelativeRS * positionWorldCameraRelative();
 }
 void forwardPosition() {
 vPositionWorldCameraRelative = positionWorldCameraRelative();
 vPosition_view = position_view();
-gl_Position = uTransform_ProjFromView * vec4(vPosition_view, 1.0);
+gl_Position = transformProjFromView * vec4(vPosition_view, 1.0);
 }
 vec3 positionWorld() {
-return uTransform_WorldFromView_TL + vPositionWorldCameraRelative;
-}`);a.fragment.uniforms.add("uTransform_WorldFromView_TL","vec3");a.fragment.code.add(h.glsl`vec3 positionWorld() {
-return uTransform_WorldFromView_TL + vPositionWorldCameraRelative;
-}`)}(function(a){a.ModelTransform=function(){this.worldFromModel_RS=g.create();this.worldFromModel_TH=d.create();this.worldFromModel_TL=d.create()};a.ViewProjectionTransform=function(){this.worldFromView_TH=d.create();this.worldFromView_TL=d.create();this.viewFromCameraRelative_RS=g.create();this.projFromView=k.create()};a.bindModelTransform=function(b,c){b.setUniformMatrix3fv("uTransform_WorldFromModel_RS",c.worldFromModel_RS);b.setUniform3fv("uTransform_WorldFromModel_TH",c.worldFromModel_TH);b.setUniform3fv("uTransform_WorldFromModel_TL",
-c.worldFromModel_TL)};a.bindViewProjTransform=function(b,c){b.setUniform3fv("uTransform_WorldFromView_TH",c.worldFromView_TH);b.setUniform3fv("uTransform_WorldFromView_TL",c.worldFromView_TL);b.setUniformMatrix4fv("uTransform_ProjFromView",c.projFromView);b.setUniformMatrix3fv("uTransform_ViewFromCameraRelative_RS",c.viewFromCameraRelative_RS)}})(e||(e={}));f.VertexPosition=e;Object.defineProperty(f,"__esModule",{value:!0})});
+return transformWorldFromViewTL + vPositionWorldCameraRelative;
+}`);a.fragment.uniforms.add("transformWorldFromViewTL","vec3");a.fragment.code.add(f.glsl`vec3 positionWorld() {
+return transformWorldFromViewTL + vPositionWorldCameraRelative;
+}`)};c.VertexPositionModelTransform=function(){this.transformWorldFromModelRS=e.create();this.transformWorldFromModelTH=d.create();this.transformWorldFromModelTL=d.create()};c.VertexPositionViewProjectionTransform=function(){this.transformWorldFromViewTH=d.create();this.transformWorldFromViewTL=d.create();this.transformViewFromCameraRelativeRS=e.create();this.transformProjFromView=g.create()};c.bindModelTransform=function(a,b){a.setUniformMatrix3fv("transformWorldFromModelRS",b.transformWorldFromModelRS);
+a.setUniform3fv("transformWorldFromModelTH",b.transformWorldFromModelTH);a.setUniform3fv("transformWorldFromModelTL",b.transformWorldFromModelTL)};c.bindViewProjTransform=function(a,b){a.setUniform3fv("transformWorldFromViewTH",b.transformWorldFromViewTH);a.setUniform3fv("transformWorldFromViewTL",b.transformWorldFromViewTL);a.setUniformMatrix4fv("transformProjFromView",b.transformProjFromView);a.setUniformMatrix3fv("transformViewFromCameraRelativeRS",b.transformViewFromCameraRelativeRS)};Object.defineProperty(c,
+"__esModule",{value:!0})});

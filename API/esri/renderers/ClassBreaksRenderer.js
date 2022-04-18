@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../symbols ../core/jsonMap ../core/lang ../core/Logger ../core/maybe ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/cast ../core/accessorSupport/decorators/enumeration ../core/accessorSupport/decorators/reader ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer ../core/accessorSupport/ensureType ../layers/support/fieldUtils ./Renderer ./mixins/VisualVariablesMixin ./support/ClassBreakInfo ./support/commonProperties ./support/LegendOptions ../support/arcadeOnDemand".split(" "),
 function(n,g,C,p,r,D,m,k,E,F,G,H,I,x,y,e,J,t,A,K,B){var z;const u=D.getLogger("esri.renderers.ClassBreaksRenderer");p=new p.JSONMap({esriNormalizeByLog:"log",esriNormalizeByPercentOfTotal:"percent-of-total",esriNormalizeByField:"field"});const L=x.ensureType(t);e=z=function(v){function w(a){a=v.call(this,a)||this;a._compiledValueExpression={valueExpression:null,compiledFunction:null};a.backgroundFillSymbol=null;a.classBreakInfos=null;a.defaultLabel=null;a.defaultSymbol=null;a.field=null;a.isMaxInclusive=

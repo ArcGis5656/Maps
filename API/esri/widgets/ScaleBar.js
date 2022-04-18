@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/screenUtils ../core/watchUtils ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/decorators/cast ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./ScaleBar/ScaleBarViewModel ./support/widgetUtils ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory".split(" "),function(n,f,v,p,w,e,B,q,h,x,y,z,C,A,D,c){e=function(r){function k(a,
 b){a=r.call(this,a,b)||this;a.label=void 0;a.messages=null;a.unit="non-metric";a.view=null;a.viewModel=new z;return a}n._inheritsLoose(k,r);var g=k.prototype;g.initialize=function(){this.own([p.whenTrue(this,"view.stationary",()=>this.scheduleRender()),p.watch(this,["view.center","view.scale","view.zoom"],()=>{this.view.stationary&&this.scheduleRender()})])};g.castStyle=function(a){return"line"===a?a:"ruler"};g.castUnit=function(a){return"metric"===a||"dual"===a?a:"non-metric"};g.render=function(){var a=

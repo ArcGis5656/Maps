@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../core/jsonMap ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../geometry/support/jsonUtils".split(" "),function(g,c,h,b,k,d,r,t,u,l,m){const n=new b.JSONMap({9001:"meters",9002:"feet",9036:"kilometers",9093:"miles",109012:"nautical-miles",109001:"yards"});b=function(f){function e(a){a=
 f.call(this,a)||this;a.geometries=null;a.geodesic=null;a.lengthUnit=null;a.maxSegmentLength=null;return a}g._inheritsLoose(e,f);e.prototype.toJSON=function(){const a={};if(this.geometries&&0<this.geometries.length){const q=this.geometries.map(function(p){return p.toJSON()});a.geometries=JSON.stringify({geometryType:m.getJsonType(this.geometries[0]),geometries:q});a.sr=JSON.stringify(this.geometries[0].spatialReference.toJSON())}this.geodesic&&(a.geodesic=this.geodesic);this.lengthUnit&&(a.lengthUnit=

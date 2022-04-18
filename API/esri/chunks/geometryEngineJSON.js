@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./geometryEngineBase","../geometry/geometryAdapters/json"],function(d,e,f){function m(b){return e.GeometryEngineApi.extendedSpatialReferenceInfo(b)}function n(b,a,c){return e.GeometryEngineApi.clip(f.jsonAdapter,b,a,c)}function p(b,a,c){return e.GeometryEngineApi.cut(f.jsonAdapter,b,a,c)}function q(b,a,c){return e.GeometryEngineApi.contains(f.jsonAdapter,b,a,c)}function r(b,a,c){return e.GeometryEngineApi.crosses(f.jsonAdapter,b,a,c)}function t(b,a,c,g){return e.GeometryEngineApi.distance(f.jsonAdapter,
 b,a,c,g)}function u(b,a,c){return e.GeometryEngineApi.equals(f.jsonAdapter,b,a,c)}function v(b,a,c){return e.GeometryEngineApi.intersects(f.jsonAdapter,b,a,c)}function w(b,a,c){return e.GeometryEngineApi.touches(f.jsonAdapter,b,a,c)}function x(b,a,c){return e.GeometryEngineApi.within(f.jsonAdapter,b,a,c)}function y(b,a,c){return e.GeometryEngineApi.disjoint(f.jsonAdapter,b,a,c)}function z(b,a,c){return e.GeometryEngineApi.overlaps(f.jsonAdapter,b,a,c)}function A(b,a,c,g){return e.GeometryEngineApi.relate(f.jsonAdapter,

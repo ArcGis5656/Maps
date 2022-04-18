@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/lang ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer ./Extent ./Geometry ./Point ./SpatialReference ./support/extentUtils ./support/zmUtils".split(" "),function(q,l,r,n,g,v,w,x,y,h,z,A,t){var p;g=p=function(u){function m(...a){a=u.call(this,...a)||this;a.paths=[];a.type="polyline";return a}q._inheritsLoose(m,u);
 var e=m.prototype;e.normalizeCtorArgs=function(a,b){let c=null,f,d,k=null;a&&!Array.isArray(a)?(c=a.paths?a.paths:null,b||(a.spatialReference?b=a.spatialReference:a.paths||(b=a)),f=a.hasZ,d=a.hasM):c=a;c=c||[];b=b||z.WGS84;c.length&&c[0]&&null!=c[0][0]&&"number"===typeof c[0][0]&&(c=[c]);if(k=c[0]&&c[0][0])void 0===f&&void 0===d?(f=2<k.length,d=!1):void 0===f?f=!d&&3<k.length:void 0===d&&(d=!f&&3<k.length);return{paths:c,spatialReference:b,hasZ:f,hasM:d}};e.writePaths=function(a,b){b.paths=r.clone(this.paths)};

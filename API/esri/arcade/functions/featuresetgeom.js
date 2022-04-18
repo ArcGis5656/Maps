@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../kernel ../../chunks/languageUtils ../featureset/actions/SpatialFilter ../featureset/sources/Empty ../../core/promiseUtils ../../geometry/Geometry ../../geometry/geometryEngineAsync".split(" "),function(p,q,f,r,n,h,g,k){function l(c,e,d,m,t){return t(c,e,function(a,u,b){if(2>b.length)return m(Error("Missing Parameters"));b=f.autoCastFeatureToGeometry(b);if(null===b[0]&&null===b[1])return h.resolve(!1);if(f.isFeatureSet(b[0]))return b[1]instanceof g?h.resolve(new r({parentfeatureset:b[0],
 relation:d,relationGeom:b[1]})):null===b[1]?h.resolve(new n({parentfeatureset:b[0]})):m("Spatial Relation cannot accept this parameter type");if(b[0]instanceof g){if(b[1]instanceof g){a=null;switch(d){case "esriSpatialRelEnvelopeIntersects":a=k.intersects(q.shapeExtent(b[0]),q.shapeExtent(b[1]));break;case "esriSpatialRelIntersects":a=k.intersects(b[0],b[1]);break;case "esriSpatialRelContains":a=k.contains(b[0],b[1]);break;case "esriSpatialRelOverlaps":a=k.overlaps(b[0],b[1]);break;case "esriSpatialRelWithin":a=

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../geometry ../../../core/Error ../../../core/maybe ../../../core/promiseUtils ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ./BaseRaster ./InMemoryRaster ./pamParser ../rasterFormats/RasterCodec ../rasterFunctions/pixelUtils ../rasterTransforms/PolynomialTransform ../../../geometry/SpatialReference ../../../geometry/Extent".split(" "),
 function(h,q,k,v,w,r,x,J,K,L,y,z,A,B,C,D,E,F,G){k=function(t){function p(){return t.apply(this,arguments)||this}h._inheritsLoose(p,t);var l=p.prototype;l.open=function(){var g=h._asyncToGenerator(function*(a){yield this.init();var b=yield this._fetchData(a);let {spatialReference:c,statistics:d,histograms:e,transform:f}=yield this._fetchAuxiliaryData(a);(a=!c)&&(c=new F({wkid:3857}));null!=e&&e.length&&null==d&&(d=D.estimateStatisticsFromHistograms(e));const {width:H,height:I}=b;let m=new G({xmin:-.5,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../chunks/_rollupPluginBabelHelpers","../../../../../core/maybe"],function(f,h,g){let m=function(){function e(a){this._cursor=this._head=a}e.from=function(a){a=k.from(new Float32Array(a));return new e(a)};var b=e.prototype;b.computedMinZoom=function(){return this._cursor.computedMinZoom()};b.setComputedMinZoom=function(a){return this._cursor.setComputedMinZoom(a)};b.boundsComputedAnchorX=function(a){return this._cursor.boundsComputedAnchorX(a)};b.boundsComputedAnchorY=
 function(a){return this._cursor.boundsComputedAnchorY(a)};b.setBoundsComputedAnchorX=function(a,c){return this._cursor.setBoundsComputedAnchorX(a,c)};b.setBoundsComputedAnchorY=function(a,c){return this._cursor.setBoundsComputedAnchorY(a,c)};b.boundsX=function(a){return this._cursor.boundsX(a)};b.boundsY=function(a){return this._cursor.boundsY(a)};b.boundsWidth=function(a){return this._cursor.boundsWidth(a)};b.boundsHeight=function(a){return this._cursor.boundsHeight(a)};b.link=function(a){if(g.isSome(a._head))return this._cursor.link(a._head)};

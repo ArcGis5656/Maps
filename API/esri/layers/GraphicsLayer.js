@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../core/support/OwningCollection ./Layer ./mixins/BlendLayer ./mixins/ScaleRangeLayer ../support/GraphicsCollection ../symbols/support/ElevationInfo".split(" "),function(k,d,e,b,u,v,l,m,n,p,q,h,r){b=function(f){function g(a){a=f.call(this,a)||this;a.elevationInfo=null;a.graphics=new h.GraphicsCollection;
 a.screenSizePerspectiveEnabled=!0;a.type="graphics";a.internal=!1;return a}k._inheritsLoose(g,f);var c=g.prototype;c.destroy=function(){this.removeAll();this.graphics.destroy()};c.add=function(a){this.graphics.add(a);return this};c.addMany=function(a){this.graphics.addMany(a);return this};c.removeAll=function(){this.graphics.removeAll();return this};c.remove=function(a){this.graphics.remove(a)};c.removeMany=function(a){this.graphics.removeMany(a)};c.on=function(a,t){return f.prototype.on.call(this,

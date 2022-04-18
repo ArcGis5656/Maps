@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/unitUtils ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ./Point ./Polygon ./projectionEllipsoid ./support/geodesicUtils ./support/webMercatorUtils ./support/WKIDUnitConversion".split(" "),function(w,h,u,l,g,B,C,x,y,p,z,A,v,m){var q;g=q=function(n){function r(...a){a=n.call(this,...a)||this;a.center=null;a.geodesic=!1;a.numberOfPoints=
 60;a.radius=1E3;a.radiusUnit="meters";return a}w._inheritsLoose(r,n);var k=r.prototype;k.normalizeCtorArgs=function(a,b){if(!a||!a.center){if(a&&a.rings)return n.prototype.normalizeCtorArgs.call(this,a,b);a={center:a}}return{...n.prototype.normalizeCtorArgs.call(this),...a,...b}};k.initialize=function(){var a=this.center;const b=this.numberOfPoints;this.hasZ=a&&a.hasZ;if(0===this.rings.length&&a){var f=u.convertUnit(this.radius,this.radiusUnit,"meters"),c=a.spatialReference,e="geographic";if(c.isWebMercator)e=

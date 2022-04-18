@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/number","../../../intl/locale","./Format"],function(t,u,w,m){function v(b,c){const g="ar"===w.getLocale(),h={ddm:`Y${"\u00b0\u200e"} A'${b.abbreviatedDirections.north}, X${"\u00b0\u200e"} B'${b.abbreviatedDirections.east}`,dms:`Y${"\u00b0\u200e"} A' B"${b.abbreviatedDirections.north}, X${"\u00b0\u200e"} C' D"${b.abbreviatedDirections.east}`,dd:`Y${"\u00b0\u200e"}${b.abbreviatedDirections.north}, X${"\u00b0\u200e"}${b.abbreviatedDirections.east}`,xy:"X\u00b0\u200e, Y\u00b0\u200e",
 basemap:"X, Y"},k={ddm:`${b.abbreviatedDirections.north}${"\u00b0\u200e"}Y 'A ,${b.abbreviatedDirections.east}${"\u00b0\u200e"}X 'B`,dms:`${b.abbreviatedDirections.north}${"\u00b0\u200e"}Y 'A "B ,${b.abbreviatedDirections.east}${"\u00b0\u200e"}X 'C "D`,dd:`${b.abbreviatedDirections.north}${"\u00b0\u200e"}Y ,${b.abbreviatedDirections.east}${"\u00b0\u200e"}X`,xy:"X\u00b0\u200e ,Y\u00b0\u200e",basemap:"X ,Y"};c.forEach(d=>{var {name:l}=d;if(h[l]){const q=d.defaultPattern===d.currentPattern;l=g?k[l]:

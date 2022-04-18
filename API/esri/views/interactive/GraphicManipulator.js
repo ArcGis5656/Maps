@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/Evented ../../core/maybe ../../core/screenUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../chunks/vec2 ../../chunks/vec3 ../../chunks/vec3f64 ../../geometry/projection ../../support/elevationInfoUtils ../../symbols/support/defaults ../../symbols/support/ElevationInfo ../support/drapedUtils".split(" "),
 function(b,q,d,v,w,h,m,g,G,H,I,x,y,z,A,p,B,C,D,E){b.GraphicManipulator=function(r){function n(a){a=r.call(this,a)||this;a.layer=null;a.interactive=!0;a.selectable=!1;a.grabbable=!0;a.dragging=!1;a.cursor=null;a.events=new w.EventEmitter;a._circleCollisionCache=null;a._graphicSymbolChangedHandle=null;a._originalSymbol=null;return a}q._inheritsLoose(n,r);var k=n.prototype;k.grabbableForEvent=function(){return!0};k.destroy=function(){this.detachSymbolChanged();this._resetGraphicSymbol();this._set("view",

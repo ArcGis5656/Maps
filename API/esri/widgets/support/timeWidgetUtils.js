@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../core/timeUtils","../../intl/date","../../chunks/SunCalc"],function(g,f,h,k){const l={hour:"2-digit",minute:"2-digit",timeZone:"UTC"},m={hour:"numeric",timeZone:"UTC"};g.formatSliderLabel=function(a,c){"tick"===c?(a=Math.round(f.convertTime(a,"minutes","hours")),a=new Date(f.convertTime(a,"hours","milliseconds"))):a=new Date(6E4*a);let b=h.formatDate(a,l);"tick"===c&&-1!==b.indexOf(" ")&&(b=h.formatDate(a,m),b=b.replace(":00",""));return b};g.getSunriseAndSunsetTimes=function(a,
 c,b,d){b=k.SunCalc.getTimes(a,c,b);c=b.sunrise;b=b.sunset;a=f.offsetDate(a,d,"hours");const e=f.offsetDate(c,d,"hours");d=f.offsetDate(b,d,"hours");if(a.getUTCDate()!==e.getUTCDate()||a.getUTCDate()!==d.getUTCDate())d=0<a.getTime()-e.getTime()?1:-1,c.setUTCDate(c.getUTCDate()+d),b.setUTCDate(b.getUTCDate()+d);return{sunrise:c,sunset:b}};g.getTimezoneInfos=function(a){return[{utcOffset:-12,short:"UTC-12",long:a.timezoneDateline},{utcOffset:-11,short:"UTC-11",long:a.timezoneSamoa},{utcOffset:-10,short:a.timezoneHAST,

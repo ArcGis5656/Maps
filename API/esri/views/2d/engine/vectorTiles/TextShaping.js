@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./ScriptUtils","../webgl/Rect"],function(w,t,x){let z=function(){function u(b,e,c,a,g,h,f){this._glyphItems=b;this._maxWidth=e;this._lineHeight=c;this._letterSpacing=a;this._hAnchor=g;this._vAnchor=h;this._justify=f}var v=u.prototype;v.getShaping=function(b,e,c){var a=this._letterSpacing;const g=this._lineHeight;var h=this._justify,f=this._maxWidth;const d=[];var l=0,n=0,q=b.length;for(var k=0;k<q;k++){var m=b.charCodeAt(k),r=c&&t.hasVerticalOrientation(m);let p;for(const y of this._glyphItems)if(p=
 y[m])break;d.push({codePoint:m,x:l,y:n,vertical:r,glyphMosaicItem:p});p&&(l+=p.metrics.advance+a)}c=l;0<f&&(c=l/Math.max(1,Math.ceil(l/f)));b=0<=b.indexOf("\u200b");f=[];for(a=0;a<q-1;a++)if(m=d[a].codePoint,r=t.allowsIdeographicBreak(m),t.isLineBreak(m)||r){k=0;if(10===m)k-=1E4;else if(r&&b)k+=150;else{if(40===m||65288===m)k+=50;m=d[a+1].codePoint;if(41===m||65289===m)k+=50}f.push(this._buildBreak(a+1,d[a].x,c,f,k,!1))}q=this._optimalBreaks(this._buildBreak(q,l,c,f,0,!0));l=0;b=e?-g:g;a=0;for(f=

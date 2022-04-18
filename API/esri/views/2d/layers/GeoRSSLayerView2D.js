@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../PopupTemplate ../../../core/Collection ../../../core/watchUtils ../../../core/Logger ../../../core/accessorSupport/ensureType ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/set ../../../core/accessorSupport/decorators/subclass ../../../renderers/SimpleRenderer ../../../renderers/support/jsonUtils ../../../rest/support/FeatureSet ./LayerView2D ./graphics/GraphicContainer ./graphics/GraphicsView2D ../../layers/LayerView".split(" "),
 function(m,p,q,r,f,g,C,D,E,F,t,h,u,v,w,x,y,z){g=function(n){function k(){var a=n.apply(this,arguments)||this;a._graphicsViewMap={};a._popupTemplates=new Map;a.graphicsViews=[];return a}m._inheritsLoose(k,n);var e=k.prototype;e.hitTest=function(){var a=m._asyncToGenerator(function*(b,c){if(!this.graphicsViews.length)return null;c=this.graphicsViews.reverse().map(d=>d.hitTest(b));return(yield Promise.all(c)).flat().filter((d,l)=>{d&&(d.popupTemplate=this._popupTemplates.get(this.graphicsViews[l]),d.layer=

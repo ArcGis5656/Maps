@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../core/maybe","../../core/urlUtils","../../chunks/persistableUrlUtils"],function(d,h,f,r){function k(a){a=f.urlToObject(a);a=a.path.match(n)||a.path.match(t);if(!a)return null;const [,b,c,e,g]=a;a=c.indexOf("/");return{title:l(-1!==a?c.slice(a+1):c),serverType:p[e.toLowerCase()],sublayer:null!=g&&""!==g?parseInt(g,10):null,url:{path:b}}}function q(a){return(a=f.urlToObject(a).path.match(u))?{serviceUrl:a[1],sublayerId:Number(a[2])}:null}function l(a){a=a.replace(/\s*[/_]+\s*/g,
 " ");return a[0].toUpperCase()+a.slice(1)}const p={mapserver:"MapServer",imageserver:"ImageServer",featureserver:"FeatureServer",sceneserver:"SceneServer",streamserver:"StreamServer",vectortileserver:"VectorTileServer"},m=Object.values(p),n=new RegExp(`^((?:https?:)?\\/\\/\\S+?\\/rest\\/services\\/(.+?)\\/(${m.join("|")}))(?:\\/(?:layers\\/)?(\\d+))?`,"i"),t=new RegExp(`^((?:https?:)?\\/\\/\\S+?\\/([^\\/\\n]+)\\/(${m.join("|")}))(?:\\/(?:layers\\/)?(\\d+))?`,"i"),u=/(.*?)\/(?:layers\/)?(\d+)\/?$/i;

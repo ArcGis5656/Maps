@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../Color ../../../core/maybe ../../../intl/date ../../../intl/number ../../../renderers/support/utils ../../../renderers/visualVariables/SizeVariable".split(" "),function(k,r,t,v,w,x,u){k.formatDateLabel=function(a){return v.formatDate(new Date(a),x.timelineDateFormatOptions)};k.formatNumberLabel=function(a){const b=Math.floor(Math.log10(Math.abs(a)))+1;return w.formatNumber(a,{notation:1E6<=Math.abs(a)?"compact":"standard",minimumSignificantDigits:2,maximumSignificantDigits:4>
 b||6<b?4:b})};k.getDeviationValues=function(a,b,d){if(!t.isSome(b)||!t.isSome(a))return[];const g=[];for(let c=-1*d;c<=d;c++)0!==c&&g.push(b+c*a);return g};k.getDynamicPathForSizeStops=function(a){const {max:b,min:d,padding:g,pathHeight:c,pathWidth:e,stops:f}=a,m=b-d;let h=`M0 0 L${e} 0 `,l;a=3===f.length?[f[0],f[1],f[2]]:[f[0],f[2],f[4]];const n=Math.min.apply(Math,a.map(p=>p.size)),y=Math.max(Math.abs(a[0].size-a[1].size),Math.abs(a[2].size-a[1].size));a.reverse();a.forEach(({size:p,value:q},z)=>

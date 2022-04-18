@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../core/Error ../../../core/Evented ../../../core/Logger ../../../core/maybe ../../../geometry/support/aaBoundingBox ../../../geometry/support/aaBoundingRect ../featureConversionUtils ./BoundsStore ./optimizedFeatureQueryEngineAdapter".split(" "),function(k,l,m,n,f,p,g,q,r,t){return function(){function h(a){this.geometryInfo=a;this._boundsStore=new r.BoundsStore;this._featuresById=new Map;this._markedIds=new Set;this.events=new m;this.featureAdapter=
 t.optimizedFeatureQueryEngineAdapter}var c=h.prototype;c.add=function(a){this._add(a);this._emitChanged()};c.addMany=function(a){for(const b of a)this._add(b);this._emitChanged()};c.clear=function(){this._featuresById.clear();this._boundsStore.clear();this._emitChanged()};c.removeById=function(a){a=this._featuresById.get(a);if(!a)return null;this._remove(a);this._emitChanged();return a};c.removeManyById=function(a){this._boundsStore.invalidateIndex();for(const b of a)(a=this._featuresById.get(b))&&

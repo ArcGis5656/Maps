@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../../core/maybe ../../../../../../core/screenUtils ../../../../engine/webgl/color ../../../../engine/webgl/definitions ../../../../engine/webgl/enums ../../../../engine/webgl/visualVariablesUtils".split(" "),function(e,t,l,u,v,h,w){function n(a){return{value:a.value,size:l.toPt(a.size)}}function k(a){return a.map(c=>n(c))}function m(a){return"string"===typeof a||"number"===typeof a?l.toPt(a):{type:"size",expression:a.expression,stops:k(a.stops)}}function x(a){const c=
 {values:[0,0,0,0,0,0,0,0],opacities:[0,0,0,0,0,0,0,0]};if("string"===typeof a.field)if(a.stops){if(8<a.stops.length)return null;a=a.stops;for(var b=0;8>b;++b){const d=a[Math.min(b,a.length-1)];c.values[b]=d.value;c.opacities[b]=d.opacity}}else return null;else if(a.stops&&0<=a.stops.length)for(a=a.stops&&0<=a.stops.length&&a.stops[0].opacity,b=0;8>b;b++)c.values[b]=Infinity,c.opacities[b]=a;else return null;return c}function p(a,c,b){a[4*c]=b.r/255;a[4*c+1]=b.g/255;a[4*c+2]=b.b/255;a[4*c+3]=b.a}function q(a){if(t.isNone(a)||

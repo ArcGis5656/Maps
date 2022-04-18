@@ -1,11 +1,11 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define("exports ../views/3d/webgl-engine/core/shaderLibrary/attributes/TextureCoordinateAttribute.glsl ../views/3d/webgl-engine/core/shaderLibrary/output/ReadLinearDepth.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/Gamma.glsl ../views/3d/webgl-engine/core/shaderModules/interfaces ../views/3d/webgl-engine/core/shaderModules/ShaderBuilder".split(" "),function(d,f,g,h,a,k){function e(c){const b=new k.ShaderBuilder;b.attributes.add("position","vec2");b.include(f.TextureCoordinateAttribute,
-{attributeTextureCoordinates:1});b.varyings.add("worldRay","vec3");b.varyings.add("eyeDir","vec3");b.vertex.uniforms.add("projectionInverse","mat4");b.vertex.uniforms.add("viewInverse","mat4");b.vertex.code.add(a.glsl`void main(void) {
-vec3 posViewNear = (projectionInverse * vec4(position, -1, 1)).xyz;
+define("exports ../views/3d/webgl-engine/core/shaderLibrary/attributes/TextureCoordinateAttribute.glsl ../views/3d/webgl-engine/core/shaderLibrary/output/ReadLinearDepth.glsl ../views/3d/webgl-engine/core/shaderLibrary/shading/Gamma.glsl ../views/3d/webgl-engine/core/shaderModules/interfaces ../views/3d/webgl-engine/core/shaderModules/ShaderBuilder ../views/3d/webgl-engine/lib/VertexAttribute".split(" "),function(d,e,g,h,a,k,l){function f(c){const b=new k.ShaderBuilder;b.attributes.add(l.VertexAttribute.POSITION,
+"vec2");b.include(e.TextureCoordinateAttribute,{attributeTextureCoordinates:e.TextureCoordinateAttributeType.Default});b.varyings.add("worldRay","vec3");b.varyings.add("eyeDir","vec3");b.vertex.uniforms.add("inverseProjectionMatrix","mat4");b.vertex.uniforms.add("inverseViewMatrix","mat4");b.vertex.code.add(a.glsl`void main(void) {
+vec3 posViewNear = (inverseProjectionMatrix * vec4(position, -1, 1)).xyz;
 eyeDir = posViewNear;
-worldRay = (viewInverse * vec4(posViewNear, 0)).xyz;
+worldRay = (inverseViewMatrix * vec4(posViewNear, 0)).xyz;
 forwardTextureCoordinates();
 gl_Position = vec4(position, 1, 1);
 }`);b.fragment.uniforms.add("lightingMainDirection","vec3").add("radii","vec2").add("scaleHeight","float").add("cameraPosition","vec3").add("nearFar","vec2").add("heightParameters","vec4").add("innerFadeDistance","float").add("altitudeFade","float").add("depthTex","sampler2D").add("betaRayleigh","vec3").add("betaCombined","vec3").add("betaMie","float").add("hazeStrength","float");b.include(h.Gamma);c.haze&&b.fragment.include(g.ReadLinearDepth);b.fragment.code.add(a.glsl`vec2 sphereIntersect(vec3 start, vec3 dir, float radius, bool planet) {
@@ -161,4 +161,4 @@ return scaleHeight * chapmanApproximation(radii[0] / scaleHeight, h, dot(normali
             gl_FragColor = applyUndergroundAtmosphere(rayDir, lightingMainDirection, gl_FragColor);
           }`}
     }
-  `);return b}const l=Object.freeze({__proto__:null,build:e});d.ChapmanAtmosphereShader=l;d.build=e});
+  `);return b}const m=Object.freeze({__proto__:null,build:f});d.ChapmanAtmosphereShader=m;d.build=f});

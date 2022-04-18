@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/jsonMap ../core/JSONSupport ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ./support/AuthoringInfo".split(" "),function(g,h,d,b,l,q,r,t,n,p){d=new d.JSONMap({simple:"simple",uniqueValue:"unique-value",classBreaks:"class-breaks",heatmap:"heatmap",dotDensity:"dot-density",dictionary:"dictionary"},{ignoreUnknown:!0});b=function(m){function k(a){a=
 m.call(this,a)||this;a.authoringInfo=null;a.type=null;return a}g._inheritsLoose(k,m);var c=k.prototype;c.getRequiredFields=function(){var a=g._asyncToGenerator(function*(e){if(!this.collectRequiredFields)return[];const f=new Set;yield this.collectRequiredFields(f,e);return Array.from(f).sort()});return function(e){return a.apply(this,arguments)}}();c.getSymbol=function(a,e){};c.getSymbolAsync=function(){var a=g._asyncToGenerator(function*(e,f){});return function(e,f){return a.apply(this,arguments)}}();

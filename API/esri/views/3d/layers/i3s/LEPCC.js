@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../core/Error"],function(q,k){function v(a,c,b){return{identifier:String.fromCharCode.apply(null,new Uint8Array(a,b+p.identifierOffset,p.identifierLength)),version:c.getUint16(b+p.versionOffset,!0),checksum:c.getUint32(b+p.checksumOffset,!0)}}function r(a,c,b){const l=[];c=w(a,c,l);const g=[];for(let d=0;d<l.length;d++){g.length=0;c=w(a,c,g);for(let e=0;e<g.length;e++)b.push(g[e]+l[d])}return c}function w(a,c,b){var l=new DataView(a,c),g=l.getUint8(0);const d=g&31;var e=
 !!(g&32),m=(g&192)>>6;g=0;if(0===m)g=l.getUint32(1,!0),c+=5;else if(1===m)g=l.getUint16(1,!0),c+=3;else if(2===m)g=l.getUint8(1),c+=2;else throw new k("lepcc-decode-error","Bad count type");if(e)throw new k("lepcc-decode-error","LUT not implemented");a=new Uint8Array(a,c,Math.ceil(g*d/8));m=e=l=0;const h=-1>>>32-d;for(let f=0;f<g;f++){for(;e<d;)l|=a[m]<<e,e+=8,m+=1;b[f]=l&h;l>>>=d;e-=d;32<e+d&&(l|=a[m-1]>>8-e)}return c+m}const p={identifierOffset:0,identifierLength:10,versionOffset:10,checksumOffset:12,

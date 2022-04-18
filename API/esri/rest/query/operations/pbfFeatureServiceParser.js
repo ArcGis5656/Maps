@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../core/Error ../../../core/maybe ../../../core/pbf ../../../layers/graphics/OptimizedGeometry ./pbfOptimizedFeatureSet".split(" "),function(g,p,q,r,t,u){function k(a){return a>=l.length?null:l[a]}function v(a,b,c){for(c=b.createPointGeometry(c);a.next();)switch(a.tag()){case 3:{var d=a.getUInt32();d=a.pos()+d;let e=0;for(;a.pos()<d;)b.addCoordinatePoint(c,a.getSInt64(),e++);break}default:a.skip()}return c}function w(a,b,c){const d=b.createGeometry(c);for(c=2+(c.hasZ?1:0)+(c.hasM?
 1:0);a.next();)switch(a.tag()){case 2:var e=a.getUInt32();e=a.pos()+e;for(var f=0;a.pos()<e;)b.addLength(d,a.getUInt32(),f++);break;case 3:e=a.getUInt32();e=a.pos()+e;f=0;for(b.allocateCoordinates(d);a.pos()<e;)b.addCoordinate(d,a.getSInt64(),f),f++,f===c&&(f=0);break;default:a.skip()}return d}function x(a){const b=new t;let c="esriGeometryPoint";for(;a.next();)switch(a.tag()){case 2:var d=a.getUInt32();for(d=a.pos()+d;a.pos()<d;)b.lengths.push(a.getUInt32());break;case 3:d=a.getUInt32();for(d=a.pos()+

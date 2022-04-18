@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/arrayUtils ../../core/Collection ../../core/collectionUtils ../../core/Handles ../../core/maybe ../../core/promiseUtils ../../core/accessorSupport/decorators/property ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./support/layerUtils ./support/validation".split(" "),function(k,c,b,p,l,q,r,m,t,d,w,x,u,v,g){b=function(n){function h(a){a=n.call(this,
 a)||this;a.state="disabled";a._handles=new r;a._domainInfo=g.getDomainInfo([]);a._loadLayers=v.createLoadLayersFunction();a.layers=new l;return a}k._inheritsLoose(h,n);var e=h.prototype;e.initialize=function(){this._handles.add(this.layers.on("change",()=>this._onLayersChange()));this._onLayersChange()};e.destroy=function(){this._set("state","disabled");this._handles.destroy()};e.select=function(a){const f=g.getValidNumber(a,this);m.isSome(f)&&(this.enabled=!0,this.value=a)};e.clear=function(){this.enabled=

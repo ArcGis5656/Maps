@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ./internals/Mat3 ./internals/Mat4 ./internals/Scalar ./internals/Vec2 ./internals/Vec3 ./internals/Vec4".split(" "),function(g,h,p,q,k,l,m,n){let r=function(d){function b(a,c=0,e,f){a=d.call(this,Float32Array,a,c,e,f)||this;a.elementType="f32";return a}h._inheritsLoose(b,d);b.fromTypedArray=function(a,c){return new b(a.buffer,a.byteOffset,c,a.byteOffset+a.byteLength)};return b}(k.BufferViewScalarImpl);r.ElementType="f32";let t=function(d){function b(a,
 c=0,e,f){a=d.call(this,Float32Array,a,c,e,f)||this;a.elementType="f32";return a}h._inheritsLoose(b,d);b.prototype.slice=function(a,c){return this.sliceBuffer(b,a,c)};b.fromTypedArray=function(a,c){return new b(a.buffer,a.byteOffset,c,a.byteOffset+a.byteLength)};return b}(l.BufferViewVec2Impl);t.ElementType="f32";let u=function(d){function b(a,c=0,e,f){a=d.call(this,Float32Array,a,c,e,f)||this;a.elementType="f32";return a}h._inheritsLoose(b,d);b.prototype.slice=function(a,c){return this.sliceBuffer(b,

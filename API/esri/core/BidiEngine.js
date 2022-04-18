@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["./bidiEngineTables"],function(g){function x(d,f,a,h,b){var c=d;void 0===f&&(f=b.defInFormat);void 0===a&&(a=b.defOutFormat);void 0===h&&(h=b.defSwap);if(f!==a){var e=f.substring(0,1),k=a.substring(0,1);var l=f.substring(1,4);var m=a.substring(1,4);"C"===l.charAt(0)&&(l=z(c),l="ltr"===l||"rtl"===l?l.toUpperCase():"L"===f.charAt(2)?"LTR":"RTL",f=e+l);"C"===m.charAt(0)&&(l=z(c),"rtl"===l?m="RTL":"ltr"===l?(c=c.split(""),c.reverse(),l=z(c.join("")),m=l.toUpperCase()):m="L"===a.charAt(2)?"LTR":
 "RTL",a=k+m)}if(f===a)return d;k=f.substring(0,1);c=f.substring(1,4);e=a.substring(0,1);m=a.substring(1,4);b.inFormat=f;b.outFormat=a;b.swap=h;if("L"===k&&"VLTR"===a){if("LTR"===c)return b.dir=0,w(d,b);if("RTL"===c)return b.dir=1,w(d,b)}if("V"===k&&"V"===e)return b.dir="RTL"===c?1:0,D(d,b);if("L"===k&&"VRTL"===a)return b.dir="LTR"===c?0:1,d=w(d,b),D(d);if("VLTR"===f&&"LLTR"===a)return b.dir=0,w(d,b);if("V"===k&&"L"===e&&c!==m)return d=D(d),"RTL"===c?x(d,"LLTR","VLTR",h,b):x(d,"LRTL","VRTL",h,b);if("VRTL"===

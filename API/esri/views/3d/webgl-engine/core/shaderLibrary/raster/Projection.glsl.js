@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../shaderModules/interfaces"],function(b,c){b.Projection=function(a){a.fragment.uniforms.add("u_transformGrid","sampler2D");a.fragment.uniforms.add("u_transformSpacing","vec2");a.fragment.uniforms.add("u_transformGridSize","vec2");a.fragment.uniforms.add("u_targetImageSize","vec2");a.fragment.code.add(c.glsl`vec2 projectPixelLocation(vec2 coords) {
 vec2 index_image = floor(coords * u_targetImageSize);

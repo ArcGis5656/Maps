@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../../chunks/_rollupPluginBabelHelpers ../../../../core/maybe ../../../../geometry/support/aaBoundingRect ../../../../geometry/support/centroid ../../../../geometry/support/jsonUtils ../../../../geometry/support/normalizeUtilsCommon ../../../../geometry/support/quantizationUtils ../../../../layers/graphics/featureConversionUtils ../../../../layers/graphics/OptimizedGeometry ./graphicsUtils".split(" "),function(A,B,m,C,n,D,p,q,h,w){function x(d){d.coords.length=0;d.lengths.length=0}const l=
 new h,u=new h;h=function(){function d(){this.bounds=m.create();this.graphic=null}d.acquire=function(a=null,f,b,g,c){let e;0===d._pool.length?e=new d:(e=d._pool.pop(),this._set.delete(e));e.acquire(a,f,b,g,c);return e};d.release=function(a){a&&!this._set.has(a)&&(a.release(),this._pool.push(a),this._set.add(a))};d.getCentroidQuantized=function(a,f){if(n.isPolygon(a.geometry)){const b=a.symbol;if(B.isNone(b))return null;if(w.isMarkerSymbol(b.type)||w.isTextSymbol(b.type))return a=C.polygonCentroid(a.geometry),

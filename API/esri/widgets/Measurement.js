@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require ../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/has ../core/promiseUtils ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./Measurement/MeasurementViewModel ./support/widgetUtils ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory".split(" "),function(p,u,e,c,y,q,D,E,k,z,A,x,F,B,G,C){const t=r=>Object.freeze({__proto__:null,
 default:r});c=function(r){function v(a,b){a=r.call(this,a,b)||this;a._widgets=new Map;a.activeTool=null;a.activeWidget=null;a.areaUnit=null;a.iconClass="esri-icon-measure";a.label=void 0;a.linearUnit=null;a.messages=null;a.view=null;a.viewModel=new x;return a}u._inheritsLoose(v,r);var f=v.prototype;f.initialize=function(){this.activeWidget&&this.viewModel.set("activeViewModel",this.activeWidget.viewModel);this.view&&this.activeTool&&this._getActiveWidget().then(a=>{this._set("activeWidget",a)});this.own([this.watch(["view",

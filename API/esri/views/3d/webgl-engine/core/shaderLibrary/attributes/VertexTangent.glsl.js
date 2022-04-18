@@ -1,7 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../shaderModules/interfaces"],function(c,b){c.VertexTangent=function(a,d){a.varyings.add("tbnTangent","vec3");a.varyings.add("tbnBiTangent","vec3");1===d.viewingMode?a.vertex.code.add(b.glsl`void forwardVertexTangent(vec3 n) {
+define(["exports","../../../../../ViewingMode","../../shaderModules/interfaces"],function(c,d,b){c.VertexTangent=function(a,e){a.varyings.add("tbnTangent","vec3");a.varyings.add("tbnBiTangent","vec3");e.viewingMode===d.ViewingMode.Global?a.vertex.code.add(b.glsl`void forwardVertexTangent(vec3 n) {
 tbnTangent = normalize(cross(vec3(0.0, 0.0, 1.0), n));
 tbnBiTangent = normalize(cross(n, tbnTangent));
 }`):a.vertex.code.add(b.glsl`void forwardVertexTangent(vec3 n) {

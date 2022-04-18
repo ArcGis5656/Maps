@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../Collection ../collectionUtils ../HandleOwner ../has ../Logger ../maybe ../accessorSupport/decorators/property ../arrayUtils ../accessorSupport/ensureType ../accessorSupport/decorators/subclass".split(" "),function(e,k,l,h,m,n,u,p,q,r,v,w,t){p.getLogger("esri.core.support.OwningCollection");e.OwningCollection=function(g){function c(a){var d=g.call(this,a)||this;d.handles.add([d.on("before-add",f=>{q.isNone(f.item)&&f.preventDefault()}),
 d.on("after-add",f=>d._own(f.item)),d.on("after-remove",f=>d._release(f.item))]);return d}k._inheritsLoose(c,g);var b=c.prototype;b._ownAll=function(){for(const a of this.items)this._own(a)};b._releaseAll=function(){for(const a of this.items)this._release(a)};b._createNewInstance=function(a){return this.itemType?new (h.ofType(this.itemType.Type))(a):new h(a)};k._createClass(c,[{key:"owner",get:function(){return this._get("owner")},set:function(a){a!==this._get("owner")&&(this._releaseAll(),this._set("owner",

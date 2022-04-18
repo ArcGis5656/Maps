@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(x){var w={exports:{}};(function(y){(function(t){t=t();void 0!==t&&(y.exports=t)})(function(){var t=function(){function m(){this.bufferLength=this.pos=0;this.eof=!1;this.buffer=null}m.prototype={ensureBuffer:function(c){var n=this.buffer,r=n?n.byteLength:0;if(c<r)return n;for(var p=512;p<c;)p<<=1;c=new Uint8Array(p);for(p=0;p<r;++p)c[p]=n[p];return this.buffer=c},getByte:function(){for(var c=this.pos;this.bufferLength<=c;){if(this.eof)return null;this.readBlock()}return this.buffer[this.pos++]},
 getBytes:function(c){var n=this.pos;if(c){this.ensureBuffer(n+c);for(c=n+c;!this.eof&&this.bufferLength<c;)this.readBlock();var r=this.bufferLength;c>r&&(c=r)}else{for(;!this.eof;)this.readBlock();c=this.bufferLength}this.pos=c;return this.buffer.subarray(n,c)},lookChar:function(){for(var c=this.pos;this.bufferLength<=c;){if(this.eof)return null;this.readBlock()}return String.fromCharCode(this.buffer[this.pos])},getChar:function(){for(var c=this.pos;this.bufferLength<=c;){if(this.eof)return null;

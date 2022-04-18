@@ -1,8 +1,8 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../../../../../chunks/vec3f64","../util/DoublePrecision.glsl","../../shaderModules/interfaces","../../../../../webgl/doublePrecisionUtils"],function(f,g,l,c,m){function e(a,b){b.instanced&&b.instancedDoublePrecision&&(a.attributes.add("modelOriginHi","vec3"),a.attributes.add("modelOriginLo","vec3"),a.attributes.add("model","mat3"),a.attributes.add("modelNormal","mat3"));b.instancedDoublePrecision&&(a.vertex.include(l.DoublePrecision,b),a.vertex.uniforms.add("viewOriginHi","vec3"),
-a.vertex.uniforms.add("viewOriginLo","vec3"));const d=[c.glsl`
+define("exports ../../../../../../chunks/vec3f64 ../ShaderOutputOptions ../util/DoublePrecision.glsl ../../shaderModules/interfaces ../../../lib/VertexAttribute ../../../../../webgl/doublePrecisionUtils".split(" "),function(e,g,l,m,c,f,n){const h=g.create(),k=g.create();e.InstancedDoublePrecision=function(a,b){b.instanced&&b.instancedDoublePrecision&&(a.attributes.add(f.VertexAttribute.MODELORIGINHI,"vec3"),a.attributes.add(f.VertexAttribute.MODELORIGINLO,"vec3"),a.attributes.add(f.VertexAttribute.MODEL,
+"mat3"),a.attributes.add(f.VertexAttribute.MODELNORMAL,"mat3"));b.instancedDoublePrecision&&(a.vertex.include(m.DoublePrecision,b),a.vertex.uniforms.add("viewOriginHi","vec3"),a.vertex.uniforms.add("viewOriginLo","vec3"));const d=[c.glsl`
     vec3 calculateVPos() {
       ${b.instancedDoublePrecision?"return model * localPosition().xyz;":"return localPosition().xyz;"}
     }
@@ -25,4 +25,4 @@ a.vertex.uniforms.add("viewOriginLo","vec3"));const d=[c.glsl`
       ${b.instancedDoublePrecision?"return vec4(modelNormal * _tangent.xyz, _tangent.w);":"return _tangent;"}
 
     }
-    `:c.glsl``];a.vertex.code.add(d[0]);a.vertex.code.add(d[1]);a.vertex.code.add(d[2]);2===b.output&&a.vertex.code.add(d[3]);a.vertex.code.add(d[4])}(function(a){a.Uniforms=function(){};a.bindCustomOrigin=function(b,d){m.encodeDoubleArraySplit(d,h,k,3);b.setUniform3fv("viewOriginHi",h);b.setUniform3fv("viewOriginLo",k)}})(e||(e={}));const h=g.create(),k=g.create();f.InstancedDoublePrecision=e;Object.defineProperty(f,"__esModule",{value:!0})});
+    `:c.glsl``];a.vertex.code.add(d[0]);a.vertex.code.add(d[1]);a.vertex.code.add(d[2]);b.output===l.ShaderOutput.Normal&&a.vertex.code.add(d[3]);a.vertex.code.add(d[4])};e.InstancedDoublePrecisionUniforms=function(){};e.bindCustomOrigin=function(a,b){n.encodeDoubleArraySplit(b,h,k,3);a.setUniform3fv("viewOriginHi",h);a.setUniform3fv("viewOriginLo",k)};Object.defineProperty(e,"__esModule",{value:!0})});

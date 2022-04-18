@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../Error","../../../Logger","../../../object","./type"],function(k,q,r,l,t){function u(a){return(b,c,d,e)=>{if(!b||m(b,a,e))return g(b,c,d,e)}}function m(a,b,c){for(var d in b.typeMap)if(a instanceof b.typeMap[d])return!0;if(null!=c&&c.messages){var e,f;d=null!=(e=b.errorContext)?e:"type";b=`Values of type '${null!=(f="function"!==typeof b.key?a[b.key]:a.declaredClass)?f:"Unknown"}' cannot be written`;c&&c.messages&&a&&c.messages.push(new q(`${d}:unsupported`,b,{definition:a,
 context:c}));v.error(b)}return!1}function w(a){return(b,c,d,e)=>{if(!b||!Array.isArray(b))return g(b,c,d,e);b=b.filter(f=>m(f,a,e));return g(b,c,d,e)}}function g(a,b,c,d){l.setDeepValue(c,h(a,d),b)}function h(a,b){return a&&"function"===typeof a.write?a.write({},b):a&&"function"===typeof a.toJSON?a.toJSON():"number"===typeof a?n(a):a}function n(a){return-Infinity===a?-Number.MAX_VALUE:Infinity===a?Number.MAX_VALUE:isNaN(a)?null:a}function x(a,b,c,d){null===a?a=null:a&&"function"===typeof a.map?(a=

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/maybe ../../../core/ObjectPool ../../../core/PooledArray ./terrainUtils ./tileUtils".split(" "),function(f,m,g,n,p,h,q){let l=function(){function c(){this.waitingAgents=new p;this.requestAbort=this.requestPromise=this.loadingAgent=this._upsampleInfo=null;this.pendingUpdates=0}c.acquire=function(a){const b=k.acquire();b._init(a);return b};var d=c.prototype;d.release=function(){this.dispose();e.delete(this);k.release(this)};d.dispose=
 function(){this.loadingAgent=g.disposeMaybe(this.loadingAgent);this.abortRequest();this._unsetUpsampleInfo();this.pendingUpdates=0;this._data=h.releaseTileData(this._data)};c.prune=function(){k.prune(0)};d._init=function(a){this.waitingAgents.clear();this._data=h.releaseTileData(this._data);this.dataInvalidated=this.dataMissing=!1;this._unsetUpsampleInfo();this.abortRequest();this.loadingAgent=null;this.pendingUpdates=0;this._pool=a;this.elevationBounds=null};d.invalidateSourceData=function(){this.dataInvalidated=

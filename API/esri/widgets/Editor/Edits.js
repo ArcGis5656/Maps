@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/HandleOwner ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass".split(" "),function(b,l,c,m,n,p,f,r,t,u,q){function g(d){return p.isNone(d)?null:JSON.stringify(d)}b.Edits=function(d){function h(a){a=d.call(this,a)||this;a._baselineAttributesJSON=null;a._baselineGeometryJSON=
 null;a.feature=null;return a}l._inheritsLoose(h,d);var k=h.prototype;k.trackChanges=function(){this.feature&&(this._baselineAttributesJSON=g(this.feature.attributes),this._baselineGeometryJSON=g(this.feature.geometry),this.notifyChange("attributesModified"),this.notifyChange("geometryModified"))};k.updateAttributes=function(a){this.feature.attributes=a;this.notifyChange("attributesModified")};k.updateGeometry=function(a){this.feature.geometry=a;this.notifyChange("geometryModified")};l._createClass(h,

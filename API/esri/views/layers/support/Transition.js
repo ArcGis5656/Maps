@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Accessor ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../chunks/mat4".split(" "),function(n,d,b,e,q,r,t,p,f){var g;b=g=function(m){function h(){var a=m.apply(this,arguments)||this;a.from=null;a.to=null;a.duration=4E3;a.repeat=!0;a.done=!1;return a}n._inheritsLoose(h,
 m);var k=h.prototype;k.getColorMatrix=function(){this.done=!1;if(null==this._lastTime)this._currentStep=0,this._lastTime=Date.now();else{var a=this._lastTime,c=Date.now();this._currentStep+=c-a;2147483647<=this._currentStep&&(this._currentStep=0);this._lastTime=c}a=this._currentStep%this.duration/(this.duration/2);a=1>=a?a:2-a;c=this.from.getColorMatrix();const l=this.to.getColorMatrix();f.multiplyScalar(c,c,1-a);f.multiplyScalar(l,l,a);!this.repeat&&this._currentStep>=this.duration&&(this.done=!0);

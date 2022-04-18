@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/maybe ../../../core/promiseUtils ../../../layers/graphics/dehydratedFeatureComparison ../dragEventPipeline ./SnappingContext ../../support/Scheduler".split(" "),function(n,y,d,z,A,p,B,q){let I=function(){function r(){this.next=new p.EventPipeline}r.prototype.createSnapDragEventPipelineStep=function({predicate:C=()=>!0,cancel:D,snappingManager:e,snappingContext:f,updatingHandles:E}){var F=this;if(d.isNone(e))return a=>a;let g=
 null,b=null;const t=()=>{g=d.abortMaybe(g);e.doneSnapping();d.isSome(b)&&b.frameTask.remove();b=null};D.next(a=>{t();return a});this.next=new p.EventPipeline;return a=>{if(!C(a))return a;g=d.abortMaybe(g);if("start"===a.action){const c="3d"===e.view.type?e.view.resourceController.scheduler.registerTask(q.TaskPriority.SNAPPING):q.ImmediateTask;b={context:new B.SnappingContext({editGeometryOperations:f.editGeometryOperations,elevationInfo:f.elevationInfo,pointer:f.pointer,vertexHandle:d.isSome(a.info)?

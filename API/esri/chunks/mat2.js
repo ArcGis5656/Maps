@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./common"],function(e,l){function p(a,b){a[0]=b[0];a[1]=b[1];a[2]=b[2];a[3]=b[3];return a}function q(a){a[0]=1;a[1]=0;a[2]=0;a[3]=1;return a}function r(a,b,c,d,g){a[0]=b;a[1]=c;a[2]=d;a[3]=g;return a}function t(a,b){if(a===b){const c=b[1];a[1]=b[2];a[2]=c}else a[0]=b[0],a[1]=b[2],a[2]=b[1],a[3]=b[3];return a}function u(a,b){const c=b[0],d=b[1],g=b[2];b=b[3];let f=c*b-g*d;if(!f)return null;f=1/f;a[0]=b*f;a[1]=-d*f;a[2]=-g*f;a[3]=c*f;return a}function v(a,b){const c=b[0];a[0]=b[3];
 a[1]=-b[1];a[2]=-b[2];a[3]=c;return a}function w(a){return a[0]*a[3]-a[2]*a[1]}function m(a,b,c){const d=b[0],g=b[1],f=b[2];b=b[3];const h=c[0],k=c[1],x=c[2];c=c[3];a[0]=d*h+f*k;a[1]=g*h+b*k;a[2]=d*x+f*c;a[3]=g*x+b*c;return a}function y(a,b,c){const d=b[0],g=b[1],f=b[2];b=b[3];const h=Math.sin(c);c=Math.cos(c);a[0]=d*c+f*h;a[1]=g*c+b*h;a[2]=d*-h+f*c;a[3]=g*-h+b*c;return a}function z(a,b,c){const d=b[1],g=b[2],f=b[3],h=c[0];c=c[1];a[0]=b[0]*h;a[1]=d*h;a[2]=g*c;a[3]=f*c;return a}function A(a,b){const c=

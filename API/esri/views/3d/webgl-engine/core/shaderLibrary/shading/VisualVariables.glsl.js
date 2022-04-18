@@ -1,8 +1,8 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../shaderModules/interfaces"],function(d,c){function e(a,b){b.vvSizeEnabled&&(a.setUniform3fv("vvSizeMinSize",b.vvSizeMinSize),a.setUniform3fv("vvSizeMaxSize",b.vvSizeMaxSize),a.setUniform3fv("vvSizeOffset",b.vvSizeOffset),a.setUniform3fv("vvSizeFactor",b.vvSizeFactor));b.vvColorEnabled&&(a.setUniform1fv("vvColorValues",b.vvColorValues),a.setUniform4fv("vvColorColors",b.vvColorColors))}d.VisualVariables=function(a,b){b.vvInstancingEnabled&&(b.vvSize||b.vvColor)&&a.attributes.add("instanceFeatureAttribute",
-"vec4");b.vvSize?(a.vertex.uniforms.add("vvSizeMinSize","vec3"),a.vertex.uniforms.add("vvSizeMaxSize","vec3"),a.vertex.uniforms.add("vvSizeOffset","vec3"),a.vertex.uniforms.add("vvSizeFactor","vec3"),a.vertex.uniforms.add("vvSymbolRotationMatrix","mat3"),a.vertex.uniforms.add("vvSymbolAnchor","vec3"),a.vertex.code.add(c.glsl`vec3 vvScale(vec4 _featureAttribute) {
+define(["exports","../../shaderModules/interfaces","../../../lib/VertexAttribute"],function(d,c,f){function e(a,b){b.vvSizeEnabled&&(a.setUniform3fv("vvSizeMinSize",b.vvSizeMinSize),a.setUniform3fv("vvSizeMaxSize",b.vvSizeMaxSize),a.setUniform3fv("vvSizeOffset",b.vvSizeOffset),a.setUniform3fv("vvSizeFactor",b.vvSizeFactor));b.vvColorEnabled&&(a.setUniform1fv("vvColorValues",b.vvColorValues),a.setUniform4fv("vvColorColors",b.vvColorColors))}d.VisualVariables=function(a,b){b.vvInstancingEnabled&&(b.vvSize||
+b.vvColor)&&a.attributes.add(f.VertexAttribute.INSTANCEFEATUREATTRIBUTE,"vec4");b.vvSize?(a.vertex.uniforms.add("vvSizeMinSize","vec3"),a.vertex.uniforms.add("vvSizeMaxSize","vec3"),a.vertex.uniforms.add("vvSizeOffset","vec3"),a.vertex.uniforms.add("vvSizeFactor","vec3"),a.vertex.uniforms.add("vvSymbolRotationMatrix","mat3"),a.vertex.uniforms.add("vvSymbolAnchor","vec3"),a.vertex.code.add(c.glsl`vec3 vvScale(vec4 _featureAttribute) {
 return clamp(vvSizeOffset + _featureAttribute.x * vvSizeFactor, vvSizeMinSize, vvSizeMaxSize);
 }
 vec4 vvTransformPosition(vec3 position, vec4 _featureAttribute) {

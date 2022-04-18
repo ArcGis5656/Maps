@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/Error","../../support/utils","../../support/adapters/support/layerUtils"],function(h,k,l,q){function r(a){a=a.map(d=>`$feature["${d}"];`);return a.length?a.join("\n")+"\n":""}function n(a,d,e){a="number"===d?a:"date"===d?a.getTime():'$feature["'+a+'"]';return"var "+e+" \x3d "+a+";"}const p=["date","number"];h.getAgeExpressions=function(a){const {layer:d,startTime:e,endTime:f}=a;var b=q.createLayerAdapter(d),c=a.unit||"days";a=l.getDateDiffSQL(b,e,f,c);{var g=l.getDateType(b,
 e);b=l.getDateType(b,f);c=[n(e,g,"startTime"),n(f,b,"endTime"),`var retVal = null;\n\n    if (startTime != null && endTime != null) {\n      startTime = Date(startTime);\n      endTime = Date(endTime);\n      retVal = DateDiff(endTime, startTime, "${c}");\n    }\n\n    return retVal;`];const m=[];"field"===g&&m.push(e);"field"===b&&m.push(f);g=r(m)+c.join("\n")}return{valueExpression:g,statisticsQuery:a,histogramQuery:a}};h.supportedAgeUnits="years months days hours minutes seconds".split(" ");h.verifyDates=

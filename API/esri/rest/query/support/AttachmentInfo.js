@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/JSONSupport ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../layers/support/exifUtils".split(" "),function(g,c,b,d,p,q,h,l,m){var f;const n={1:{id:1,rotation:0,mirrored:!1},2:{id:2,rotation:0,mirrored:!0},3:{id:3,rotation:180,mirrored:!1},4:{id:4,rotation:180,mirrored:!0},
 5:{id:5,rotation:-90,mirrored:!0},6:{id:6,rotation:90,mirrored:!1},7:{id:7,rotation:90,mirrored:!0},8:{id:8,rotation:-90,mirrored:!1}};b=f=function(k){function e(a){a=k.call(this,a)||this;a.contentType=null;a.exifInfo=null;a.id=null;a.globalId=null;a.keywords=null;a.name=null;a.parentGlobalId=null;a.parentObjectId=null;a.size=null;a.url=null;return a}g._inheritsLoose(e,k);e.prototype.clone=function(){return new f({contentType:this.contentType,exifInfo:this.exifInfo,id:this.id,globalId:this.globalId,

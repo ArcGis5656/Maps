@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../chunks/_rollupPluginBabelHelpers","../../../../../core/maybe","./util"],function(v,z,q,r){let B=function(){function t(b,a,c){this.tileCoordRange=b;this._visibleTiles=a;this._createUnique=c;this._tiles=new Map;this._uniqueSymbolsReferences=new Map}var k=t.prototype;k.add=function(b,a){this._uniqueSymbolLayerArray=null;let c=this._tiles.get(b.id);c||(c={symbols:new Map},this._tiles.set(b.id,c));var d=new Map;if(a)for(var e of a)c.symbols.has(e)&&(d.set(e,c.symbols.get(e)),
 c.symbols.delete(e));else for(var [f]of b.layerData)c.symbols.has(f)&&(d.set(f,c.symbols.get(f)),c.symbols.delete(f));this._removeSymbols(d);a=b.symbols;d=new Map;for(const [g,h]of a)if(e=h.length,32<=e){f=this.tileCoordRange;do f/=2,e/=4;while(8<e&&64<f);e=new r.GridIndex(this.tileCoordRange,this.tileCoordRange,f);d.set(g,{flat:h,index:e});c.symbols.set(g,{flat:h,index:e});for(const l of h)e.getCell(l.xTile,l.yTile).push(l)}else d.set(g,{flat:h}),c.symbols.set(g,{flat:h});this._addSymbols(b.key,

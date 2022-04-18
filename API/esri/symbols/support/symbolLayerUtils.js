@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require exports ../../chunks/_rollupPluginBabelHelpers ../../request ../../core/Error ../../core/ItemCache ../../core/maybe ../../geometry/support/aaBoundingBox ./symbolLayerUtils3D".split(" "),function(v,d,e,w,f,q,r,t,u){function g(){g=e._asyncToGenerator(function*(a,b){if("icon"===a.type)return x(a,b);if("object"===a.type)return y(a,b);throw new f("symbol3d:unsupported-symbol-layer","computeLayerSize only works with symbol layers of type Icon and Object");});return g.apply(this,arguments)}
 function h(a,b){return k.apply(this,arguments)}function k(){k=e._asyncToGenerator(function*(a,b){if(a.resource.href)return z(a.resource.href).then(c=>[c.width,c.height]);if(a.resource.primitive)return r.isSome(b)?[b,b]:[256,256];throw new f("symbol3d:invalid-symbol-layer","symbol layers of type Icon must have either an href or a primitive resource");});return k.apply(this,arguments)}function x(a,b){return h(a,b).then(c=>{if(null==a.size)return c;c=c[0]/c[1];return 1<c?[a.size,a.size/c]:[a.size*c,

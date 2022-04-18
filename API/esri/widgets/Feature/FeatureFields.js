@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/watchUtils ../../core/accessorSupport/decorators/aliasOf ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/property ../../core/accessorSupport/decorators/subclass ../Widget ./FeatureFields/FeatureFieldsViewModel ./support/FeatureElementInfo ../support/uriUtils ../support/widgetUtils ../support/decorators/messageBundle ../../core/Logger ../support/jsxFactory".split(" "),
 function(r,d,t,k,b,z,A,l,u,v,n,w,x,B,p,C,g){b=function(q){function m(a,e){a=q.call(this,a,e)||this;a._featureElementInfo=null;a.attributes=null;a.description=null;a.expressionInfos=null;a.fieldInfos=null;a.title=null;a.viewModel=new n;a.messages=null;a.messagesURIUtils=null;return a}r._inheritsLoose(m,q);var f=m.prototype;f.initialize=function(){this._featureElementInfo=new w;t.init(this,["viewModel.description","viewModel.title"],()=>this._setupFeatureElementInfo())};f.destroy=function(){this._featureElementInfo.destroy()};

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./BuildingNumericFilterViewModel ./support/buildingLayerUtils ./support/filterUtils ./support/validation".split(" "),function(k,e,g,h,d,w,x,p,q,r,t,u){d=function(l){function f(){var a=l.apply(this,arguments)||this;a._levelFieldName=null;a._parseValueFromFilter=
 b=>{const c=new RegExp(`${a._levelFieldName}\\s*=\\s*(\\d+)`,"gi"),v=new RegExp(`${a._levelFieldName}\\s*<\\s*(\\d+)`,"gi");for(const {filterMode:m,filterExpression:n}of b.filterBlocks.items)if(b=null,"solid"===m.type?b=c.exec(n):"x-ray"===m.type&&(b=v.exec(n)),g.isSome(b))return parseInt(b[1],10);return null};return a}k._inheritsLoose(f,l);f.prototype._setup=function(){const a=[];this.layers.forEach(c=>{c=r.findFieldInfoByModelName(c,"bldglevel");g.isSome(c)&&(this._levelFieldName=c.fieldName,a.push(c))});

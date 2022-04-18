@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/JSONSupport ../core/lang ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/enumeration ../core/accessorSupport/decorators/reader ../core/accessorSupport/decorators/subclass ../rest/support/colorRamps".split(" "),function(l,c,a,m,d,r,n,p,q,g){var e;a=e=function(h){function f(b){b=h.call(this,b)||this;b.altitude=45;b.azimuth=315;b.colorRamp=null;b.hillshadeType="multi-directional";
 b.pixelSizePower=.664;b.pixelSizeFactor=.024;b.scalingType="none";b.type="raster-shaded-relief";b.zFactor=1;return b}l._inheritsLoose(f,h);var k=f.prototype;k.readColorRamp=function(b){return g.fromJSON(b)};k.clone=function(){return new e({hillshadeType:this.hillshadeType,altitude:this.altitude,azimuth:this.azimuth,zFactor:this.zFactor,scalingType:this.scalingType,pixelSizeFactor:this.pixelSizeFactor,pixelSizePower:this.pixelSizePower,colorRamp:m.clone(this.colorRamp)})};return f}(a.JSONSupport);

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../../chunks/_rollupPluginBabelHelpers","./MeshData","./Utils"],function(r,q,p){return function(){function k(a,b,d,c=0,e=0){this.id=a;this.geometryType=b;this.materialKey=d;this.minZoom=c;this.maxZoom=e;this.meshData=null;this.indexCount=this.indexFrom=this.vertexCount=this.vertexFrom=this.zOrder=this.symbolLevel=0}var l=k.prototype;l.clone=function(){return this.copy()};l.copy=function(){const a=new k(this.id,this.geometryType,this.materialKey);a.vertexFrom=this.vertexFrom;a.vertexCount=
 this.vertexCount;a.indexFrom=this.indexFrom;a.indexCount=this.indexCount;a.zOrder=this.zOrder;a.symbolLevel=this.symbolLevel;a.meshData=this.meshData;a.minZoom=this.minZoom;a.maxZoom=this.maxZoom;return a};l.setMeshDataFromBuffers=function(a,b,d){const c=new q;for(const e in b){const f=b[e].stride,m=b[e].data,g=[],n=p.strideToPackingFactor(f);for(let h=0;h<f*a.vertexCount/n;++h)g[h]=m[h+f*a.vertexFrom/n];c.vertexData.set(e,g)}c.indexData.length=0;for(b=0;b<a.indexCount;++b)c.indexData[b]=d[b+a.indexFrom]-

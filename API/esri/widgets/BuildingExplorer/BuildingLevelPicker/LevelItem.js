@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/maybe ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../Widget ../../support/widgetUtils ../../../core/Logger ../../support/jsxFactory".split(" "),function(b,l,c,m,d,r,t,u,n,p,q,v,f){b.LevelItem=function(k){function g(a,e){a=k.call(this,a,e)||this;a.active=!1;a.hovering=
 !1;a.width=0;a.height=0;a.onSelect=()=>{};a.onFocus=()=>{};a.onBlur=()=>{};a._baseElement=null;return a}l._inheritsLoose(g,k);var h=g.prototype;h.render=function(){return f.tsx("div",{key:this,bind:this,class:this.classes("esri-building-level-picker-item",{["esri-building-level-picker-item--active"]:this.active,["esri-building-level-picker-item--hover"]:this.hovering}),styles:{height:`${this.height}px`}},this._renderBase())};h.focus=function(){m.isNone(this._baseElement)||this._baseElement.focus()};

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../core/timeUtils"],function(c,p){function h(a,d,b){d=l(d,b);const {dayOfMonth:f,month:e}=r[d];a=new Date(a.getTime());a.setMonth(e,f);return a}function l(a,d){return d===c.Hemisphere.NORTHERN?a:q(a)}function q(a){a=m.indexOf(a);return m[(a+2)%4]}c.Hemisphere=void 0;(function(a){a[a.NORTHERN=0]="NORTHERN";a[a.SOUTHERN=1]="SOUTHERN"})(c.Hemisphere||(c.Hemisphere={}));const r={spring:{dayOfMonth:20,month:2},summer:{dayOfMonth:21,month:5},fall:{dayOfMonth:23,month:8},winter:{dayOfMonth:21,
 month:11}},m=["spring","summer","fall","winter"];c.ORDERED_SEASONS=m;c.calculatePlaySpeed=function(a,d,b){if(isNaN(a.getTime())&&isNaN(d.getTime()))return 3E5;b=b.getTime();a=a.getTime();d=d.getTime();const f=a-36E5,e=a+36E5,g=d-48E5,n=d+24E5;let k=3E5;if(b>=f&&b<=e)k=12E5>=b-f?18E5-(b-f)/12E5*16E5:6E5>=e-b?3E5-(e-b)/12E5*2E5:2E5;else if(b>=g&&b<=n)k=6E5>=b-g?3E5-(b-g)/12E5*2E5:12E5>=n-b?18E5-(n-b)/12E5*16E5:2E5;else if(b<a||b>d)k=18E5;return k};c.dateTimeToSliderPos=function(a){return p.timeSinceUTCMidnight(a,

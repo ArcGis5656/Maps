@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../../core/mathUtils","../definitions","../../../layers/features/support/StaticBitSet"],function(k,h,p,q){let u=function(){function l(a,b){this.width=a;this.height=b;a=Math.ceil(a/1);b=Math.ceil(b/1);this._cols=a;this._rows=b;this._cells=q.StaticBitSet.create(a*b)}var g=l.prototype;g.insertMetrics=function(a){const b=this._hasCollision(a);0===b&&this._markMetrics(a);return b};g.getCellId=function(a,b){return a+b*this._cols};g.has=function(a){return this._cells.has(a)};
 g.hasRange=function(a,b){return this._cells.hasRange(a,b)};g.set=function(a){this._cells.set(a)};g.setRange=function(a,b){this._cells.setRange(a,b)};g._hasCollision=function(a){const b=a.id;let c=0,d=0;a.save();do{const e=a.boundsCount;c+=e;for(let f=0;f<e;f++){const m=a.boundsComputedAnchorX(f),n=a.boundsComputedAnchorY(f),r=a.boundsWidth(f)+2,t=a.boundsHeight(f)+2;switch(this._collide(m,n,r,t)){case 2:return 2;case 1:d++}}}while(a.peekId()===b&&a.next());a.restore();return c===d?1:0};g._collide=

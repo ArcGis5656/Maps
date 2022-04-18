@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports"],function(t){function u(c,g){return`${Math.round(10*c)/10}${g}`}t.drawColliders=function(c,g){const b=window.COLLISION_XRAY;for(let m=0;m<g.length;++m){const f=!g[m].unique.show;if(b||!f)for(const n of g[m].colliders){if(!n.enabled)continue;var a=!g[m].unique.parts[n.partIndex].show;if(!b&&a)continue;var p=n.xScreen,d=n.yScreen;const q=n.dxScreen,r=n.dyScreen;c.globalAlpha=f||a?.2:1;a=c;var k=p-1,h=d-1;a.fillStyle="green";a.fillRect(k,h,3,3);a=c;k=p+q;h=d+r;var e=n.width,l=n.height;
 a.strokeStyle="red";a.strokeRect(k,h,e,l);a=c;p=p+q-1;d=d+r-1;a.fillStyle="blue";a.fillRect(p,d,3,3);c.globalAlpha=1}}};t.drawGridIndex=function(c,g){c.strokeStyle="black";const b=g.cellSize,a=g.rows,p=g.columns;for(let d=0;d<a;d++){const k=g.cells[d],h=d*b,e=(d+1)*b;for(let l=0;l<p;l++){const m=k[l],f=l*b;c.strokeRect(f,h,(l+1)*b-f,e-h);c.fillText(`cells:${m.length}`,f+4,h+12)}}};t.perfAdd=function(c,g,b){if(window.PERFORMANCE_RECORDING_STORAGE){var a=window.PERFORMANCE_RECORDING_STORAGE;a.perf=

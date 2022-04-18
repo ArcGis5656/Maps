@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../arcade/FunctionWrapper","../arcade/ImmutableArray","./languageUtils","../core/promiseUtils"],function(v,x,y,c,p){function w(h){function t(e,g){if(g instanceof x)return h.arcadeCustomFunctionHandler(g);if(g instanceof c.NativeFunction)return(...b)=>g.fn(e,{preparsed:!0,arguments:b});if(g instanceof c.SizzleFunction)return(...b)=>{if(b.length!==g.paramCount)throw Error("Invalid parameters");return g.fn(...b)};throw Error("Invalid Parameter");}function u(e){if(e instanceof y)return e.toArray();
 if(c.isArray(e))return e;throw Error("Invalid Parameter");}h.functions.array=function(e,g){return h.standardFunction(e,g,function(b,d,a){c.pcCheck(a,1,2);b=c.toNumber(a[0]);if(isNaN(b)||!1===c.isInteger(b))throw Error("Invalid Parameter");a=c.defaultUndefined(a[1],null);b=Array(b);b.fill(a);return b})};h.functions.front=function(e,g){return h.standardFunction(e,g,function(b,d,a){c.pcCheck(a,1,1);if(c.isImmutableArray(a[0])){if(0>=a[0].length())throw Error("Array is empty");return a[0].get(0)}if(c.isArray(a[0])){if(0>=

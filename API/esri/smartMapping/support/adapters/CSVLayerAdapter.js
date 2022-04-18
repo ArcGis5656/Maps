@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Error ../../../core/maybe ../../../core/Logger ../../../core/accessorSupport/ensureType ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/set ../../../core/accessorSupport/decorators/subclass ../../../rest/support/generateRendererUtils ../../statistics/support/utils ../../statistics/support/WorkerClient ../utils ./FeatureLayerAdapter ./support/utils".split(" "),function(m,y,t,u,n,F,G,H,
 I,z,v,p,A,B,C,D){function w(h){return"esri.rest.support.ClassBreaksDefinition"===h.declaredClass}function x(h){return"esri.rest.support.UniqueValueDefinition"===h.declaredClass}n=function(h){function q(d){return h.call(this,d)||this}m._inheritsLoose(q,h);var r=q.prototype;r._createGenerateRendererResult=function(){var d=m._asyncToGenerator(function*(a,b,e,c,f){a=null==a?void 0:a.features;if(null==a||!a.length)throw new t("csv-layer-adapter:insufficient-data","No features are available to calculate statistics");

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../geometry/Extent"],function(c,d){c.cloneGeometry=function(a){if(null===a)return null;const b=a.clone();void 0!==a.cache._geVersion&&(b.cache._geVersion=a.cache._geVersion);return b};c.convertLinearUnitsToCode=function(a){if(void 0===a)return null;if("number"===typeof a)return a;a=a.toLowerCase();a=a.replace(/\s/g,"");a=a.replace(/-/g,"");switch(a){case "meters":case "meter":case "m":case "squaremeters":case "squaremeter":return 9001;case "miles":case "mile":case "squaremile":case "squaremiles":return 9035;
 case "kilometers":case "kilometer":case "squarekilometers":case "squarekilometer":case "km":return 9036;case "yard":case "yd":case "yards":case "squareyards":case "squareyard":return 9096;case "feet":case "ft":case "foot":case "squarefeet":case "squarefoot":return 9002;case "nm":case "nmi":case "nauticalmile":case "nauticalmiles":case "squarenauticalmile":case "squarenauticalmiles":return 9030}return null};c.convertSquareUnitsToCode=function(a){if(void 0===a)return null;if("number"===typeof a)return a;

@@ -1,7 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../attributes/VertexTextureCoordinates.glsl","../../shaderModules/interfaces"],function(e,f,d){e.ComputeNormalTexture=function(b,c){const a=b.fragment;c.vertexTangents?(b.attributes.add("tangent","vec4"),b.varyings.add("vTangent","vec4"),2===c.doubleSidedMode?a.code.add(d.glsl`mat3 computeTangentSpace(vec3 normal) {
+define("exports ../attributes/TextureCoordinateAttribute.glsl ../attributes/VertexTextureCoordinates.glsl ./Normals.glsl ../../shaderModules/interfaces ../../../lib/VertexAttribute".split(" "),function(e,f,g,h,d,k){e.ComputeNormalTexture=function(b,c){const a=b.fragment;c.vertexTangents?(b.attributes.add(k.VertexAttribute.TANGENT,"vec4"),b.varyings.add("vTangent","vec4"),c.doubleSidedMode===h.NormalsDoubleSidedMode.WindingOrder?a.code.add(d.glsl`mat3 computeTangentSpace(vec3 normal) {
 float tangentHeadedness = gl_FrontFacing ? vTangent.w : -vTangent.w;
 vec3 tangent = normalize(gl_FrontFacing ? vTangent.xyz : -vTangent.xyz);
 vec3 bitangent = cross(normal, tangent) * tangentHeadedness;
@@ -22,7 +22,7 @@ T = T - normal * dot(normal, T);
 T *= inversesqrt(max(dot(T,T), 1.e-10));
 vec3 B = sign(det) * cross(normal, T);
 return mat3(T, B, normal);
-}`));0!==c.attributeTextureCoordinates&&(b.include(f.VertexTextureCoordinates,c),a.uniforms.add("normalTexture","sampler2D"),a.uniforms.add("normalTextureSize","vec2"),a.code.add(d.glsl`
+}`));c.attributeTextureCoordinates!==f.TextureCoordinateAttributeType.None&&(b.include(g.VertexTextureCoordinates,c),a.uniforms.add("normalTexture","sampler2D"),a.uniforms.add("normalTextureSize","vec2"),a.code.add(d.glsl`
     vec3 computeTextureNormal(mat3 tangentSpace, vec2 uv) {
       vtc.uv = uv;
       ${c.supportsTextureAtlas?"vtc.size \x3d normalTextureSize;":""}

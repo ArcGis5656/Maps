@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/deprecate ../../core/lang ../../core/Logger ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../tasks/Locator ./SearchSource ./support/locatorUtils".split(" "),function(e,c,m,n,a,d,w,t,u,v,p){var h;const q=a.getLogger("esri.widgets.Search.LocatorSearchSource");a=h=function(r){function f(g){var b=r.call(this,g)||this;b.apiKey=null;b.categories=
 null;b.countryCode=null;b.defaultZoomScale=null;b.localSearchDisabled=!1;b.locationType=null;b.name="";b.placeholder="";b.searchTemplate="";b.singleLineFieldName=null;b.suggestionsEnabled=null;b.url=null;b.zoomScale=null;b.getResults=(k,l)=>p.getResults({source:e._assertThisInitialized(b),...k},l);b.getSuggestions=(k,l)=>p.getSuggestions({source:e._assertThisInitialized(b),...k},l);return b}e._inheritsLoose(f,r);f.prototype.clone=function(){return new h({apiKey:this.apiKey,autoNavigate:this.autoNavigate,

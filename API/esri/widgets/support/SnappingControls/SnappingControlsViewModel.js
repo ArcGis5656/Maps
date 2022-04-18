@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../core/Accessor ../../../core/HandleOwner ../../../core/watchUtils ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/has ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../LayerList/support/layerListUtils ./SnappingLayerListViewModel".split(" "),function(g,c,b,m,h,d,r,t,u,n,p,q){b=function(k){function e(a){a=k.call(this,a)||this;a.layerListViewModel=
 new q.SnappingLayerListViewModel;a.snappingOptions=null;a.view=null;return a}g._inheritsLoose(e,k);var l=e.prototype;l.initialize=function(){this.handles.add([h.init(this,"view",a=>{this.layerListViewModel.view=a}),h.init(this,"snappingOptions.featureSources",()=>{this.layerListViewModel.featureSnappingSources=this.snappingOptions.featureSources})])};l.updateEnabledFeatureSources=function(a){for(const f of this.snappingOptions.featureSources)p.canDisplayLayer(f.layer)&&(f.enabled=a.includes(f.layer.id))};

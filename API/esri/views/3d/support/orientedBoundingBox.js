@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/mat3 ../../../chunks/mat3f64 ../../../chunks/quat ../../../chunks/quatf32 ../../../chunks/quatf64 ../../../chunks/vec3 ../../../chunks/vec3f32 ../../../chunks/vec3f64 ../../../chunks/vec4 ../../../chunks/vec4f64 ../../../geometry/support/aaBoundingBox ../../../geometry/support/plane ./dito".split(" "),function(g,y,D,v,A,E,h,B,w,F,G,H,t,I){function z(a=[0,0,0],b=[-1,-1,-1],c=[0,0,0,1]){return{center:w.clone(a),halfSize:B.clone(b),quaternion:A.clone(c)}}function p(a,
 b){const c=t.signedDistance(b,a.center);a=x(a,t.normal(b));return c>a?1:c<-a?-1:0}function x(a,b){v.conjugate(q,a.quaternion);h.transformQuat(e,b,q);a=a.halfSize;return Math.abs(e[0]*a[0])+Math.abs(e[1]*a[1])+Math.abs(e[2]*a[2])}const q=E.create(),e=w.create(),J=w.create(),r=G.create(),u=D.create(),m=[.1,.2,.3,.4,.5,.6,.7,.8,.9,1,1.1,1.2],K=(()=>{const a=new Int8Array(162);let b=0;const c=f=>{for(let k=0;k<f.length;k++)a[b+k]=f[k];b+=6};c([6,2,3,1,5,4]);c([0,2,3,1,5,4]);c([0,2,3,7,5,4]);c([0,1,3,

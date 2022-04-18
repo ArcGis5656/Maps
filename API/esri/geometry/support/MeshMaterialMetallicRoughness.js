@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../Color ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./MeshMaterial ./MeshTexture".split(" "),function(p,c,q,d,e,b,u,v,r,t,g){var h;b=h=function(k){function l(a){a=k.call(this,a)||this;a.emissiveColor=null;a.emissiveTexture=null;a.occlusionTexture=null;a.metallic=1;a.roughness=1;a.metallicRoughnessTexture=
 null;return a}p._inheritsLoose(l,k);var m=l.prototype;m.clone=function(){return this.cloneWithDeduplication(null,new Map)};m.cloneWithDeduplication=function(a,f){const n=d.isSome(a)?a.get(this):null;if(n)return n;f=new h(this.clonePropertiesWithDeduplication(f));d.isSome(a)&&a.set(this,f);return f};m.clonePropertiesWithDeduplication=function(a){return{...k.prototype.clonePropertiesWithDeduplication.call(this,a),emissiveColor:d.isSome(this.emissiveColor)?this.emissiveColor.clone():null,emissiveTexture:d.isSome(this.emissiveTexture)?

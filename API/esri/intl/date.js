@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../core/jsonMap","./locale"],function(e,f,n){function q(d){d=d||r;if(!m.has(d)){var k=n.getLocale();k=t[n.getLocale()]||k;m.set(d,new Intl.DateTimeFormat(k,d))}return m.get(d)}var a={year:"numeric",month:"numeric",day:"numeric"},g={year:"numeric",month:"long",day:"numeric"},h={year:"numeric",month:"short",day:"numeric"};const l={year:"numeric",month:"long",weekday:"long",day:"numeric"},b={hour:"numeric",minute:"numeric"},c={...b,second:"numeric"},p={"short-date":a,"short-date-short-time":{...a,
 ...b},"short-date-short-time-24":{...a,...b,hour12:!1},"short-date-long-time":{...a,...c},"short-date-long-time-24":{...a,...c,hour12:!1},"short-date-le":a,"short-date-le-short-time":{...a,...b},"short-date-le-short-time-24":{...a,...b,hour12:!1},"short-date-le-long-time":{...a,...c},"short-date-le-long-time-24":{...a,...c,hour12:!1},"long-month-day-year":g,"long-month-day-year-short-time":{...g,...b},"long-month-day-year-short-time-24":{...g,...b,hour12:!1},"long-month-day-year-long-time":{...g,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../request ../../core/Error ../../core/promiseUtils ../../core/urlUtils ../../portal/Portal ../../portal/PortalQueryParams ../../support/featureFlags".split(" "),function(e,q,r,m,t,n,u,v,w){function x(a,b){return k.apply(this,arguments)}function k(){k=q._asyncToGenerator(function*(a,b){try{return{data:(yield p(a,b)).data,baseUrl:n.removeFile(a),styleUrl:a}}catch(c){return t.throwIfAbortError(c),null}});return k.apply(this,arguments)}function y(a,
 b,c){b=b&&b.portal||u.getDefault();let d;const f=`${b.url} - ${b.user&&b.user.username} - ${a}`;l[f]||(l[f]=z(a,b,c).then(g=>{d=g;return g.fetchData()}).then(g=>({data:g,baseUrl:d.itemUrl,styleName:a})));return l[f]}function z(a,b,c){return b.load(c).then(()=>{const d=new v({disableExtraQuery:!0,query:`owner:${"esri_en"} AND type:${"Style"} AND typekeywords:"${a}"`});return b.queryItems(d,c)}).then(({results:d})=>{let f=null;const g=a.toLowerCase();if(d&&Array.isArray(d))for(const h of d)if(h.typeKeywords.some(A=>

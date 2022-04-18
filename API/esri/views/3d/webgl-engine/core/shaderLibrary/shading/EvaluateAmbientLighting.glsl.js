@@ -1,7 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../../shaderModules/interfaces"],function(e,b){e.EvaluateAmbientLighting=function(a,c){a=a.fragment;const d=void 0!==c.lightingSphericalHarmonicsOrder?c.lightingSphericalHarmonicsOrder:2;0===d?(a.uniforms.add("lightingAmbientSH0","vec3"),a.code.add(b.glsl`vec3 calculateAmbientIrradiance(vec3 normal, float ambientOcclusion) {
+define(["exports","./PhysicallyBasedRenderingParameters.glsl","../../shaderModules/interfaces"],function(e,f,b){e.EvaluateAmbientLighting=function(a,c){a=a.fragment;const d=void 0!==c.lightingSphericalHarmonicsOrder?c.lightingSphericalHarmonicsOrder:2;0===d?(a.uniforms.add("lightingAmbientSH0","vec3"),a.code.add(b.glsl`vec3 calculateAmbientIrradiance(vec3 normal, float ambientOcclusion) {
 vec3 ambientLight = 0.282095 * lightingAmbientSH0;
 return ambientLight * (1.0 - ambientOcclusion);
 }`)):1===d?(a.uniforms.add("lightingAmbientSH_R","vec4"),a.uniforms.add("lightingAmbientSH_G","vec4"),a.uniforms.add("lightingAmbientSH_B","vec4"),a.code.add(b.glsl`vec3 calculateAmbientIrradiance(vec3 normal, float ambientOcclusion) {
@@ -42,7 +42,7 @@ dot(lightingAmbientSH_G2, sh2),
 dot(lightingAmbientSH_B2, sh2)
 );
 return ambientLight * (1.0 - ambientOcclusion);
-}`),1!==c.pbrMode&&2!==c.pbrMode||a.code.add(b.glsl`const vec3 skyTransmittance = vec3(0.9, 0.9, 1.0);
+}`),c.pbrMode!==f.PBRMode.Normal&&c.pbrMode!==f.PBRMode.Schematic||a.code.add(b.glsl`const vec3 skyTransmittance = vec3(0.9, 0.9, 1.0);
 vec3 calculateAmbientRadiance(float ambientOcclusion)
 {
 vec3 ambientLight = 1.2 * (0.282095 * lightingAmbientSH0) - 0.2;

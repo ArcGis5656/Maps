@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["require","../../chunks/_rollupPluginBabelHelpers","../nextTick","./RemoteClient","./utils"],function(l,g,h,k,f){function m(c){if(c&&c.__esModule)return c;const d=Object.create(null);if(c)for(const a in c)if("default"!==a){const b=Object.getOwnPropertyDescriptor(c,a);Object.defineProperty(d,a,b.get?b:{enumerable:!0,get:()=>c[a]})}d.default=c;return Object.freeze(d)}let n=function(){const c=document.createDocumentFragment();["addEventListener","dispatchEvent","removeEventListener"].forEach(d=>
 {this[d]=(...a)=>c[d](...a)})};return function(){function c(){this._dispatcher=new n;this._workerPostMessage({type:f.MessageType.HANDSHAKE})}var d=c.prototype;d.terminate=function(){};d.postMessage=function(a){h.nextTick(()=>{this._workerMessageHandler(new MessageEvent("message",{data:a}))})};d.dispatchEvent=function(a){return this._dispatcher.dispatchEvent(a)};d.addEventListener=function(a,b,e){this._dispatcher.addEventListener(a,b,e)};d.removeEventListener=function(a,b,e){this._dispatcher.removeEventListener(a,

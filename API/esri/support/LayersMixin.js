@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/Collection ../core/collectionUtils ../core/Logger ../core/promiseUtils ../core/accessorSupport/decorators/property ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/subclass ../layers/Layer".split(" "),function(m,k,n,q,r,t,u,v,y,z,A,w,x){function l(e,g,f){if(e)for(let a=0,b=e.length;a<b;a++){var d=e.getItemAt(a);if(d[g]===f||d&&"group"===d.type&&(d=l(d.layers,g,f)))return d}}
 const p=t.getLogger("esri.support.LayersMixin");m.LayersMixin=e=>{e=function(g){function f(...a){var b=g.call(this,...a)||this;b.layers=new q;b.layers.on("before-add",c=>{c=c.item;c.parent&&"remove"in c.parent&&c.parent.remove(c)});b.layers.on("after-add",c=>{c=c.item;c.parent=k._assertThisInitialized(b);b.layerAdded(c);"elevation"!==c.type&&"base-elevation"!==c.type||p.error(`Layer 'title:${c.title}, id:${c.id}' of type '${c.type}' is not supported as an operational layer and will therefore be ignored.`)});

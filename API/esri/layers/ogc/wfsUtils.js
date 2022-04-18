@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../geometry ../../request ../../core/Error ../../core/iteratorUtils ../../core/maybe ../../core/promiseUtils ../../core/urlUtils ../../geometry/projection ../../geometry/support/spatialReferenceUtils ../../geometry/support/typeUtils ../graphics/sources/geojson/geojson ./dateUtils ./xmlUtils ../support/Field ../../geometry/SpatialReference ../../geometry/Extent".split(" "),function(m,n,ma,u,l,A,v,V,w,L,x,W,X,Y,p,t,M,Z){function B(){B=n._asyncToGenerator(function*(a,
 b){b=yield u(a,{responseType:"text",query:{SERVICE:"WFS",REQUEST:"GetCapabilities",VERSION:"2.0.0",...null==b?void 0:b.customParameters},signal:null==b?void 0:b.signal});b=N(b.data);w.isHTTPSProtocol(a)&&(w.hasSameOrigin(a,b.operations.DescribeFeatureType.url,!0)&&(b.operations.DescribeFeatureType.url=w.toHTTPS(b.operations.DescribeFeatureType.url)),w.hasSameOrigin(a,b.operations.GetFeature.url,!0)&&(b.operations.GetFeature.url=w.toHTTPS(b.operations.GetFeature.url)));return b});return B.apply(this,

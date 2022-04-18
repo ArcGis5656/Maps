@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../support/GeolocationPositioning".split(" "),function(l,d,e,b,t,u,p,q){b=function(m){function f(a){a=m.call(this,a)||this;a._watchId=null;a._trackStartingTimeoutId=null;a._settingPosition=null;return a}l._inheritsLoose(f,m);var c=f.prototype;c.destroy=function(){this._stopTracking()};
 c.start=function(){"disabled"!==this.state&&"feature-unsupported"!==this.state&&this._startTracking()};c.stop=function(){"disabled"!==this.state&&"feature-unsupported"!==this.state&&this._stopTracking()};c._stopWatchingPosition=function(){null!==this._watchId&&(navigator.geolocation.clearWatch(this._watchId),this._watchId=null)};c._stopTracking=function(){this._clearWaitingTimer();this._stopWatchingPosition();this._clear()};c._startTracking=function(){this._stopTracking();const a=navigator.geolocation.watchPosition(r=>

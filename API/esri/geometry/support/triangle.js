@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../core/ObjectStack ../../chunks/vec2 ../../chunks/vec3 ../../chunks/vec3f64 ./lineSegment ./vectorStacks".split(" "),function(h,F,y,e,p,q,m){function z(a){return a?{p0:p.clone(a.p0),p1:p.clone(a.p1),p2:p.clone(a.p2)}:{p0:p.create(),p1:p.create(),p2:p.create()}}function G(a,c,d,b=z()){e.copy(b.p0,a);e.copy(b.p1,c);e.copy(b.p2,d);return b}function H(a,c,d){var b=y.distance(a,c);c=y.distance(c,d);a=y.distance(d,a);d=(b+c+a)/2;b=d*(d-b)*(d-c)*(d-a);return 0>=b?0:Math.sqrt(b)}const A=
 new F.ObjectStack(q.create),K=new F.ObjectStack(()=>({p0:null,p1:null,p2:null})),B=p.create(),I=p.create();h.area2d=function(a){return H(a.p0,a.p1,a.p2)};h.areaPoints2d=H;h.areaPoints3d=function(a,c,d){e.subtract(B,c,a);e.subtract(I,d,a);return e.length(e.cross(B,B,I))/2};h.copy=function(a,c=z()){return G(a.p0,a.p1,a.p2,c)};h.create=z;h.distance2=function(a,c){var d=a.p0,b=a.p1;a=a.p2;const n=e.subtract(m.sv3d.get(),b,d),g=e.subtract(m.sv3d.get(),a,b),r=e.subtract(m.sv3d.get(),d,a),u=e.subtract(m.sv3d.get(),

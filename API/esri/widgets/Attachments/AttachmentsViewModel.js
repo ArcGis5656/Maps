@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../Graphic ../../core/Collection ../../core/Error ../../core/HandleOwner ../../core/maybe ../../core/watchUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/decorators/cast ../../core/accessorSupport/decorators/subclass ../../rest/query/support/AttachmentInfo ../../rest/support/AttachmentQuery ../Feature/support/featureUtils".split(" "),function(l,k,x,f,g,y,z,
 A,p,G,H,B,C,D,t,E){const u={editing:!1,operations:{add:!0,update:!0,delete:!0}},v=f.ofType(D);f=function(w){function q(b){var a=w.call(this,b)||this;a._getAttachmentsPromise=null;a._attachmentLayer=null;a.abilities={...u};a.activeAttachmentInfo=null;a.attachmentInfos=new v;a.graphic=null;a.mode="view";a.handles.add([A.init(l._assertThisInitialized(a),"graphic",()=>a._graphicChanged())]);return a}l._inheritsLoose(q,w);var h=q.prototype;h.destroy=function(){this.graphic=this._attachmentLayer=null};

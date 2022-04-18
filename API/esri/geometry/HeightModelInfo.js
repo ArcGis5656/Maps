@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/arrayUtils ../core/jsonMap ../core/JSONSupport ../core/unitUtils ../core/Warning ../core/accessorSupport/decorators/property ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/reader ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer".split(" "),function(w,e,d,r,x,t,u,p,q,B,m,y,z){function v(h,f){return new u("height-unit:unsupported",`Height unit of value '${h}' is not supported`,
 f)}function A(h,f){return new u("height-model:unsupported",`Height model of value '${h}' is not supported`,f)}var k;const n=r.strict()({orthometric:"gravity-related-height",gravity_related_height:"gravity-related-height",ellipsoidal:"ellipsoidal"});q=n.jsonValues.slice();d.removeUnordered(q,"orthometric");const l=r.strict()({meter:"meters",foot:"feet","us-foot":"us-feet","clarke-foot":"clarke-feet","clarke-yard":"clarke-yards","clarke-link":"clarke-links","sears-yard":"sears-yards","sears-foot":"sears-feet",

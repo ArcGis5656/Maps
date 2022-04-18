@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../../core/RandomLCG ../../../../../chunks/vec3 ../../../../../chunks/vec3f64 ../../../support/buffer/glUtil ./bufferLayouts".split(" "),function(l,y,w,z,x,h){function A(a){const c=q;c[0]=a.position0[0];c[1]=a.position0[1];c[2]=a.position0[2];c[3]=a.position1[0];c[4]=a.position1[1];c[5]=a.position1[2];f[0]=5381;for(a=0;a<m.length;a++)f[0]=31*f[0]+m[a];return f[0]}function B(a){const c=q;c[0]=k(a.position0[0]);c[1]=k(a.position0[1]);c[2]=k(a.position0[2]);c[3]=k(a.position1[0]);
 c[4]=k(a.position1[1]);c[5]=k(a.position1[2]);f[0]=5381;for(a=0;a<m.length;a++)f[0]=31*f[0]+m[a];return f[0]}function k(a){return Math.round(1E4*a)/1E4}let t=function(){function a(){}var c=a.prototype;c.updateSettings=function(b){this.settings=b;this.edgeHashFunction=b.reducedPrecision?B:A};c.write=function(b,d,e){var r=this.edgeHashFunction(e);n.seed=r;r=n.getIntRange(0,255);const C=n.getIntRange(0,this.settings.variants-1);var g=n.getFloat();g=-(1-Math.min(g/.7,1))+Math.max(0,g-.7)/(1-.7);g=255*

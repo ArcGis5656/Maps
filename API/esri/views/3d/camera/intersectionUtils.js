@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../core/maybe ../../../chunks/vec3 ../../../chunks/vec3f64 ../../../geometry/projectionEllipsoid ../../../geometry/support/aaBoundingRect ../webgl-engine/lib/Intersector".split(" "),function(k,n,f,m,t,u,v){function p(a,b){return a.elevationProvider?n.unwrapOr(a.elevationProvider.getElevation(b[0],b[1],b[2],a.renderCoordsHelper.spatialReference,"ground"),0):0}function q(a,b,c){if(!a.state.isGlobal)return!1;const g=p(a,b);({far:a}=a.stateManager.constraintsManager.nearFarHeuristic.compute(b,
 c,a.renderDataExtent,g,w));a*=a;return f.squaredDistance(b,c)>a}const r={},l=m.create(),e=m.create(),h=m.create(),w={near:0,far:0};k.cameraOnContentAlongViewDirection=function(a,b,c,g){const d=a.state.camera.clone();b&&(d.eye=b,d.center=c,d.up=g);b=d.ray;c=r[a.viewingMode];c||(c=v.newIntersector(a.state.viewingMode),c.options.backfacesTerrain=!a.state.isGlobal,c.options.invisibleTerrain=!0,r[a.viewingMode]=c);({isGlobal:g}=a.state);a.sceneIntersectionHelper.intersectRay(b,c,e)&&!q(a,b.origin,e)?b=

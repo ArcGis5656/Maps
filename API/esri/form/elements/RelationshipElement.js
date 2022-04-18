@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/lang ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./Element ../../popup/support/RelatedRecordsInfoFieldOrder".split(" "),function(h,c,k,d,a,l,m,n){var e;a=e=function(g){function f(b){b=g.call(this,b)||this;b.displayCount=null;b.displayType="list";b.editable=!0;b.orderByFields=null;b.relationshipId=null;b.type="relationship";return b}
 h._inheritsLoose(f,g);f.prototype.clone=function(){return new e({description:this.description,displayCount:this.displayCount,displayType:this.displayType,editable:this.editable,label:this.label,orderByFields:k.clone(this.orderByFields),relationshipId:this.relationshipId,visibilityExpression:this.visibilityExpression})};return f}(m);c.__decorate([d.property({type:Number,json:{write:!0}})],a.prototype,"displayCount",void 0);c.__decorate([d.property({type:["list"],json:{write:!0}})],a.prototype,"displayType",

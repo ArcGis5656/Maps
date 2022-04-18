@@ -1,4 +1,4 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports"],function(d){function h(n,a,k,e){let f=null,c=1E3;"number"===typeof a?(c=a,e=k):(f=null!=a?a:null,c=k);let b=0,l;const g=()=>{b=0;n.apply(e,l)};a=(...m)=>{f&&f.apply(e,m);l=m;c?b||(b=setTimeout(g,c)):g()};a.remove=()=>{b&&(clearTimeout(b),b=0)};a.forceUpdate=()=>{b&&(clearTimeout(b),g())};a.hasPendingUpdates=()=>!!b;return a}d.default=h;d.throttle=h;Object.defineProperty(d,"__esModule",{value:!0})});
+define(["exports"],function(g){g.throttle=function(m,a,h,d){let e=null,c=1E3;"number"===typeof a?(c=a,d=h):(e=null!=a?a:null,c=h);let b=0,k;const f=()=>{b=0;m.apply(d,k)};a=(...l)=>{e&&e.apply(d,l);k=l;c?b||(b=setTimeout(f,c)):f()};a.remove=()=>{b&&(clearTimeout(b),b=0)};a.forceUpdate=()=>{b&&(clearTimeout(b),f())};a.hasPendingUpdates=()=>!!b;return a};Object.defineProperty(g,"__esModule",{value:!0})});

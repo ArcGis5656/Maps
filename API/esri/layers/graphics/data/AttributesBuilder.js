@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../core/maybe","./attributeSupport","../../../statistics/utils"],function(l,g,m){return function(){function h(b,a,c){this._fieldDataCache=new Map;this._returnDistinctMap=new Map;this.returnDistinctValues=b.returnDistinctValues;this.fieldsIndex=c;this.featureAdapter=a;if((a=b.outFields)&&-1===a.indexOf("*")){this.outFields=a;b=0;for(const d of a){var e=g.getExpressionFromFieldName(d);e=(a=this.fieldsIndex.get(e))?null:g.getWhereClause(e,c);a=a?a.name:g.getAliasFromFieldName(d)||`FIELD_EXP_${b++}`;
 this._fieldDataCache.set(d,{alias:a,clause:e})}}}var f=h.prototype;f.countDistinctValues=function(b){if(!this.returnDistinctValues)return b.length;b.forEach(a=>this.getAttributes(a));return this._returnDistinctMap.size};f.getAttributes=function(b){b=this._processAttributesForOutFields(b);return this._processAttributesForDistinctValues(b)};f.getFieldValue=function(b,a,c){const e=c?c.name:a;let d=null;this._fieldDataCache.has(e)?d=this._fieldDataCache.get(e).clause:c||(d=g.getWhereClause(a,this.fieldsIndex),

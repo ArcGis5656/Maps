@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/Accessor ../../../../core/Handles ../../../../core/maybe ../../../../core/promiseUtils ../../../../core/watchUtils ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../chunks/vec3f64 ../../../../geometry/Point ../../../../geometry/support/aaBoundingRect".split(" "),
 function(b,h,c,l,m,n,p,q,d,w,x,y,r,t,u,v){b.StableSurfaceCenter=function(k){function f(a){a=k.call(this,a)||this;a.location=null;a._updateController=null;a._handles=new m;return a}h._inheritsLoose(f,k);var g=f.prototype;g.initialize=function(){this.view.state.isLocal&&(this._handles.add([this.watch(["surfaceView.spatialReference","surfaceView.extent"],()=>this._update()),q.on(this,"surface.layers","change",()=>this._update())]),this._update())};g.destroy=function(){this._handles.destroy()};g._update=

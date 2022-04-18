@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer ./labelUtils".split(" "),function(m,c,b,e,t,u,v,n,p,q,k){var f;b=f=function(l){function g(){var a=l.apply(this,arguments)||this;a.expression=null;a.title=
 null;a.value=null;return a}m._inheritsLoose(g,l);var h=g.prototype;h.readExpression=function(a,d){return d.value?k.convertTemplatedStringToArcade(d.value):a};h.writeExpression=function(a,d,r){null!=this.value&&(a=k.convertTemplatedStringToArcade(this.value));null!=a&&(d[r]=a)};h.clone=function(){return new f({expression:this.expression,title:this.title,value:this.value})};return g}(b.JSONSupport);c.__decorate([e.property({type:String,json:{write:{writerEnsuresNonNull:!0}}})],b.prototype,"expression",

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../support/FeatureSet ../support/IdSet ../support/shared ../support/sqlUtils ../../../core/promiseUtils ../../../core/sql/WhereClause ../../../geometry/SpatialReference".split(" "),function(w,t,q,l,r,k,u,x){return function(v){function n(b){var a=v.call(this,b)||this;a.declaredClass="esri.arcade.featureset.actions.AttributeFilter";a._maxProcessing=1E3;a._parent=b.parentfeatureset;b.whereclause instanceof u.WhereClause?(a._whereclause=b.whereclause,
 a._whereClauseFunction=null):(a._whereClauseFunction=b.whereclause,a._whereclause=null);return a}w._inheritsLoose(n,v);var f=n.prototype;f._initialiseFeatureSet=function(){null!==this._parent?(this.fields=this._parent.fields.slice(0),this.geometryType=this._parent.geometryType,this.objectIdField=this._parent.objectIdField,this.globalIdField=this._parent.globalIdField,this.spatialReference=this._parent.spatialReference,this.hasM=this._parent.hasM,this.hasZ=this._parent.hasZ,this.typeIdField=this._parent.typeIdField,

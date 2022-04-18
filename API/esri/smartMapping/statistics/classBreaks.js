@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../core/Error ../../core/maybe ./support/utils ../support/utils ../support/adapters/support/layerUtils".split(" "),function(p,b,w,q,r,f){function x(a){return g.apply(this,arguments)}function g(){g=p._asyncToGenerator(function*(a){if(!a||!a.layer||!a.field&&!a.valueExpression)throw new b("class-breaks:missing-parameters","'layer' and 'field' or 'valueExpression' parameters are required");if(a.valueExpression&&!a.view)throw new b("class-breaks:missing-parameters",
 "View is required when 'valueExpression' is specified");const {layer:h,...k}=a;var c=f.createLayerAdapter(h,f.featureCapableLayerTypes);a={layerAdapter:c,...k};a.normalizationType=r.getNormalizationType(a);a.numClasses=a.numClasses||5;if(!c)throw new b("class-breaks:invalid-parameters","'layer' must be one of these types: "+f.getLayerTypeLabels(f.featureCapableLayerTypes).join(", "));var d=w.isSome(a.signal)?{signal:a.signal}:null;yield c.load(d);var e=a.field;d=a.minValue;const l=a.maxValue,y=null!=

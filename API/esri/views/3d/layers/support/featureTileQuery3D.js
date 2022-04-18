@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/Accessor ../../../../core/maybe ../../../../core/promiseUtils ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/has ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../layers/graphics/dehydratedFeatures ../../../../rest/query/operations/query ../../support/PBFDecoder".split(" "),function(x,
 l,f,q,r,y,g,D,E,F,t,z,A,B){let k=function(b){function c(a){return b.call(this,a)||this}l._inheritsLoose(c,b);var d=c.prototype;d.queryFeatureCount=function(a,e){return this.layer.queryFeatureCount(a,e)};d.destroy=function(){this._decoder=r.destroyMaybe(this._decoder)};d._createRequestOptions=function(a){return{...a,query:{...this.layer.customParameters,token:this.layer.apiKey,...null==a?void 0:a.query}}};l._createClass(c,[{key:"queryFeaturesDehydrated",get:function(){var a=this.layer.capabilities;

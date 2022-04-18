@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./aaBoundingRect","./boundsUtils","./jsonUtils","./spatialReferenceUtils"],function(A,w,t,B,H){function I(b,c){let a,e;const [m,,k]=t.getBoundsXY(w.create(),b);if(k<=c)a=b;else if(m>=c)e=b;else{const d=[],l=[],n=[];for(var g of b.rings){const [q,,r]=t.getPointsBounds(w.create(),g);if(r<=c)d.push(g);else if(q>=c)l.push(g);else{var f=g[g.length-1];b=y(f,c);let p=[];for(var h of g){const u=y(h,c);u===b?p.push(h):(f=C(f,h,c),p.push(f),b?d.push(p):l.push(p),n.push(f[1]),p=[],p.push([f[0],
 f[1]]),p.push(h),b=u);f=h}b?d.push(p):l.push(p)}}n.sort((q,r)=>q-r);for(g=0;g<n.length-1;g+=2)h=[],h.push([c,n[g]]),h.push([c,n[g+1]]),0<d.length&&d.push(h),0<l.length&&l.push(h);0<d.length&&(a=D(d));0<l.length&&(e=D(l))}return[a,e]}function D(b){const c={rings:[]};for(;0<b.length;){const e=b[0];var a=!1;const [m,k]=e[0],[g,f]=e[e.length-1];if(m!==g||k!==f)for(let h=1;h<b.length;h++){const d=b[h],[l,n]=d[0],[q,r]=d[d.length-1];if(f===n&&g===l){for(a=1;a<d.length;a++)e.push([d[a][0],d[a][1]]);a=!0}else if(f===

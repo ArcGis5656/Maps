@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("require ./chunks/_rollupPluginBabelHelpers ./chunks/tslib.es6 ./core/Collection ./core/collectionUtils ./core/deprecate ./core/JSONSupport ./core/lang ./core/Loadable ./core/loadAll ./core/Logger ./core/maybe ./core/promiseUtils ./core/urlUtils ./core/accessorSupport/decorators/property ./core/accessorSupport/ensureType ./core/accessorSupport/decorators/subclass ./core/accessorSupport/decorators/writer ./geometry/SpatialReference ./portal/Portal ./portal/PortalItem ./support/basemapDefinitions ./webdoc/support/writeUtils".split(" "),
 function(D,n,h,t,x,E,g,F,G,H,I,y,u,v,l,Q,J,K,L,z,M,A,B){var q;let N=0;const w=I.getLogger("esri.Basemap");g=q=function(m){function k(b){var a=m.call(this,b)||this;a.id=null;a.portalItem=null;a.spatialReference=null;a.thumbnailUrl=null;a.title="Basemap";a.id=Date.now().toString(16)+"-basemap-"+N++;a.baseLayers=new t;a.referenceLayers=new t;const c=d=>{d.parent&&d.parent!==n._assertThisInitialized(a)&&"remove"in d.parent&&d.parent.remove(d);d.parent=n._assertThisInitialized(a);"elevation"===d.type&&

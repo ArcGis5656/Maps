@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../maquette/dom","../maquette/projector","./advanced-projector-options","./utils"],function(x,u,I,D,E){const F=(e,f)=>{const c=[];for(;e&&e!==f;)c.push(e),e=e.parentNode;return c},G=(e,f)=>e.find(f),y=(e,f,c=!1)=>{let g=e;f.forEach((k,p)=>{var h;const q=null!=(h=g)&&h.children?G(g.children,l=>l.domNode===k):void 0;if(!c||q||p===f.length-1)g=q});return g};x.createAdvancedProjector=e=>{let f;const c={...D.defaultAdvancedProjectorOptions,...e},g=E.applyDefaultProjectionOptions(c),
 k=g.performanceLogger;let p=!0,h,q=!1;const l=[],r=[],v=(b,a,z)=>{let m;g.eventHandlerInterceptor=(J,K,L,M)=>function(n){k("domEvent",n);var d=F(n.currentTarget,m.domNode);const H=d.some(t=>{var A;return customElements.get(null==t?void 0:null==(A=t.tagName)?void 0:A.toLowerCase())});n.eventPhase!==Event.CAPTURING_PHASE&&H?(d=n.composedPath(),d=d.slice(d.indexOf(n.currentTarget),d.indexOf(m.domNode)).filter(t=>t.getRootNode()===t.ownerDocument).reverse(),d=y(m.getLastRender(),d,!0)):(d.reverse(),d=

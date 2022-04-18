@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../colorUtils ../../core/Error ./effects ../../chunks/_commonjsHelpers ./utils".split(" "),function(X,O,z,J,Ba,Y){function Z(f){let n;if(!f)return[];try{n=aa.exports.parse(f)}catch(q){throw new z("effect:invalid-syntax","Invalid effect syntax",{value:f,error:q});}return n.map(q=>Ca(q))}function Ca(f){try{switch(f.name){case "grayscale":case "sepia":case "saturate":case "invert":case "brightness":case "contrast":var n,q=1;K(f.parameters,1);1===f.parameters.length&&(q=E(f.parameters[0]));
 return n=new J.ColorMatrixEffect(f.name,q);case "opacity":var d;q=1;K(f.parameters,1);1===f.parameters.length&&(q=E(f.parameters[0]));return d=new J.OpacityEffect(q);case "hue-rotate":var p;q=0;K(f.parameters,1);if(1===f.parameters.length){var m=f.parameters[0];if("quantity"!==m.type||!(0===m.value&&null===m.unit||m.unit&&null!=R[m.unit]))throw new z("effect:type-error",`Expected <angle>, Actual: ${P(m)}`,{term:m});q=m.value*R[m.unit]||0}return p=new J.HueRotateEffect(q);case "blur":var v;q=0;K(f.parameters,

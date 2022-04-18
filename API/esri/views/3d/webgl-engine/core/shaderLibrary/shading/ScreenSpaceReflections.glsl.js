@@ -1,7 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","../output/ReadLinearDepth.glsl","./Reprojection.glsl","../../shaderModules/interfaces"],function(c,e,d,f){c.ScreenSpaceReflections=function(a,b){a.fragment.uniforms.add("nearFar","vec2");a.fragment.uniforms.add("depthMapView","sampler2D");a.fragment.uniforms.add("ssrViewMat","mat4");a.fragment.uniforms.add("invResolutionHeight","float");a.fragment.include(e.ReadLinearDepth);a.include(d.Reprojection);a.fragment.code.add(f.glsl`
+define(["exports","../output/ReadLinearDepth.glsl","./Reprojection.glsl","../../shaderModules/interfaces"],function(c,e,d,f){c.ScreenSpaceReflections=function(a,b){a.fragment.uniforms.add("nearFar","vec2");a.fragment.uniforms.add("depthMapView","sampler2D");a.fragment.uniforms.add("view","mat4");a.fragment.uniforms.add("invResolutionHeight","float");a.fragment.include(e.ReadLinearDepth);a.include(d.Reprojection);a.fragment.code.add(f.glsl`
   const int maxSteps = ${b.highStepCount?"150;":"75;"}
 
   vec4 applyProjectionMat(mat4 projectionMat, vec3 x)
@@ -18,17 +18,17 @@ define(["exports","../output/ReadLinearDepth.glsl","./Reprojection.glsl","../../
     vec3 viewPosEnd = startPosition;
 
     // Project the start position to the screen
-    vec4 projectedCoordStart = applyProjectionMat(rpProjectionMat, viewPos);
+    vec4 projectedCoordStart = applyProjectionMat(proj, viewPos);
     vec3  Q0 = viewPos / projectedCoordStart.w; // homogeneous camera space
     float k0 = 1.0/ projectedCoordStart.w;
 
     // advance the position in the direction of the reflection
     viewPos += dir;
 
-    vec4 projectedCoordVanishingPoint = applyProjectionMat(rpProjectionMat, dir);
+    vec4 projectedCoordVanishingPoint = applyProjectionMat(proj, dir);
 
     // Project the advanced position to the screen
-    vec4 projectedCoordEnd = applyProjectionMat(rpProjectionMat, viewPos);
+    vec4 projectedCoordEnd = applyProjectionMat(proj, viewPos);
     vec3  Q1 = viewPos / projectedCoordEnd.w; // homogeneous camera space
     float k1 = 1.0/ projectedCoordEnd.w;
 
@@ -100,4 +100,4 @@ define(["exports","../output/ReadLinearDepth.glsl","./Reprojection.glsl","../../
     }
     return vec3(P, 0.0);
   }
-  `)};c.bindSSRUniforms=function(a,b){b.ssrEnabled&&(a.bindTexture(b.linearDepthTexture,"depthMapView"),a.setUniform2fv("nearFar",b.camera.nearFar),a.setUniformMatrix4fv("ssrViewMat",b.camera.viewMatrix),a.setUniform1f("invResolutionHeight",1/b.camera.height),d.bindReprojectionUniforms(a,b))};Object.defineProperty(c,"__esModule",{value:!0})});
+  `)};c.bindSSRUniforms=function(a,b){b.ssrEnabled&&(a.bindTexture(b.linearDepthTexture,"depthMapView"),a.setUniform2fv("nearFar",b.camera.nearFar),a.setUniformMatrix4fv("view",b.camera.viewMatrix),a.setUniform1f("invResolutionHeight",1/b.camera.height),d.bindReprojectionUniforms(a,b))};Object.defineProperty(c,"__esModule",{value:!0})});

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/JSONSupport ../core/lang ../core/accessorSupport/decorators/property ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/enumeration ../core/accessorSupport/decorators/reader ../core/accessorSupport/decorators/subclass ../core/accessorSupport/decorators/writer ./support/stretchRendererUtils ../rest/support/colorRamps".split(" "),function(t,c,b,f,d,y,u,n,v,w,e,p){var k;b=k=function(q){function l(a){a=q.call(this,
 a)||this;a.colorRamp=null;a.computeGamma=!1;a.dynamicRangeAdjustment=!1;a.gamma=[];a.maxPercent=null;a.minPercent=null;a.numberOfStandardDeviations=null;a.outputMax=null;a.outputMin=null;a.sigmoidStrengthLevel=null;a.statistics=[];a.histograms=null;a.useGamma=!1;a.stretchType="none";a.type="raster-stretch";return a}t._inheritsLoose(l,q);var g=l.prototype;g.readColorRamp=function(a){if(a)return p.fromJSON(a)};g.writeStatistics=function(a,m,x){var r;null!=(r=a)&&r.length&&(Array.isArray(a[0])||(a=a.map(h=>

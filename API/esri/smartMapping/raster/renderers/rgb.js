@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../chunks/_rollupPluginBabelHelpers","../../../core/Error","../../../renderers/support/rasterRendererHelper","../support/utils"],function(k,l,m,e,t){function u(a){return f.apply(this,arguments)}function f(){f=l._asyncToGenerator(function*(a){a=yield t.processRasterRendererParameters(a);const {rasterInfo:b}=a.layer;if(1===b.bandCount)throw new m("raster-rgb-renderer:not-supported","Only multiband image is supported");const {rgbBandIds:c}=a;if(c&&3!==c.length)throw new m("raster-rgb-renderer:invalid-parameters",
 "rgb band ids must have exactly three 0-based band indices");c||(a.rgbBandIds=e.getDefaultBandCombination(b));return a});return f.apply(this,arguments)}function g(){g=l._asyncToGenerator(function*(a){a=yield u(a);var b=a.layer;const {rasterInfo:c}=b,{rgbBandIds:n}=a,p={bandIds:n,stretchType:a.stretchType,includeStatisticsInStretch:a.includeStatisticsInStretch};let d=e.createStretchRenderer(c,p);a.estimateStatistics&&d.dynamicRangeAdjustment&&(yield b.updateRasterInfoWithEstimatedStats({renderingRule:a.renderingRule,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["../../../geometry/support/aaBoundingRect","./TileCache","./TileCoverage","./TileKey"],function(x,F,B,G){const m=new G(0,0,0,0),e=new Map,n=[],t=[];return function(){function C(a){this._previousScale=Number.POSITIVE_INFINITY;this.cachePolicy="keep";this.coveragePolicy="closest";this.resampling=!0;this.tileIndex=new Map;this.tiles=[];this.buffer=192;this.acquireTile=a.acquireTile;this.releaseTile=a.releaseTile;this.tileInfoView=a.tileInfoView;this.resampling=null==a.resampling||!!a.resampling;
 a.cachePolicy&&(this.cachePolicy=a.cachePolicy);a.coveragePolicy&&(this.coveragePolicy=a.coveragePolicy);null!=a.buffer&&(this.buffer=a.buffer);a.cacheSize&&(this._tileCache=new F(a.cacheSize,this.tileInfoView,d=>{this.releaseTile(d)}))}var p=C.prototype;p.destroy=function(){this.tileIndex.clear()};p.update=function(a){const {resampling:d,tileIndex:b}=this,f=this.tileInfoView.getTileCoverage(a.state,this.buffer,this.coveragePolicy);t.length=0;n.length=0;e.clear();if(f){var {minScale:u,maxScale:H}=

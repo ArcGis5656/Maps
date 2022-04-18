@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../chunks/tslib.es6 ../../../geometry ../../../core/Error ../../../core/HandleOwner ../../../core/has ../../../core/Loadable ../../../core/maybe ../../../core/promiseUtils ../../../core/workers/workers ../../../core/accessorSupport/decorators/property ../../../core/arrayUtils ../../../core/accessorSupport/ensureType ../../../core/accessorSupport/decorators/subclass ../../../geometry/support/typeUtils ./support/clientSideDefaults ../../ogc/wfsUtils ../../../rest/support/FeatureSet ../../../geometry/Extent".split(" "),
 function(e,f,k,L,x,y,z,A,r,t,B,l,M,N,C,D,u,n,E,F){e.WFSSource=function(v){function p(){var b=v.apply(this,arguments)||this;b.capabilities=u.createCapabilities(!1,!1);b.type="wfs";b.refresh=t.debounce(function(){var a=f._asyncToGenerator(function*(c){yield b.load();({extent:c}=yield b._connection.invoke("refresh",c));b.sourceJSON.extent=c;return{dataChanged:!0,updates:{extent:b.sourceJSON.extent}}});return function(c){return a.apply(this,arguments)}}());return b}f._inheritsLoose(p,v);var g=p.prototype;

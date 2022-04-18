@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../chunks/_rollupPluginBabelHelpers","../../ViewState","../../engine/Container","../../engine/webgl/enums"],function(g,l,q,f,r){f=function(m){function h(a){var b=m.call(this)||this;b.layerView=a;b._childrenRenderParameters={context:null,pixelRatio:1,state:new q,stationary:!0,painter:null};b._name=b.constructor.name;b.requestRender=b.requestRender.bind(l._assertThisInitialized(b));return b}l._inheritsLoose(h,m);var n=h.prototype;n.doRender=function(a){if(a.drawPhase===r.WGLDrawPhase.MAP){var b=
 window.devicePixelRatio,{stationary:t,context:d,painter:k,profiler:p}=a,e=this._childrenRenderParameters;e.context=d.gl;e.state.copy(a.state);e.state.pixelRatio=b;e.stationary=t;e.painter=k;a=this.createRenderParams(a);k.beforeRenderLayer(a,this.clips?255:0,a.globalOpacity);p.recordContainerStart(this._name);b=d.getBoundFramebufferObject();var c=d.getViewport();d.resetState();d.bindFramebuffer(b);d.setViewport(c.x,c.y,c.width,c.height);this.layerView._renderTarget.framebuffer=b.glName;this.layerView._renderTarget.viewport[0]=

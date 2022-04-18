@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../handleUtils","../lang","../maybe"],function(g,t,u,v){function p(a){return a?a.__accessor__?a.__accessor__:a.propertyInvalidated?a:null:null}function k(a,b,c){return b?Object.keys(b).reduce(function(d,e){let m=null;var f="merge";c&&(m=c.path?`${c.path}.${e}`:e,f=c.policy(m));if("replace"===f)return d[e]=b[e],d;if(void 0===d[e])return d[e]=u.clone(b[e]),d;let h=d[e];f=b[e];if(h===f)return d;if(Array.isArray(f)||Array.isArray(d))h=h?Array.isArray(h)?d[e]=h.concat():d[e]=[h]:d[e]=
 [],f&&(Array.isArray(f)||(f=[f]),f.forEach(l=>{-1===h.indexOf(l)&&h.push(l)}));else if(f&&"object"===typeof f)if(c){const l=c.path;c.path=v.assumeNonNull(m);d[e]=k(h,f,c);c.path=l}else d[e]=k(h,f,null);else if(!d.hasOwnProperty(e)||b.hasOwnProperty(e))d[e]=f;return d},a||{}):a}function n(a){return Array.isArray(a)?a:a.split(".")}function q(a){return-1<a.indexOf(",")?a.split(",").map(b=>b.trim()):[a.trim()]}function r(a){if(Array.isArray(a)){const b=[];for(const c of a)b.push(...q(c));return b}return q(a)}

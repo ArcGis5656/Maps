@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../core/JSONSupport ../../core/lang ../../core/accessorSupport/decorators/property ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer ../../layers/support/source/DataLayerSource ../../geometry/SpatialReference".split(" "),function(m,c,a,n,p,d,q,r,g,t,u){var h;a=h=function(e){function k(b){b=e.call(this,b)||this;b.dynamicDataSource=void 0;
 b.gdbVersion=null;b.geometryPrecision=void 0;b.historicMoment=null;b.maxAllowableOffset=void 0;b.objectIds=null;b.orderByFields=null;b.outFields=null;b.outSpatialReference=null;b.relationshipId=void 0;b.start=void 0;b.num=void 0;b.returnGeometry=!1;b.returnM=void 0;b.returnZ=void 0;b.where=null;return b}m._inheritsLoose(k,e);var l=k.prototype;l._writeHistoricMoment=function(b,f){f.historicMoment=b&&b.getTime()};l.writeStart=function(b,f){f.resultOffset=this.start;f.resultRecordCount=this.num||10;

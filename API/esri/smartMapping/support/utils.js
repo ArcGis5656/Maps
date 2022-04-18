@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../chunks/_rollupPluginBabelHelpers","../../support/arcadeOnDemand","../../support/basemapUtils"],function(e,q,r,t){function h(){h=q._asyncToGenerator(function*(a){const b=a.field,d=a.normalizationField;a=a.valueExpression;var c=[];a&&(k||({arcadeUtils:c}=yield r.loadArcade(),k=c),c=k.extractFieldNames(a));b&&c.push(b);d&&c.push(d);return c});return h.apply(this,arguments)}function g(a){return String(a).padStart(2,"0")}function n(a,b,d){if("date"===b||"number"===b){"number"===
 b&&(a=new Date(a));b=d?a.getFullYear():a.getUTCFullYear();const c=g((d?a.getMonth():a.getUTCMonth())+1),f=g(d?a.getDate():a.getUTCDate()),u=g(d?a.getHours():a.getUTCHours()),v=g(d?a.getMinutes():a.getUTCMinutes());a=g(d?a.getSeconds():a.getUTCSeconds());a=`TIMESTAMP'${b}-${c}-${f} ${u}:${v}:${a}'`}return a}function l(a,b){if(b instanceof Date)return"date";if("number"===typeof b)return"number";if("string"===typeof b&&(a=a.getField(b),"\x3cnow\x3e"!==b.toLowerCase()&&a&&"date"===a.type))return"field"}

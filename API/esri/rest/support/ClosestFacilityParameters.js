@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../geometry ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/enumeration ../../core/accessorSupport/decorators/reader ../../core/accessorSupport/decorators/subclass ../../core/accessorSupport/decorators/writer ./commonProperties ./networkEnums ./TravelMode ../../geometry/SpatialReference".split(" "),
 function(m,c,b,n,d,w,x,y,e,p,q,r,t,f,u,v){b=function(k){function h(a){a=k.call(this,a)||this;a.accumulateAttributes=null;a.apiKey=null;a.attributeParameterValues=null;a.defaultCutoff=null;a.defaultTargetFacilityCount=null;a.directionsLanguage=null;a.directionsLengthUnits=null;a.directionsOutputType=null;a.directionsStyleName=null;a.directionsTimeAttribute=null;a.facilities=null;a.impedanceAttribute=null;a.incidents=null;a.outputGeometryPrecision=null;a.outputGeometryPrecisionUnits=null;a.outputLines=

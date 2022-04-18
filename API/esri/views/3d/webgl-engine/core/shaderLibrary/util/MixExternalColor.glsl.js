@@ -1,20 +1,20 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
-define(["exports","./ColorConversion.glsl","../../shaderModules/interfaces"],function(b,d,a){b.MixExternalColor=function(c){c.include(d.ColorConversion);c.code.add(a.glsl`
+define(["exports","../../../../layers/support/symbolColorUtils","./ColorConversion.glsl","../../shaderModules/interfaces"],function(c,b,e,a){c.MixExternalColor=function(d){d.include(e.ColorConversion);d.code.add(a.glsl`
     vec3 mixExternalColor(vec3 internalColor, vec3 textureColor, vec3 externalColor, int mode) {
       // workaround for artifacts in OSX using Intel Iris Pro
       // see: https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/10475
       vec3 internalMixed = internalColor * textureColor;
       vec3 allMixed = internalMixed * externalColor;
 
-      if (mode == ${a.glsl.int(1)}) {
+      if (mode == ${a.glsl.int(b.ColorMixModeEnum.Multiply)}) {
         return allMixed;
       }
-      else if (mode == ${a.glsl.int(2)}) {
+      else if (mode == ${a.glsl.int(b.ColorMixModeEnum.Ignore)}) {
         return internalMixed;
       }
-      else if (mode == ${a.glsl.int(3)}) {
+      else if (mode == ${a.glsl.int(b.ColorMixModeEnum.Replace)}) {
         return externalColor;
       }
       else {
@@ -32,10 +32,10 @@ define(["exports","./ColorConversion.glsl","../../shaderModules/interfaces"],fun
       float internalMixed = internalOpacity * textureOpacity;
       float allMixed = internalMixed * externalOpacity;
 
-      if (mode == ${a.glsl.int(2)}) {
+      if (mode == ${a.glsl.int(b.ColorMixModeEnum.Ignore)}) {
         return internalMixed;
       }
-      else if (mode == ${a.glsl.int(3)}) {
+      else if (mode == ${a.glsl.int(b.ColorMixModeEnum.Replace)}) {
         return externalOpacity;
       }
       else {
@@ -43,4 +43,4 @@ define(["exports","./ColorConversion.glsl","../../shaderModules/interfaces"],fun
         return allMixed;
       }
     }
-  `)};Object.defineProperty(b,"__esModule",{value:!0})});
+  `)};Object.defineProperty(c,"__esModule",{value:!0})});

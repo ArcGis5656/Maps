@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../../chunks/_rollupPluginBabelHelpers ../../../../chunks/tslib.es6 ../../../../core/Accessor ../../../../core/has ../../../../core/accessorSupport/decorators/property ../../../../core/arrayUtils ../../../../core/accessorSupport/ensureType ../../../../core/accessorSupport/decorators/subclass ../../../../core/libs/rbush/PooledRBush ../../../../geometry/support/aaBoundingBox ../../../../layers/graphics/dehydratedFeatures".split(" "),function(c,m,f,q,r,h,w,x,t,u,v,n){c.SpatialIndex2D=
 function(p){function k(a){a=p.call(this,a)||this;a._index=new u.PooledRBush(9,r("esri-csp-restrictions")?b=>({minX:b.extent[0],minY:b.extent[1],maxX:b.extent[2],maxY:b.extent[3]}):[".extent[0]",".extent[1]",".extent[2]",".extent[3]"]);a._missing=new Set;a._boundsByFeature=new Map;a.spatialReference=null;a.hasZ=null;a.hasM=null;a.objectIdField=null;a.updating=!1;return a}m._inheritsLoose(k,p);var d=k.prototype;d.setup=function(a){this._addMany(a)};d.destroy=function(){this._missing.clear();this._index.destroy();

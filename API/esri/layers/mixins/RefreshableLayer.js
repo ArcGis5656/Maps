@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Logger ../../core/promiseUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./refresh".split(" "),function(h,e,f,p,m,k,r,t,u,q,n){h.RefreshableLayer=b=>{b=function(c){function g(...d){var a=c.call(this,...d)||this;a.refreshInterval=0;a.refreshTimestamp=0;a._debounceHasDataChanged=m.debounce(()=>
 a.hasDataChanged());a.when().then(()=>{n.registerLayer(e._assertThisInitialized(a))},()=>{});return a}e._inheritsLoose(g,c);var l=g.prototype;l.destroy=function(){n.unregisterLayer(this)};l.refresh=function(d=Date.now()){m.ignoreAbortErrors(this._debounceHasDataChanged()).then(a=>{a&&this._set("refreshTimestamp",d);this.emit("refresh",{dataChanged:a})},a=>{p.getLogger(this.declaredClass).error(a);this.emit("refresh",{dataChanged:!1,error:a})})};l.hasDataChanged=function(){var d=e._asyncToGenerator(function*(){return!0});

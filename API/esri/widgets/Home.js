@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Widget ./Home/HomeViewModel ./support/decorators/accessibleHandler ./support/decorators/messageBundle ../core/Logger ./support/decorators/vmEvent ./support/jsxFactory ./support/widgetUtils".split(" "),function(l,c,g,b,x,y,e,q,r,m,t,n,z,u,
 k,A){b=function(p){function h(a,d){a=p.call(this,a,d)||this;a.goToOverride=null;a.iconClass="esri-icon-home";a.label=void 0;a.messages=null;a.messagesCommon=null;a.view=null;a.viewModel=new m;a.viewpoint=null;return a}l._inheritsLoose(h,p);var f=h.prototype;f.cancelGo=function(){return null};f.go=function(){return null};f.render=function(){var a;const d=null==(a=this.viewModel)?void 0:a.state;({homeTitle:a}=this);return k.tsx("div",{bind:this,class:this.classes("esri-home esri-widget--button esri-widget",

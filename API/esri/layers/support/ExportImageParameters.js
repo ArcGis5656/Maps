@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/HandleOwner ../../core/maybe ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./commonProperties ./sublayerUtils ../../views/support/floorFilterUtils".split(" "),function(d,m,e,q,r,t,f,A,B,C,u,v,w,l){const x={visible:"visibleSublayers",definitionExpression:"layerDefs",labelingInfo:"hasDynamicLayers",
 labelsVisible:"hasDynamicLayers",opacity:"hasDynamicLayers",minScale:"visibleSublayers",maxScale:"visibleSublayers",renderer:"hasDynamicLayers",source:"hasDynamicLayers"};d.ExportImageParameters=function(n){function k(a){a=n.call(this,a)||this;a.floors=null;a.scale=0;return a}m._inheritsLoose(k,n);var p=k.prototype;p.destroy=function(){this.layer=null};p.toJSON=function(){var a=this.layer;a={dpi:a.dpi,format:a.imageFormat,transparent:a.imageTransparency,gdbVersion:a.gdbVersion||null};this.hasDynamicLayers&&

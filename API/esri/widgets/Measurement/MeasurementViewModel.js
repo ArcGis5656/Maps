@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/unitUtils ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ../../properties/defaultUnit".split(" "),function(f,c,b,g,d,m,n,p,k,l){b=function(h){function e(a){a=h.call(this,a)||this;a.activeTool=null;a.activeViewModel=null;a.view=null;return a}f._inheritsLoose(e,h);f._createClass(e,
 [{key:"areaUnit",get:function(){return this.defaultUnit},set:function(a){void 0===a?this._clearOverride("areaUnit"):this._override("areaUnit",a)}},{key:"linearUnit",get:function(){return this.defaultUnit},set:function(a){void 0===a?this._clearOverride("linearUnit"):this._override("linearUnit",a)}},{key:"state",get:function(){const {activeViewModel:a}=this;return a?a.state:"disabled"}}]);return e}(b);c.__decorate([d.property({type:["area","distance","direct-line"]})],b.prototype,"activeTool",void 0);

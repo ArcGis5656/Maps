@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/JSONSupport ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./VoxelFormat".split(" "),function(h,b,a,d,l,m,n,k,e){a=function(f){function g(){var c=f.apply(this,arguments)||this;c.id=null;c.description="";c.name=null;c.originalFormat=null;c.renderingFormat=null;c.unit="";c.volumeId=0;c.type=null;return c}
 h._inheritsLoose(g,f);return g}(a.JSONSupport);b.__decorate([d.property({type:Number,json:{write:{enabled:!0,isRequired:!0}}})],a.prototype,"id",void 0);b.__decorate([d.property({type:String,json:{write:!0}})],a.prototype,"description",void 0);b.__decorate([d.property({type:String,json:{write:{enabled:!0,isRequired:!0}}})],a.prototype,"name",void 0);b.__decorate([d.property({type:e,json:{write:!0}})],a.prototype,"originalFormat",void 0);b.__decorate([d.property({type:e,json:{write:{enabled:!0,isRequired:!0}}})],

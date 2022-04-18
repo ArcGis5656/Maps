@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../chunks/_rollupPluginBabelHelpers ../chunks/tslib.es6 ../Color ../core/watchUtils ../core/accessorSupport/decorators/aliasOf ../core/arrayUtils ../core/has ../core/accessorSupport/ensureType ../core/accessorSupport/decorators/property ../core/accessorSupport/decorators/subclass ./Histogram ./Slider ./Widget ./HistogramRangeSlider/HistogramRangeSliderViewModel ./smartMapping/support/utils ./support/widgetUtils ./support/decorators/messageBundle ../core/Logger ./support/jsxFactory".split(" "),
 function(y,e,q,r,m,d,G,w,n,z,A,B,C,D,E,H,F,I,u){d=function(x){function v(a,g){a=x.call(this,a,g)||this;a._barElements=[];a._histogram=null;a._slider=null;a.average=null;a.barCreatedFunction=null;a.bins=null;a.dataLines=null;a.dataLineCreatedFunction=null;a.excludedBarColor=new q("#d7e5f0");a.hasTimeData=null;a.includedBarColor=new q("#599dd4");a.label=void 0;a.labelFormatFunction=null;a.max=null;a.messages=null;a.min=null;a.precision=4;a.rangeType=null;a.standardDeviation=null;a.standardDeviationCount=

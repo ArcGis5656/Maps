@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("./chunks/_rollupPluginBabelHelpers ./chunks/tslib.es6 ./Camera ./geometry ./core/JSONSupport ./core/maybe ./core/accessorSupport/decorators/property ./core/arrayUtils ./core/has ./core/accessorSupport/decorators/cast ./core/accessorSupport/decorators/subclass ./geometry/support/jsonUtils".split(" "),function(n,c,p,q,b,h,d,u,v,r,t,k){function e(){return{enabled:!this.camera}}var f;b=f=function(l){function g(a){a=l.call(this,a)||this;a.rotation=0;a.scale=0;a.targetGeometry=null;a.camera=null;
 return a}n._inheritsLoose(g,l);var m=g.prototype;m.castRotation=function(a){a%=360;0>a&&(a+=360);return a};m.clone=function(){return new f({rotation:this.rotation,scale:this.scale,targetGeometry:h.isSome(this.targetGeometry)?this.targetGeometry.clone():null,camera:h.isSome(this.camera)?this.camera.clone():null})};return g}(b.JSONSupport);c.__decorate([d.property({type:Number,json:{write:!0,origins:{"web-map":{default:0,write:!0},"web-scene":{write:{overridePolicy:e}}}}})],b.prototype,"rotation",void 0);

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../chunks/_rollupPluginBabelHelpers ../../colorUtils ../../core/screenUtils ../../chunks/mat4f32 ./colorMatrixFunctions".split(" "),function(g,m,v,w,n,h){function f(b,c,a){return b+(c-b)*a}function k(b){return Math.round(1E3*w.px2pt(b))/1E3}let p=function(){function b(a,d,e){this.strength=a;this.radius=d;this.threshold=e;this.type="bloom"}var c=b.prototype;c.interpolate=function(a,d,e){this.strength=f(a.strength,d.strength,e);this.radius=f(a.radius,d.radius,e);this.threshold=f(a.threshold,
 d.threshold,e)};c.clone=function(){return new b(this.strength,this.radius,this.threshold)};c.toJSON=function(){return{type:"bloom",radius:k(this.radius),strength:this.strength,threshold:this.threshold}};return b}(),q=function(){function b(a){this.radius=a;this.type="blur"}var c=b.prototype;c.interpolate=function(a,d,e){this.radius=Math.round(f(a.radius,d.radius,e))};c.clone=function(){return new b(this.radius)};c.toJSON=function(){return{type:"blur",radius:k(this.radius)}};return b}(),l=function(){function b(a,

@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../chunks/_rollupPluginBabelHelpers","../../../core/maybe","../../../core/unitUtils","./constants"],function(t,J,e,r,K){function v(a,b){return e.isNone(b)?a:e.isSome(a)?Math.min(a,b):b}function n(a,b){return e.isNone(b)?a:e.isSome(a)?Math.max(a,b):b}function w(a,b){return e.isSome(a)&&e.isSome(b)?a*b:null}let D=function(){function a(){this._sampleCount=this._totalElevation=this._start=0}var b=a.prototype;b.copy=function(c){this._start=c._start;this._sampleCount=c._sampleCount;
 this._totalElevation=c._totalElevation};b.reset=function(){this._totalElevation=this._sampleCount=this._start=0};b.restart=function(c,d){this._start=c;this._sampleCount=1;this._totalElevation=d};b.insert=function(c){++this._sampleCount;this._totalElevation+=c};J._createClass(a,[{key:"avgElevation",get:function(){return this._totalElevation/this._sampleCount}},{key:"isHole",get:function(){return 0===this._sampleCount}},{key:"start",get:function(){return this._start}}]);return a}();t.getBoundsInMeters=

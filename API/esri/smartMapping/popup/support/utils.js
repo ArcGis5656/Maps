@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("exports ../../../chunks/_rollupPluginBabelHelpers ../../../core/arrayUtils ../../../intl/messages ../../../intl/substitute ../../../layers/support/fieldUtils ../../../popup/content/AttachmentsContent ../../../popup/content/Content ../../../popup/content/CustomContent ../../../popup/content/ExpressionContent ../../../popup/content/FieldsContent ../../../popup/content/MediaContent ../../../popup/content/TextContent ../../../popup/ExpressionInfo ../../../popup/FieldInfo ../../../renderers/support/utils ../../../renderers/visualVariables/support/visualVariableUtils".split(" "),
 function(m,v,w,x,p,A,I,J,K,L,B,M,C,D,y,E,F){function z(a){return"hasVisualVariables"in a&&a.hasVisualVariables()?a.visualVariables.filter(b=>F.viewScaleRE.test(b.valueExpression)||"target"in b&&"outline"===b.target?!1:!0):[]}function n(a,b){let k=null;"popupTemplate"in a&&a.popupTemplate&&(k=a.popupTemplate.fieldInfos);const c=a.getField(b);let f=null;k&&k.some(e=>e&&e.fieldName.toLowerCase()===c.name.toLowerCase()?(f=e.clone(),!0):!1);f||(a=-1<A.numericTypes.indexOf(c.type),b="integer"===c.type||

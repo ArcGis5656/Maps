@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","../../../../core/LRUCache","../../../../core/maybe","../../tiling/TileCoverage","../../tiling/TileKey"],function(v,x,m,y,t){const z=(n,g)=>n+1/(1<<2*g);let B=function(){function n(a,b){this._tiles=new Map;this._tileCache=new x(40,c=>c.dispose());this._viewSize=[0,0];this._visibleTiles=new Map;this.acquireTile=a.acquireTile;this.releaseTile=a.releaseTile;this.tileInfoView=a.tileInfoView;this._container=b}var g=n.prototype;g.destroy=function(){for(const [,a]of this._tiles)a.dispose();
 this._tiles=null;this._tileCache.clear();this._tileCache=null};g.update=function(a){this._updateCacheSize(a);const b=this.tileInfoView;a=b.getTileCoverage(a.state,0,"smallest");const {spans:c,lodInfo:e}=a,{level:f}=e,d=this._tiles,l=new Set,p=new Set;for(const {row:h,colFrom:k,colTo:A}of c)for(let q=k;q<=A;q++){const u=t.getId(f,h,e.normalizeCol(q),e.getWorldForColumn(q)),w=this._getOrAcquireTile(u);l.add(u);w.processed()?this._addToContainer(w):p.add(new t(u))}for(const [h,k]of d)k.isCoverage=l.has(h);

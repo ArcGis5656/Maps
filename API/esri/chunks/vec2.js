@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define(["exports","./common"],function(d,r){function t(a,b){a[0]=b[0];a[1]=b[1];return a}function u(a,b,c){a[0]=b;a[1]=c;return a}function v(a,b,c){a[0]=b[0]+c[0];a[1]=b[1]+c[1];return a}function h(a,b,c){a[0]=b[0]-c[0];a[1]=b[1]-c[1];return a}function k(a,b,c){a[0]=b[0]*c[0];a[1]=b[1]*c[1];return a}function l(a,b,c){a[0]=b[0]/c[0];a[1]=b[1]/c[1];return a}function w(a,b){a[0]=Math.ceil(b[0]);a[1]=Math.ceil(b[1]);return a}function x(a,b){a[0]=Math.floor(b[0]);a[1]=Math.floor(b[1]);return a}function y(a,
 b,c){a[0]=Math.min(b[0],c[0]);a[1]=Math.min(b[1],c[1]);return a}function z(a,b,c){a[0]=Math.max(b[0],c[0]);a[1]=Math.max(b[1],c[1]);return a}function A(a,b){a[0]=Math.round(b[0]);a[1]=Math.round(b[1]);return a}function B(a,b,c){a[0]=b[0]*c;a[1]=b[1]*c;return a}function C(a,b,c,e){a[0]=b[0]+c[0]*e;a[1]=b[1]+c[1]*e;return a}function m(a,b){const c=b[0]-a[0];a=b[1]-a[1];return Math.sqrt(c*c+a*a)}function n(a,b){const c=b[0]-a[0];a=b[1]-a[1];return c*c+a*a}function p(a){const b=a[0];a=a[1];return Math.sqrt(b*

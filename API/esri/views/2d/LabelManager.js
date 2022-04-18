@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../chunks/_rollupPluginBabelHelpers ../../chunks/tslib.es6 ../../core/Accessor ../../core/Error ../../core/HandleOwner ../../core/Logger ../../core/throttle ../../core/accessorSupport/decorators/property ../../core/arrayUtils ../../core/has ../../core/accessorSupport/ensureType ../../core/accessorSupport/decorators/subclass ./engine/webgl/collisions/CollisionEngine".split(" "),function(g,d,b,l,m,n,p,e,u,v,w,q,r){const t=n.getLogger("esri.views.2d.layers.labels.LabelManager");b=function(k){function f(a){a=
 k.call(this,a)||this;a._applyVisibilityPassThrottled=p.throttle(a._applyVisibilityPass,32,g._assertThisInitialized(a));a.lastUpdateId=-1;a.updateRequested=!1;a.view=null;return a}g._inheritsLoose(f,k);var c=f.prototype;c.initialize=function(){this.collisionEngine=new r.CollisionEngine};c.destroy=function(){this.collisionEngine=null;this._applyVisibilityPassThrottled.remove();this._applyVisibilityPassThrottled=null};c.update=function(a){this._applyVisibilityPassThrottled(a)};c.viewChange=function(){this.requestUpdate()};

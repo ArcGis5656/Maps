@@ -1,5 +1,5 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-// See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+// See https://js.arcgis.com/4.23/esri/copyright.txt for details.
 //>>built
 define("../../../chunks/_rollupPluginBabelHelpers ../../../core/Error ./CloudRaster ./ImageAuxRaster ./ImageServerRaster ./MRFRaster ./TIFFRaster".split(" "),function(l,p,q,g,r,t,u){const b=new Map;b.set("CRF",{desc:"Cloud Raster Format",constructor:q});b.set("MRF",{desc:"Meta Raster Format",constructor:t});b.set("TIFF",{desc:"GeoTIFF",constructor:u});b.set("RasterTileServer",{desc:"Raster Tile Server",constructor:r});b.set("JPG",{desc:"JPG Raster Format",constructor:g});b.set("PNG",{desc:"PNG Raster Format",
 constructor:g});b.set("GIF",{desc:"GIF Raster Format",constructor:g});b.set("BMP",{desc:"BMP Raster Format",constructor:g});return function(){function h(){}h.open=function(){var e=l._asyncToGenerator(function*(d){const {url:c,ioConfig:v,sourceJSON:w}=d;let a=d.datasetFormat;null==a&&c.lastIndexOf(".")&&(a=c.slice(c.lastIndexOf(".")+1).toUpperCase());if("OVR"===a||"TIF"===a)a="TIFF";else if("JPG"===a||"JPEG"===a||"JFIF"===a)a="JPG";-1<c.toLowerCase().indexOf("/imageserver")&&-1===c.toLowerCase().indexOf("/wcsserver")&&
