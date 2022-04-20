@@ -124,20 +124,20 @@ const Landscontent = [
     type: "fields",
     fieldInfos: [
       {
+        label: "المالك",
         fieldName: "relationships/32/Owner_Name",
-        label: "Owner",
       },
       {
+        label: "نوع الأرض",
         fieldName: "Type_Land",
-        label: "Land's Type",
       },
       {
+        label: "المساحة",
         fieldName: "Area",
-        label: "Land's Area",
       },
       {
+        label: "المديرية",
         fieldName: "relationships/30/Directorate_Name_Arabic",
-        label: "Directorate",
       },
     ],
   },

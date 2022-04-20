@@ -217,7 +217,7 @@ require([
   var AnimalsLayer = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/7",
     id: "Animals",
-    visible: true,
+    visible: false,
     renderer: AnimalsRenderer,
     labelingInfo: [Lable("$feature.AnimalID")],
     outFields: ["AnimalID"],
@@ -229,7 +229,7 @@ require([
   var LandsLayer = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/11",
     id: "Lands",
-    visible: false,
+    visible: true,
     renderer: LandsRenderer,
     labelingInfo: [Lable("$feature.LandID")],
     outFields: ["LandID"],
@@ -258,8 +258,8 @@ require([
   map.add(LabLayer); // adds the layer to the map
   map.add(WorkshopsLayer); // adds the layer to the map
   map.add(PointsSalesLayer); // adds the layer to the map
-  map.add(LandsLayer); // adds the layer to the map
   map.add(AnimalsLayer); // adds the layer to the map
+  map.add(LandsLayer); // adds the layer to the map
 
   /*****************************************************************/
 
@@ -306,13 +306,13 @@ require([
    * properties may be accessed. Once the population layer has loaded,
    * the view will animate to it's initial extent.
    *****************************************************************/
-  view.when(() => {
-    YemenLayer.when(() => {
-      view.goTo(YemenLayer.fullExtent).catch((YemenError) => {
-        console.error(YemenError);
-      });
-    });
-  });
+  // view.when(() => {
+  //   YemenLayer.when(() => {
+  //     view.goTo(YemenLayer.fullExtent).catch((YemenError) => {
+  //       console.error(YemenError);
+  //     });
+  //   });
+  // });
   // view.when(() => {
   //   GovernmentLayer.when(() => {
   //     view.goTo(GovernmentLayer.fullExtent).catch((errorGovernment) => {
@@ -327,13 +327,13 @@ require([
   //     });
   //   });
   // });
-  // view.when(() => {
-  //   LandsLayer.when(() => {
-  //     view.goTo(LandsLayer.fullExtent).catch((errorLand) => {
-  //       console.error(errorLand);
-  //     });
-  //   });
-  // });
+  view.when(() => {
+    LandsLayer.when(() => {
+      view.goTo(LandsLayer.fullExtent).catch((errorLand) => {
+        console.error(errorLand);
+      });
+    });
+  });
 
   /*****************************************************************
    * The visible property on the layer can be used to toggle the
