@@ -149,24 +149,24 @@ const Animalscontent = [
     type: "fields",
     fieldInfos: [
       {
+        label: "المالك",
         fieldName: "relationships/26/Owner_Name",
-        label: "Owner",
       },
       {
+        label: "نوع الحيوان",
         fieldName: "Type",
-        label: "Animal's Type",
       },
       {
+        label: "عدد الحيوانات",
         fieldName: "Count",
-        label: "Animal's Count",
       },
       {
+        label: "كمية الإنتاج",
         fieldName: "Quantity_Production",
-        label: "Animal's Quantity Production ",
       },
       {
+        label: "المديرية",
         fieldName: "relationships/28/Directorate_Name_Arabic",
-        label: "Directorate",
       },
     ],
   },
