@@ -595,7 +595,7 @@ require([
   var RepositoryLayer = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/2",
     id: "Repository",
-    visible: true,
+    visible: false,
     renderer: serviceCenterRenderer,
     labelingInfo: [Lable("$feature.Repositories_Name")],
 
@@ -610,6 +610,26 @@ require([
         },
       ],
       content: Repositoriescontent,
+    },
+  });
+  var FridgesLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/3",
+    id: "Fridges",
+    visible: true,
+    renderer: serviceCenterRenderer,
+    labelingInfo: [Lable("$feature.Fridge_Name")],
+
+    outFields: ["Fridge_Name", "Energy_Used", "Capacity"],
+    popupTemplate: {
+      title: "{Fridge_Name}",
+      expressionInfos: [
+        {
+          name: "Vacant Energy",
+          title: "الطاقة الشاغرة",
+          expression: "$feature.Capacity - $feature.Energy_Used",
+        },
+      ],
+      content: Fridgescontent,
     },
   });
   var LandsLayer = new FeatureLayer({
@@ -637,26 +657,6 @@ require([
     },
   });
 
-  var FridgesLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/3",
-    id: "Fridges",
-    visible: false,
-    renderer: serviceCenterRenderer,
-    labelingInfo: [Lable("$feature.Fridge_Name")],
-
-    outFields: ["Fridge_Name", "Energy_Used", "Capacity"],
-    popupTemplate: {
-      title: "{Fridge_Name}",
-      expressionInfos: [
-        {
-          name: "Vacant Energy",
-          title: "الطاقة الشاغرة",
-          expression: "$feature.Capacity - $feature.Energy_Used",
-        },
-      ],
-      content: Fridgescontent,
-    },
-  });
   /*****************************************************************
    *! Layers may be added to the map in the map's constructor
    *****************************************************************/
