@@ -510,6 +510,123 @@ require([
     },
   ];
 
+  const LabsRenderer = {
+    type: "unique-value", // autocasts as new UniqueValueRenderer()
+    field: "Actual_Power",
+    defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
+    visualVariables: [
+      {
+        type: "color",
+        field: "Actual_Power",
+        normalizationField: "Maximum_Power",
+        legendOptions: {
+          title: "% الطاقة الشاغرة",
+        },
+        stops: [
+          {
+            value: 0,
+            color: "yellow",
+
+            label: "=0%",
+          },
+          {
+            value: 0.99,
+            color: "orange",
+            label: "<= 99% & >0%",
+          },
+          {
+            value: 1,
+            color: "red",
+            label: "=100%",
+          },
+        ],
+      },
+      {
+        type: "size",
+        field: "Actual_Power",
+        normalizationField: "Maximum_Power",
+        stops: [
+          {
+            value: 0,
+            size: 18,
+            label: "=0%",
+          },
+          {
+            value: 0.99,
+            size: 12,
+            label: "<= 99% & >0%",
+          },
+          {
+            value: 1,
+            size: 8,
+            label: "=100%",
+          },
+        ],
+      },
+    ],
+  };
+  const Labscontent = [
+    {
+      // content: "Repository's Vacant Energy {Energy_Used / Capacity}",
+      // Pass in the fields to display
+
+      type: "fields",
+      fieldInfos: [
+        {
+          label: "اسم المعمل",
+          fieldName: "Lab_Name",
+        },
+        {
+          label: "المسؤول",
+          fieldName: "Administrator",
+        },
+        {
+          label: "الكود",
+          fieldName: "Code",
+        },
+        {
+          label: "التصريح",
+          fieldName: "Declaration",
+        },
+        {
+          label: "الطاقة القصوى",
+          fieldName: "Maximum_Power",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة الفعلية",
+          fieldName: "Actual_Power",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة الغير مستغلة",
+          fieldName: "expression/Unused Energy",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "التلفون",
+          fieldName: "relationships/18/Phone",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "المديرية",
+          fieldName: "relationships/19/Directorate_Name_Arabic",
+        },
+        {
+          label: "المحافظة",
+          fieldName: "relationships/1/relationships/29/Government_Name_Arabic",
+        },
+      ],
+    },
+  ];
   /*****************************************************************
    *! Create FeatureLayers instances.
    *****************************************************************/
@@ -612,10 +729,10 @@ require([
       content: Repositoriescontent,
     },
   });
-  var FridgesLayer = new FeatureLayer({
+  var FridgeLayer = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/3",
     id: "Fridges",
-    visible: true,
+    visible: false,
     renderer: serviceCenterRenderer,
     labelingInfo: [Lable("$feature.Fridge_Name")],
 
@@ -630,6 +747,26 @@ require([
         },
       ],
       content: Fridgescontent,
+    },
+  });
+  var LabLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/4",
+    id: "Labs",
+    visible: true,
+    renderer: LabsRenderer,
+    labelingInfo: [Lable("$feature.Lab_Name")],
+
+    outFields: ["Lab_Name", "Actual_Power", "Maximum_Power"],
+    popupTemplate: {
+      title: "{Lab_Name}",
+      expressionInfos: [
+        {
+          name: "Unused Energy",
+          title: "الطاقة الغير مستغلة",
+          expression: "$feature.Maximum_Power - $feature.Actual_Power",
+        },
+      ],
+      content: Labscontent,
     },
   });
   var LandsLayer = new FeatureLayer({
@@ -672,7 +809,8 @@ require([
   map.add(AssociationLayer); // adds the layer to the map
   map.add(UnionLayer); // adds the layer to the map
   map.add(RepositoryLayer); // adds the layer to the map
-  map.add(FridgesLayer); // adds the layer to the map
+  map.add(FridgeLayer); // adds the layer to the map
+  map.add(LabLayer); // adds the layer to the map
   map.add(LandsLayer); // adds the layer to the map
   map.add(AnimalsLayer); // adds the layer to the map
 
