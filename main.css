@@ -9,6 +9,11 @@ body,
 }
 body{
   background-color:#475dbe;
+  }
+
+.esri-widget__table tr td, .esri-widget__table tr th
+{
+  text-align: right
 }
 
 #layerToggle1 {
