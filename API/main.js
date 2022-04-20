@@ -4,11 +4,36 @@ require([
   "esri/layers/FeatureLayer",
   "esri/widgets/Legend",
   "esri/widgets/Expand",
-], function (Map, MapView, FeatureLayer, Legend, Expand) {
+  "esri/config",
+], function (Map, MapView, FeatureLayer, Legend, Expand, esriConfig) {
+  // esriConfig.fontsUrl = "/fonts";
   /*****************************************************************
    *! Set a basic symbol on a layer to visualize all features the same way.
    *****************************************************************/
-  var AssociationsRenderer = {
+  function Lable($field) {
+    return {
+      // autocasts as new Lable()
+      symbol: {
+        type: "text", // autocasts as new TextSymbol()
+        color: "black",
+        haloColor: "white",
+        haloSize: 1,
+        font: {
+          // autocast as new Font()
+          // family: "Ubuntu Mono",
+          size: 14,
+          weight: "bold",
+        },
+      },
+      labelExpressionInfo: {
+        expression: $field,
+      },
+      maxScale: 0,
+      minScale: 25000000,
+    };
+  }
+
+  const administrativeCenterRenderer = {
     type: "unique-value", // autocasts as new UniqueValueRenderer()
     field: "Performance",
     defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
@@ -18,7 +43,7 @@ require([
         value: "0",
         symbol: {
           type: "simple-marker", // autocasts as new SimpleFillSymbol()
-          color: "blue",
+          color: "green",
           size: 9,
         },
       },
@@ -27,7 +52,7 @@ require([
         value: "1",
         symbol: {
           type: "simple-marker", // autocasts as new SimpleFillSymbol()
-          color: "green",
+          color: "yellow",
           size: 10,
         },
       },
@@ -44,19 +69,482 @@ require([
         value: "2",
         symbol: {
           type: "simple-marker", // autocasts as new SimpleFillSymbol()
-          color: "yellow",
+          color: "orange",
           size: 11,
         },
       },
     ],
   };
+  const Associationscontent = [
+    {
+      // Pass in the fields to display
+      type: "fields",
+      fieldInfos: [
+        { label: "اسم الجمعية", fieldName: "Association_Name" },
+        {
+          label: "المسؤول",
+          fieldName: "Administrator",
+        },
+        {
+          label: "الكود",
+          fieldName: "Code",
+        },
+        {
+          label: "التصريح",
+          fieldName: "Declaration",
+        },
+        {
+          label: "الأداء",
+          fieldName: "Performance",
+        },
+        {
+          label: "التلفون",
+          fieldName: "relationships/4/Phone", // The field whose values you want to format
+          format: {
+            digitSeparator: true, // Uses a comma separator in numbers >999
+          },
+        },
+        {
+          label: "الاتحاد",
+          fieldName: "relationships/1/Union_Name",
+        },
+        {
+          label: "عدد الأعضاء",
+          fieldName: "relationships/3/Member_Association",
+        },
+        {
+          label: "المديرية",
+          fieldName: "relationships/5/Directorate_Name_Arabic",
+        },
+        {
+          label: "المحافظة",
+          fieldName: "relationships/10/relationships/9/Government_Name_Arabic",
+        },
+        {
+          label: "الطاقة الإنتاجية",
+          fieldName: "relationships/1",
+        },
+      ],
+    },
+  ];
+  const Unionscontent = [
+    {
+      // Pass in the fields to display
+      type: "fields",
+      fieldInfos: [
+        {
+          label: "اسم الاتحاد",
+          fieldName: "Union_Name",
+        },
+        {
+          label: "المسؤول",
+          fieldName: "Administrator",
+        },
+        {
+          label: "الكود",
+          fieldName: "Code",
+        },
+        {
+          label: "التصريح",
+          fieldName: "Declaration",
+        },
+        {
+          label: "الأداء",
+          fieldName: "Performance",
+        },
+        {
+          label: "الطاقة الإنتاجية",
+          fieldName: "relationships/1",
+        },
+        {
+          label: "التلفون",
+          fieldName: "relationships/0/Phone",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "المحافظة",
+          fieldName: "relationships/2/relationships/9/Government_Name_Arabic",
+        },
+      ],
+    },
+  ];
+
+  const LandsRenderer = {
+    type: "unique-value", // autocasts as new UniqueValueRenderer()
+    field: "Type_Land",
+    uniqueValueInfos: [
+      {
+        // All features with value of "صالحة للزراعة ومستزرعة" will be green
+        value: "0",
+        symbol: {
+          type: "simple-fill",
+          color: "green",
+        },
+      },
+      {
+        // All features with value of "صالحة للزراعة وغير مستزرعة" will be blue
+        value: "1",
+        symbol: {
+          type: "simple-fill",
+          color: [19, 235, 0],
+        },
+      },
+      {
+        // All features with value of "غير صالحة للزراعة" will be yellow
+        value: "2",
+        symbol: {
+          type: "simple-fill",
+          color: "yellow",
+        },
+      },
+    ],
+  };
+  const Landscontent = [
+    {
+      // Pass in the fields to display
+      type: "fields",
+      fieldInfos: [
+        {
+          fieldName: "relationships/32/Owner_Name",
+          label: "Owner",
+        },
+        {
+          fieldName: "Type_Land",
+          label: "Land's Type",
+        },
+        {
+          fieldName: "Area",
+          label: "Land's Area",
+        },
+        {
+          fieldName: "relationships/30/Directorate_Name_Arabic",
+          label: "Directorate",
+        },
+      ],
+    },
+  ];
+  const AnimalsRenderer = {
+    type: "unique-value", // autocasts as new UniqueValueRenderer()
+    field: "Quantity_Production",
+    defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
+    visualVariables: [
+      {
+        type: "color",
+        field: "Quantity_Production",
+        normalizationField: "Count",
+        legendOptions: {
+          title: "% كمية الإنتاج",
+        },
+        stops: [
+          {
+            value: 0,
+            color: "yellow",
+            label: "=0%",
+          },
+          {
+            value: 0.99,
+            color: [19, 235, 0],
+            label: "<= 99% & >0%",
+          },
+          {
+            value: 1,
+            color: "green",
+            label: "=100%",
+          },
+        ],
+      },
+      {
+        type: "size",
+        field: "Quantity_Production",
+        normalizationField: "Capacity",
+        stops: [
+          {
+            value: 0,
+            size: 18,
+            label: "=0%",
+          },
+          {
+            value: 0.99,
+            size: 12,
+            label: "<= 99% & >0%",
+          },
+          {
+            value: 1,
+            size: 8,
+            label: "=100%",
+          },
+        ],
+      },
+    ],
+  };
+  const Animalscontent = [
+    {
+      // Pass in the fields to display
+      type: "fields",
+      fieldInfos: [
+        {
+          fieldName: "relationships/26/Owner_Name",
+          label: "Owner",
+        },
+        {
+          fieldName: "Type",
+          label: "Animal's Type",
+        },
+        {
+          fieldName: "Count",
+          label: "Animal's Count",
+        },
+        {
+          fieldName: "Quantity_Production",
+          label: "Animal's Quantity Production ",
+        },
+        {
+          fieldName: "relationships/28/Directorate_Name_Arabic",
+          label: "Directorate",
+        },
+      ],
+    },
+  ];
+
+  const serviceCenterRenderer = {
+    type: "unique-value", // autocasts as new UniqueValueRenderer()
+    field: "Energy_Used",
+    defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
+    visualVariables: [
+      {
+        type: "color",
+        field: "Energy_Used",
+        normalizationField: "Capacity",
+        legendOptions: {
+          title: "% الطاقة الشاغرة",
+        },
+        stops: [
+          {
+            value: 0,
+            color: "yellow",
+            label: "=0%",
+          },
+          {
+            value: 0.99,
+            color: "orange",
+            label: "<= 99% & >0%",
+          },
+          {
+            value: 1,
+            color: "red",
+            label: "=100%",
+          },
+        ],
+      },
+      {
+        type: "size",
+        field: "Energy_Used",
+        normalizationField: "Capacity",
+        stops: [
+          {
+            value: 0,
+            size: 18,
+            label: "=0%",
+          },
+          {
+            value: 0.99,
+            size: 12,
+            label: "<= 99% & >0%",
+          },
+          {
+            value: 1,
+            size: 8,
+            label: "=100%",
+          },
+        ],
+      },
+    ],
+  };
+  const Repositoriescontent = [
+    {
+      // content: "Repository's Vacant Energy {Energy_Used / Capacity}",
+      // Pass in the fields to display
+
+      type: "fields",
+      fieldInfos: [
+        {
+          label: "اسم المستودع",
+          fieldName: "Repositories_Name",
+        },
+        {
+          label: "المسؤول",
+          fieldName: "Administrator",
+        },
+        {
+          label: "الكود",
+          fieldName: "Code",
+        },
+        {
+          label: "التصريح",
+          fieldName: "Declaration",
+        },
+        {
+          label: "السعر (م3/ساعة)",
+          fieldName: "Price",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة الاستيعابية",
+          fieldName: "Capacity",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة المستخدمة",
+          fieldName: "Energy_Used",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة الشاغرة",
+          fieldName: "expression/Vacant Energy",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "التلفون",
+          fieldName: "relationships/8/Phone",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "المنتج",
+          fieldName: "relationships/1/relationships/29/Government_Name_Arabic",
+        },
+        {
+          label: "المديرية",
+          fieldName: "relationships/10/Directorate_Name_Arabic",
+        },
+        {
+          label: "المحافظة",
+          fieldName: "relationships/2/relationships/9/Government_Name_Arabic",
+        },
+      ],
+    },
+  ];
+  const Fridgescontent = [
+    {
+      // content: "Repository's Vacant Energy {Energy_Used / Capacity}",
+      // Pass in the fields to display
+
+      type: "fields",
+      fieldInfos: [
+        {
+          label: "اسم الثلاجة",
+          fieldName: "Fridge_Name",
+        },
+        {
+          label: "المسؤول",
+          fieldName: "Administrator",
+        },
+        {
+          label: "الكود",
+          fieldName: "Code",
+        },
+        {
+          label: "التصريح",
+          fieldName: "Declaration",
+        },
+        {
+          label: "السعر (م3/ساعة)",
+          fieldName: "Price",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة الاستيعابية",
+          fieldName: "Capacity",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة المستخدمة",
+          fieldName: "Energy_Used",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة الشاغرة",
+          fieldName: "expression/Vacant Energy",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "التلفون",
+          fieldName: "relationships/12/Phone",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "المنتج",
+          fieldName: "relationships/1/relationships/29/Government_Name_Arabic",
+        },
+        {
+          label: "المديرية",
+          fieldName: "relationships/14/Directorate_Name_Arabic",
+        },
+        {
+          label: "المحافظة",
+          fieldName: "relationships/1/relationships/29/Government_Name_Arabic",
+        },
+      ],
+    },
+  ];
 
   /*****************************************************************
    *! Create FeatureLayers instances.
    *****************************************************************/
   //data needs to be public to access them without authorization
+  var YemenLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/8",
+    id: "Yemen",
+    opacity: 0.9,
+    popupTemplate: {
+      title: "اليمن", // Show attribute value
+    },
+  });
+  var GovernmentLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/9",
+    id: "Governments",
+    visible: false,
+    labelingInfo: [Lable("$feature.Government_Name_Arabic")],
+    outFields: ["Government_Name_Arabic", "GovernmentID"],
+    popupTemplate: {
+      title: "{GovernmentID}", // Show attribute value
+      content: "اسم المحافظة {Government_Name_Arabic}", // Display text in pop-up
+    },
+  });
+  var DirectorateLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/10",
+    id: "Directorates",
+    visible: false,
+    labelingInfo: [Lable("$feature.Directorate_Name_Arabic")],
+    outFields: ["Directorate_Name_Arabic", "DirectorateID"],
+    popupTemplate: {
+      title: "{DirectorateID}", // Show attribute value
+      content: "اسم المديرية {Directorate_Name_Arabic}", // Display text in pop-up
+    },
+  });
   var featureLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/Map/MapServer/5",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/1",
     /*****************************************************************
      *! Set properties on a feature layer
      * Additional properties can be set on a feature layer to change how it draws and behaves.
@@ -74,85 +562,99 @@ require([
 
     // This property can be used to uniquely identify the layer
     id: "Associations",
-    visible: false,
-    renderer: AssociationsRenderer,
+    visible: true,
+    renderer: administrativeCenterRenderer,
+    labelingInfo: [Lable("$feature.Association_Name")],
 
     // popup
     // *********************************************************
     //*** ADD ***//
 
-    outFields: ["Association_Name", "Performance"],
+    outFields: ["Association_Name"],
 
     //*** ADD ***//
     popupTemplate: {
       // Enable a popup
       title: "{Association_Name}",
-      content: [
-        {
-          // Pass in the fields to display
-          type: "fields",
-          fieldInfos: [
-            {
-              fieldName: "Association_Name",
-              label: "Association Name",
-            },
-            {
-              fieldName: "relationships/16/Phone",
-              label: "Phone",
-            },
-            {
-              fieldName: "relationships/8/Directorate_Name_English",
-              label: "Directorate",
-            },
-            {
-              fieldName: "relationships/6/Union_Name",
-              label: "Union",
-            },
-          ],
-        },
-      ],
+      content: Associationscontent,
     },
   });
-  var YemenLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/Map/MapServer/10",
-    id: "Yemen",
-    opacity: 0.6,
-  });
-  var GovernmentLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/Map/MapServer/9",
-    id: "Governments",
-    visible: false,
-    outFields: ["Government_Name_English", "GovernmentID"],
+  var UnionLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/0",
+    id: "Unions",
+    visible: true,
+    renderer: administrativeCenterRenderer,
+    labelingInfo: [Lable("$feature.Union_Name")],
+    outFields: ["Union_Name"],
     popupTemplate: {
-      title: "{GovernmentID}", // Show attribute value
-      content: "The Government name is {Government_Name_English}.", // Display text in pop-up
+      title: "{Union_Name}",
+      content: Unionscontent,
     },
   });
   var LandsLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/Map/MapServer/7",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/11",
     id: "Lands",
     visible: false,
-    outFields: ["Type_LandID", "LandID "],
+    renderer: LandsRenderer,
+    labelingInfo: [Lable("$feature.LandID")],
+    outFields: ["LandID"],
     popupTemplate: {
-      title: "{LandID }",
-      content: [
-        {
-          type: "fields",
-          fieldInfos: [
-            {
-              fieldName: "LandID",
-              label: "LandID",
-            },
-            {
-              fieldName: "relationships/8/Directorate_Name_Arabic",
-              label: "Directorate",
-            },
-          ],
-        },
-      ],
+      title: "{LandID}",
+      content: Landscontent,
     },
   });
+  var AnimalsLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/7",
+    id: "Animals",
+    visible: false,
+    renderer: AnimalsRenderer,
+    labelingInfo: [Lable("$feature.AnimalID")],
+    outFields: ["AnimalID"],
+    popupTemplate: {
+      title: "{AnimalID}",
+      content: Animalscontent,
+    },
+  });
+  var RepositoryLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/2",
+    id: "Repository",
+    visible: false,
+    renderer: serviceCenterRenderer,
+    labelingInfo: [Lable("$feature.Repositories_Name")],
 
+    outFields: ["Repositories_Name", "Energy_Used", "Capacity"],
+    popupTemplate: {
+      title: "{Repositories_Name}",
+      expressionInfos: [
+        {
+          name: "Vacant Energy",
+          title: "الطاقة الشاغرة",
+          expression: "$feature.Capacity - $feature.Energy_Used",
+        },
+      ],
+      content: Repositoriescontent,
+    },
+  });
+  var FridgesLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/3",
+    id: "Fridges",
+    visible: false,
+    renderer: serviceCenterRenderer,
+    labelingInfo: [Lable("$feature.Fridge_Name")],
+
+    outFields: ["Fridge_Name", "Energy_Used", "Capacity"],
+    popupTemplate: {
+      title: "{Fridge_Name}",
+      expressionInfos: [
+        {
+          name: "Vacant Energy",
+          title: "الطاقة الشاغرة",
+          expression: "$feature.Capacity - $feature.Energy_Used",
+        },
+      ],
+      content: Fridgescontent,
+    },
+  });
   /*****************************************************************
    *! Layers may be added to the map in the map's constructor
    *****************************************************************/
@@ -164,8 +666,13 @@ require([
    *! Or they may be added to the map using map.add()
    *****************************************************************/
   map.add(GovernmentLayer); // adds the layer to the map
+  map.add(DirectorateLayer); // adds the layer to the map
+  map.add(UnionLayer); // adds the layer to the map
   map.add(featureLayer); // adds the layer to the map
   map.add(LandsLayer); // adds the layer to the map
+  map.add(AnimalsLayer); // adds the layer to the map
+  map.add(RepositoryLayer); // adds the layer to the map
+  map.add(FridgesLayer); // adds the layer to the map
 
   /*****************************************************************/
 
@@ -219,27 +726,27 @@ require([
       });
     });
   });
-  view.when(() => {
-    GovernmentLayer.when(() => {
-      view.goTo(GovernmentLayer.fullExtent).catch((errorGovernment) => {
-        console.error(errorGovernment);
-      });
-    });
-  });
-  view.when(() => {
-    featureLayer.when(() => {
-      view.goTo(featureLayer.fullExtent).catch((errorFeature) => {
-        console.error(errorFeature);
-      });
-    });
-  });
-  view.when(() => {
-    LandsLayer.when(() => {
-      view.goTo(LandsLayer.fullExtent).catch((errorLand) => {
-        console.error(errorLand);
-      });
-    });
-  });
+  // view.when(() => {
+  //   GovernmentLayer.when(() => {
+  //     view.goTo(GovernmentLayer.fullExtent).catch((errorGovernment) => {
+  //       console.error(errorGovernment);
+  //     });
+  //   });
+  // });
+  // view.when(() => {
+  //   featureLayer.when(() => {
+  //     view.goTo(featureLayer.fullExtent).catch((errorFeature) => {
+  //       console.error(errorFeature);
+  //     });
+  //   });
+  // });
+  // view.when(() => {
+  //   LandsLayer.when(() => {
+  //     view.goTo(LandsLayer.fullExtent).catch((errorLand) => {
+  //       console.error(errorLand);
+  //     });
+  //   });
+  // });
 
   /*****************************************************************
    * The visible property on the layer can be used to toggle the
@@ -260,4 +767,10 @@ require([
   LandsLayerToggle.addEventListener("change", () => {
     LandsLayer.visible = LandsLayerToggle.checked;
   });
+
+  /*****************************************************************
+   * ! Resources
+   * https://developers.arcgis.com/javascript/latest/sample-code/intro-layers/
+   * https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-labelClass.html
+   *******************************************************************/
 });
