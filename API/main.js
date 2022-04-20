@@ -543,7 +543,7 @@ require([
       content: "اسم المديرية {Directorate_Name_Arabic}", // Display text in pop-up
     },
   });
-  var featureLayer = new FeatureLayer({
+  var AssociationLayer = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/1",
     /*****************************************************************
      *! Set properties on a feature layer
@@ -668,7 +668,7 @@ require([
   map.add(GovernmentLayer); // adds the layer to the map
   map.add(DirectorateLayer); // adds the layer to the map
   map.add(UnionLayer); // adds the layer to the map
-  map.add(featureLayer); // adds the layer to the map
+  map.add(AssociationLayer); // adds the layer to the map
   map.add(LandsLayer); // adds the layer to the map
   map.add(AnimalsLayer); // adds the layer to the map
   map.add(RepositoryLayer); // adds the layer to the map
@@ -734,8 +734,8 @@ require([
   //   });
   // });
   // view.when(() => {
-  //   featureLayer.when(() => {
-  //     view.goTo(featureLayer.fullExtent).catch((errorFeature) => {
+  //   AssociationLayer.when(() => {
+  //     view.goTo(AssociationLayer.fullExtent).catch((errorFeature) => {
   //       console.error(errorFeature);
   //     });
   //   });
@@ -762,7 +762,7 @@ require([
     GovernmentLayer.visible = GovernmentsLayerToggle.checked;
   });
   AssociationsLayerToggle.addEventListener("change", () => {
-    featureLayer.visible = AssociationsLayerToggle.checked;
+    AssociationLayer.visible = AssociationsLayerToggle.checked;
   });
   LandsLayerToggle.addEventListener("change", () => {
     LandsLayer.visible = LandsLayerToggle.checked;
