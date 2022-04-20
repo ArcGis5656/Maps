@@ -562,7 +562,7 @@ require([
 
     // This property can be used to uniquely identify the layer
     id: "Associations",
-    visible: true,
+    visible: false,
     renderer: administrativeCenterRenderer,
     labelingInfo: [Lable("$feature.Association_Name")],
 
