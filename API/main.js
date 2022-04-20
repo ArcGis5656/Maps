@@ -510,7 +510,7 @@ require([
     },
   ];
 
-  const LabsRenderer = {
+  const Labs_Workshops_Renderer = {
     type: "unique-value", // autocasts as new UniqueValueRenderer()
     field: "Actual_Power",
     defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
@@ -520,7 +520,7 @@ require([
         field: "Actual_Power",
         normalizationField: "Maximum_Power",
         legendOptions: {
-          title: "% الطاقة الشاغرة",
+          title: "% الطاقة الغير مستغلة",
         },
         stops: [
           {
@@ -619,6 +619,68 @@ require([
         {
           label: "المديرية",
           fieldName: "relationships/19/Directorate_Name_Arabic",
+        },
+        {
+          label: "المحافظة",
+          fieldName: "relationships/1/relationships/29/Government_Name_Arabic",
+        },
+      ],
+    },
+  ];
+  const Workshopscontent = [
+    {
+      // content: "Repository's Vacant Energy {Energy_Used / Capacity}",
+      // Pass in the fields to display
+
+      type: "fields",
+      fieldInfos: [
+        {
+          label: "اسم المعمل",
+          fieldName: "Lab_Name",
+        },
+        {
+          label: "المسؤول",
+          fieldName: "Administrator",
+        },
+        {
+          label: "الكود",
+          fieldName: "Code",
+        },
+        {
+          label: "التصريح",
+          fieldName: "Declaration",
+        },
+        {
+          label: "الطاقة القصوى",
+          fieldName: "Maximum_Power",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة الفعلية",
+          fieldName: "Actual_Power",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "الطاقة الغير مستغلة",
+          fieldName: "expression/Unused Energy",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "التلفون",
+          fieldName: "relationships/20/Phone",
+          format: {
+            digitSeparator: true,
+          },
+        },
+        {
+          label: "المديرية",
+          fieldName: "relationships/21/Directorate_Name_Arabic",
         },
         {
           label: "المحافظة",
@@ -753,7 +815,7 @@ require([
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/4",
     id: "Labs",
     visible: true,
-    renderer: LabsRenderer,
+    renderer: Labs_Workshops_Renderer,
     labelingInfo: [Lable("$feature.Lab_Name")],
 
     outFields: ["Lab_Name", "Actual_Power", "Maximum_Power"],
@@ -767,6 +829,26 @@ require([
         },
       ],
       content: Labscontent,
+    },
+  });
+  var WorkshopsLayer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/5",
+    id: "Workshops",
+    visible: true,
+    renderer: Labs_Workshops_Renderer,
+    labelingInfo: [Lable("$feature.Workshop_Name")],
+
+    outFields: ["Workshop_Name", "Actual_Power", "Maximum_Power"],
+    popupTemplate: {
+      title: "{Workshop_Name}",
+      expressionInfos: [
+        {
+          name: "Unused Energy",
+          title: "الطاقة الغير مستغلة",
+          expression: "$feature.Maximum_Power - $feature.Actual_Power",
+        },
+      ],
+      content: Workshopscontent,
     },
   });
   var LandsLayer = new FeatureLayer({
@@ -811,6 +893,7 @@ require([
   map.add(RepositoryLayer); // adds the layer to the map
   map.add(FridgeLayer); // adds the layer to the map
   map.add(LabLayer); // adds the layer to the map
+  map.add(WorkshopsLayer); // adds the layer to the map
   map.add(LandsLayer); // adds the layer to the map
   map.add(AnimalsLayer); // adds the layer to the map
 
