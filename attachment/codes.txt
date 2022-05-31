@@ -1,0 +1,78 @@
+
+url+"MapServer"+"/"+index+"/query?where=1=1&outFields=*&f=geojson"
+
+async queryDistricts(url, filterfield): Promise<option[]> {
+    try {
+     
+      const [esriRequest] = await loadModules(["esri/request"]);
+      esriRequest(url, {
+        query: {
+          f: "json",
+          where: "fieldname=" + filterfield,
+          outFields: ["*"],
+          geometry: true
+        },
+        responseType: "json"
+      }).then((results) => {
+        results.data.features.map((feature) => {
+          this.distoptions.push(
+            {
+              key: feature.attributes.DISCODE,
+              title: feature.attributes.DIS_A,
+              extent: feature.geometry.extent,
+              rings: feature.geometry.rings,
+            }
+          )
+        });
+        // Pouplate Districts
+        this.distOptions = this.distControl.valueChanges.pipe(
+          startWith(''),
+          map(value => this._filter(value, this.distoptions))
+        );
+      });
+      return this.distoptions;
+    } catch (error) {
+      console.log("EsriLoader: ", error);
+    }
+  }
+
+/// highlight
+
+highlightSelection = (feature) => {
+    this.mapview.graphics.removeAll();
+    if (feature.key != 0) {
+      return loadModules(['esri/Graphic']).then(([Graphic]) => {
+        var polygon = {
+          type: "polygon",
+          rings: feature.rings
+        }
+        var simpleFillSymbol = {
+          type: "simple-fill",
+          color: [227, 139, 79, 0.1],  // orange, opacity 80%
+          outline: {
+            color: [255, 255, 255],
+            width: 1
+          }
+        };
+        var attributes = {
+          name: feature.title,
+          id: feature.key
+        };
+        var popupTemplate = {
+          title: "{name}",
+          content: "I am located at <b>{id}</b>.",
+          container: "feature-node"
+        };
+        var polygonGraphic = new Graphic({
+          geometry: polygon,
+          symbol: simpleFillSymbol,
+          attributes: attributes,
+          popupTemplate: popupTemplate
+        });
+        this.mapview.graphics.add(polygonGraphic);
+        this.mapview.goTo(polygonGraphic);
+      })
+    }
+    else
+      this.mapview.goTo(this.mapExtent)
+  }
