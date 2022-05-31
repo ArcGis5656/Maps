@@ -46,3 +46,13 @@ body{
   padding: 10px;
   opacity: 0.75;
 }
+#layerToggle4 {
+  bottom: 20px;
+  right: 430px;
+  position: absolute;
+  z-index: 99;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  opacity: 0.75;
+}

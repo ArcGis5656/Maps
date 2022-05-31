@@ -229,7 +229,7 @@ require([
   var LandsLayer = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/11",
     id: "Lands",
-    visible: true,
+    visible: false,
     renderer: LandsRenderer,
     labelingInfo: [Lable("$feature.LandID")],
     outFields: ["LandID"],
@@ -329,7 +329,7 @@ require([
   // });
   view.when(() => {
     LandsLayer.when(() => {
-      view.goTo(LandsLayer.fullExtent).catch((errorLand) => {
+      view.goTo(YemenLayer.fullExtent).catch((errorLand) => {
         console.error(errorLand);
       });
     });
@@ -341,12 +341,16 @@ require([
    * the layer is still part of the map, which means you can access
    * its properties and perform analysis even though it isn't visible.
    *******************************************************************/
+  const DirectorateLayerToggle = document.getElementById("DirectoratesLayer");
   const AssociationsLayerToggle = document.getElementById("AssociationsLayer");
   const GovernmentsLayerToggle = document.getElementById("GovernmentsLayer");
   const LandsLayerToggle = document.getElementById("LandsLayer");
 
   GovernmentsLayerToggle.addEventListener("change", () => {
     GovernmentLayer.visible = GovernmentsLayerToggle.checked;
+  });
+  DirectorateLayerToggle.addEventListener("change", () => {
+    DirectorateLayer.visible = DirectorateLayerToggle.checked;
   });
   AssociationsLayerToggle.addEventListener("change", () => {
     AssociationLayer.visible = AssociationsLayerToggle.checked;
