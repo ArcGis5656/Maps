@@ -71,7 +71,15 @@ require([
         )
         .then(function (resulte) {
           console.log( resulte);
-          
+          function show()
+          {
+             for (let index = 0; index < resulte.length; index++) {
+                  const element ="{ name: 'Phone"+index+"', title: 'التلفون', expression: resulte["+index+"]} ,";
+                console.log( element );
+                return element;
+                
+          }
+        }
           const layer = new FeatureLayer({
             url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/0",
             id: "Unions",
@@ -80,10 +88,19 @@ require([
             popupTemplate: {
               title: "{Union_Name}",
               expressionInfos: [
+                 
+                
+                  //  show()
+                
+              
                 {
-                  name: "Phone",
+                  name: "Phone1",
                   title: "التلفون",
                   expression: resulte[0],
+                }, {
+                  name: "Phone2",
+                  title: " ",
+                  expression: resulte[1],
                 },
               ],
               content: [
@@ -110,7 +127,11 @@ require([
                     },
                     {
                       label: "التلفون",
-                      fieldName: "expression/Phone", // The field whose values you want to format
+                      fieldName: "expression/Phone1", // The field whose values you want to format
+                    },
+                    {
+                      label: "",
+                      fieldName: "expression/Phone2", // The field whose values you want to format
                     }
                   ],
                 },
