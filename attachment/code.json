@@ -1,0 +1,18 @@
+{
+  "7": {
+    "features": [
+      {
+        "aggregateGeometries": null,
+        "geometry": null,
+        "symbol": null,
+        "attributes": {
+          "OBJECTID": 7,
+          "AssociationID": 7,
+          "PhoneID": 7,
+          "Phone": 777888999
+        },
+        "popupTemplate": null
+      }
+    ]
+  }
+}

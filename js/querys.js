@@ -5,100 +5,54 @@ require([
   "esri/widgets/Legend",
   "esri/widgets/Expand",
   "esri/widgets/FeatureTable/Grid/Grid",
-  "esri/tasks/support/Query"
-], function (Map, MapView, FeatureLayer, Legend, Expand, Grid, Query) {
-  // var AssociationsRenderer = {
-  //   type: "unique-value", // autocasts as new UniqueValueRenderer()
-  //   field: "Performance",
-  //   defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
-  //   uniqueValueInfos: [
-  //     {
-  //       // All features with value of "North" will be blue
-  //       value: "0",
-  //       symbol: {
-  //         type: "simple-marker", // autocasts as new SimpleFillSymbol()
-  //         color: "blue",
-  //         size: 9,
-  //       },
-  //     },
-  //     {
-  //       // All features with value of "East" will be green
-  //       value: "1",
-  //       symbol: {
-  //         type: "simple-marker", // autocasts as new SimpleFillSymbol()
-  //         color: "green",
-  //         size: 10,
-  //       },
-  //     },
-  //     {
-  //       // All features with value of "South" will be red
-  //       value: "3",
-  //       symbol: {
-  //         type: "simple-marker", // autocasts as new SimpleFillSymbol()
-  //         color: "red",
-  //       },
-  //     },
-  //     {
-  //       // All features with value of "West" will be yellow
-  //       value: "2",
-  //       symbol: {
-  //         type: "simple-marker", // autocasts as new SimpleFillSymbol()
-  //         color: "yellow",
-  //         size: 11,
-  //       },
-  //     },
-  //   ],
-  // };
-  const layer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/1",
-  });
-
+], function (Map, MapView, FeatureLayer, Legend, Expand, Grid) {
+  var AssociationsRenderer = {
+    type: "unique-value", // autocasts as new UniqueValueRenderer()
+    field: "Performance",
+    defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
+    uniqueValueInfos: [
+      {
+        // All features with value of "North" will be blue
+        value: "0",
+        symbol: {
+          type: "simple-marker", // autocasts as new SimpleFillSymbol()
+          color: "blue",
+          size: 9,
+        },
+      },
+      {
+        // All features with value of "East" will be green
+        value: "1",
+        symbol: {
+          type: "simple-marker", // autocasts as new SimpleFillSymbol()
+          color: "green",
+          size: 10,
+        },
+      },
+      {
+        // All features with value of "South" will be red
+        value: "3",
+        symbol: {
+          type: "simple-marker", // autocasts as new SimpleFillSymbol()
+          color: "red",
+        },
+      },
+      {
+        // All features with value of "West" will be yellow
+        value: "2",
+        symbol: {
+          type: "simple-marker", // autocasts as new SimpleFillSymbol()
+          color: "yellow",
+          size: 11,
+        },
+      },
+    ],
+  };
   var featureLayer = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/1",
     id: "Associations",
     visible: true,
-    renderer: {
-      type: "unique-value", // autocasts as new UniqueValueRenderer()
-      field: "Performance",
-      defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
-      uniqueValueInfos: [
-        {
-          // All features with value of "North" will be blue
-          value: "0",
-          symbol: {
-            type: "simple-marker", // autocasts as new SimpleFillSymbol()
-            color: "blue",
-            size: 9,
-          },
-        },
-        {
-          // All features with value of "East" will be green
-          value: "1",
-          symbol: {
-            type: "simple-marker", // autocasts as new SimpleFillSymbol()
-            color: "green",
-            size: 10,
-          },
-        },
-        {
-          // All features with value of "South" will be red
-          value: "3",
-          symbol: {
-            type: "simple-marker", // autocasts as new SimpleFillSymbol()
-            color: "red",
-          },
-        },
-        {
-          // All features with value of "West" will be yellow
-          value: "2",
-          symbol: {
-            type: "simple-marker", // autocasts as new SimpleFillSymbol()
-            color: "yellow",
-            size: 11,
-          },
-        },
-      ],
-    },
+    renderer: AssociationsRenderer,
     outFields: ["*"],
 
     popupTemplate: {
@@ -141,7 +95,7 @@ require([
     layers: [YemenLayer],
   });
 
-  map.add(layer);
+  map.add(featureLayer);
 
   var view = new MapView({
     container: "viewDiv",
@@ -172,162 +126,70 @@ require([
     return (g = new Grid());
   });
 
-  // view.on("click", function (event) {
-  //   // console.log(event);
-  //   clearMap();
-  //   // queryFeatures();
-  //   console.log(event.mapPoint);
-  // });
-  // //////////////////////////////////////////////////////////////////////////////////////////
-  // const relationshipIds = [];
-  // const objectIds = [];
-  // featureLayer.when(function () {
-  //   console.log("layer relationships", featureLayer.relationships.length);
-  //   console.log("layer fields", featureLayer.fields.length);
-  //   featureLayer.fields.forEach(function (field) {
-  //     console.log("field name:", field.name);
-  //     console.log("field type:", field.type);
-  //   });
-  //   featureLayer.relationships.forEach(function (relationship) {
-  //     console.log("relationship id:", relationship.id);
-  //     console.log("relationship cardinality:", relationship.cardinality);
-  //     console.log("relationship key field:", relationship.keyField);
-  //     console.log("relationship name:", relationship.name);
-  //     relationshipIds.push(relationship.id);
-  //     console.log("relationship relatedTableId:", relationship.relatedTableId);
-  //   });
-  // });
-  /////////////////////////////////////////////////////////////////////////////////////////
-  // relationship query parameter
-  // const query = {
-  //   outFields: ["*"],
-  //   relationshipId: relationshipIds,
-  //   objectIds: objectIds,
-  // };
-
-  // query related features for given objectIds
-  // featureLayer
-  //   .queryRelatedFeatures(query)
-  //   .then(function (result) {
-  //     objectIds.forEach(function (objectId) {
-  //       // print out the attributes of related features if the result
-  //       // is returned for the specified objectId
-  //       if (result[objectId]) {
-  //         console.group("relationship for feature:", objectId);
-  //         result[objectId].features.forEach(function (feature) {
-  //           console.log("attributes", JSON.stringify(feature.attributes));
-  //         });
-  //         console.groupEnd();
-  //       }
-  //     });
-  //   })
-  //   .catch(function (error) {
-  //     console.log("error from queryRelatedFeatures", error);
-  //   });
-
   view.on("click", (event) => {
     // only include graphics from hurricanesLayer in the hitTest
     const opts = {
-      include:layer
-    }
-    view.hitTest(event, opts).then((response) => {
-      console.log(response)
-      // check if a feature is returned from the hurricanesLayer
-      if (response.results.length) {
-        // console.log(graphic.attributes)
-        const graphic = response.results[0].graphic;
-        // do something with the graphic
-        return graphic.attributes
-      }
-    }).then((objectIds) => {
-      console.log(objectIds["OBJECTID"])
-      return layer.queryRelatedFeatures({
-        outFields: ["*"],
-        relationshipId: layer.relationships[1].id,
-        objectIds: objectIds["OBJECTID"],
-      }).then((results) => {
-        console.log(results)
+      include: featureLayer,
+    };
+
+    view
+      .hitTest(event, opts)
+      .then((response) => {
+        console.log(response);
+        // check if a feature is returned from the hurricanesLayer
+        if (response.results.length) {
+          const graphic = response.results[0].graphic;
+          // do something with the graphic
+          return graphic.attributes["OBJECTID"];
+        }
       })
-    })
-  })
-  ///////////////////////////////////////////////////////////////////////////////////////////////
-//   function queryFeatures(screenPoint) {
-//     // console.log(screenPoint);
-//     const point = view.toMap(screenPoint);
-//      console.log( point);
+      .then((objectId) => {
+        console.log(objectId);
+        return featureLayer
+          .queryRelatedFeatures({
+            outFields: ["*"],
+            relationshipId: featureLayer.relationships[1].id,
+            objectIds: objectId,
+          })
+          .then((results) => {
+            results[objectId].features.forEach((element) => {
+               console.log( element.attributes["Phone"]);
+              });
+          });
+      });
+  });
 
-    
-    
-// .then(function (objectIds) {
-//         console.log(objectIds);
-//         if (!objectIds.length) {
-//           return;
-//         }
-//         // Highlight the area returned from the first query
-//         view.whenLayerView(featureLayer).then(function (layerView) {
-//           if (highlight) {
-//             highlight.remove();
-//           }
-//           highlight = layerView.highlight(objectIds);
-//         });
 
-//         // Query the for the related features for the features ids found
-//         return featureLayer.queryRelatedFeatures({
-//           outFields: ["NAME", "SUM_POPULATION"],
-//           relationshipId: relationshipIds,
-//           objectIds: objectIds,
-//         });
-//       })
 
-//       .then(function (relatedFeatureSetByObjectId) {
-//         if (!relatedFeatureSetByObjectId) {
-//           return;
-//         }
-//         // Create a grid with the data
-//         Object.keys(relatedFeatureSetByObjectId).forEach(function (objectId) {
-//           // get the attributes of the FeatureSet
-//           const relatedFeatureSet = relatedFeatureSetByObjectId[objectId];
-//           const rows = relatedFeatureSet.features.map(function (feature) {
-//             return feature.attributes;
-//           });
 
-//           if (!rows.length) {
-//             return;
-//           }
 
-//           // create a new div for the grid of related features
-//           // append to queryResults div inside of the gridDiv
-//           const gridDiv = document.createElement("div");
-//           const results = document.getElementById("queryResults");
-//           results.appendChild(gridDiv);
 
-//           // destroy current grid if exists
-//           if (grid) {
-//             grid.destroy();
-//           }
-//           // create new grid to hold the results of the query
-//           grid = new Grid(
-//             {
-//               columns: Object.keys(rows[0]).map(function (fieldName) {
-//                 return {
-//                   label: fieldName,
-//                   field: fieldName,
-//                   sortable: true,
-//                 };
-//               }),
-//             },
-//             gridDiv
-//           );
 
-//           // add the data to the grid
-//           grid.renderArray(rows);
-//         });
-//         clearbutton.style.display = "inline";
-//       })
-//       .catch(function (error) {
-//         console.error(error);
-//       });
-//   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   function clearMap() {
     if (highlight) {
