@@ -5,7 +5,8 @@ require([
   "esri/widgets/Legend",
   "esri/widgets/Expand",
   "esri/widgets/FeatureTable/Grid/Grid",
-], function (Map, MapView, FeatureLayer, Legend, Expand, Grid) {
+  "esri/tasks/support/Query"
+], function (Map, MapView, FeatureLayer, Legend, Expand, Grid, Query) {
   // var AssociationsRenderer = {
   //   type: "unique-value", // autocasts as new UniqueValueRenderer()
   //   field: "Performance",
@@ -48,6 +49,10 @@ require([
   //     },
   //   ],
   // };
+  const layer = new FeatureLayer({
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/1",
+  });
+
   var featureLayer = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/1",
     id: "Associations",
@@ -94,7 +99,7 @@ require([
         },
       ],
     },
-    outFields: ["Association_Name", "Performance"],
+    outFields: ["*"],
 
     popupTemplate: {
       title: "{Association_Name}",
@@ -136,7 +141,7 @@ require([
     layers: [YemenLayer],
   });
 
-  map.add(featureLayer);
+  map.add(layer);
 
   var view = new MapView({
     container: "viewDiv",
@@ -167,11 +172,12 @@ require([
     return (g = new Grid());
   });
 
-  view.on("click", function (event) {
-    // console.log("event: "+event);
-    clearMap();
-    queryFeatures(event);
-  });
+  // view.on("click", function (event) {
+  //   // console.log(event);
+  //   clearMap();
+  //   // queryFeatures();
+  //   console.log(event.mapPoint);
+  // });
   // //////////////////////////////////////////////////////////////////////////////////////////
   // const relationshipIds = [];
   // const objectIds = [];
@@ -218,91 +224,110 @@ require([
   //   .catch(function (error) {
   //     console.log("error from queryRelatedFeatures", error);
   //   });
-  ///////////////////////////////////////////////////////////////////////////////////////////////
-  function queryFeatures(screenPoint) {
-    // console.log("screenPoint: "+screenPoint.value);
-    const point = view.toMap(screenPoint);
-    //  console.log("point: "+point.value);
 
-    // Query the for the feature ids where the user clicked
-    featureLayer
-      .queryObjectIds({
-        geometry: point,
-        spatialRelationship: "intersects",
-        returnGeometry: false,
+  view.on("click", (event) => {
+    // only include graphics from hurricanesLayer in the hitTest
+    const opts = {
+      include:layer
+    }
+    view.hitTest(event, opts).then((response) => {
+      console.log(response)
+      // check if a feature is returned from the hurricanesLayer
+      if (response.results.length) {
+        // console.log(graphic.attributes)
+        const graphic = response.results[0].graphic;
+        // do something with the graphic
+        return graphic.attributes
+      }
+    }).then((objectIds) => {
+      console.log(objectIds["OBJECTID"])
+      return layer.queryRelatedFeatures({
         outFields: ["*"],
+        relationshipId: layer.relationships[1].id,
+        objectIds: objectIds["OBJECTID"],
+      }).then((results) => {
+        console.log(results)
       })
+    })
+  })
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+//   function queryFeatures(screenPoint) {
+//     // console.log(screenPoint);
+//     const point = view.toMap(screenPoint);
+//      console.log( point);
 
-      .then(function (objectIds) {
-        console.log("point: " + objectIds.length);
-        if (!objectIds.length) {
-          return;
-        }
-        // Highlight the area returned from the first query
-        view.whenLayerView(featureLayer).then(function (layerView) {
-          if (highlight) {
-            highlight.remove();
-          }
-          highlight = layerView.highlight(objectIds);
-        });
+    
+    
+// .then(function (objectIds) {
+//         console.log(objectIds);
+//         if (!objectIds.length) {
+//           return;
+//         }
+//         // Highlight the area returned from the first query
+//         view.whenLayerView(featureLayer).then(function (layerView) {
+//           if (highlight) {
+//             highlight.remove();
+//           }
+//           highlight = layerView.highlight(objectIds);
+//         });
 
-        // Query the for the related features for the features ids found
-        return featureLayer.queryRelatedFeatures({
-          outFields: ["NAME", "SUM_POPULATION"],
-          relationshipId: relationshipIds,
-          objectIds: objectIds,
-        });
-      })
+//         // Query the for the related features for the features ids found
+//         return featureLayer.queryRelatedFeatures({
+//           outFields: ["NAME", "SUM_POPULATION"],
+//           relationshipId: relationshipIds,
+//           objectIds: objectIds,
+//         });
+//       })
 
-      .then(function (relatedFeatureSetByObjectId) {
-        if (!relatedFeatureSetByObjectId) {
-          return;
-        }
-        // Create a grid with the data
-        Object.keys(relatedFeatureSetByObjectId).forEach(function (objectId) {
-          // get the attributes of the FeatureSet
-          const relatedFeatureSet = relatedFeatureSetByObjectId[objectId];
-          const rows = relatedFeatureSet.features.map(function (feature) {
-            return feature.attributes;
-          });
+//       .then(function (relatedFeatureSetByObjectId) {
+//         if (!relatedFeatureSetByObjectId) {
+//           return;
+//         }
+//         // Create a grid with the data
+//         Object.keys(relatedFeatureSetByObjectId).forEach(function (objectId) {
+//           // get the attributes of the FeatureSet
+//           const relatedFeatureSet = relatedFeatureSetByObjectId[objectId];
+//           const rows = relatedFeatureSet.features.map(function (feature) {
+//             return feature.attributes;
+//           });
 
-          if (!rows.length) {
-            return;
-          }
+//           if (!rows.length) {
+//             return;
+//           }
 
-          // create a new div for the grid of related features
-          // append to queryResults div inside of the gridDiv
-          const gridDiv = document.createElement("div");
-          const results = document.getElementById("queryResults");
-          results.appendChild(gridDiv);
+//           // create a new div for the grid of related features
+//           // append to queryResults div inside of the gridDiv
+//           const gridDiv = document.createElement("div");
+//           const results = document.getElementById("queryResults");
+//           results.appendChild(gridDiv);
 
-          // destroy current grid if exists
-          if (grid) {
-            grid.destroy();
-          }
-          // create new grid to hold the results of the query
-          grid = new Grid(
-            {
-              columns: Object.keys(rows[0]).map(function (fieldName) {
-                return {
-                  label: fieldName,
-                  field: fieldName,
-                  sortable: true,
-                };
-              }),
-            },
-            gridDiv
-          );
+//           // destroy current grid if exists
+//           if (grid) {
+//             grid.destroy();
+//           }
+//           // create new grid to hold the results of the query
+//           grid = new Grid(
+//             {
+//               columns: Object.keys(rows[0]).map(function (fieldName) {
+//                 return {
+//                   label: fieldName,
+//                   field: fieldName,
+//                   sortable: true,
+//                 };
+//               }),
+//             },
+//             gridDiv
+//           );
 
-          // add the data to the grid
-          grid.renderArray(rows);
-        });
-        clearbutton.style.display = "inline";
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  }
+//           // add the data to the grid
+//           grid.renderArray(rows);
+//         });
+//         clearbutton.style.display = "inline";
+//       })
+//       .catch(function (error) {
+//         console.error(error);
+//       });
+//   }
 
   function clearMap() {
     if (highlight) {
