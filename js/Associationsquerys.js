@@ -1,3 +1,5 @@
+// *?still the popup window display the data that was display in the console window
+// *?how to get the zoom level from query
 require([
   "esri/Map",
   "esri/views/MapView",
@@ -151,8 +153,9 @@ require([
             objectIds: objectId,
           })
           .then((results) => {
+            console.log(results);
             results[objectId].features.forEach((element) => {
-              console.log(element.attributes["Phone"]);
+              console.log(element);
             });
             })
           .then(function () {
