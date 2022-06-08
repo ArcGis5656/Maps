@@ -6,53 +6,94 @@ require([
   "esri/widgets/Expand",
   "esri/widgets/FeatureTable/Grid/Grid",
 ], function (Map, MapView, FeatureLayer, Legend, Expand, Grid) {
-  var AssociationsRenderer = {
-    type: "unique-value", // autocasts as new UniqueValueRenderer()
-    field: "Performance",
-    defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
-    uniqueValueInfos: [
-      {
-        // All features with value of "North" will be blue
-        value: "0",
-        symbol: {
-          type: "simple-marker", // autocasts as new SimpleFillSymbol()
-          color: "blue",
-          size: 9,
-        },
-      },
-      {
-        // All features with value of "East" will be green
-        value: "1",
-        symbol: {
-          type: "simple-marker", // autocasts as new SimpleFillSymbol()
-          color: "green",
-          size: 10,
-        },
-      },
-      {
-        // All features with value of "South" will be red
-        value: "3",
-        symbol: {
-          type: "simple-marker", // autocasts as new SimpleFillSymbol()
-          color: "red",
-        },
-      },
-      {
-        // All features with value of "West" will be yellow
-        value: "2",
-        symbol: {
-          type: "simple-marker", // autocasts as new SimpleFillSymbol()
-          color: "yellow",
-          size: 11,
-        },
-      },
-    ],
-  };
+  // var AssociationsRenderer = {
+  //   type: "unique-value", // autocasts as new UniqueValueRenderer()
+  //   field: "Performance",
+  //   defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
+  //   uniqueValueInfos: [
+  //     {
+  //       // All features with value of "North" will be blue
+  //       value: "0",
+  //       symbol: {
+  //         type: "simple-marker", // autocasts as new SimpleFillSymbol()
+  //         color: "blue",
+  //         size: 9,
+  //       },
+  //     },
+  //     {
+  //       // All features with value of "East" will be green
+  //       value: "1",
+  //       symbol: {
+  //         type: "simple-marker", // autocasts as new SimpleFillSymbol()
+  //         color: "green",
+  //         size: 10,
+  //       },
+  //     },
+  //     {
+  //       // All features with value of "South" will be red
+  //       value: "3",
+  //       symbol: {
+  //         type: "simple-marker", // autocasts as new SimpleFillSymbol()
+  //         color: "red",
+  //       },
+  //     },
+  //     {
+  //       // All features with value of "West" will be yellow
+  //       value: "2",
+  //       symbol: {
+  //         type: "simple-marker", // autocasts as new SimpleFillSymbol()
+  //         color: "yellow",
+  //         size: 11,
+  //       },
+  //     },
+  //   ],
+  // };
   var featureLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/Map/MapServer/5",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/1",
     id: "Associations",
     visible: true,
-    renderer: AssociationsRenderer,
+    renderer: {
+      type: "unique-value", // autocasts as new UniqueValueRenderer()
+      field: "Performance",
+      defaultSymbol: { type: "simple-marker" }, // autocasts as new SimpleFillSymbol()
+      uniqueValueInfos: [
+        {
+          // All features with value of "North" will be blue
+          value: "0",
+          symbol: {
+            type: "simple-marker", // autocasts as new SimpleFillSymbol()
+            color: "blue",
+            size: 9,
+          },
+        },
+        {
+          // All features with value of "East" will be green
+          value: "1",
+          symbol: {
+            type: "simple-marker", // autocasts as new SimpleFillSymbol()
+            color: "green",
+            size: 10,
+          },
+        },
+        {
+          // All features with value of "South" will be red
+          value: "3",
+          symbol: {
+            type: "simple-marker", // autocasts as new SimpleFillSymbol()
+            color: "red",
+          },
+        },
+        {
+          // All features with value of "West" will be yellow
+          value: "2",
+          symbol: {
+            type: "simple-marker", // autocasts as new SimpleFillSymbol()
+            color: "yellow",
+            size: 11,
+          },
+        },
+      ],
+    },
     outFields: ["Association_Name", "Performance"],
 
     popupTemplate: {
@@ -86,7 +127,7 @@ require([
     // },
   });
   var YemenLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/Map/MapServer/10",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/8",
     id: "Yemen",
     opacity: 0.6,
   });
@@ -127,35 +168,36 @@ require([
   });
 
   view.on("click", function (event) {
+    // console.log("event: "+event);
     clearMap();
     queryFeatures(event);
   });
-  //////////////////////////////////////////////////////////////////////////////////////////
-  const relationshipIds = [];
-  const objectIds = [];
-  featureLayer.when(function () {
-    console.log("layer relationships", featureLayer.relationships.length);
-    console.log("layer fields", featureLayer.fields.length);
-    featureLayer.fields.forEach(function (field) {
-      console.log("field name:", field.name);
-      console.log("field type:", field.type);
-    });
-    featureLayer.relationships.forEach(function (relationship) {
-      console.log("relationship id:", relationship.id);
-      console.log("relationship cardinality:", relationship.cardinality);
-      console.log("relationship key field:", relationship.keyField);
-      console.log("relationship name:", relationship.name);
-      relationshipIds.push(relationship.id);
-      console.log("relationship relatedTableId:", relationship.relatedTableId);
-    });
-  });
+  // //////////////////////////////////////////////////////////////////////////////////////////
+  // const relationshipIds = [];
+  // const objectIds = [];
+  // featureLayer.when(function () {
+  //   console.log("layer relationships", featureLayer.relationships.length);
+  //   console.log("layer fields", featureLayer.fields.length);
+  //   featureLayer.fields.forEach(function (field) {
+  //     console.log("field name:", field.name);
+  //     console.log("field type:", field.type);
+  //   });
+  //   featureLayer.relationships.forEach(function (relationship) {
+  //     console.log("relationship id:", relationship.id);
+  //     console.log("relationship cardinality:", relationship.cardinality);
+  //     console.log("relationship key field:", relationship.keyField);
+  //     console.log("relationship name:", relationship.name);
+  //     relationshipIds.push(relationship.id);
+  //     console.log("relationship relatedTableId:", relationship.relatedTableId);
+  //   });
+  // });
   /////////////////////////////////////////////////////////////////////////////////////////
   // relationship query parameter
-  const query = {
-    outFields: ["*"],
-    relationshipId: relationshipIds,
-    objectIds: objectIds,
-  };
+  // const query = {
+  //   outFields: ["*"],
+  //   relationshipId: relationshipIds,
+  //   objectIds: objectIds,
+  // };
 
   // query related features for given objectIds
   // featureLayer
@@ -178,7 +220,9 @@ require([
   //   });
   ///////////////////////////////////////////////////////////////////////////////////////////////
   function queryFeatures(screenPoint) {
+    // console.log("screenPoint: "+screenPoint.value);
     const point = view.toMap(screenPoint);
+    //  console.log("point: "+point.value);
 
     // Query the for the feature ids where the user clicked
     featureLayer
@@ -190,10 +234,10 @@ require([
       })
 
       .then(function (objectIds) {
+        console.log("point: " + objectIds.length);
         if (!objectIds.length) {
           return;
         }
-
         // Highlight the area returned from the first query
         view.whenLayerView(featureLayer).then(function (layerView) {
           if (highlight) {
