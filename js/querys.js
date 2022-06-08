@@ -135,7 +135,6 @@ require([
     view
       .hitTest(event, opts)
       .then((response) => {
-        console.log(response);
         // check if a feature is returned from the hurricanesLayer
         if (response.results.length) {
           const graphic = response.results[0].graphic;
@@ -153,43 +152,36 @@ require([
           })
           .then((results) => {
             results[objectId].features.forEach((element) => {
-               console.log( element.attributes["Phone"]);
+              console.log(element.attributes["Phone"]);
+            });
+            })
+          .then(function () {
+             return featureLayer
+              .queryRelatedFeatures({
+                outFields: ["*"],
+                relationshipId: featureLayer.relationships[3].id,
+                objectIds: objectId,
+              })
+              .then((results) => {
+                results[objectId].features.forEach((element) => {
+                  console.log(element.attributes["Union_Name"]);
+                });
               });
-          });
+          }).then(function () {
+            return featureLayer
+             .queryRelatedFeatures({
+               outFields: ["*"],
+               relationshipId: featureLayer.relationships[2].id,
+               objectIds: objectId,
+             })
+             .then((results) => {
+              results[objectId].features.forEach((element) => {
+                 console.log(element.attributes["Directorate_Name_Arabic"]);
+               });
+             });
+         });
       });
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   function clearMap() {
     if (highlight) {
