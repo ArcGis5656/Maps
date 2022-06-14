@@ -1,5 +1,6 @@
 // *? (logically error) the name of the right government does not appear
 // *?still the popup window display the data that was display in the console window
+// (we have two phones want display it in one record and seprate it by comma)
 // *?how to get the zoom level from query
 require([
   "esri/Map",
