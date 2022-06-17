@@ -59,6 +59,7 @@ require([
     renderer: administrativeCenterRenderer,
     outFields: ["*"],
   });
+
   var featureLayer2 = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/10",
     visible: false,
@@ -95,7 +96,7 @@ require([
   view.ui.add(legendExpand, "top-right");
 
   // Initialize variables
-  let highlight, grid;
+  let highlight, grid, government, phones=[];;
 
   // call clearMap method when clear is clicked
   const clearbutton = document.getElementById("clearButton");
@@ -114,6 +115,7 @@ require([
     view
       .hitTest(event, opts)
       .then((response) => {
+        
         // check if a feature is returned from the hurricanesLayer
         if (response.results.length) {
           const graphic = response.results[0].graphic;
@@ -129,9 +131,10 @@ require([
             relationshipId: featureLayer.relationships[0].id,
             objectIds: objectId,
           })
-          .then((results) => {
+          .then((results) => {  phones=[];
             results[objectId].features.forEach((element) => {
               console.log(element.attributes["Phone"]);
+              phones.push(element.attributes["Phone"]);
             });
           })
           .then(function () {
@@ -145,7 +148,9 @@ require([
                 results[objectId].features.forEach((element) => {
                   console.log(element.attributes["OBJECTID_1"]);
                 });
-                console.log( results[objectId].features[0].attributes["OBJECTID_1"]);
+                console.log(
+                  results[objectId].features[0].attributes["OBJECTID_1"]
+                );
                 return results[objectId].features[0].attributes["OBJECTID_1"];
               })
               .then(function (oid) {
@@ -160,68 +165,73 @@ require([
                   .then((results) => {
                     console.log(results[oid]);
                     results[oid].features.forEach((element) => {
-                 
                       console.log(element.attributes["Government_Name_Arabic"]);
-                      featureLayer.popupTemplate= {
-                        title: "{Union_Name}",
-                        expressionInfos: [                  
-                        {
-                          name: "Government_Name",
-                          title: "المحافظة",
-                          expression:22222,
-                        },
-                      ],
-                        content: [
-                          {
-                            // Pass in the fields to display
-                            type: "fields",
-                            fieldInfos: [
-                              {
-                                label: "اسم الاتحاد",
-                                fieldName: "Union_Name",
-                              },
-                              {
-                                label: "المحافظة",
-                                fieldName: "expression/Government_Name",
-                              },
-                              {
-                                label: "المسؤول",
-                                fieldName: "Administrator",
-                              },
-                              {
-                                label: "الكود",
-                                fieldName: "Code",
-                              },
-                              {
-                                label: "التصريح",
-                                fieldName: "Declaration",
-                              },
-                              {
-                                label: "الأداء",
-                                fieldName: "Performance",
-                              },
-                              {
-                                label: "الطاقة الإنتاجية",
-                                fieldName: "relationships/1",
-                              },
-                              {
-                                label: "التلفون",
-                                  fieldName: "relationships/0/Phone",
-                                  format: {
-                                  digitSeparator: true,
-                                },
-                              }
-                            ],
-                          },
-                        ],
-                      };
+                      government = element.attributes["Government_Name_Arabic"];
                     });
                   });
               });
           });
-      });
-  });
+      }).then(( ) => {featureLayer.popupTemplate = {
+    title: "{Union_Name}",
 
+    content: [
+      {
+        // Pass in the fields to display
+        type: "fields",
+        fieldInfos: [
+          {
+            label: "اسم الاتحاد",
+            fieldName: "Union_Name",
+          },
+          {
+            label: "المسؤول",
+            fieldName: "Administrator",
+          },
+          {
+            label: "الكود",
+            fieldName: "Code",
+          },
+          {
+            label: "التصريح",
+            fieldName: "Declaration",
+          },
+          {
+            label: "الأداء",
+            fieldName: "Performance",
+          },
+          {
+            label: "الطاقة الإنتاجية",
+            fieldName: "relationships/1",
+          },
+        ],
+      },
+
+      {
+        // Pass in the fields to display
+        type: "custom",
+        creator: function () {
+          return (
+            '<div class="esri-feature-fields" style="margin-top:-24px; margin-bottom:-24px;"><div class="esri-feature-element-info"></div><table class="esri-widget__table" summary="قائمة البيانات الجدولية والقيم"><tbody><tr><th class="esri-feature-fields__field-header">التلفون</th><td class="esri-feature-fields__field-data"> ' +
+           phones.toString() +
+            "</td></tr></tbody></table></div>"
+          );
+        },
+      }, {
+        // Pass in the fields to display
+        type: "custom",
+        creator: function () {
+          return (
+            '<div class="esri-feature-fields" style="margin-top:-24px; margin-bottom:-24px;"><div class="esri-feature-element-info"></div><table class="esri-widget__table" summary="قائمة البيانات الجدولية والقيم"><tbody><tr  style="background-color:rgba(76,76,76,.02);"><th class="esri-feature-fields__field-header">المحافظة</th><td class="esri-feature-fields__field-data"> ' +
+           government +
+            "</td></tr></tbody></table></div>"
+          );
+        },
+      },
+    ],
+  };} )
+  ;
+  });
+  
   function clearMap() {
     if (highlight) {
       highlight.remove();
