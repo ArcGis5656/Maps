@@ -58,54 +58,6 @@ require([
     visible: true,
     renderer: administrativeCenterRenderer,
     outFields: ["*"],
-
-    popupTemplate: {
-      title: "{Union_Name}",
-      content: [
-        {
-          // Pass in the fields to display
-          type: "fields",
-          fieldInfos: [
-            {
-              label: "اسم الاتحاد",
-              fieldName: "Union_Name",
-            },
-            {
-              label: "المسؤول",
-              fieldName: "Administrator",
-            },
-            {
-              label: "الكود",
-              fieldName: "Code",
-            },
-            {
-              label: "التصريح",
-              fieldName: "Declaration",
-            },
-            {
-              label: "الأداء",
-              fieldName: "Performance",
-            },
-            {
-              label: "الطاقة الإنتاجية",
-              fieldName: "relationships/1",
-            },
-            {
-              label: "التلفون",
-              fieldName: "relationships/0/Phone",
-              format: {
-                digitSeparator: true,
-              },
-            },
-            {
-              label: "المحافظة",
-              fieldName:
-                "relationships/2/relationships/9/Government_Name_Arabic",
-            },
-          ],
-        },
-      ],
-    },
   });
   var featureLayer2 = new FeatureLayer({
     url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/10",
@@ -191,24 +143,78 @@ require([
               })
               .then((results) => {
                 results[objectId].features.forEach((element) => {
-                  console.log(element.attributes["GovernmentID"]);
+                  console.log(element.attributes["OBJECTID_1"]);
                 });
-                // console.log( results[objectId].features[0].attributes["GovernmentID"]);
-                return results[objectId].features[0].attributes["GovernmentID"];
+                console.log( results[objectId].features[0].attributes["OBJECTID_1"]);
+                return results[objectId].features[0].attributes["OBJECTID_1"];
               })
-              .then(function (GovernmentID) {
+              .then(function (oid) {
                 // console.log(GovernmentID);
                 // console.log(featureLayer2);
                 return featureLayer2
                   .queryRelatedFeatures({
                     outFields: ["*"],
                     relationshipId: featureLayer2.relationships[9].id,
-                    objectIds: GovernmentID,
+                    objectIds: oid,
                   })
                   .then((results) => {
-                    console.log(results);
-                    results[GovernmentID].features.forEach((element) => {
-                      console.log(element.attributes["GovernmentID"]);
+                    console.log(results[oid]);
+                    results[oid].features.forEach((element) => {
+                 
+                      console.log(element.attributes["Government_Name_Arabic"]);
+                      featureLayer.popupTemplate= {
+                        title: "{Union_Name}",
+                        expressionInfos: [                  
+                        {
+                          name: "Government_Name",
+                          title: "المحافظة",
+                          expression:22222,
+                        },
+                      ],
+                        content: [
+                          {
+                            // Pass in the fields to display
+                            type: "fields",
+                            fieldInfos: [
+                              {
+                                label: "اسم الاتحاد",
+                                fieldName: "Union_Name",
+                              },
+                              {
+                                label: "المحافظة",
+                                fieldName: "expression/Government_Name",
+                              },
+                              {
+                                label: "المسؤول",
+                                fieldName: "Administrator",
+                              },
+                              {
+                                label: "الكود",
+                                fieldName: "Code",
+                              },
+                              {
+                                label: "التصريح",
+                                fieldName: "Declaration",
+                              },
+                              {
+                                label: "الأداء",
+                                fieldName: "Performance",
+                              },
+                              {
+                                label: "الطاقة الإنتاجية",
+                                fieldName: "relationships/1",
+                              },
+                              {
+                                label: "التلفون",
+                                  fieldName: "relationships/0/Phone",
+                                  format: {
+                                  digitSeparator: true,
+                                },
+                              }
+                            ],
+                          },
+                        ],
+                      };
                     });
                   });
               });
