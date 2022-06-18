@@ -161,7 +161,7 @@ require([
     };
   }
   var featureLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/3",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/3",
     id: "Fridges",
     visible: true,
     renderer: serviceCenterRenderer,
@@ -170,11 +170,11 @@ require([
     outFields: ["*"],
   });
   var featureLayer2 = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/10",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/10",
     visible: false,
   });
   var YemenLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/8",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/8",
     id: "Yemen",
     opacity: 0.6,
   });
@@ -308,7 +308,7 @@ require([
                 // console.log(featureLayer2);
                 return query
                   .executeQueryJSON(
-                    "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/38",
+                    "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/38",
                     {
                       outFields: ["*"],
                       // autocasts as new Query()
@@ -320,7 +320,7 @@ require([
                     oid = oid.features[0].attributes["OBJECTID"];
                     return query
                       .executeQueryJSON(
-                        "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/18",
+                        "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/18",
                         {
                           outFields: ["*"],
 
@@ -335,7 +335,7 @@ require([
                         // console.log(featureLayer2);
                         return query
                           .executeQueryJSON(
-                            "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/33",
+                            "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/33",
                             {
                               outFields: ["*"],
 
@@ -348,7 +348,7 @@ require([
                             oid = oid.features[0].attributes["OBJECTID"];
                             return query
                               .executeQueryJSON(
-                                "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/30",
+                                "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/30",
                                 {
                                   outFields: ["*"],
 

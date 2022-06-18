@@ -53,7 +53,7 @@ require([
     ],
   };
   var featureLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/0",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/0",
     id: "Union",
     visible: true,
     renderer: administrativeCenterRenderer,
@@ -61,11 +61,11 @@ require([
   });
 
   var featureLayer2 = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/10",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/10",
     visible: false,
   });
   var YemenLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/8",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/8",
     id: "Yemen",
     opacity: 0.6,
   });

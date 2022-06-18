@@ -1,7 +1,7 @@
 require(["esri/rest/query"], function (query) {
   // url to the layer of interest to query
   let queryUrl =
-    "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/9";
+    "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/9";
   let displayAttribute = "Government_Name_Arabic";
   query
     .executeQueryJSON(queryUrl, {
@@ -32,7 +32,7 @@ require(["esri/rest/query"], function (query) {
     ).then(
       function (GovernmentID) {
         let queryUrl =
-          "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/10";
+          "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/10";
         let displayAttribute = "Directorate_Name_Arabic";
          query
           .executeQueryJSON(queryUrl, {

@@ -36,7 +36,7 @@ require([
    *****************************************************************/
   //data needs to be public to access them without authorization
   var YemenLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/8",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/8",
     id: "Yemen",
     opacity: 0.9,
     popupTemplate: {
@@ -44,7 +44,7 @@ require([
     },
   });
   var GovernmentLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/9",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/9",
     id: "Governments",
     visible: false,
     labelingInfo: [Lable("$feature.Government_Name_Arabic")],
@@ -55,7 +55,7 @@ require([
     },
   });
   var DirectorateLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/10",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/10",
     id: "Directorates",
     visible: false,
     labelingInfo: [Lable("$feature.Directorate_Name_Arabic")],
@@ -66,7 +66,7 @@ require([
     },
   });
   var AssociationLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/1",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/1",
     /*****************************************************************
      *! Set properties on a feature layer
      * Additional properties can be set on a feature layer to change how it draws and behaves.
@@ -102,7 +102,7 @@ require([
     },
   });
   var UnionLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/0",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/0",
     id: "Unions",
     visible: false,
     renderer: administrativeCenterRenderer,
@@ -114,7 +114,7 @@ require([
     },
   });
   var RepositoryLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/2",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/2",
     id: "Repository",
     visible: false,
     renderer: serviceCenterRenderer,
@@ -134,7 +134,7 @@ require([
     },
   });
   var FridgeLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/3",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/3",
     id: "Fridges",
     visible: false,
     renderer: serviceCenterRenderer,
@@ -154,7 +154,7 @@ require([
     },
   });
   var LabLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/4",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/4",
     id: "Labs",
     visible: false,
     renderer: Labs_Workshops_Renderer,
@@ -174,7 +174,7 @@ require([
     },
   });
   var WorkshopsLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/5",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/5",
     id: "Workshops",
     visible: false,
     renderer: Labs_Workshops_Renderer,
@@ -194,7 +194,7 @@ require([
     },
   });
   var PointsSalesLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/6",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/6",
     id: "PointsSales",
     visible: false,
     // renderer: PointsSalesRenderer,
@@ -215,7 +215,7 @@ require([
     },
   });
   var AnimalsLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/7",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/7",
     id: "Animals",
     visible: false,
     renderer: AnimalsRenderer,
@@ -227,7 +227,7 @@ require([
     },
   });
   var LandsLayer = new FeatureLayer({
-    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/11",
+    url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/11",
     id: "Lands",
     visible: false,
     renderer: LandsRenderer,

@@ -6,7 +6,7 @@ require([
 ], function (query, Map, MapView, FeatureLayer) {
   // url to the layer of interest to query
   let queryUrl =
-    "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/0";
+    "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/0";
   let displayAttribute = "UnionID";
   // let phones = "";
   const phones = [];
@@ -42,7 +42,7 @@ require([
     )
     .then(function (UnionID) {
       let queryUrl =
-        "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/37";
+        "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/37";
       let displayAttribute = "Phone";
       query
         .executeQueryJSON(queryUrl, {
@@ -81,7 +81,7 @@ require([
           }
         }
           const layer = new FeatureLayer({
-            url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDBs/MapServer/0",
+            url: "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/0",
             id: "Unions",
             visible: true,
             outFields: ["*"],
