@@ -57,33 +57,6 @@ require([
     renderer: AssociationsRenderer,
     outFields: ["*"],
 
-    popupTemplate: {
-      title: "{Association_Name}",
-      content: [
-        {
-          // Pass in the fields to display
-          type: "fields",
-          fieldInfos: [
-            {
-              fieldName: "Association_Name",
-              label: "Association Name",
-            },
-            {
-              fieldName: "relationships/16/Phone",
-              label: "Phone",
-            },
-            {
-              fieldName: "relationships/8/Directorate_Name_English",
-              label: "Directorate",
-            },
-            {
-              fieldName: "relationships/6/Union_Name",
-              label: "Union",
-            },
-          ],
-        },
-      ], // "The lands type number is {Type_LandID}.", // Display text in pop-up
-    },
     // content: "The Association Performance is {Performance}.",
     // },
   });
@@ -118,7 +91,11 @@ require([
   view.ui.add(legendExpand, "top-right");
 
   // Initialize variables
-  let highlight, grid;
+  let highlight,
+    grid,
+    Union,
+    Directorate,
+    phones = [];
 
   // call clearMap method when clear is clicked
   const clearbutton = document.getElementById("clearButton");
@@ -145,7 +122,7 @@ require([
         }
       })
       .then((objectId) => {
-        console.log(objectId);
+        // console.log(objectId);
         return featureLayer
           .queryRelatedFeatures({
             outFields: ["*"],
@@ -153,13 +130,15 @@ require([
             objectIds: objectId,
           })
           .then((results) => {
-            console.log(results);
+            // console.log(results);
+            phones = [];
             results[objectId].features.forEach((element) => {
-              console.log(element);
+              console.log(element.attributes["Phone"]);
+              phones.push(element.attributes["Phone"]);
             });
-            })
+          })
           .then(function () {
-             return featureLayer
+            return featureLayer
               .queryRelatedFeatures({
                 outFields: ["*"],
                 relationshipId: featureLayer.relationships[3].id,
@@ -168,24 +147,74 @@ require([
               .then((results) => {
                 results[objectId].features.forEach((element) => {
                   console.log(element.attributes["Union_Name"]);
+                  Union = element.attributes["Union_Name"];
                 });
               });
-          }).then(function () {
+          })
+          .then(function () {
             return featureLayer
-             .queryRelatedFeatures({
-               outFields: ["*"],
-               relationshipId: featureLayer.relationships[2].id,
-               objectIds: objectId,
-             })
-             .then((results) => {
-              results[objectId].features.forEach((element) => {
-                 console.log(element.attributes["Directorate_Name_Arabic"]);
-               });
-             });
-         });
-      });
+              .queryRelatedFeatures({
+                outFields: ["*"],
+                relationshipId: featureLayer.relationships[2].id,
+                objectIds: objectId,
+              })
+              .then((results) => {
+                results[objectId].features.forEach((element) => {
+                  console.log(element.attributes["Directorate_Name_Arabic"]);
+                  Directorate = element.attributes["Directorate_Name_Arabic"];
+                });
+              });
+          });
+      }).then(()=> {featureLayer.popupTemplate = {
+    title: "{Association_Name}",
+    content: [
+      {
+        // Pass in the fields to display
+        type: "fields",
+        fieldInfos: [
+          {
+            label: "Association Name",
+            fieldName: "Association_Name",
+          },
+        ],
+      },
+      {
+        // Pass in the fields to display
+        type: "custom",
+        creator: function () {
+          return (
+            '<div class="esri-feature-fields" style="margin-top:-24px; margin-bottom:-24px;"><div class="esri-feature-element-info"></div><table class="esri-widget__table" summary="قائمة البيانات الجدولية والقيم"><tbody><tr style="background-color:rgba(76,76,76,.02);"><th class="esri-feature-fields__field-header">التلفون</th><td class="esri-feature-fields__field-data"> ' +
+            phones.toString() +
+            "</td></tr></tbody></table></div>"
+          );
+        },
+      },
+      {
+        // Pass in the fields to display
+        type: "custom",
+        creator: function () {
+          return (
+            '<div class="esri-feature-fields" style="margin-top:-24px; margin-bottom:-24px;"><div class="esri-feature-element-info"></div><table class="esri-widget__table" summary="قائمة البيانات الجدولية والقيم"><tbody><tr><th class="esri-feature-fields__field-header">المديرية</th><td class="esri-feature-fields__field-data"> ' +
+            Directorate +
+            "</td></tr></tbody></table></div>"
+          );
+        },
+      },
+      {
+        // Pass in the fields to display
+        type: "custom",
+        creator: function () {
+          return (
+            '<div class="esri-feature-fields" style="margin-top:-24px; margin-bottom:-24px;"><div class="esri-feature-element-info"></div><table class="esri-widget__table" summary="قائمة البيانات الجدولية والقيم"><tbody><tr style="background-color:rgba(76,76,76,.02);"><th class="esri-feature-fields__field-header">الإتحاد</th><td class="esri-feature-fields__field-data"> ' +
+            Union +
+            "</td></tr></tbody></table></div>"
+          );
+        },
+      },
+    ], // "The lands type number is {Type_LandID}.", // Display text in pop-up
+  };});
   });
-
+  
   function clearMap() {
     if (highlight) {
       highlight.remove();
