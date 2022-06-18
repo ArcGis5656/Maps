@@ -96,7 +96,7 @@ require([
   view.ui.add(legendExpand, "top-right");
 
   // Initialize variables
-  let highlight, grid, government, phones=[];;
+  let highlight, grid, government, phones=[];
 
   // call clearMap method when clear is clicked
   const clearbutton = document.getElementById("clearButton");
