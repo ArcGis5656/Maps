@@ -1,5 +1,4 @@
-// *?still the popup window display the data that was display in the console window
-// *?how to get the zoom level from query
+// *?still the popup window display slowly and the land number is still not correct
 require([
   "esri/rest/query",
 
@@ -107,6 +106,7 @@ require([
     grid,
     Union,
     Directorate,
+    DirectorateID,
     phones = [],
     Member_Association,
     production_capacity,
@@ -145,6 +145,7 @@ require([
             objectIds: objectId,
           })
           .then((results) => {
+            //Phones
             // console.log(results);
             phones = [];
             results[objectId].features.forEach((element) => {
@@ -153,6 +154,8 @@ require([
             });
           })
           .then(function () {
+            //union
+            // console.log(objectId);
             return featureLayer
               .queryRelatedFeatures({
                 outFields: ["*"],
@@ -167,6 +170,8 @@ require([
               });
           })
           .then(function () {
+            //directorate
+            // console.log(objectId);
             return featureLayer
               .queryRelatedFeatures({
                 outFields: ["*"],
@@ -177,10 +182,14 @@ require([
                 results[objectId].features.forEach((element) => {
                   // console.log(element.attributes["Directorate_Name_Arabic"]);
                   Directorate = element.attributes["Directorate_Name_Arabic"];
+                  DirectorateID = element.attributes["OBJECTID_1"];
                 });
               });
           })
           .then(function () {
+            //government
+            // console.log(objectId);
+
             return featureLayer
               .queryRelatedFeatures({
                 outFields: ["*"],
@@ -188,27 +197,17 @@ require([
                 objectIds: objectId,
               })
               .then((results) => {
-                results[objectId].features.forEach((element) => {
-                  // console.log(element.attributes["OBJECTID_1"]);
-                });
-                // console.log(
-                //   results[objectId].features[0].attributes["OBJECTID_1"]
-                // );
-                return results[objectId].features[0].attributes["OBJECTID_1"];
-              })
-              .then(function (oid) {
-                // console.log(GovernmentID);
-                // console.log(oid);
-                // console.log(featureLayer2);
+                let DirectorateID =
+                  results[objectId].features[0].attributes["OBJECTID_1"];
                 return featureLayer2
                   .queryRelatedFeatures({
                     outFields: ["*"],
                     relationshipId: featureLayer2.relationships[9].id,
-                    objectIds: oid,
+                    objectIds: DirectorateID,
                   })
                   .then((results) => {
-                    // console.log(results[oid]);
-                    results[oid].features.forEach((element) => {
+                    // console.log(results[DirectorateID]);
+                    results[DirectorateID].features.forEach((element) => {
                       // console.log(element.attributes["Government_Name_Arabic"]);
                       government = element.attributes["Government_Name_Arabic"];
                     });
@@ -216,77 +215,71 @@ require([
               });
           })
           .then(function () {
-            console.log(objectId);
-            return featureLayer
+            //! products
+            // console.log(objectId);
+            //? directorates
+            // console.log(DirectorateID);
+            //? lands in directorate
+            featureLayer2
               .queryRelatedFeatures({
                 outFields: ["*"],
-                relationshipId: featureLayer.relationships[2].id,
-                objectIds: objectId,
+                relationshipId: featureLayer2.relationships[7].id,
+                objectIds: DirectorateID,
               })
               .then((results) => {
-                return results[objectId].features[0].attributes["OBJECTID_1"];
-              })
-              .then(function (oid) {
-                console.log(oid);
-                return featureLayer2
-                  .queryRelatedFeatures({
-                    outFields: ["*"],
-                    relationshipId: featureLayer2.relationships[7].id,
-                    objectIds: oid,
-                  })
-                  .then((results) => {
-                    console.log(results);
-                    if (results[oid]) {
-                      length = results[oid].features.length;
-
-                      // results[oid].features.forEach((element) => {
-                      let objectIds =
-                        results[oid].features[0].attributes["OBJECTID"];
-                      landsLayer
-                        .queryRelatedFeatures({
-                          outFields: ["*"],
-                          relationshipId: landsLayer.relationships[0].id,
-                          objectIds: objectIds,
-                        })
-                        .then((results) => {
-                          if (results[objectIds]) {
-                            results[objectIds].features.forEach((element) => {
-                              Quantity_Production =
-                                element.attributes[
-                                  "Quantity_Production_Actual"
-                                ];
-                              console.log(
-                                element.attributes["Quantity_Production_Actual"]
-                              );
-                            });
-                          }
-                          return query
-                            .executeQueryJSON(
-                              "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/30",
-                              {
-                                outFields: ["*"],
-
-                                // autocasts as new Query()
-                                where: "OBJECTID  = " + objectIds,
-                              }
-                            )
-                            .then((oid) => {
-                              console.log(oid);
-                              //   console.log(
-                              //   oid.features[0].attributes[
-                              //     "Product_Vegetarian_Name"
-                              //   ]
-                              // );
-                              // console.log(oid.features[0].attributes["Type"]); //2
-                              // Product =
-                              //   oid.features[0].attributes[
-                              //     "Product_Vegetarian_Name"
-                              //   ];
-                            });
-                        });
-                      // });
-                    }
+                // console.log(results);
+                console.log(results[DirectorateID]);//! 1000 WHY this VALUE ??  must be 15871
+                // console.log(DirectorateID);
+                length = results[DirectorateID].features.length;
+                console.log(length);
+                if (length) {
+                  results[DirectorateID].features.forEach((element) => {
+                    // console.log(element.attributes["OBJECTID"]);
+                    //Result_Product_Vegetarian
+                    landsLayer
+                      .queryRelatedFeatures({
+                        outFields: ["*"],
+                        relationshipId: landsLayer.relationships[0].id,
+                        objectIds: element.attributes["OBJECTID"],
+                      })
+                      .then((results) => {
+                        if (results[element.attributes["OBJECTID"]]) {
+                          results[
+                            element.attributes["OBJECTID"]
+                          ].features.forEach((element) => {
+                            console.log(element.attributes["OBJECTID"]);
+                            // Product_Vegetarian
+                            query
+                              .executeQueryJSON(
+                                "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/30",
+                                {
+                                  outFields: ["*"],
+                                  where:
+                                    "OBJECTID  = " +
+                                    element.attributes["OBJECTID"],
+                                }
+                              )
+                              .then((results) => {
+                                // console.log(results.features);
+                                if (results.features) {
+                                  results.features.forEach((element) => {
+                                    console.log(
+                                      element.attributes[
+                                        "Product_Vegetarian_Name"
+                                      ]
+                                    );
+                                  });
+                                } else {
+                                  console.log("out the range of features");
+                                }
+                              });
+                          });
+                        } else {
+                          // console.log("the land is not has product");
+                        }
+                      });
                   });
+                }
               });
           })
           .then(() => {
@@ -297,7 +290,7 @@ require([
                 objectIds: objectId,
               })
               .then((results) => {
-                console.log(results[objectId].features.length);
+                // console.log(results[objectId].features.length);
                 Member_Association = results[objectId].features.length;
               });
           });
