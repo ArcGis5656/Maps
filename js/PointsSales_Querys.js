@@ -167,11 +167,11 @@ require([
               objectIds: objectId,
             }).then((results) => {
               results[objectId].features.forEach((element) => {
-                console.log(
-                  element.attributes["Product_ManufacturerID"],
-                  element.attributes["Quantity_Total"],
-                  element.attributes["Quantity_Sold"]
-                );
+                // console.log(
+                //   element.attributes["Product_ManufacturerID"],
+                //   element.attributes["Quantity_Total"],
+                //   element.attributes["Quantity_Sold"]
+                // );
                 //Product_Manufacturer
                 query
                   .executeQueryJSON(
@@ -186,11 +186,11 @@ require([
                     }
                   )
                   .then((Product) => {
-                    console.log(
-                      Product.features[0].attributes[
-                        "Product_Manufacturer_Name"
-                      ]
-                    ); //2
+                    // console.log(
+                    //   Product.features[0].attributes[
+                    //     "Product_Manufacturer_Name"
+                    //   ]
+                    // ); //2
                     Product_Manufacturer[
                       element.attributes["Product_ManufacturerID"]
                     ] = Array(
@@ -200,10 +200,13 @@ require([
                         "Product_Manufacturer_Name"
                       ]
                     );
-                    for (let key in Product_Manufacturer) {
-                      let value = Product_Manufacturer[key];
-                      console.log(key + " = " + value + "");
-                    }
+                    // for (let key in Product_Manufacturer) {
+                    //   let value = Product_Manufacturer[key];
+                    //   value.forEach((element) => {
+                    //     console.log(element);
+                    //   });
+                    //   console.log(key + " = " + value + "");
+                    // }
                   });
               });
             });
@@ -222,7 +225,7 @@ require([
                 //   element.attributes["Quantity_Total"],
                 //   element.attributes["Quantity_Sold"]
                 // );
-                //Product_Manufacturer
+                //Product_Vegetarian
                 query
                   .executeQueryJSON(
                     "https://192.168.56.56:6443/arcgis/rest/services/MapsDB/MapServer/30",
@@ -236,9 +239,9 @@ require([
                     }
                   )
                   .then((Product) => {
-                    console.log(
-                      Product.features[0].attributes["Product_Vegetarian_Name"]
-                    ); //2
+                    // console.log(
+                    //   Product.features[0].attributes["Product_Vegetarian_Name"]
+                    // ); //2
                     Product_Vegetarian[
                       element.attributes["Product_VegetarianID"]
                     ] = Array(
@@ -246,16 +249,25 @@ require([
                       element.attributes["Quantity_Sold"],
                       Product.features[0].attributes["Product_Vegetarian_Name"]
                     );
-                    for (let key in Product_Vegetarian) {
-                      let value = Product_Vegetarian[key];
-                      console.log(key + " = " + value + "");
-                    }
+                    // console.log(Product_Vegetarian);
+     
+                    // for (let key in Product_Vegetarian) {
+                    //   let value = Product_Vegetarian[key];
+                    //   value.forEach((element) => {
+                    //     console.log(element);
+                    //   });
+                    //   console.log(key + " = " + value + "");
+                    // }
+                    // console.log(Product_Vegetarian);
+     
                   });
               });
             });
           });
       })
       .then(() => {
+        console.log(Product_Vegetarian);
+     
         PointsSalesLayer.popupTemplate = {
           title: "{Workshop_Name}",
           // expressionInfos: [
@@ -285,19 +297,19 @@ require([
                   label: "التصريح",
                   fieldName: "Declaration",
                 },
-                {
-                  label: "المنتجات",
-                  fieldName:
-                    "relationships/22/relationships/45/Product_Manufacturer_Name",
-                  // fieldName: "relationships/23/relationships/47/Product_Vegetarian_Name",
-                },
-                {
-                  label: "متوسط كميةالبيع",
-                  fieldName: "expression/average sales quantity",
-                  format: {
-                    digitSeparator: true,
-                  },
-                },
+                // {
+                //   label: "المنتجات",
+                //   fieldName:
+                //     "relationships/22/relationships/45/Product_Manufacturer_Name",
+                //   // fieldName: "relationships/23/relationships/47/Product_Vegetarian_Name",
+                // },
+                // {
+                //   label: "متوسط كميةالبيع",
+                //   fieldName: "expression/average sales quantity",
+                //   format: {
+                //     digitSeparator: true,
+                //   },
+                // },
               ],
             },
             {
@@ -333,8 +345,68 @@ require([
             },
           ], // "The lands type number is {Type_LandID}.", // Display text in pop-up
         };
+        PointsSalesLayer.popupTemplate.content.push({
+          // Pass in the fields to display
+          type: "custom",
+          creator: function () {
+            return (
+              '<div class="esri-feature-fields" style="margin-top:-24px; "><div class="esri-feature-element-info"></div><table class="esri-widget__table" summary="قائمة البيانات الجدولية والقيم"><tbody>الطاقة الإنتاجية</tbody></table></div>' +
+              "</td></tr></tbody></table></div>"
+            );
+          },
+        });
+        console.log(Product_Manufacturer);
+        for (let Key in Product_Vegetarian) {
+          let value = Product_Vegetarian[Key];
+          value.forEach((element) => {
+            console.log(element);
+            PointsSalesLayer.popupTemplate.content.push({
+              // Pass in the fields to display
+              type: "custom",
+              creator: function () {
+                return (
+                  '<div class="esri-feature-fields" style="margin-top:-24px; margin-bottom:-24px;"><div class="esri-feature-element-info"></div><table class="esri-widget__table" summary="قائمة البيانات الجدولية والقيم"><tbody>' +
+                  style(Key) +
+                  '<th class="esri-feature-fields__field-header"> المنتج</th><td class="esri-feature-fields__field-data"> ' +
+                  element +
+                  "</td></tr></tbody></table></div>"
+                );
+              },
+            });
+          });
+          // console.log(key + " = " + value + "");
+        }
+
+        for (let key in Product_Manufacturer) {
+          let value = Product_Manufacturer[key];
+          value.forEach((element) => {
+            console.log(element);
+            PointsSalesLayer.popupTemplate.content.push({
+              // Pass in the fields to display
+              type: "custom",
+              creator: function () {
+                return (
+                  '<div class="esri-feature-fields" style="margin-top:-24px; margin-bottom:-24px;"><div class="esri-feature-element-info"></div><table class="esri-widget__table" summary="قائمة البيانات الجدولية والقيم"><tbody>' +
+                  style(key) +
+                  '<th class="esri-feature-fields__field-header"> المنتج</th><td class="esri-feature-fields__field-data"> ' +
+                  element +
+                  "</td></tr></tbody></table></div>"
+                );
+              },
+            });
+          });
+          // console.log(key + " = " + value + "");
+        }
       });
   });
+
+  function style(x) {
+    if (x % 2 != 0) {
+      return "<tr>";
+    } else {
+      return '<tr style="background-color:rgba(76,76,76,.02);">';
+    }
+  }
   function clearMap() {
     if (highlight) {
       highlight.remove();
