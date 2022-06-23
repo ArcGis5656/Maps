@@ -1,6 +1,6 @@
 // the layer is so slowly
 // the popup does not apear when first clicked in the layer
-// and the query does not work well 
+// and the query does not work well
 require([
   "esri/rest/query",
   "esri/Map",
@@ -89,6 +89,7 @@ require([
   let highlight,
     grid,
     Directorate,
+    Pandemic,
     Seasons = [],
     Season,
     Types = [],
@@ -133,7 +134,8 @@ require([
         }
       })
       .then((objectId) => {
-        console.log(objectId);
+        // console.log(objectId);
+        //Directorate
         Directorate = "";
 
         landsLayer
@@ -143,25 +145,26 @@ require([
             objectIds: objectId,
           })
           .then((results) => {
-            //console.log(results);
+            // console.log(results);
+            Directorate =
+              results[objectId].features[0].attributes[
+                "Directorate_Name_Arabic"
+              ];
+            // console.log(Directorate);
 
-            results[objectId].features.forEach((element) => {
-              console.log(element.attributes["Directorate_Name_Arabic"]);
-              Directorate = element.attributes["Directorate_Name_Arabic"];
-            });
             return results[objectId].features[0].attributes["OBJECTID_1"];
           })
           .then(function (id) {
+            // Government
             government = "";
             DirectorateLayer.queryRelatedFeatures({
               outFields: ["*"],
               relationshipId: DirectorateLayer.relationships[9].id,
               objectIds: id,
             }).then((results) => {
-              results[id].features.forEach((element) => {
-                console.log(element.attributes["Government_Name_Arabic"]);
-                government = element.attributes["Government_Name_Arabic"];
-              });
+              government =
+                results[id].features[0].attributes["Government_Name_Arabic"];
+              // console.log(government);
             });
           })
           .then(() => {
@@ -171,7 +174,7 @@ require([
             Season = "";
             Expected_quantity = [];
             Actual_quantity = [];
-            console.log(objectId);
+            // console.log(objectId);
 
             landsLayer
               .queryRelatedFeatures({
@@ -180,6 +183,7 @@ require([
                 objectIds: objectId,
               })
               .then((results) => {
+                console.log(results);
                 if (results[objectId]) {
                   Seasons = [];
                   // console.log(results[objectId]);
